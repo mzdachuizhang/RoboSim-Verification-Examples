@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>
+clock GlobalTime;
+clock cycle;
+
+broadcast chan wait_p;
+broadcast chan end;
+
+broadcast chan registerRead;
+broadcast chan registerWrite;
+
+broadcast chan registerRead_M_C;
+broadcast chan registerWrite_C_M;
+
+broadcast chan registerRead_CtrlPusher_S;
+broadcast chan registerWrite_S_CtrlPusher;
+
+broadcast chan collect_SimPusher;
+broadcast chan startexec_SimPusher;
+broadcast chan endexec_SimPusher;
+
+
+// searchObject in IMotionControl
+struct{
+    bool b;
+} searchObject, searchObject_ModPusher, searchObject_CtrlPusher, searchObject_SimPusher,
+  searchObject_SimPusher_CtrlPusher, searchObject_CtrlPusher_ModPusher, searchObject_ModPusher_rp0;
+int searchObject_ModPusher_n, searchObject_CtrlPusher_n, searchObject_SimPusher_n;
+
+// moveToObject in IMotionControl
+struct{
+    bool b;
+} moveToObject, moveToObject_ModPusher, moveToObject_CtrlPusher, moveToObject_SimPusher,
+  moveToObject_SimPusher_CtrlPusher, moveToObject_CtrlPusher_ModPusher, moveToObject_ModPusher_rp0;
+int moveToObject_ModPusher_n, moveToObject_CtrlPusher_n, moveToObject_SimPusher_n;
+
+// closeInOnObject in IMotionControl
+struct{
+    bool b;
+} closeInOnObject, closeInOnObject_ModPusher, closeInOnObject_CtrlPusher, closeInOnObject_SimPusher,
+  closeInOnObject_SimPusher_CtrlPusher, closeInOnObject_CtrlPusher_ModPusher, closeInOnObject_ModPusher_rp0; 
+int closeInOnObject_ModPusher_n, closeInOnObject_CtrlPusher_n, closeInOnObject_SimPusher_n;
+
+// pushObject in IMotionControl
+struct{
+    bool b;
+} pushObject, pushObject_ModPusher, pushObject_CtrlPusher, pushObject_SimPusher,
+  pushObject_SimPusher_CtrlPusher, pushObject_CtrlPusher_ModPusher, pushObject_ModPusher_rp0; 
+int pushObject_ModPusher_n, pushObject_CtrlPusher_n, pushObject_SimPusher_n;
+
+// moveAroundObject in IMotionControl
+struct{
+    bool b;
+} moveAroundObject, moveAroundObject_ModPusher, moveAroundObject_CtrlPusher, moveAroundObject_SimPusher,
+  moveAroundObject_SimPusher_CtrlPusher, moveAroundObject_CtrlPusher_ModPusher, moveAroundObject_ModPusher_rp0;
+int moveAroundObject_ModPusher_n, moveAroundObject_CtrlPusher_n, moveAroundObject_SimPusher_n;
+
+// scanAndAlign in IMotionControl
+struct{
+    bool b;
+} scanAndAlign, scanAndAlign_ModPusher, scanAndAlign_CtrlPusher, scanAndAlign_SimPusher,
+  scanAndAlign_SimPusher_CtrlPusher, scanAndAlign_CtrlPusher_ModPusher, scanAndAlign_ModPusher_rp0;
+int scanAndAlign_ModPusher_n, scanAndAlign_CtrlPusher_n, scanAndAlign_SimPusher_n;
+
+// evade in IMotionControl
+struct{
+    bool b;
+} evade, evade_ModPusher, evade_CtrlPusher, evade_SimPusher,
+  evade_SimPusher_CtrlPusher, evade_CtrlPusher_ModPusher, evade_ModPusher_rp0;
+int evade_ModPusher_n, evade_CtrlPusher_n, evade_SimPusher_n;
+
+// enableNeighbourDetection in INeighbourWatchOps
+struct{
+    bool b;
+} enableNeighbourDetection, enableNeighbourDetection_ModPusher,
+  enableNeighbourDetection_CtrlPusher, enableNeighbourDetection_SimPusher,
+  enableNeighbourDetection_SimPusher_CtrlPusher, enableNeighbourDetection_CtrlPusher_ModPusher, 
+  enableNeighbourDetection_ModPusher_rp0;
+int enableNeighbourDetection_ModPusher_n, enableNeighbourDetection_CtrlPusher_n, enableNeighbourDetection_SimPusher_n;
+
+// disableNeighbourDetection in INeighbourWatchOps
+struct{
+    bool b;
+} disableNeighbourDetection, disableNeighbourDetection_ModPusher,
+  disableNeighbourDetection_CtrlPusher, disableNeighbourDetection_SimPusher,
+  disableNeighbourDetection_SimPusher_CtrlPusher, disableNeighbourDetection_CtrlPusher_ModPusher, 
+  disableNeighbourDetection_ModPusher_rp0; 
+int disableNeighbourDetection_ModPusher_n, disableNeighbourDetection_CtrlPusher_n, 
+    disableNeighbourDetection_SimPusher_n;
+
+// enableGoalFinding in IGoalWatchOps
+struct{
+    bool b;
+} enableGoalFinding, enableGoalFinding_ModPusher, enableGoalFinding_CtrlPusher, enableGoalFinding_SimPusher,
+  enableGoalFinding_SimPusher_CtrlPusher, enableGoalFinding_CtrlPusher_ModPusher, enableGoalFinding_ModPusher_rp0;
+int enableGoalFinding_ModPusher_n, enableGoalFinding_CtrlPusher_n, enableGoalFinding_SimPusher_n;
+
+// disableGoalFinding in IGoalWatchOps
+struct{
+    bool b;
+} disableGoalFinding, disableGoalFinding_ModPusher, disableGoalFinding_CtrlPusher, disableGoalFinding_SimPusher,
+  disableGoalFinding_SimPusher_CtrlPusher, disableGoalFinding_CtrlPusher_ModPusher, disableGoalFinding_ModPusher_rp0;
+int disableGoalFinding_ModPusher_n, disableGoalFinding_CtrlPusher_n, disableGoalFinding_SimPusher_n;
+
+// enableObjectWatch in IObjectWatchOps
+struct{
+    bool b;
+} enableObjectWatch, enableObjectWatch_ModPusher, enableObjectWatch_CtrlPusher, enableObjectWatch_SimPusher,
+  enableObjectWatch_SimPusher_CtrlPusher, enableObjectWatch_CtrlPusher_ModPusher, enableObjectWatch_ModPusher_rp0;
+int enableObjectWatch_ModPusher_n, enableObjectWatch_CtrlPusher_n, enableObjectWatch_SimPusher_n;
+
+// disableObjectWatch in IObjectWatchOps
+struct{
+    bool b;
+} disableObjectWatch, disableObjectWatch_ModPusher, disableObjectWatch_CtrlPusher, disableObjectWatch_SimPusher,
+  disableObjectWatch_SimPusher_CtrlPusher, disableObjectWatch_CtrlPusher_ModPusher, disableObjectWatch_ModPusher_rp0;
+int disableObjectWatch_ModPusher_n, disableObjectWatch_CtrlPusher_n, disableObjectWatch_SimPusher_n;
+
+// event goalSeen in IGoalWatch
+struct{
+    bool b;
+} goalSeen, goalSeen_ModPusher, goalSeen_CtrlPusher, goalSeen_SimPusher,
+  goalSeen_SimPusher_CtrlPusher, goalSeen_CtrlPusher_ModPusher, goalSeen_ModPusher_rp0;
+
+// event objectSeen in IObjectWatch
+struct{
+    bool b;
+    int n;
+} objectSeen, objectSeen_ModPusher, objectSeen_CtrlPusher, objectSeen_SimPusher,
+  objectSeen_SimPusher_CtrlPusher, objectSeen_CtrlPusher_ModPusher, objectSeen_ModPusher_rp0;
+
+// event neighbourDetected in INeighbourWatch
+struct{
+    bool b;
+    int n;
+} neighbourDetected, neighbourDetected_ModPusher, neighbourDetected_CtrlPusher, neighbourDetected_SimPusher,
+  neighbourDetected_SimPusher_CtrlPusher, neighbourDetected_CtrlPusher_ModPusher, neighbourDetected_ModPusher_rp0;
+
+
+
+
+
+</declaration>
+	<template>
+		<name x="5" y="5">ModPusher_cycle</name>
+		<declaration>const int period = 1;
+
+void Init(){
+    searchObject_ModPusher_n = 0;
+    moveToObject_ModPusher_n = 0;
+    closeInOnObject_ModPusher_n = 0;
+    pushObject_ModPusher_n = 0;
+    moveAroundObject_ModPusher_n = 0;
+    scanAndAlign_ModPusher_n = 0;
+    evade_ModPusher_n = 0;
+    enableNeighbourDetection_ModPusher_n = 0;
+    disableNeighbourDetection_ModPusher_n = 0;
+    enableGoalFinding_ModPusher_n = 0;
+    disableGoalFinding_ModPusher_n = 0;
+    enableObjectWatch_ModPusher_n = 0;
+    disableObjectWatch_ModPusher_n = 0;
+}
+
+bool ifConflict(){
+    return searchObject_ModPusher_n&gt;1 || moveToObject_ModPusher_n&gt;1 || closeInOnObject_ModPusher_n&gt;1 || 
+           pushObject_ModPusher_n&gt;1 || moveAroundObject_ModPusher_n&gt;1 || scanAndAlign_ModPusher_n&gt;1 || 
+           evade_ModPusher_n&gt;1 || enableNeighbourDetection_ModPusher_n&gt;1 || disableNeighbourDetection_ModPusher_n&gt;1 ||
+           enableGoalFinding_ModPusher_n&gt;1 || disableGoalFinding_ModPusher_n&gt;1 || enableObjectWatch_ModPusher_n&gt;1 ||
+           disableObjectWatch_ModPusher_n&gt;1;
+}
+
+void TakeInput(){
+    goalSeen_ModPusher.b = true;
+    objectSeen_ModPusher.b = true;
+    objectSeen_ModPusher.n = 1;
+    neighbourDetected_ModPusher.b = true;
+    neighbourDetected_ModPusher.n = 1;
+}
+
+void GiveOutput(){
+    if(searchObject_ModPusher_rp0.b==true){
+        searchObject = searchObject_ModPusher;
+        searchObject_ModPusher_rp0.b=false;
+        searchObject_ModPusher.b=false;
+    }
+    if(moveToObject_ModPusher_rp0.b==true){
+        moveToObject = moveToObject_ModPusher;
+        moveToObject_ModPusher_rp0.b=false;
+        moveToObject_ModPusher.b=false;
+    }
+    if(closeInOnObject_ModPusher_rp0.b==true){
+        closeInOnObject = closeInOnObject_ModPusher;
+        closeInOnObject_ModPusher_rp0.b=false;
+        closeInOnObject_ModPusher.b=false;
+    }
+    if(pushObject_ModPusher_rp0.b==true){
+        pushObject = pushObject_ModPusher;
+        pushObject_ModPusher_rp0.b=false;
+        pushObject_ModPusher.b=false;
+    }    
+    if(moveAroundObject_ModPusher_rp0.b==true){
+        moveAroundObject = moveAroundObject_ModPusher;
+        moveAroundObject_ModPusher_rp0.b=false;
+        moveAroundObject_ModPusher.b=false;
+    }    
+    if(scanAndAlign_ModPusher_rp0.b==true){
+        scanAndAlign = scanAndAlign_ModPusher;
+        scanAndAlign_ModPusher_rp0.b=false;
+        scanAndAlign_ModPusher.b=false;
+    }    
+    if(evade_ModPusher_rp0.b==true){
+        evade = evade_ModPusher;
+        evade_ModPusher_rp0.b=false;
+        evade_ModPusher.b=false;
+    }  
+    if(enableNeighbourDetection_ModPusher_rp0.b==true){
+        enableNeighbourDetection = enableNeighbourDetection_ModPusher;
+        enableNeighbourDetection_ModPusher_rp0.b=false;
+        enableNeighbourDetection_ModPusher.b=false;
+    }  
+    if(disableNeighbourDetection_ModPusher_rp0.b==true){
+        disableNeighbourDetection = disableNeighbourDetection_ModPusher;
+        disableNeighbourDetection_ModPusher_rp0.b=false;
+        disableNeighbourDetection_ModPusher.b=false;
+    }  
+    if(enableGoalFinding_ModPusher_rp0.b==true){
+        enableGoalFinding = enableGoalFinding_ModPusher;
+        enableGoalFinding_ModPusher_rp0.b=false;
+        enableGoalFinding_ModPusher.b=false;
+    }  
+    if(disableGoalFinding_ModPusher_rp0.b==true){
+        disableGoalFinding = disableGoalFinding_ModPusher;
+        disableGoalFinding_ModPusher_rp0.b=false;
+        disableGoalFinding_ModPusher.b=false;
+    }  
+    if(enableObjectWatch_ModPusher_rp0.b==true){
+        enableObjectWatch = enableObjectWatch_ModPusher;
+        enableObjectWatch_ModPusher_rp0.b=false;
+        enableObjectWatch_ModPusher.b=false;
+    }  
+    if(disableObjectWatch_ModPusher_rp0.b==true){
+        disableObjectWatch = disableObjectWatch_ModPusher;
+        disableObjectWatch_ModPusher_rp0.b=false;
+        disableObjectWatch_ModPusher.b=false;
+    }  
+}</declaration>
+		<location id="id0" x="-323" y="51">
+			<name x="-340" y="17">m0</name>
+			<committed/>
+		</location>
+		<location id="id1" x="-178" y="51">
+			<name x="-188" y="17">m1</name>
+			<committed/>
+		</location>
+		<location id="id2" x="17" y="51">
+			<name x="9" y="17">m2</name>
+			<label kind="invariant" x="-17" y="60">cycle&lt;=period</label>
+		</location>
+		<location id="id3" x="17" y="-51">
+			<name x="34" y="-59">m3</name>
+			<committed/>
+		</location>
+		<location id="id4" x="144" y="51">
+			<name x="134" y="17">m4</name>
+		</location>
+		<location id="id5" x="17" y="-119">
+			<name x="34" y="-128">Output_Conflict</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id5"/>
+			<label kind="guard" x="25" y="-93">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="60" y="34">end?</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="guard" x="25" y="85">cycle==period</label>
+			<label kind="synchronisation" x="25" y="102">wait_p!</label>
+			<label kind="assignment" x="25" y="119">cycle=0</label>
+			<nail x="17" y="136"/>
+			<nail x="-323" y="136"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id2"/>
+			<label kind="guard" x="51" y="-34">ifConflict()==false</label>
+			<label kind="synchronisation" x="51" y="-17">registerWrite!</label>
+			<label kind="assignment" x="51" y="0">GiveOutput()</label>
+			<nail x="51" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="-144" y="-34">registerWrite_C_M?</label>
+			<nail x="-17" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-153" y="34">registerRead_M_C!</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="assignment" x="-289" y="17">Init(),
+TakeInput()</label>
+		</transition>
+	</template>
+	<template>
+		<name>CtrlPusher_cycle</name>
+		<declaration>void Init(){
+    searchObject_CtrlPusher_n = 0;
+    moveToObject_CtrlPusher_n = 0;
+    closeInOnObject_CtrlPusher_n = 0;
+    pushObject_CtrlPusher_n = 0;
+    moveAroundObject_CtrlPusher_n = 0;
+    scanAndAlign_CtrlPusher_n = 0;
+    evade_CtrlPusher_n = 0;
+    enableNeighbourDetection_CtrlPusher_n = 0;
+    disableNeighbourDetection_CtrlPusher_n = 0;
+    enableGoalFinding_CtrlPusher_n = 0;
+    disableGoalFinding_CtrlPusher_n = 0;
+    enableObjectWatch_CtrlPusher_n = 0;
+    disableObjectWatch_CtrlPusher_n = 0;
+}
+
+bool ifConflict(){  
+    return searchObject_CtrlPusher_n&gt;1 || moveToObject_CtrlPusher_n&gt;1 || closeInOnObject_CtrlPusher_n&gt;1 || 
+           pushObject_CtrlPusher_n&gt;1 || moveAroundObject_CtrlPusher_n&gt;1 || scanAndAlign_CtrlPusher_n&gt;1 || 
+           evade_CtrlPusher_n&gt;1 || enableNeighbourDetection_CtrlPusher_n&gt;1 || disableNeighbourDetection_CtrlPusher_n&gt;1 ||
+           enableGoalFinding_CtrlPusher_n&gt;1 || disableGoalFinding_CtrlPusher_n&gt;1 || enableObjectWatch_CtrlPusher_n&gt;1 ||
+           disableObjectWatch_CtrlPusher_n&gt;1;
+}
+
+void TakeInput(){
+    goalSeen_CtrlPusher = goalSeen_ModPusher;
+    objectSeen_CtrlPusher = objectSeen_ModPusher;
+    neighbourDetected_CtrlPusher = neighbourDetected_ModPusher;
+}
+
+void GiveOutput(){
+    if(searchObject_CtrlPusher_ModPusher.b==true){
+        searchObject_ModPusher = searchObject_CtrlPusher;
+        searchObject_ModPusher_n += 1;
+        searchObject_ModPusher_rp0.b=true;
+        searchObject_CtrlPusher_ModPusher.b=false;
+        searchObject_CtrlPusher.b=false;
+    }
+    if(moveToObject_CtrlPusher_ModPusher.b==true){
+        moveToObject_ModPusher = moveToObject_CtrlPusher;
+        moveToObject_ModPusher_n += 1;
+        moveToObject_ModPusher_rp0.b=true;
+        moveToObject_CtrlPusher_ModPusher.b=false;
+        moveToObject_CtrlPusher.b=false;
+    }
+    if(closeInOnObject_CtrlPusher_ModPusher.b==true){
+        closeInOnObject_ModPusher = closeInOnObject_CtrlPusher;
+        closeInOnObject_ModPusher_n += 1;
+        closeInOnObject_ModPusher_rp0.b=true;
+        closeInOnObject_CtrlPusher_ModPusher.b=false;
+        closeInOnObject_CtrlPusher.b=false;
+    }
+    if(pushObject_CtrlPusher_ModPusher.b==true){
+        pushObject_ModPusher = pushObject_CtrlPusher;
+        pushObject_ModPusher_n += 1;
+        pushObject_ModPusher_rp0.b=true;
+        pushObject_CtrlPusher_ModPusher.b=false;
+        pushObject_CtrlPusher.b=false;
+    }
+    if(moveAroundObject_CtrlPusher_ModPusher.b==true){
+        moveAroundObject_ModPusher = moveAroundObject_CtrlPusher;
+        moveAroundObject_ModPusher_n += 1;
+        moveAroundObject_ModPusher_rp0.b=true;
+        moveAroundObject_CtrlPusher_ModPusher.b=false;
+        moveAroundObject_CtrlPusher.b=false;
+    }
+    if(scanAndAlign_CtrlPusher_ModPusher.b==true){
+        scanAndAlign_ModPusher = scanAndAlign_CtrlPusher;
+        scanAndAlign_ModPusher_n += 1;
+        scanAndAlign_ModPusher_rp0.b=true;
+        scanAndAlign_CtrlPusher_ModPusher.b=false;
+        scanAndAlign_CtrlPusher.b=false;
+    }
+    if(evade_CtrlPusher_ModPusher.b==true){
+        evade_ModPusher = evade_CtrlPusher;
+        evade_ModPusher_n += 1;
+        evade_ModPusher_rp0.b=true;
+        evade_CtrlPusher_ModPusher.b=false;
+        evade_CtrlPusher.b=false;
+    }
+    if(enableNeighbourDetection_CtrlPusher_ModPusher.b==true){
+        enableNeighbourDetection_ModPusher = enableNeighbourDetection_CtrlPusher;
+        enableNeighbourDetection_ModPusher_n += 1;
+        enableNeighbourDetection_ModPusher_rp0.b=true;
+        enableNeighbourDetection_CtrlPusher_ModPusher.b=false;
+        enableNeighbourDetection_CtrlPusher.b=false;
+    }
+    if(disableNeighbourDetection_CtrlPusher_ModPusher.b==true){
+        disableNeighbourDetection_ModPusher = disableNeighbourDetection_CtrlPusher;
+        disableNeighbourDetection_ModPusher_n += 1;
+        disableNeighbourDetection_ModPusher_rp0.b=true;
+        disableNeighbourDetection_CtrlPusher_ModPusher.b=false;
+        disableNeighbourDetection_CtrlPusher.b=false;
+    }
+    if(enableGoalFinding_CtrlPusher_ModPusher.b==true){
+        enableGoalFinding_ModPusher = enableGoalFinding_CtrlPusher;
+        enableGoalFinding_ModPusher_n += 1;
+        enableGoalFinding_ModPusher_rp0.b=true;
+        enableGoalFinding_CtrlPusher_ModPusher.b=false;
+        enableGoalFinding_CtrlPusher.b=false;
+    }
+    if(disableGoalFinding_CtrlPusher_ModPusher.b==true){
+        disableGoalFinding_ModPusher = disableGoalFinding_CtrlPusher;
+        disableGoalFinding_ModPusher_n += 1;
+        disableGoalFinding_ModPusher_rp0.b=true;
+        disableGoalFinding_CtrlPusher_ModPusher.b=false;
+        disableGoalFinding_CtrlPusher.b=false;
+    }
+    if(enableObjectWatch_CtrlPusher_ModPusher.b==true){
+        enableObjectWatch_ModPusher = enableObjectWatch_CtrlPusher;
+        enableObjectWatch_ModPusher_n += 1;
+        enableObjectWatch_ModPusher_rp0.b=true;
+        enableObjectWatch_CtrlPusher_ModPusher.b=false;
+        enableObjectWatch_CtrlPusher.b=false;
+    }
+    if(disableObjectWatch_CtrlPusher_ModPusher.b==true){
+        disableObjectWatch_ModPusher = disableObjectWatch_CtrlPusher;
+        disableObjectWatch_ModPusher_n += 1;
+        disableObjectWatch_ModPusher_rp0.b=true;
+        disableObjectWatch_CtrlPusher_ModPusher.b=false;
+        disableObjectWatch_CtrlPusher.b=false;
+    }
+}</declaration>
+		<location id="id6" x="-340" y="-102">
+			<name x="-349" y="-136">c0</name>
+		</location>
+		<location id="id7" x="76" y="-102">
+			<name x="67" y="-136">c2</name>
+		</location>
+		<location id="id8" x="-178" y="-102">
+			<name x="-188" y="-136">c1</name>
+			<committed/>
+		</location>
+		<location id="id9" x="76" y="-204">
+			<name x="93" y="-204">c3</name>
+			<committed/>
+		</location>
+		<location id="id10" x="204" y="-102">
+			<name x="212" y="-93">c4</name>
+		</location>
+		<location id="id11" x="76" y="-263">
+			<name x="93" y="-272">Output_Conflict</name>
+		</location>
+		<init ref="id6"/>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id11"/>
+			<label kind="guard" x="84" y="-238">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id10"/>
+			<label kind="synchronisation" x="110" y="-119">end?</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="84" y="-77">wait_p?</label>
+			<nail x="76" y="-51"/>
+			<nail x="-340" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id7"/>
+			<label kind="guard" x="110" y="-178">ifConflict()==false</label>
+			<label kind="synchronisation" x="110" y="-161">registerWrite_C_M!</label>
+			<label kind="assignment" x="110" y="-144">GiveOutput()</label>
+			<nail x="101" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-136" y="-178">registerWrite_S_CtrlPusher?</label>
+			<nail x="50" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-153" y="-119">registerRead_CtrlPusher_S!</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-314" y="-153">registerRead_M_C?</label>
+			<label kind="assignment" x="-314" y="-136">Init(),
+TakeInput()</label>
+		</transition>
+	</template>
+	<template>
+		<name>SimPusher_cycle</name>
+		<declaration>void Init(){
+    searchObject_SimPusher_n = 0;
+    moveToObject_SimPusher_n = 0;
+    closeInOnObject_SimPusher_n = 0;
+    pushObject_SimPusher_n = 0;
+    moveAroundObject_SimPusher_n = 0;
+    scanAndAlign_SimPusher_n = 0;
+    evade_SimPusher_n = 0;
+    enableNeighbourDetection_SimPusher_n = 0;
+    disableNeighbourDetection_SimPusher_n = 0;
+    enableGoalFinding_SimPusher_n = 0;
+    disableGoalFinding_SimPusher_n = 0;
+    enableObjectWatch_SimPusher_n = 0;
+    disableObjectWatch_SimPusher_n = 0;
+}
+
+bool ifConflict(){  // for all variables from controller to module, need to be judge if its number ≥ 1
+    return searchObject_SimPusher_n&gt;1 || moveToObject_SimPusher_n&gt;1 || closeInOnObject_SimPusher_n&gt;1 || 
+           pushObject_SimPusher_n&gt;1 || moveAroundObject_SimPusher_n&gt;1 || scanAndAlign_SimPusher_n&gt;1 || 
+           evade_SimPusher_n&gt;1 || enableNeighbourDetection_SimPusher_n&gt;1 || disableNeighbourDetection_SimPusher_n&gt;1 ||
+           enableGoalFinding_SimPusher_n&gt;1 || disableGoalFinding_SimPusher_n&gt;1 || enableObjectWatch_SimPusher_n&gt;1 ||
+           disableObjectWatch_SimPusher_n&gt;1;
+}
+
+void TakeInput(){
+    goalSeen_SimPusher = goalSeen_CtrlPusher;
+    objectSeen_SimPusher = objectSeen_CtrlPusher;
+    neighbourDetected_SimPusher = neighbourDetected_CtrlPusher;
+}
+
+void GiveOutput(){
+    if(searchObject_SimPusher_CtrlPusher.b==true){
+        searchObject_CtrlPusher = searchObject_SimPusher;
+        searchObject_CtrlPusher_n += 1;
+        searchObject_CtrlPusher_ModPusher.b=true;
+        searchObject_SimPusher_CtrlPusher.b=false;
+        searchObject_SimPusher.b=false;
+    }
+    if(moveToObject_SimPusher_CtrlPusher.b==true){
+        moveToObject_CtrlPusher = moveToObject_SimPusher;
+        moveToObject_CtrlPusher_n += 1;
+        moveToObject_CtrlPusher_ModPusher.b=true;
+        moveToObject_SimPusher_CtrlPusher.b=false;
+        moveToObject_SimPusher.b=false;
+    }
+    if(closeInOnObject_SimPusher_CtrlPusher.b==true){
+        closeInOnObject_CtrlPusher = closeInOnObject_SimPusher;
+        closeInOnObject_CtrlPusher_n += 1;
+        closeInOnObject_CtrlPusher_ModPusher.b=true;
+        closeInOnObject_SimPusher_CtrlPusher.b=false;
+        closeInOnObject_SimPusher.b=false;
+    }
+    if(pushObject_SimPusher_CtrlPusher.b==true){
+        pushObject_CtrlPusher = pushObject_SimPusher;
+        pushObject_CtrlPusher_n += 1;
+        pushObject_CtrlPusher_ModPusher.b=true;
+        pushObject_SimPusher_CtrlPusher.b=false;
+        pushObject_SimPusher.b=false;
+    }
+    if(moveAroundObject_SimPusher_CtrlPusher.b==true){
+        moveAroundObject_CtrlPusher = moveAroundObject_SimPusher;
+        moveAroundObject_CtrlPusher_n += 1;
+        moveAroundObject_CtrlPusher_ModPusher.b=true;
+        moveAroundObject_SimPusher_CtrlPusher.b=false;
+        moveAroundObject_SimPusher.b=false;
+    }
+    if(scanAndAlign_SimPusher_CtrlPusher.b==true){
+        scanAndAlign_CtrlPusher = scanAndAlign_SimPusher;
+        scanAndAlign_CtrlPusher_n += 1;
+        scanAndAlign_CtrlPusher_ModPusher.b=true;
+        scanAndAlign_SimPusher_CtrlPusher.b=false;
+        scanAndAlign_SimPusher.b=false;
+    }
+    if(evade_SimPusher_CtrlPusher.b==true){
+        evade_CtrlPusher = evade_SimPusher;
+        evade_CtrlPusher_n += 1;
+        evade_CtrlPusher_ModPusher.b=true;
+        evade_SimPusher_CtrlPusher.b=false;
+        evade_SimPusher.b=false;
+    }
+    if(enableNeighbourDetection_SimPusher_CtrlPusher.b==true){
+        enableNeighbourDetection_CtrlPusher = enableNeighbourDetection_SimPusher;
+        enableNeighbourDetection_CtrlPusher_n += 1;
+        enableNeighbourDetection_CtrlPusher_ModPusher.b=true;
+        enableNeighbourDetection_SimPusher_CtrlPusher.b=false;
+        enableNeighbourDetection_SimPusher.b=false;
+    }
+    if(disableNeighbourDetection_SimPusher_CtrlPusher.b==true){
+        disableNeighbourDetection_CtrlPusher = disableNeighbourDetection_SimPusher;
+        disableNeighbourDetection_CtrlPusher_n += 1;
+        disableNeighbourDetection_CtrlPusher_ModPusher.b=true;
+        disableNeighbourDetection_SimPusher_CtrlPusher.b=false;
+        disableNeighbourDetection_SimPusher.b=false;
+    }
+    if(enableGoalFinding_SimPusher_CtrlPusher.b==true){
+        enableGoalFinding_CtrlPusher = enableGoalFinding_SimPusher;
+        enableGoalFinding_CtrlPusher_n += 1;
+        enableGoalFinding_CtrlPusher_ModPusher.b=true;
+        enableGoalFinding_SimPusher_CtrlPusher.b=false;
+        enableGoalFinding_SimPusher.b=false;
+    }
+    if(disableGoalFinding_SimPusher_CtrlPusher.b==true){
+        disableGoalFinding_CtrlPusher = disableGoalFinding_SimPusher;
+        disableGoalFinding_CtrlPusher_n += 1;
+        disableGoalFinding_CtrlPusher_ModPusher.b=true;
+        disableGoalFinding_SimPusher_CtrlPusher.b=false;
+        disableGoalFinding_SimPusher.b=false;
+    }
+    if(enableObjectWatch_SimPusher_CtrlPusher.b==true){
+        enableObjectWatch_CtrlPusher = enableObjectWatch_SimPusher;
+        enableObjectWatch_CtrlPusher_n += 1;
+        enableObjectWatch_CtrlPusher_ModPusher.b=true;
+        enableObjectWatch_SimPusher_CtrlPusher.b=false;
+        enableObjectWatch_SimPusher.b=false;
+    }
+    if(disableObjectWatch_SimPusher_CtrlPusher.b==true){
+        disableObjectWatch_CtrlPusher = disableObjectWatch_SimPusher;
+        disableObjectWatch_CtrlPusher_n += 1;
+        disableObjectWatch_CtrlPusher_ModPusher.b=true;
+        disableObjectWatch_SimPusher_CtrlPusher.b=false;
+        disableObjectWatch_SimPusher.b=false;
+    }
+}</declaration>
+		<location id="id12" x="-238" y="34">
+			<name x="-229" y="51">s0</name>
+		</location>
+		<location id="id13" x="-102" y="34">
+			<name x="-110" y="51">s1</name>
+			<committed/>
+		</location>
+		<location id="id14" x="119" y="34">
+			<name x="127" y="42">s2</name>
+		</location>
+		<location id="id15" x="119" y="136">
+			<name x="93" y="110">s4</name>
+		</location>
+		<location id="id16" x="119" y="-68">
+			<name x="110" y="-51">s3</name>
+			<committed/>
+		</location>
+		<location id="id17" x="246" y="136">
+			<name x="236" y="102">s5</name>
+		</location>
+		<location id="id18" x="119" y="-127">
+			<name x="136" y="-135">Output_Conflict</name>
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id18"/>
+			<label kind="guard" x="127" y="-102">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id17"/>
+			<label kind="synchronisation" x="170" y="119">end?</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="25" y="119">wait_p?</label>
+			<nail x="-238" y="136"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id14"/>
+			<label kind="guard" x="153" y="-34">ifConflict()==false</label>
+			<label kind="synchronisation" x="153" y="-17">registerWrite_S_CtrlPusher!</label>
+			<label kind="assignment" x="153" y="0">GiveOutput()</label>
+			<nail x="153" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-42" y="-51">collect_SimPusher?</label>
+			<nail x="85" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id15"/>
+			<label kind="synchronisation" x="127" y="76">endexec_SimPusher?</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-68" y="17">startexec_SimPusher!</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="synchronisation" x="-272" y="-8">registerRead_CtrlPusher_S?</label>
+			<label kind="assignment" x="-212" y="17">Init(),
+TakeInput()</label>
+		</transition>
+	</template>
+	<template>
+		<name>SimPusher</name>
+		<declaration>const int close = 1;
+const int Ta = 1;
+const int Tb = 1;
+const int Tc = 1;
+const int Td = 1;
+const int Te = 1;
+const int S = 1;
+
+int neighbours;
+int distance;
+int d;
+int n;
+bool goal;
+
+clock T;
+clock N;
+clock C;
+
+clock timer;
+
+
+void enableObjectWatch(){
+    enableObjectWatch_SimPusher.b=true;
+    enableObjectWatch_SimPusher_CtrlPusher.b=true;
+    enableObjectWatch_SimPusher_n += 1;
+}
+
+void searchObject(){
+    searchObject_SimPusher.b=true;
+    searchObject_SimPusher_CtrlPusher.b=true;
+    searchObject_SimPusher_n += 1;
+}
+
+void moveToObject(){
+    moveToObject_SimPusher.b=true;
+    moveToObject_SimPusher_CtrlPusher.b=true;
+    moveToObject_SimPusher_n += 1;
+}
+
+void closeInOnObject(){
+    closeInOnObject_SimPusher.b=true;
+    closeInOnObject_SimPusher_CtrlPusher.b=true;
+    closeInOnObject_SimPusher_n += 1;
+}
+
+void disableObjectWatch(){
+    disableObjectWatch_SimPusher.b=true;
+    disableObjectWatch_SimPusher_CtrlPusher.b=true;
+    disableObjectWatch_SimPusher_n += 1;
+}
+
+void enableGoalFinding(){
+    enableGoalFinding_SimPusher.b=true;
+    enableGoalFinding_SimPusher_CtrlPusher.b=true;
+    enableGoalFinding_SimPusher_n += 1;
+}
+
+void moveAroundObject(){
+    moveAroundObject_SimPusher.b=true;
+    moveAroundObject_SimPusher_CtrlPusher.b=true;
+    moveAroundObject_SimPusher_n += 1;
+}
+
+void enableNeighbourDetection(){
+    enableNeighbourDetection_SimPusher.b=true;
+    enableNeighbourDetection_SimPusher_CtrlPusher.b=true;
+    enableNeighbourDetection_SimPusher_n += 1;
+}
+
+void disableGoalFinding(){
+    disableGoalFinding_SimPusher.b=true;
+    disableGoalFinding_SimPusher_CtrlPusher.b=true;
+    disableGoalFinding_SimPusher_n += 1;
+}
+
+void scanAndAlign(){
+    scanAndAlign_SimPusher.b=true;
+    scanAndAlign_SimPusher_CtrlPusher.b=true;
+    scanAndAlign_SimPusher_n += 1;
+}
+
+void pushObject(){
+    pushObject_SimPusher.b=true;
+    pushObject_SimPusher_CtrlPusher.b=true;
+    pushObject_SimPusher_n += 1;
+}
+
+void disableNeighbourDetection(){
+    disableNeighbourDetection_SimPusher.b=true;
+    disableNeighbourDetection_SimPusher_CtrlPusher.b=true;
+    disableNeighbourDetection_SimPusher_n += 1;
+}
+
+void evade(){
+    evade_SimPusher.b=true;
+    evade_SimPusher_CtrlPusher.b=true;
+    evade_SimPusher_n += 1;
+}
+
+</declaration>
+		<location id="id19" x="-671" y="212">
+			<name x="-688" y="229">ss0</name>
+		</location>
+		<location id="id20" x="-671" y="85">
+			<name x="-663" y="102">Init</name>
+			<urgent/>
+		</location>
+		<location id="id21" x="-493" y="-34">
+			<name x="-603" y="-34">Searching_Init</name>
+			<urgent/>
+		</location>
+		<location id="id22" x="-408" y="-34">
+			<name x="-459" y="-25">Searching_Watch</name>
+			<urgent/>
+		</location>
+		<location id="id23" x="-323" y="-170">
+			<name x="-306" y="-187">ss3</name>
+		</location>
+		<location id="id24" x="-493" y="-170">
+			<name x="-527" y="-196">ss2</name>
+			<urgent/>
+		</location>
+		<location id="id25" x="-119" y="-34">
+			<name x="-246" y="-17">MovingToObject_Init</name>
+			<urgent/>
+		</location>
+		<location id="id26" x="-16" y="-34">
+			<name x="-85" y="-17">MovingToObject_Watch</name>
+			<urgent/>
+		</location>
+		<location id="id27" x="-493" y="85">
+			<name x="-518" y="102">ss1</name>
+			<urgent/>
+		</location>
+		<location id="id28" x="153" y="-34">
+			<name x="145" y="-17">ss4</name>
+			<urgent/>
+		</location>
+		<location id="id29" x="331" y="-34">
+			<name x="322" y="-17">ss5</name>
+		</location>
+		<location id="id30" x="510" y="-34">
+			<name x="519" y="-25">ss6</name>
+			<urgent/>
+		</location>
+		<location id="id31" x="510" y="136">
+			<name x="527" y="119">CloseInOnObject_Init</name>
+			<urgent/>
+		</location>
+		<location id="id32" x="510" y="204">
+			<name x="442" y="221">CloseInOnObject_Watch</name>
+			<urgent/>
+		</location>
+		<location id="id33" x="331" y="204">
+			<name x="322" y="221">ss7</name>
+			<urgent/>
+		</location>
+		<location id="id34" x="153" y="204">
+			<name x="144" y="221">ss8</name>
+		</location>
+		<location id="id35" x="-34" y="204">
+			<name x="-51" y="170">ss9</name>
+			<urgent/>
+		</location>
+		<location id="id36" x="-34" y="306">
+			<name x="-17" y="306">ss10</name>
+			<urgent/>
+		</location>
+		<location id="id37" x="-34" y="391">
+			<name x="-17" y="374">Scanning_Init</name>
+			<urgent/>
+		</location>
+		<location id="id38" x="-34" y="442">
+			<name x="-76" y="459">Scanning_Watch</name>
+			<urgent/>
+		</location>
+		<location id="id39" x="68" y="442">
+			<name x="51" y="459">ss11</name>
+			<urgent/>
+		</location>
+		<location id="id40" x="306" y="442">
+			<name x="272" y="459">Scanning_NewCycle</name>
+			<urgent/>
+		</location>
+		<location id="id41" x="272" y="510">
+			<name x="255" y="527">ss12</name>
+		</location>
+		<location id="id42" x="-340" y="340">
+			<name x="-450" y="314">MovingAround</name>
+			<urgent/>
+		</location>
+		<location id="id43" x="-34" y="680">
+			<name x="-17" y="663">ss14</name>
+			<urgent/>
+		</location>
+		<location id="id44" x="-34" y="603">
+			<name x="-17" y="586">ss13</name>
+			<urgent/>
+		</location>
+		<location id="id45" x="-323" y="969">
+			<name x="-374" y="986">Pushing_NewCycle</name>
+			<urgent/>
+		</location>
+		<location id="id46" x="-255" y="680">
+			<name x="-246" y="688">Pushing_Init</name>
+			<urgent/>
+		</location>
+		<location id="id47" x="-323" y="680">
+			<name x="-382" y="646">Pushing_Watching</name>
+			<urgent/>
+		</location>
+		<location id="id48" x="-408" y="680">
+			<name x="-442" y="654">ss15</name>
+			<urgent/>
+		</location>
+		<location id="id49" x="34" y="748">
+			<name x="0" y="756">ss16</name>
+			<urgent/>
+		</location>
+		<location id="id50" x="272" y="748">
+			<name x="280" y="756">ss17</name>
+			<urgent/>
+		</location>
+		<location id="id51" x="272" y="867">
+			<name x="289" y="841">ss18</name>
+			<urgent/>
+		</location>
+		<location id="id52" x="272" y="969">
+			<name x="280" y="977">ss20</name>
+			<urgent/>
+		</location>
+		<location id="id53" x="-136" y="969">
+			<name x="-161" y="986">ss21</name>
+			<urgent/>
+		</location>
+		<location id="id54" x="510" y="442">
+			<name x="500" y="408">ss19</name>
+			<urgent/>
+		</location>
+		<location id="id55" x="-323" y="884">
+			<name x="-306" y="867">ss22</name>
+		</location>
+		<location id="id56" x="-408" y="561">
+			<name x="-391" y="552">ss24</name>
+			<urgent/>
+		</location>
+		<location id="id57" x="-493" y="442">
+			<name x="-552" y="450">Evading</name>
+			<urgent/>
+		</location>
+		<location id="id58" x="-408" y="782">
+			<name x="-459" y="765">ss23</name>
+			<urgent/>
+		</location>
+		<location id="id59" x="-204" y="748">
+			<urgent/>
+		</location>
+		<init ref="id19"/>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id27"/>
+			<label kind="guard" x="-578" y="391">timer&gt;=Te</label>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id57"/>
+			<label kind="guard" x="-433" y="391">timer&lt;Te</label>
+			<label kind="synchronisation" x="-433" y="408">collect_SimPusher!</label>
+			<label kind="assignment" x="-433" y="425">evade()</label>
+			<nail x="-408" y="374"/>
+			<nail x="-374" y="442"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id59"/>
+			<label kind="guard" x="-391" y="731">neighbours&gt;=2 || N&lt;Tb</label>
+			<nail x="-306" y="748"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id59"/>
+			<label kind="guard" x="-357" y="705">distance&lt;=0 || C&lt;Tc</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id36"/>
+			<label kind="synchronisation" x="-544" y="833">collect_SimPusher!</label>
+			<label kind="assignment" x="-569" y="850">disableNeighbourDetection()</label>
+			<nail x="-408" y="1054"/>
+			<nail x="578" y="1054"/>
+			<nail x="578" y="306"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id58"/>
+			<label kind="guard" x="-595" y="697">neighbours&lt;2 &amp;&amp; N&gt;=Tb</label>
+			<label kind="synchronisation" x="-552" y="714">collect_SimPusher!</label>
+			<label kind="assignment" x="-561" y="731">disableObjectWatch()</label>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="synchronisation" x="-450" y="476">collect_SimPusher!</label>
+			<label kind="assignment" x="-433" y="493">disableNeighbourDetection(),
+timer=0</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-399" y="578">distance&gt;0 &amp;&amp; C&gt;=Tc</label>
+			<label kind="synchronisation" x="-399" y="595">collect_SimPusher!</label>
+			<label kind="assignment" x="-399" y="612">disableObjectWatch()</label>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id48"/>
+			<label kind="synchronisation" x="-314" y="833">startexec_SimPusher!</label>
+			<nail x="-323" y="816"/>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id55"/>
+			<label kind="synchronisation" x="-323" y="901">endexec_SimPusher!</label>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="-289" y="935">collect_SimPusher!</label>
+			<label kind="assignment" x="-289" y="952">pushObject()</label>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id54"/>
+			<label kind="synchronisation" x="324" y="425">collect_SimPusher!</label>
+			<label kind="assignment" x="324" y="442">scanAndAlign()</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-34" y="986">neighbours&gt;=2 &amp;&amp; n&gt;=2</label>
+			<label kind="assignment" x="-34" y="1003">neighbours=n</label>
+			<nail x="238" y="1020"/>
+			<nail x="-102" y="1020"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-34" y="969">neighbours&lt;2 &amp;&amp; n&gt;=2</label>
+			<nail x="204" y="986"/>
+			<nail x="-68" y="986"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-34" y="918">neighbours&gt;=2 &amp;&amp; n&lt;2</label>
+			<label kind="assignment" x="-34" y="935">N=0, neighbours=n</label>
+			<nail x="204" y="952"/>
+			<nail x="-68" y="952"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-34" y="901">neighbours&lt;2 &amp;&amp; n&lt;2</label>
+			<nail x="238" y="918"/>
+			<nail x="-102" y="918"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-51" y="850">not neighbourDetected_SimPusher.b==true</label>
+			<label kind="assignment" x="8" y="867">n=neighbourDetected_SimPusher.n</label>
+			<nail x="-136" y="867"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id52"/>
+			<label kind="guard" x="272" y="892">neighbourDetected_SimPusher.b==true</label>
+			<label kind="assignment" x="272" y="909">n=neighbourDetected_SimPusher.n</label>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id51"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id50"/>
+			<label kind="guard" x="85" y="799">distance==0 &amp;&amp; d&gt;0</label>
+			<label kind="assignment" x="102" y="816">C=0, distance=d</label>
+			<nail x="68" y="816"/>
+			<nail x="238" y="816"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id50"/>
+			<label kind="guard" x="93" y="765">distance&gt;0 &amp;&amp; d&gt;0</label>
+			<nail x="102" y="782"/>
+			<nail x="204" y="782"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id50"/>
+			<label kind="guard" x="76" y="697">distance&gt;0 &amp;&amp; d==0</label>
+			<label kind="assignment" x="119" y="714">distance=d</label>
+			<nail x="102" y="714"/>
+			<nail x="204" y="714"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id50"/>
+			<label kind="guard" x="68" y="663">distance==0 and d==0</label>
+			<nail x="68" y="680"/>
+			<nail x="238" y="680"/>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id49"/>
+			<label kind="guard" x="-195" y="714">objectSeen_SimPusher.b==true</label>
+			<label kind="assignment" x="-187" y="731">d=objectSeen_SimPusher.n</label>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id48"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id47"/>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id46"/>
+			<label kind="synchronisation" x="-229" y="637">collect_SimPusher!</label>
+			<label kind="assignment" x="-238" y="654">enableNeighbourDetection()</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id27"/>
+			<label kind="guard" x="-416" y="272">timer&gt;=Td</label>
+			<nail x="-340" y="212"/>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id43"/>
+			<label kind="synchronisation" x="-34" y="620">collect_SimPusher!</label>
+			<label kind="assignment" x="-34" y="637">enableObjectWatch()</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id42"/>
+			<label kind="guard" x="-323" y="289">timer&lt;Td</label>
+			<label kind="synchronisation" x="-323" y="306">collect_SimPusher!</label>
+			<label kind="assignment" x="-323" y="323">moveAroundObject()</label>
+			<nail x="-272" y="272"/>
+			<nail x="-238" y="340"/>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id44"/>
+			<label kind="guard" x="-170" y="484">not goal==true 
+&amp;&amp; timer&gt;=5</label>
+			<label kind="synchronisation" x="-170" y="518">collect_SimPusher!</label>
+			<label kind="assignment" x="-170" y="535">disableGoalFinding(),
+neighbours=2, C=0, N=0</label>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id42"/>
+			<label kind="guard" x="-229" y="408">goal==true &amp;&amp; timer&gt;=5</label>
+			<label kind="synchronisation" x="-220" y="425">collect_SimPusher!</label>
+			<label kind="assignment" x="-220" y="442">disableGoalFinding()</label>
+			<nail x="-238" y="442"/>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id38"/>
+			<label kind="synchronisation" x="93" y="493">startexec_SimPusher?</label>
+			<nail x="25" y="510"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id41"/>
+			<label kind="synchronisation" x="357" y="493">endexec_SimPusher!</label>
+			<nail x="510" y="510"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id40"/>
+			<label kind="guard" x="127" y="459">goalSeen.b==true</label>
+			<label kind="assignment" x="127" y="476">goal=true</label>
+			<nail x="187" y="459"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id40"/>
+			<label kind="guard" x="110" y="408">not goalSeen.b==true</label>
+			<nail x="187" y="425"/>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id39"/>
+			<label kind="guard" x="-17" y="425">timer&lt;5</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id38"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id37"/>
+			<label kind="synchronisation" x="-161" y="314">collect_SimPusher!</label>
+			<label kind="assignment" x="-161" y="331">goal=false,
+enableGoalFinding(),
+timer=0</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id36"/>
+			<label kind="guard" x="-195" y="229">distance==0 &amp;&amp; T&lt;Ta</label>
+			<label kind="synchronisation" x="-195" y="246">collect_SimPusher!</label>
+			<label kind="assignment" x="-195" y="263">disableObjectWatch()</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id27"/>
+			<label kind="guard" x="-119" y="187">T&gt;=Ta</label>
+			<nail x="-136" y="204"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id32"/>
+			<label kind="guard" x="52" y="238">objectSeen_SimPusher.b==true &amp;&amp;
+distance&gt;0 &amp;&amp; T&lt;Ta</label>
+			<label kind="assignment" x="51" y="272">d=objectSeen_SimPusher.n, T=0, distance=d</label>
+			<nail x="34" y="272"/>
+			<nail x="442" y="272"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id32"/>
+			<label kind="guard" x="51" y="102">not objectSeen_SimPusher.b==true ||
+not distance&gt;0 || T&gt;=Ta</label>
+			<label kind="assignment" x="51" y="136">d=objectSeen_SimPusher.n</label>
+			<nail x="34" y="136"/>
+			<nail x="442" y="136"/>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id35"/>
+			<label kind="synchronisation" x="-8" y="187">startexec_SimPusher?</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<label kind="synchronisation" x="170" y="187">endexec_SimPusher!</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="synchronisation" x="348" y="170">collect_SimPusher!</label>
+			<label kind="assignment" x="348" y="187">closeInOnObject()</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id32"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="guard" x="518" y="34">distance&lt;close &amp;&amp; T&lt;Ta</label>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id27"/>
+			<label kind="guard" x="425" y="68">T&gt;=Ta</label>
+			<nail x="476" y="85"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id26"/>
+			<label kind="guard" x="221" y="0">not objectSeen_SimPusher.b==true ||
+not distance&gt;=close || T&gt;=Ta</label>
+			<label kind="assignment" x="221" y="34">d=objectSeen_SimPusher.n</label>
+			<nail x="476" y="34"/>
+			<nail x="34" y="34"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id26"/>
+			<label kind="guard" x="161" y="-136">objectSeen_SimPusher.b==true &amp;&amp;
+distance&gt;=close &amp;&amp; T&lt;Ta</label>
+			<label kind="assignment" x="161" y="-102">d=objectSeen_SimPusher.n, T=0, distance=d</label>
+			<nail x="476" y="-102"/>
+			<nail x="34" y="-102"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="synchronisation" x="348" y="-51">startexec_SimPusher?</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id29"/>
+			<label kind="synchronisation" x="170" y="-51">endexec_SimPusher!</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id28"/>
+			<label kind="synchronisation" x="8" y="-68">collect_SimPusher!</label>
+			<label kind="assignment" x="8" y="-51">moveToObject()</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id26"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id27"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-374" y="-85">objectSeen_SimPusher.b==true</label>
+			<label kind="assignment" x="-374" y="-68">distance=objectSeen_SimPusher.n,
+T=0</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id24"/>
+			<label kind="guard" x="-646" y="-144">not objectSeen_SimPusher.b==true</label>
+			<label kind="synchronisation" x="-646" y="-127">collect_SimPusher!</label>
+			<label kind="assignment" x="-646" y="-110">d = objectSeen_SimPusher.n,
+searchObject()</label>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id22"/>
+			<label kind="synchronisation" x="-374" y="-127">startexec_SimPusher?</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id23"/>
+			<label kind="synchronisation" x="-476" y="-195">endexec_SimPusher!</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id22"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id21"/>
+			<label kind="synchronisation" x="-654" y="51">collect_SimPusher!</label>
+			<label kind="assignment" x="-654" y="68">enableObjectWatch()</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id20"/>
+			<label kind="synchronisation" x="-663" y="153">startexec_SimPusher?</label>
+		</transition>
+	</template>
+	<system>system ModPusher_cycle,
+       CtrlPusher_cycle,
+       SimPusher_cycle,
+       SimPusher;
+    </system>
+	<queries>
+		<query>
+			<formula>A[] not deadlock</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

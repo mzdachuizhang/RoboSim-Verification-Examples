@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>/* version4: this version we add an output_conflict in every cycle, which means if 
+there's a variable outputs in one cycle twice or more, it will be go into
+an unexceptable state named Output_Conflict */
+
+/* version5: this version, we delete the variable like x_*_* to simplify the model.
+However, there's something wrong with variable z.
+(Due to z_ctr0.b will be performed as an input.) and the property E&lt;&gt; ctr0_cycle.Output_Conflict will be satisfied.
+*/
+
+
+clock GlobalTime;
+
+clock cycle;
+const int period = 1;
+
+broadcast chan end;
+
+broadcast chan wait_p;
+
+broadcast chan registerRead;
+broadcast chan registerWrite;
+broadcast chan registerRead_M_C;
+broadcast chan registerRead_c0_S;
+broadcast chan registerRead_c1_S;
+broadcast chan registerWrite_S_c0;
+broadcast chan registerWrite_S_c1;
+broadcast chan registerWrite_C_M;
+
+broadcast chan startexec_stm0;
+broadcast chan endexec_stm0;
+broadcast chan startexec_stm1;
+broadcast chan endexec_stm1;
+broadcast chan startexec_stm2;
+broadcast chan endexec_stm2;
+
+broadcast chan collect_stm0;
+broadcast chan collect_stm1;
+broadcast chan collect_stm2;
+
+broadcast chan v_x;
+broadcast chan op_op1;
+broadcast chan op_op2;
+broadcast chan ev_ev0;
+
+const int c = 2;    //interface0
+
+struct
+{
+    bool b;
+    int value;
+} x, x_mod, x_ctr0, x_ctr1, x_stm0, x_stm1, x_stm2;     //interface1
+
+int x_mod_n, x_ctr0_n, x_ctr1_n, x_stm0_n, x_stm1_n, x_stm2_n;   //for output number of x
+
+struct
+{
+    bool b;
+    int y;
+} op1, op1_mod, op1_ctr0, op1_ctr1, op1_stm0, op1_stm2; //interface2
+//  op1_s0_c0, op1_s2_c1, op1_c0_m, op1_c1_m, op1_m_rp; 
+
+int op1_mod_n, op1_ctr0_n, op1_ctr1_n, op1_stm0_n, op1_stm1_n, op1_stm2_n;
+
+struct
+{
+    bool b;
+} op2, op2_mod, op2_ctr0, op2_stm0; //interface3
+//  op2_s0_c0, op2_c0_m, op2_m_rp; 
+
+int op2_mod_n, op2_ctr0_n, op2_stm0_n;
+
+struct
+{
+    bool b;
+    bool Occ;
+} ev0, ev0_mod, ev0_ctr0, ev0_stm0; //interface4
+//  ev0_s0_c0, ev0_c0_m, ev0_m_rp; 
+
+int ev0_mod_n, ev0_ctr0_n, ev0_stm0_n;
+
+struct
+{
+    bool b;
+    bool Occ;
+} ev1, ev1_mod, ev1_ctr1, ev1_stm2; //interface5
+
+int ev1_mod_n, ev1_ctr1_n, ev1_stm2_n;
+
+struct
+{
+    bool b;
+    int value;
+} z, z_mod, z_ctr0, z_stm0, z_stm1; //interface6
+//  z_s0_c0, z_s1_c0; 
+
+int z_mod_n, z_ctr0_n, z_stm0_n, z_stm1_n;
+
+struct
+{
+    bool b;
+    bool Occ;
+} ev5, ev5_stm1; //interface7
+
+int ev5_stm1_n;
+
+struct
+{
+    bool b;
+    bool Occ;
+} ev2, ev2_mod, ev2_ctr0, ev2_ctr1, ev2_stm1, ev2_stm2; //interface8
+//  ev2_s1_c0, ev2_c0_m; 
+
+int ev2_mod_n, ev2_ctr0_n, ev2_ctr1_n, ev2_stm1_n, ev2_stm2_n;
+
+struct
+{
+    bool b;
+    bool Occ;
+} ev3, ev3_mod, ev3_ctr0; //event 3
+
+int ev3_mod_n, ev3_ctr0_n;
+</declaration>
+	<template>
+		<name>p_model</name>
+		<declaration>clock t;
+bool b;</declaration>
+		<location id="id0" x="0" y="0">
+		</location>
+		<location id="id1" x="-68" y="-68">
+			<committed/>
+		</location>
+		<branchpoint id="id2" x="-102" y="-102">
+		</branchpoint>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-51" y="-51">v_x?</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="assignment" x="-93" y="-204">ev1.b=true,ev3.b=false,
+t=0</label>
+			<label kind="probability" x="-59" y="-187">3</label>
+			<nail x="-102" y="-170"/>
+			<nail x="0" y="-170"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="assignment" x="-272" y="-136">ev1.b=false,ev3.b=true,
+t=0</label>
+			<label kind="probability" x="-136" y="-119">3</label>
+			<nail x="-170" y="-102"/>
+			<nail x="-170" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="assignment" x="-221" y="-51">ev1.b=true,ev3.b=true,
+t=0</label>
+			<label kind="probability" x="-93" y="-68">1</label>
+			<nail x="-68" y="-34"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="assignment" x="-59" y="-119">ev1.b=false,ev3.b=false,
+t=0</label>
+			<label kind="probability" x="-76" y="-110">4</label>
+			<nail x="-34" y="-68"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-51" y="144">op_op2?</label>
+			<nail x="34" y="136"/>
+			<nail x="-34" y="136"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="144" y="42">op_op1?</label>
+			<nail x="102" y="102"/>
+			<nail x="136" y="34"/>
+		</transition>
+	</template>
+	<template>
+		<name>platform_mapping</name>
+		<location id="id3" x="-68" y="42">
+		</location>
+		<location id="id4" x="170" y="42">
+			<committed/>
+		</location>
+		<init ref="id3"/>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-153" y="-187">x.b==false &amp;&amp; op1.b==false &amp;&amp; op2.b==false &amp;&amp; ev0.b==false</label>
+			<nail x="238" y="-162"/>
+			<nail x="-136" y="-162"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-25" y="144">ev0.b==true</label>
+			<label kind="synchronisation" x="-25" y="161">ev_ev0!</label>
+			<label kind="assignment" x="-25" y="178">ev0.b=false</label>
+			<nail x="170" y="178"/>
+			<nail x="-68" y="178"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-16" y="76">op2.b==true</label>
+			<label kind="synchronisation" x="-16" y="93">op_op2!</label>
+			<label kind="assignment" x="-16" y="110">op2.b=false</label>
+			<nail x="136" y="110"/>
+			<nail x="-34" y="110"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="1" y="-60">op1.b==true</label>
+			<label kind="synchronisation" x="1" y="-43">op_op1!</label>
+			<label kind="assignment" x="1" y="-26">op1.b=false</label>
+			<nail x="119" y="-26"/>
+			<nail x="-17" y="-26"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-42" y="-128">x.b==true</label>
+			<label kind="synchronisation" x="-42" y="-111">v_x!</label>
+			<label kind="assignment" x="-42" y="-94">x.b=false</label>
+			<nail x="170" y="-94"/>
+			<nail x="-68" y="-94"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="9" y="25">registerWrite?</label>
+		</transition>
+	</template>
+	<template>
+		<name x="5" y="5">mod_cycle</name>
+		<declaration>void Init(){    //every cycle, the number of each output from controller to module resets to 0
+    x_mod_n = 0;
+    op1_mod_n = 0;
+    op2_mod_n = 0;
+    ev0_mod_n = 0;
+    ev1_mod_n = 0;
+    z_mod_n = 0;
+    ev2_mod_n = 0;
+    ev3_mod_n = 0;
+}
+
+bool ifConflict(){  // for all variables from controller to module, need to be judge if its number ≥ 1
+    return x_mod_n&gt;1 || op1_mod_n&gt;1 || op2_mod_n&gt;1 || ev0_mod_n&gt;1 ||
+           ev1_mod_n&gt;1 || z_mod_n&gt;1 || ev2_mod_n&gt;1 || ev3_mod_n&gt;1;
+}
+
+void TakeInput(){    // input from robot platform to module
+    ev1.b=true;
+    ev3.b=true;
+    ev1_mod = ev1;
+    ev3_mod = ev3;
+}
+
+void GiveOutput(){   // Output from module to robot platform
+    if (x_mod.b == true){
+        x = x_mod;
+        x_mod.b = false;
+    }
+    if (op1_mod.b == true){
+        op1 = op1_mod;
+        op1_mod.b = false;
+    }
+    if (op2_mod.b == true){
+        op2 = op2_mod; 
+        op2_mod.b = false;
+    }
+    if (ev0_mod.b == true){
+        ev0 = ev0_mod;
+        ev0_mod.b = false;
+    }
+}</declaration>
+		<location id="id5" x="-416" y="-204">
+			<name x="-426" y="-238">m0</name>
+			<committed/>
+		</location>
+		<location id="id6" x="-280" y="-204">
+			<name x="-290" y="-238">m1</name>
+			<urgent/>
+		</location>
+		<location id="id7" x="-34" y="-204">
+			<name x="-43" y="-238">m2</name>
+			<label kind="invariant" x="-136" y="-195">cycle&lt;=period</label>
+		</location>
+		<location id="id8" x="136" y="-204">
+			<name x="127" y="-187">End</name>
+		</location>
+		<location id="id9" x="-34" y="-289">
+			<name x="-43" y="-272">m3</name>
+			<committed/>
+		</location>
+		<location id="id10" x="-34" y="-374">
+			<name x="-17" y="-382">Output_Conflict</name>
+		</location>
+		<init ref="id5"/>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-26" y="-340">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-9" y="-297">ifConflict()==false</label>
+			<label kind="synchronisation" x="17" y="-280">registerWrite!</label>
+			<label kind="assignment" x="42" y="-263">GiveOutput()</label>
+			<nail x="42" y="-246"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-221" y="-272">registerWrite_C_M?</label>
+			<nail x="-110" y="-246"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="42" y="-221">end?</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-178" y="-178">cycle==period</label>
+			<label kind="synchronisation" x="-178" y="-161">wait_p!</label>
+			<label kind="assignment" x="-178" y="-144">cycle=0</label>
+			<nail x="-34" y="-127"/>
+			<nail x="-416" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-229" y="-221">registerRead_M_C!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="assignment" x="-391" y="-238">Init(),
+TakeInput()</label>
+		</transition>
+	</template>
+	<template>
+		<name>ctr0_cycle</name>
+		<declaration>void Init(){
+    x_ctr0_n = 0;
+    op1_ctr0_n = 0;
+    op2_ctr0_n = 0;
+    ev0_ctr0_n = 0;
+    ev2_ctr0_n = 0;
+    z_ctr0_n = 0;
+    ev3_ctr0_n = 0;
+}
+
+bool ifConflict(){
+    return x_ctr0_n&gt;1 || op1_ctr0_n&gt;1 || op2_ctr0_n&gt;1 || ev0_ctr0_n&gt;1 || 
+           ev2_ctr0_n&gt;1 || z_ctr0_n&gt;1 || ev3_ctr0_n&gt;1 ;
+}
+
+void TakeInput(){
+    x_ctr0 = x_mod; 
+    ev3_ctr0 = ev3_mod;
+}
+
+void GiveOutput(){
+    if (x_ctr0.b == true){
+        x_mod = x_ctr0; x_mod_n += 1;   // in ouput, we will count the number of output variables in one cycle
+        x_ctr0.b = false;
+    }
+    if (op1_ctr0.b == true){
+        op1_mod = op1_ctr0; op1_mod_n += 1;
+        op1_ctr0.b = false;
+    }
+    if (op2_ctr0.b == true){
+        op2_mod = op2_ctr0; op2_mod_n += 1;
+        op2_ctr0.b = false;
+    }
+    if (ev0_ctr0.b == true){
+        ev0_mod = ev0_ctr0; ev0_mod_n += 1;
+        ev0_ctr0.b = false;
+    }
+    if (ev2_ctr0.b == true){
+        ev2_mod = ev2_ctr0; ev2_mod_n += 1;
+        ev2_ctr0.b = false;
+    }
+}
+</declaration>
+		<location id="id11" x="-272" y="0">
+			<name x="-282" y="-34">c0</name>
+			<label kind="comments" x="-204" y="-110">Ctr0</label>
+		</location>
+		<location id="id12" x="-102" y="0">
+			<name x="-112" y="-34">c1</name>
+			<urgent/>
+		</location>
+		<location id="id13" x="68" y="0">
+			<name x="58" y="-34">c2</name>
+			<label kind="comments" x="-34" y="-348">只要保证单个machine的output
+顺序即可，其他顺序无所谓</label>
+		</location>
+		<location id="id14" x="68" y="-136">
+			<name x="34" y="-144">c3</name>
+			<committed/>
+		</location>
+		<location id="id15" x="238" y="0">
+			<name x="228" y="-34">c4</name>
+		</location>
+		<location id="id16" x="68" y="-195">
+			<name x="85" y="-212">Output_Conflict</name>
+		</location>
+		<init ref="id11"/>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id16"/>
+			<label kind="guard" x="76" y="-170">ifConflict() == true</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id11"/>
+			<label kind="synchronisation" x="76" y="34">wait_p?</label>
+			<nail x="68" y="102"/>
+			<nail x="-272" y="102"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id15"/>
+			<label kind="synchronisation" x="127" y="-17">end?</label>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id13"/>
+			<label kind="guard" x="85" y="-119">ifConflict() == false</label>
+			<label kind="synchronisation" x="102" y="-102">registerWrite_C_M!</label>
+			<label kind="assignment" x="110" y="-85">GiveOutput()</label>
+			<nail x="102" y="-68"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-93" y="-102">registerWrite_S_c0?</label>
+			<nail x="34" y="-68"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="synchronisation" x="-85" y="-17">registerRead_c0_S!</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="-255" y="-51">registerRead_M_C?</label>
+			<label kind="assignment" x="-238" y="-34">TakeInput(),
+Init()</label>
+		</transition>
+	</template>
+	<template>
+		<name>stm0_cycle</name>
+		<declaration>void Init(){
+    x_stm0_n = 0;
+    op1_stm0_n = 0;
+    op2_stm0_n = 0;
+    ev0_stm0_n = 0;
+    z_stm0_n = 0;
+}
+
+bool ifConflict(){
+    return x_stm0_n&gt;1 || op1_stm0_n&gt;1 || op2_stm0_n&gt;1 || ev0_stm0_n&gt;1 || z_stm0_n&gt;1 ;
+}
+
+void TakeInput(){
+    x_stm0 = x_ctr0; //interface1 from ctr0 to stm0
+    z_stm0 = z_ctr0; //interface6 from ctr0 to stm0
+}
+
+void GiveOutput(){
+    if (x_stm0.b == true){
+        x_ctr0 = x_stm0; x_ctr0_n += 1; //interface1 from stm0 to ctr0
+        x_stm0.b = false;
+    }
+    if (op1_stm0.b == true){
+        op1_ctr0 = op1_stm0; op1_ctr0_n += 1; //interface2 from stm0 to ctr0
+        op1_stm0.b = false;
+    }
+    if (op2_stm0.b == true){
+        op2_ctr0 = op2_stm0; op2_ctr0_n += 1; //interface3 from stm0 to ctr0
+        op2_stm0.b = false;
+    }
+    if (ev0_stm0.b == true){
+        ev0_ctr0 = ev0_stm0; ev0_ctr0_n += 1; //interface4 from stm0 to ctr0
+        ev0_stm0.b = false;
+    }
+    if (z_stm0.b == true){
+        z_ctr0 = z_stm0; z_ctr0_n += 1; //interface6 from stm0 to ctr0
+        z_stm0.b = false;
+    }
+}</declaration>
+		<location id="id17" x="-204" y="-68">
+			<name x="-214" y="-102">s1</name>
+			<urgent/>
+		</location>
+		<location id="id18" x="-34" y="-68">
+			<name x="-44" y="-102">s2</name>
+		</location>
+		<location id="id19" x="-34" y="-170">
+			<name x="-42" y="-145">s3</name>
+			<committed/>
+		</location>
+		<location id="id20" x="136" y="-68">
+			<name x="126" y="-102">s4</name>
+		</location>
+		<location id="id21" x="-374" y="-68">
+			<name x="-384" y="-102">s0</name>
+			<label kind="comments" x="-323" y="-178">STM0_cycle</label>
+		</location>
+		<location id="id22" x="238" y="-68">
+			<name x="229" y="-102">s5</name>
+		</location>
+		<location id="id23" x="-34" y="-229">
+			<name x="-17" y="-237">Output_Conflict</name>
+		</location>
+		<init ref="id21"/>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id23"/>
+			<label kind="guard" x="-25" y="-204">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id22"/>
+			<label kind="synchronisation" x="154" y="-85">end?</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="synchronisation" x="144" y="-34">wait_p?</label>
+			<nail x="136" y="34"/>
+			<nail x="-374" y="34"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id17"/>
+			<label kind="synchronisation" x="-357" y="-102">registerRead_c0_S?</label>
+			<label kind="assignment" x="-348" y="-85">TakeInput(), Init()</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id20"/>
+			<label kind="synchronisation" x="0" y="-85">endexec_stm0?</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-17" y="-161">ifConflict()==false</label>
+			<label kind="synchronisation" x="-8" y="-144">registerWrite_S_c0!</label>
+			<label kind="assignment" x="0" y="-127">GiveOutput()</label>
+			<nail x="0" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id19"/>
+			<label kind="synchronisation" x="-153" y="-153">collect_stm0?</label>
+			<nail x="-68" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<label kind="synchronisation" x="-179" y="-85">startexec_stm0!</label>
+		</transition>
+	</template>
+	<template>
+		<name>stm0</name>
+		<declaration>int w;
+
+void Init(){
+    x_stm0.b = false; //interface1
+    op1_stm0.b = false; //interface2
+    op2_stm0.b = false; //interface3
+    ev0_stm0.b = false; //interface4
+    z_stm0.b = false; //interface6
+}</declaration>
+		<location id="id24" x="-306" y="-442">
+			<name x="-316" y="-476">ds0</name>
+			<label kind="comments" x="-246" y="-433">STM0</label>
+		</location>
+		<location id="id25" x="-306" y="-374">
+			<name x="-382" y="-382">initstm0</name>
+			<urgent/>
+		</location>
+		<location id="id26" x="-306" y="-306">
+			<name x="-316" y="-340">ds1</name>
+			<urgent/>
+		</location>
+		<location id="id27" x="-408" y="-204">
+			<name x="-418" y="-238">ds2</name>
+			<urgent/>
+		</location>
+		<location id="id28" x="-204" y="-204">
+			<name x="-187" y="-213">s0</name>
+			<urgent/>
+		</location>
+		<location id="id29" x="-306" y="-136">
+			<name x="-289" y="-145">ds3</name>
+			<urgent/>
+		</location>
+		<location id="id30" x="-306" y="-77">
+			<name x="-316" y="-111">ds4</name>
+		</location>
+		<location id="id31" x="-306" y="0">
+			<name x="-316" y="-34">ds5</name>
+			<urgent/>
+		</location>
+		<location id="id32" x="-102" y="0">
+			<name x="-112" y="-34">ds6</name>
+			<urgent/>
+		</location>
+		<location id="id33" x="-102" y="-136">
+			<name x="-112" y="-170">ds7</name>
+			<urgent/>
+		</location>
+		<location id="id34" x="-102" y="-306">
+			<name x="-85" y="-306">ds8</name>
+			<urgent/>
+		</location>
+		<init ref="id24"/>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id26"/>
+			<label kind="synchronisation" x="-272" y="-374">collect_stm0!</label>
+			<label kind="assignment" x="-272" y="-357">z_stm0.b=true,
+z_stm0.value=x_stm0.value,
+z_stm0_n+=1</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<label kind="synchronisation" x="-93" y="-263">collect_stm0!</label>
+			<label kind="assignment" x="-93" y="-246">op2_stm0.b=true,
+op2_stm0_n+=1</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="synchronisation" x="-93" y="-110">collect_stm0!</label>
+			<label kind="assignment" x="-93" y="-93">ev0_stm0.b=true,
+ev0_stm0_n+=1</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id32"/>
+			<label kind="guard" x="-263" y="0">x_stm0.value&lt;c</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id29"/>
+			<label kind="guard" x="-442" y="0">x_stm0.value&gt;=c</label>
+			<nail x="-374" y="0"/>
+			<nail x="-374" y="-136"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="-297" y="-59">startexec_stm0?</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="synchronisation" x="-297" y="-119">endexec_stm0!</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id29"/>
+			<label kind="comments" x="-603" y="-187">if I add output of x in this transition, it will produce a conflict.
+Because there's two x output in one cycle.</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id28"/>
+			<label kind="synchronisation" x="-340" y="-272">collect_stm0!</label>
+			<label kind="assignment" x="-357" y="-255">op1_stm0.b=true,
+op1_stm0.y=1,
+op1_stm0_n +=1</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id27"/>
+			<label kind="synchronisation" x="-535" y="-323">collect_stm0!</label>
+			<label kind="assignment" x="-535" y="-306">x_stm0.b=true,
+x_stm0.value=x_stm0.value+w,
+x_stm0_n+=1</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id26"/>
+			<label kind="assignment" x="-348" y="-357">w=1</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="synchronisation" x="-425" y="-425">startexec_stm0?</label>
+		</transition>
+	</template>
+	<template>
+		<name>stm1_cycle</name>
+		<declaration>void Init(){
+    x_stm1_n = 0;
+    op1_stm1_n = 0;
+    z_stm1_n = 0;
+    ev5_stm1_n = 0;
+    ev2_stm1_n = 0;
+}
+
+bool ifConflict(){
+    return x_stm1_n&gt;1 || op1_stm1_n&gt;1 || z_stm1_n&gt;1 || ev5_stm1_n&gt;1 || ev2_stm1_n&gt;1 ;
+}
+
+void TakeInput(){
+    x_stm1 = x_ctr0; //interface1 from ctr0 to stm1
+    z_stm1 = z_ctr0; //interface6 from ctr0 to stm1
+    ev5_stm1 = ev3_ctr0; //from ctr0's ev3 to stm1's ev5
+}
+
+void GiveOutput(){
+    if (x_stm1.b == true){
+        x_ctr0 = x_stm1; x_ctr0_n += 1; //interface1 from stm1 to ctr0
+        x_stm1.b = false;
+    }
+    if (ev2_stm1.b == true){
+        ev2_ctr0 = ev2_stm1; ev2_ctr0_n += 1; //interface8 from stm1 to ctr0
+        ev2_stm1.b = false;
+    }
+    if (z_stm1.b == true){
+        z_ctr0 = z_stm1; z_ctr0_n += 1; //interface6 from stm1 to ctr0
+        z_stm1.b = false;
+    }
+}
+</declaration>
+		<location id="id35" x="-374" y="-68">
+			<name x="-382" y="-102">s0</name>
+			<label kind="comments" x="-331" y="-170">STM1_cycle</label>
+		</location>
+		<location id="id36" x="-204" y="-68">
+			<name x="-212" y="-102">s1</name>
+			<urgent/>
+		</location>
+		<location id="id37" x="-34" y="-68">
+			<name x="-44" y="-102">s2</name>
+		</location>
+		<location id="id38" x="136" y="-68">
+			<name x="126" y="-102">s4</name>
+		</location>
+		<location id="id39" x="-34" y="-170">
+			<name x="-42" y="-153">s3</name>
+			<committed/>
+		</location>
+		<location id="id40" x="238" y="-68">
+			<name x="228" y="-102">s5</name>
+		</location>
+		<location id="id41" x="-34" y="-238">
+			<name x="-44" y="-272">Output_Conflict</name>
+		</location>
+		<init ref="id35"/>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id41"/>
+			<label kind="guard" x="-25" y="-212">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id35"/>
+			<label kind="synchronisation" x="144" y="-34">wait_p?</label>
+			<nail x="136" y="34"/>
+			<nail x="-374" y="34"/>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id40"/>
+			<label kind="synchronisation" x="154" y="-85">end?</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id36"/>
+			<label kind="synchronisation" x="-357" y="-102">registerRead_c0_S?</label>
+			<label kind="assignment" x="-348" y="-85">TakeInput(),Init()</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id38"/>
+			<label kind="synchronisation" x="0" y="-85">endexec_stm1?</label>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id37"/>
+			<label kind="guard" x="-8" y="-153">ifConflict()==false</label>
+			<label kind="synchronisation" x="0" y="-136">registerWrite_S_c0!</label>
+			<label kind="assignment" x="0" y="-119">GiveOutput()</label>
+			<nail x="0" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id39"/>
+			<label kind="synchronisation" x="-161" y="-136">collect_stm1?</label>
+			<nail x="-68" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id37"/>
+			<label kind="synchronisation" x="-179" y="-85">startexec_stm1!</label>
+		</transition>
+	</template>
+	<template>
+		<name>stm1</name>
+		<declaration>void Init(){
+    x_stm1.b = false; //interface1
+    z_stm1.b = false; //interface6
+    ev2_stm1.b = false; //interface8
+}</declaration>
+		<location id="id42" x="-34" y="-782">
+			<name x="-42" y="-816">ds0</name>
+			<label kind="comments" x="34" y="-799">STM1</label>
+		</location>
+		<location id="id43" x="-34" y="-714">
+			<name x="-110" y="-731">initstm1</name>
+			<urgent/>
+		</location>
+		<location id="id44" x="-34" y="-612">
+			<name x="-68" y="-612">s0</name>
+			<urgent/>
+		</location>
+		<location id="id45" x="-34" y="-544">
+			<name x="-17" y="-544">ds1</name>
+			<urgent/>
+		</location>
+		<location id="id46" x="-34" y="-476">
+			<name x="-17" y="-484">ds2</name>
+		</location>
+		<location id="id47" x="-34" y="-408">
+			<name x="-25" y="-399">ds3</name>
+			<urgent/>
+		</location>
+		<location id="id48" x="136" y="-510">
+			<name x="153" y="-527">ds4</name>
+			<urgent/>
+		</location>
+		<init ref="id42"/>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id44"/>
+			<label kind="synchronisation" x="144" y="-612">collect_stm1!</label>
+			<label kind="assignment" x="144" y="-595">x_stm1.b=true,
+x_stm1.value=0,
+x_stm1_n+=1</label>
+			<nail x="136" y="-612"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id48"/>
+			<label kind="guard" x="144" y="-493">ev5_stm1.b==true &amp;&amp; 
+x_stm1.value&gt;=c &amp;&amp; 
+z_stm1.value==x_stm1.value</label>
+			<label kind="synchronisation" x="144" y="-442">collect_stm1!</label>
+			<label kind="assignment" x="144" y="-425">ev2_stm1.b=true,
+ev2_stm1_n+=1</label>
+			<nail x="136" y="-408"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id45"/>
+			<label kind="guard" x="-246" y="-408">not (ev5_stm1.b==true &amp;&amp; 
+x_stm1.value&gt;=c &amp;&amp; 
+z_stm1.value==x_stm1.value)</label>
+			<nail x="-170" y="-408"/>
+			<nail x="-170" y="-544"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id47"/>
+			<label kind="synchronisation" x="-25" y="-459">startexec_stm1?</label>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id46"/>
+			<label kind="synchronisation" x="-25" y="-518">endexec_stm1!</label>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id45"/>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id44"/>
+			<label kind="synchronisation" x="-25" y="-697">collect_stm1!</label>
+			<label kind="assignment" x="-25" y="-680">z_stm1.b = true,
+z_stm1.value = 1,
+z_stm1_n+=1</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id43"/>
+			<label kind="synchronisation" x="-25" y="-765">startexec_stm1?</label>
+		</transition>
+	</template>
+	<template>
+		<name>ctr1_cycle</name>
+		<declaration>void Init(){
+    x_ctr1_n = 0;
+    op1_ctr1_n = 0;
+    ev1_ctr1_n = 0;
+    ev2_ctr1_n = 0;
+}
+
+bool ifConflict(){
+    return x_ctr1_n&gt;1 || op1_ctr1_n&gt;1 || ev1_ctr1_n&gt;1 || ev2_ctr1_n&gt;1 ;
+}
+
+void TakeInput(){
+    x_ctr1 = x_mod; 
+    ev1_ctr1 = ev1_mod;
+    ev2_ctr1 = ev2_mod;
+}
+
+void GiveOutput(){
+    if (x_ctr1.b == true){
+        x_mod = x_ctr1; x_mod_n += 1;
+        x_ctr1.b = false;
+    }
+    if (op1_ctr1.b == true){
+        op1_mod = op1_ctr1; op1_mod_n += 1;
+        op1_ctr1.b = false;
+    }
+}</declaration>
+		<location id="id49" x="-272" y="0">
+			<name x="-282" y="-34">c0</name>
+			<label kind="comments" x="-221" y="-127">ctr1</label>
+		</location>
+		<location id="id50" x="-102" y="0">
+			<name x="-112" y="-34">c1</name>
+			<urgent/>
+		</location>
+		<location id="id51" x="68" y="0">
+			<name x="58" y="-34">c2</name>
+			<label kind="comments" x="-17" y="-238">只要保证单个machine的output
+顺序即可，其他顺序无所谓</label>
+		</location>
+		<location id="id52" x="68" y="-93">
+			<name x="59" y="-76">c3</name>
+			<committed/>
+		</location>
+		<location id="id53" x="187" y="0">
+			<name x="178" y="-34">c4</name>
+		</location>
+		<location id="id54" x="68" y="-144">
+			<name x="85" y="-161">Output_Conflict</name>
+		</location>
+		<init ref="id49"/>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id54"/>
+			<label kind="guard" x="76" y="-127">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id49"/>
+			<label kind="synchronisation" x="68" y="34">wait_p?</label>
+			<nail x="68" y="68"/>
+			<nail x="-272" y="68"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id53"/>
+			<label kind="synchronisation" x="102" y="-17">end?</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id51"/>
+			<label kind="guard" x="85" y="-93">ifConflict()==false</label>
+			<label kind="synchronisation" x="102" y="-76">registerWrite_C_M!</label>
+			<label kind="assignment" x="110" y="-59">GiveOutput()</label>
+			<nail x="102" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id52"/>
+			<label kind="synchronisation" x="-102" y="-68">registerWrite_S_c1?</label>
+			<nail x="34" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id51"/>
+			<label kind="synchronisation" x="-85" y="-17">registerRead_c1_S!</label>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id50"/>
+			<label kind="synchronisation" x="-255" y="-34">registerRead_M_C?</label>
+			<label kind="assignment" x="-255" y="-17">TakeInput(),Init()</label>
+		</transition>
+	</template>
+	<template>
+		<name>stm2_cycle</name>
+		<declaration>void Init(){
+    x_stm2_n = 0;
+    op1_stm2_n = 0;
+    ev1_stm2_n = 0;
+    ev2_stm2_n = 0;
+}
+
+bool ifConflict(){
+    return x_stm2_n&gt;1 || op1_stm2_n&gt;1 || ev1_stm2_n&gt;1 || ev2_stm2_n&gt;1 ;
+}
+
+
+void TakeInput(){
+    x_stm2 = x_ctr1; //interface1 from ctr1 to stm2
+    ev1_stm2 = ev1_ctr1; //interface5 from ctr1 to stm2
+    ev2_stm2 = ev2_ctr1; //interface8 from ctr1 to stm2
+}
+
+void GiveOutput(){
+    if (x_stm2.b == true){
+        x_ctr1 = x_stm2; x_ctr1_n += 1; //interface1 from stm2 to ctr1
+        x_stm2.b = false;
+    }
+    if (op1_stm2.b ==true){
+        op1_ctr1 = op1_stm2; op1_ctr1_n += 1; //interface2 from stm2 to ctr1
+        op1_stm2.b = false;
+    }
+}
+</declaration>
+		<location id="id55" x="-374" y="-68">
+			<name x="-382" y="-102">s0</name>
+			<label kind="comments" x="-331" y="-153">STM2_cycle</label>
+		</location>
+		<location id="id56" x="-204" y="-68">
+			<name x="-212" y="-102">s1</name>
+			<urgent/>
+		</location>
+		<location id="id57" x="-34" y="-68">
+			<name x="-44" y="-102">s2</name>
+		</location>
+		<location id="id58" x="127" y="-68">
+			<name x="117" y="-102">s4</name>
+		</location>
+		<location id="id59" x="-34" y="-170">
+			<name x="-42" y="-153">s3</name>
+			<committed/>
+		</location>
+		<location id="id60" x="212" y="-68">
+			<name x="202" y="-102">s5</name>
+		</location>
+		<location id="id61" x="-34" y="-238">
+			<name x="-17" y="-238">Output_Conflict</name>
+		</location>
+		<init ref="id55"/>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id61"/>
+			<label kind="guard" x="-25" y="-204">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id60"/>
+			<label kind="synchronisation" x="145" y="-85">end?</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id55"/>
+			<label kind="synchronisation" x="136" y="-34">wait_p?</label>
+			<nail x="127" y="34"/>
+			<nail x="-374" y="34"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id56"/>
+			<label kind="synchronisation" x="-357" y="-102">registerRead_c1_S?</label>
+			<label kind="assignment" x="-348" y="-85">TakeInput(),Init()</label>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id58"/>
+			<label kind="synchronisation" x="0" y="-85">endexec_stm2?</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id57"/>
+			<label kind="guard" x="-8" y="-144">ifConflict()==false</label>
+			<label kind="synchronisation" x="0" y="-128">registerWrite_S_c1!</label>
+			<label kind="assignment" x="-8" y="-111">GiveOutput()</label>
+			<nail x="0" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id59"/>
+			<label kind="synchronisation" x="-161" y="-136">collect_stm2?</label>
+			<nail x="-68" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="synchronisation" x="-178" y="-85">startexec_stm2!</label>
+		</transition>
+	</template>
+	<template>
+		<name>stm2</name>
+		<declaration>void Init(){
+    x_stm2.b = false;
+    op1_stm2.b = false;
+}</declaration>
+		<location id="id62" x="-34" y="-238">
+			<name x="-44" y="-272">ds0</name>
+		</location>
+		<location id="id63" x="-34" y="-170">
+			<name x="-68" y="-187">s0</name>
+			<urgent/>
+		</location>
+		<location id="id64" x="-34" y="-102">
+			<name x="-17" y="-119">ds1</name>
+			<urgent/>
+		</location>
+		<location id="id65" x="-34" y="-34">
+			<name x="-17" y="-51">ds2</name>
+		</location>
+		<location id="id66" x="-34" y="34">
+			<name x="-17" y="17">ds3</name>
+			<urgent/>
+		</location>
+		<init ref="id62"/>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id63"/>
+			<label kind="guard" x="110" y="-136">(x_stm2.value&gt;=c &amp;&amp; 
+(ev1_stm2.b==true ||
+(ev2_stm2.b==true &amp;&amp;
+x_stm2.value==1 )))</label>
+			<label kind="synchronisation" x="110" y="-68">collect_stm2!</label>
+			<label kind="assignment" x="110" y="-51">op1_stm2.b = true,
+op1_stm2.y = 1,
+op1_stm2_n+=1</label>
+			<nail x="102" y="34"/>
+			<nail x="102" y="-170"/>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id64"/>
+			<label kind="guard" x="-229" y="42">not ( x_stm2.value&gt;=c &amp;&amp; 
+(ev1_stm2.b==true ||
+(ev2_stm2.b==true &amp;&amp;
+x_stm2.value==1 )))</label>
+			<nail x="-136" y="34"/>
+			<nail x="-136" y="-102"/>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id66"/>
+			<label kind="synchronisation" x="-25" y="-17">startexec_stm2?</label>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id65"/>
+			<label kind="synchronisation" x="-25" y="-93">endexec_stm2!</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id64"/>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id63"/>
+			<label kind="synchronisation" x="-25" y="-221">startexec_stm2?</label>
+		</transition>
+	</template>
+	<system>//ctrl0_cycle = ctrl_cycle();
+//ctr_cycle &amp; stm_cycle can be simplified (just use one template and others use instantiation)
+
+/*To make sure outputs can be transitted in a right way, we change the member of structs.
+For events, there's another member "Occ" to record if it will happen.
+(and b in events just for recording if it is an output in current cycle)
+At the beginning of each cycle, we will change the member "b" for all variables to false.
+*/
+
+system  platform_mapping,
+        mod_cycle, ctr0_cycle, ctr1_cycle,
+        stm0_cycle, stm0,
+        stm1_cycle, stm1,
+        stm2_cycle, stm2;
+    </system>
+	<queries>
+		<query>
+			<formula>E&lt;&gt; stm2_cycle.Output_Conflict</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm1_cycle.Output_Conflict</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm0_cycle.Output_Conflict</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ctr1_cycle.Output_Conflict</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ctr0_cycle.Output_Conflict</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; mod_cycle.Output_Conflict</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>simulate [&lt;=10] {ev0.b}</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>simulate [&lt;=10] {x.value}</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>simulate [&lt;=10]{ op1.b,op2.b}</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>simulate [&lt;=100]{p_model.t}</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>stm1.ds3 --&gt; stm1.s0</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>stm2.ds3 --&gt; stm2.s0</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; op1.b==true</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; z_stm1.value==1 &amp;&amp; x_stm1.value==1</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>A[] true</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>A[] not deadlock</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

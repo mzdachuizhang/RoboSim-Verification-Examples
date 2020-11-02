@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>
+clock GlobalTime;
+clock cycle;
+
+int end_machine_num = 0;
+const int machine_num = 1;
+
+broadcast chan wait_p;
+broadcast chan end;
+
+broadcast chan registerRead;
+broadcast chan registerWrite;
+
+broadcast chan registerRead_M_C;
+broadcast chan registerWrite_C_M;
+
+broadcast chan registerRead_CtrlSquare_S;
+broadcast chan registerWrite_S_CtrlSquare;
+
+broadcast chan collect_SimSquare;
+broadcast chan startexec_SimSquare;
+broadcast chan endexec_SimSquare;
+
+// event stop in IStop
+struct{
+    bool b;
+} stop, stop_ModSquare, stop_CtrlSquare, stop_SimSquare,
+  stop_SimSquare_CtrlSquare, stop_CtrlSquare_ModSquare, stop_ModSquare_rp;
+int stop_ModSquare_n, stop_CtrlSquare_n, stop_SimSquare_n;
+
+// event collisionDetected in ICollision
+struct{
+    bool b;
+} collisionDetected, collisionDetected_ModSquare, collisionDetected_CtrlSquare, collisionDetected_SimSquare;
+
+// operation moveForward in IMove
+struct{
+    bool b;
+    int linear;
+} moveForward, moveForward_ModSquare, moveForward_CtrlSquare, moveForward_SimSquare,
+  moveForward_SimSquare_CtrlSquare, moveForward_CtrlSquare_ModSquare, moveForward_ModSquare_rp;
+int moveForward_ModSquare_n, moveForward_CtrlSquare_n, moveForward_SimSquare_n;
+
+// operation turn in IMove
+struct{
+    bool b;
+    int angular;
+} turn, turn_ModSquare, turn_CtrlSquare, turn_SimSquare,
+  turn_SimSquare_CtrlSquare, turn_CtrlSquare_ModSquare, turn_ModSquare_rp;
+int turn_ModSquare_n, turn_CtrlSquare_n, turn_SimSquare_n;
+
+// operation avoid in IMove
+struct{
+    bool b;
+} avoid, avoid_ModSquare, avoid_CtrlSquare, avoid_SimSquare,
+  avoid_SimSquare_CtrlSquare, avoid_CtrlSquare_ModSquare, avoid_ModSquare_rp;
+int avoid_ModSquare_n, avoid_CtrlSquare_n, avoid_SimSquare_n;
+
+// operation enableCollisionDtection in IMove
+struct{
+    bool b;
+} enableCollisionDetection, enableCollisionDetection_ModSquare, 
+  enableCollisionDetection_CtrlSquare, enableCollisionDetection_SimSquare,
+  enableCollisionDetection_SimSquare_CtrlSquare, enableCollisionDetection_CtrlSquare_ModSquare,
+  enableCollisionDetection_ModSquare_rp;
+int enableCollisionDetection_ModSquare_n, enableCollisionDetection_CtrlSquare_n,
+    enableCollisionDetection_SimSquare_n;
+
+// operation disableCollisionDetection in IMove
+struct{
+    bool b;
+} disableCollisionDetection, disableCollisionDetection_ModSquare,
+  disableCollisionDetection_CtrlSquare, disableCollisionDetection_SimSquare,
+  disableCollisionDetection_SimSquare_CtrlSquare, disableCollisionDetection_CtrlSquare_ModSquare,
+  disableCollisionDetection_ModSquare_rp;
+int disableCollisionDetection_ModSquare_n, disableCollisionDetection_CtrlSquare_n,
+    disableCollisionDetection_SimSquare_n;
+
+
+// Initial in ModSquare
+void InitMod(){
+    stop_ModSquare_n = 0;
+    moveForward_ModSquare_n = 0;
+    turn_ModSquare_n = 0;
+    avoid_ModSquare_n = 0;
+    enableCollisionDetection_ModSquare_n = 0;
+    disableCollisionDetection_ModSquare_n = 0;
+}
+
+</declaration>
+	<template>
+		<name>ModSquare_cycle</name>
+		<declaration>const int period = 1;
+
+void Init(){    //every cycle, the number of each output from controller to module resets to 0
+    stop_ModSquare_n = 0;
+    moveForward_ModSquare_n = 0;
+    turn_ModSquare_n = 0;
+    avoid_ModSquare_n = 0;
+    enableCollisionDetection_ModSquare_n = 0;
+    disableCollisionDetection_ModSquare_n = 0;
+}
+
+bool ifConflict(){  // for all variables from controller to module, need to be judge if its number ≥ 1
+    return stop_ModSquare_n&gt;1 || moveForward_ModSquare_n&gt;1 || turn_ModSquare_n&gt;1 ||
+           avoid_ModSquare_n&gt;1 || enableCollisionDetection_ModSquare_n&gt;1 || 
+           disableCollisionDetection_ModSquare_n&gt;1;
+}
+
+void TakeInput(int i){
+    if(i==0) collisionDetected.b = false;
+    else if(i==1) collisionDetected.b = true;
+    collisionDetected_ModSquare = collisionDetected;
+}
+
+void GiveOutput(){
+    if(stop_ModSquare_rp.b==true){
+        stop = stop_ModSquare;
+        stop_ModSquare_rp.b=false;
+        stop_ModSquare.b=false;
+    }
+    if(moveForward_ModSquare_rp.b==true){
+        moveForward = moveForward_ModSquare;
+        moveForward_ModSquare_rp.b=false;
+        moveForward_ModSquare.b=false;
+    }
+    if(turn_ModSquare_rp.b==true){
+        turn = turn_ModSquare;
+        turn_ModSquare_rp.b=false;
+        turn_ModSquare.b=false;
+    }    
+    if(avoid_ModSquare_rp.b==true){
+        avoid = avoid_ModSquare;
+        avoid_ModSquare_rp.b=false;
+        avoid_ModSquare.b=false;
+    }    
+    if(enableCollisionDetection_ModSquare_rp.b==true){
+        enableCollisionDetection = enableCollisionDetection_ModSquare;
+        enableCollisionDetection_ModSquare_rp.b=false;
+        enableCollisionDetection_ModSquare.b=false;
+    }
+    if(disableCollisionDetection_ModSquare_rp.b==true){
+        disableCollisionDetection = disableCollisionDetection_ModSquare;
+        disableCollisionDetection_ModSquare_rp.b=false;
+        disableCollisionDetection_ModSquare.b=false;
+    }
+}</declaration>
+		<location id="id0" x="-323" y="51">
+			<name x="-340" y="17">m0</name>
+			<committed/>
+		</location>
+		<location id="id1" x="-178" y="51">
+			<name x="-188" y="17">m1</name>
+			<committed/>
+		</location>
+		<location id="id2" x="17" y="51">
+			<name x="9" y="17">m2</name>
+			<label kind="invariant" x="-93" y="59">cycle&lt;=period</label>
+		</location>
+		<location id="id3" x="17" y="-51">
+			<name x="34" y="-59">m3</name>
+			<committed/>
+		</location>
+		<location id="id4" x="314" y="51">
+			<name x="304" y="17">m4</name>
+		</location>
+		<location id="id5" x="17" y="-119">
+			<name x="34" y="-128">Output_Conflict</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id2"/>
+			<label kind="guard" x="76" y="85">end_machine_num+1&lt;machine_num</label>
+			<label kind="synchronisation" x="76" y="102">end?</label>
+			<label kind="assignment" x="76" y="119">end_machine_num+=1</label>
+			<nail x="85" y="76"/>
+			<nail x="59" y="110"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id5"/>
+			<label kind="guard" x="25" y="-93">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id4"/>
+			<label kind="guard" x="51" y="17">end_machine_num+1&gt;=machine_num</label>
+			<label kind="synchronisation" x="51" y="34">end?</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-93" y="85">cycle==period</label>
+			<label kind="synchronisation" x="-93" y="102">wait_p!</label>
+			<label kind="assignment" x="-93" y="119">cycle=0</label>
+			<nail x="17" y="136"/>
+			<nail x="-323" y="136"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id2"/>
+			<label kind="guard" x="51" y="-34">ifConflict()==false</label>
+			<label kind="synchronisation" x="51" y="-17">registerWrite!</label>
+			<label kind="assignment" x="51" y="0">GiveOutput()</label>
+			<nail x="51" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="-144" y="-34">registerWrite_C_M?</label>
+			<nail x="-17" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-153" y="34">registerRead_M_C!</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="select" x="-289" y="0">i: int[0,1]</label>
+			<label kind="assignment" x="-289" y="17">Init(),
+TakeInput(i)</label>
+		</transition>
+	</template>
+	<template>
+		<name>CtrlSquare_cycle</name>
+		<declaration>void Init(){
+    stop_CtrlSquare_n = 0;
+    moveForward_CtrlSquare_n = 0;
+    turn_CtrlSquare_n = 0;
+    avoid_CtrlSquare_n = 0;
+    enableCollisionDetection_CtrlSquare_n = 0;
+    disableCollisionDetection_CtrlSquare_n = 0;
+}
+
+bool ifConflict(){  // for all variables from controller to module, need to be judge if its number ≥ 1
+    return stop_CtrlSquare_n&gt;1 || moveForward_CtrlSquare_n&gt;1 || turn_CtrlSquare_n&gt;1 ||
+           avoid_CtrlSquare_n&gt;1 || enableCollisionDetection_CtrlSquare_n&gt;1 || 
+           disableCollisionDetection_CtrlSquare_n&gt;1;
+}
+
+void TakeInput(){
+    collisionDetected_CtrlSquare = collisionDetected_ModSquare;
+}
+
+void GiveOutput(){
+    if(stop_CtrlSquare_ModSquare.b==true){
+        stop_ModSquare = stop_CtrlSquare;
+        stop_ModSquare_n += 1;
+        stop_ModSquare_rp.b=true;
+        stop_CtrlSquare_ModSquare.b=false;
+        stop_CtrlSquare.b=false;
+    }
+    if(moveForward_CtrlSquare_ModSquare.b==true){
+        moveForward_ModSquare = moveForward_CtrlSquare;
+        moveForward_ModSquare_n += 1;
+        moveForward_ModSquare_rp.b=true;
+        moveForward_CtrlSquare_ModSquare.b=false;
+        moveForward_CtrlSquare.b=false;
+    }
+    if(turn_CtrlSquare_ModSquare.b==true){
+        turn_ModSquare = turn_CtrlSquare;
+        turn_ModSquare_n += 1;
+        turn_ModSquare_rp.b=true;
+        turn_CtrlSquare_ModSquare.b=false;
+        turn_CtrlSquare.b=false;
+    }
+    if(avoid_CtrlSquare_ModSquare.b==true){
+        avoid_ModSquare = avoid_CtrlSquare;
+        avoid_ModSquare_n += 1;
+        avoid_ModSquare_rp.b=true;
+        avoid_CtrlSquare_ModSquare.b=false;
+        avoid_CtrlSquare.b=false;
+    }
+    if(enableCollisionDetection_CtrlSquare_ModSquare.b==true){
+        enableCollisionDetection_ModSquare = enableCollisionDetection_CtrlSquare;
+        enableCollisionDetection_ModSquare_n += 1;
+        enableCollisionDetection_ModSquare_rp.b=true;
+        enableCollisionDetection_CtrlSquare_ModSquare.b=false;
+        enableCollisionDetection_CtrlSquare.b=false;
+    }
+    if(disableCollisionDetection_CtrlSquare_ModSquare.b==true){
+        disableCollisionDetection_ModSquare = disableCollisionDetection_CtrlSquare;
+        disableCollisionDetection_ModSquare_n += 1;
+        disableCollisionDetection_ModSquare_rp.b=true;
+        disableCollisionDetection_CtrlSquare_ModSquare.b=false;
+        disableCollisionDetection_CtrlSquare.b=false;
+    }
+}</declaration>
+		<location id="id6" x="-340" y="-102">
+			<name x="-349" y="-136">c0</name>
+		</location>
+		<location id="id7" x="76" y="-102">
+			<name x="67" y="-136">c2</name>
+		</location>
+		<location id="id8" x="-178" y="-102">
+			<name x="-188" y="-136">c1</name>
+			<committed/>
+		</location>
+		<location id="id9" x="76" y="-204">
+			<name x="93" y="-204">c3</name>
+			<committed/>
+		</location>
+		<location id="id10" x="348" y="-102">
+			<name x="356" y="-93">c4</name>
+		</location>
+		<location id="id11" x="76" y="-263">
+			<name x="93" y="-272">Output_Conflict</name>
+		</location>
+		<init ref="id6"/>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id7"/>
+			<label kind="guard" x="119" y="-76">end_machine_num+1&lt;machine_num</label>
+			<label kind="synchronisation" x="119" y="-59">end?</label>
+			<nail x="110" y="-51"/>
+			<nail x="136" y="-85"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id11"/>
+			<label kind="guard" x="84" y="-238">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id10"/>
+			<label kind="guard" x="102" y="-136">end_machine_num+1&gt;=machine_num</label>
+			<label kind="synchronisation" x="102" y="-119">end?</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="8" y="-76">wait_p?</label>
+			<nail x="76" y="-51"/>
+			<nail x="-340" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id7"/>
+			<label kind="guard" x="102" y="-187">ifConflict()==false</label>
+			<label kind="synchronisation" x="102" y="-170">registerWrite_C_M!</label>
+			<label kind="assignment" x="102" y="-153">GiveOutput()</label>
+			<nail x="101" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-136" y="-178">registerWrite_S_CtrlSquare?</label>
+			<nail x="50" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-153" y="-119">registerRead_CtrlSquare_S!</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-314" y="-153">registerRead_M_C?</label>
+			<label kind="assignment" x="-314" y="-136">Init(),
+TakeInput()</label>
+		</transition>
+	</template>
+	<template>
+		<name>SimSquare_cycle</name>
+		<declaration>void Init(){
+    stop_SimSquare_n = 0;
+    moveForward_SimSquare_n = 0;
+    turn_SimSquare_n = 0;
+    avoid_SimSquare_n = 0;
+    enableCollisionDetection_SimSquare_n = 0;
+    disableCollisionDetection_SimSquare_n = 0;
+}
+
+bool ifConflict(){  // for all variables from controller to module, need to be judge if its number ≥ 1
+    return stop_SimSquare_n&gt;1 || moveForward_SimSquare_n&gt;1 || turn_SimSquare_n&gt;1 ||
+           avoid_SimSquare_n&gt;1 || enableCollisionDetection_SimSquare_n&gt;1 || 
+           disableCollisionDetection_SimSquare_n&gt;1;
+}
+
+void TakeInput(){
+    collisionDetected_SimSquare = collisionDetected_CtrlSquare;
+}
+
+void GiveOutput(){
+    if(stop_SimSquare_CtrlSquare.b==true){
+        stop_CtrlSquare = stop_SimSquare;
+        stop_CtrlSquare_n += 1;
+        stop_CtrlSquare_ModSquare.b=true;
+        stop_SimSquare_CtrlSquare.b=false;
+        stop_SimSquare.b=false;
+    }
+    if(moveForward_SimSquare_CtrlSquare.b==true){
+        moveForward_CtrlSquare = moveForward_SimSquare;
+        moveForward_CtrlSquare_n += 1;
+        moveForward_CtrlSquare_ModSquare.b=true;
+        moveForward_SimSquare_CtrlSquare.b=false;
+        moveForward_SimSquare.b=false;
+    }
+    if(turn_SimSquare_CtrlSquare.b==true){
+        turn_CtrlSquare = turn_SimSquare;
+        turn_CtrlSquare_n += 1;
+        turn_CtrlSquare_ModSquare.b=true;
+        turn_SimSquare_CtrlSquare.b=false;
+        turn_SimSquare.b=false;
+    }
+    if(avoid_SimSquare_CtrlSquare.b==true){
+        avoid_CtrlSquare = avoid_SimSquare;
+        avoid_CtrlSquare_n += 1;
+        avoid_CtrlSquare_ModSquare.b=true;
+        avoid_SimSquare_CtrlSquare.b=false;
+        avoid_SimSquare.b=false;
+    }
+    if(enableCollisionDetection_SimSquare_CtrlSquare.b==true){
+        enableCollisionDetection_CtrlSquare = enableCollisionDetection_SimSquare;
+        enableCollisionDetection_CtrlSquare_n += 1;
+        enableCollisionDetection_CtrlSquare_ModSquare.b=true;
+        enableCollisionDetection_SimSquare_CtrlSquare.b=false;
+        enableCollisionDetection_SimSquare.b=false;
+    }
+    if(disableCollisionDetection_SimSquare_CtrlSquare.b==true){
+        disableCollisionDetection_CtrlSquare = disableCollisionDetection_SimSquare;
+        disableCollisionDetection_CtrlSquare_n += 1;
+        disableCollisionDetection_CtrlSquare_ModSquare.b=true;
+        disableCollisionDetection_SimSquare_CtrlSquare.b=false;
+        disableCollisionDetection_SimSquare.b=false;
+    }
+}</declaration>
+		<location id="id12" x="-238" y="34">
+			<name x="-229" y="51">s0</name>
+		</location>
+		<location id="id13" x="-102" y="34">
+			<name x="-110" y="51">s1</name>
+			<committed/>
+		</location>
+		<location id="id14" x="119" y="34">
+			<name x="127" y="42">s2</name>
+		</location>
+		<location id="id15" x="119" y="136">
+			<name x="93" y="110">s4</name>
+		</location>
+		<location id="id16" x="119" y="-68">
+			<name x="110" y="-51">s3</name>
+			<committed/>
+		</location>
+		<location id="id17" x="399" y="136">
+			<name x="389" y="102">s5</name>
+		</location>
+		<location id="id18" x="119" y="-127">
+			<name x="136" y="-135">Output_Conflict</name>
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id15"/>
+			<label kind="guard" x="161" y="161">end_machine_num+1&lt;machine_num</label>
+			<label kind="synchronisation" x="161" y="178">end?</label>
+			<nail x="144" y="195"/>
+			<nail x="178" y="161"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id18"/>
+			<label kind="guard" x="127" y="-102">ifConflict()==true</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id17"/>
+			<label kind="guard" x="127" y="102">end_machine_num+1&gt;=machine_num</label>
+			<label kind="synchronisation" x="170" y="119">end?</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="25" y="119">wait_p?</label>
+			<nail x="-238" y="136"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id14"/>
+			<label kind="guard" x="153" y="-34">ifConflict()==false</label>
+			<label kind="synchronisation" x="153" y="-17">registerWrite_S_CtrlSquare!</label>
+			<label kind="assignment" x="153" y="0">GiveOutput()</label>
+			<nail x="153" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-42" y="-51">collect_SimSquare?</label>
+			<nail x="85" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id15"/>
+			<label kind="synchronisation" x="127" y="76">endexec_SimSquare?</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-68" y="17">startexec_SimSquare!</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="synchronisation" x="-272" y="-8">registerRead_CtrlSquare_S?</label>
+			<label kind="assignment" x="-212" y="17">Init(),
+TakeInput()</label>
+		</transition>
+	</template>
+	<template>
+		<name>SimSquare</name>
+		<declaration>const int linear=0;    
+const int angular=0;    
+int segment;
+clock C;
+clock D;
+
+void moveForward(int linear){
+    moveForward_SimSquare.b=true;
+    moveForward_SimSquare.linear=linear;
+    moveForward_SimSquare_CtrlSquare.b=true;
+    moveForward_SimSquare_n += 1;
+}
+
+void enableCollisionDetection(){
+    enableCollisionDetection_SimSquare.b=true;
+    enableCollisionDetection_SimSquare_CtrlSquare.b=true;
+    enableCollisionDetection_SimSquare_n += 1;
+}
+
+void disableCollisionDetection(){
+    disableCollisionDetection_SimSquare.b=true;
+    disableCollisionDetection_SimSquare_CtrlSquare.b=true;
+    disableCollisionDetection_SimSquare_n += 1;
+}
+
+void avoid(){
+    avoid_SimSquare.b=true;
+    avoid_SimSquare_CtrlSquare.b=true;
+    avoid_SimSquare_n += 1;
+}
+
+void stop(){
+    stop_SimSquare.b=true;
+    stop_SimSquare_CtrlSquare.b=true;
+    stop_SimSquare_n += 1;
+}
+
+void turn(int angular){
+    turn_SimSquare.b=true;
+    turn_SimSquare.angular=angular;
+    turn_SimSquare_CtrlSquare.b=true;
+    turn_SimSquare_n += 1;
+}
+
+
+
+
+
+</declaration>
+		<location id="id19" x="-680" y="-850">
+			<name x="-663" y="-867">Init</name>
+			<committed/>
+		</location>
+		<location id="id20" x="-680" y="-748">
+			<name x="-722" y="-765">ss1</name>
+			<urgent/>
+		</location>
+		<location id="id21" x="-807" y="-850">
+			<name x="-841" y="-867">ss0</name>
+		</location>
+		<location id="id22" x="-680" y="-663">
+			<name x="-807" y="-680">SMovingForward</name>
+			<urgent/>
+		</location>
+		<location id="id23" x="-680" y="-578">
+			<name x="-773" y="-595">SObserving</name>
+			<urgent/>
+		</location>
+		<location id="id24" x="-544" y="-578">
+			<name x="-629" y="-612">DObserving</name>
+			<urgent/>
+		</location>
+		<location id="id25" x="-544" y="-442">
+			<name x="-586" y="-459">ss2</name>
+		</location>
+		<location id="id26" x="-374" y="-493">
+			<name x="-357" y="-510">EObserving</name>
+			<urgent/>
+		</location>
+		<location id="id27" x="-374" y="-357">
+			<name x="-357" y="-374">SCollision</name>
+			<urgent/>
+		</location>
+		<location id="id28" x="-510" y="-357">
+			<name x="-535" y="-391">Waiting</name>
+			<urgent/>
+		</location>
+		<location id="id29" x="-510" y="-289">
+			<name x="-493" y="-289">ss3</name>
+		</location>
+		<location id="id30" x="-306" y="-578">
+			<name x="-314" y="-612">ss6</name>
+			<urgent/>
+		</location>
+		<location id="id31" x="-204" y="-578">
+			<name x="-214" y="-612">finish</name>
+		</location>
+		<location id="id32" x="-408" y="-646">
+			<name x="-425" y="-680">ss4</name>
+			<urgent/>
+		</location>
+		<location id="id33" x="-374" y="-425">
+			<urgent/>
+		</location>
+		<location id="id34" x="-236" y="-646">
+			<name x="-263" y="-637">ss5</name>
+			<urgent/>
+		</location>
+		<location id="id35" x="-238" y="-748">
+			<name x="-221" y="-765">STurning</name>
+			<urgent/>
+		</location>
+		<location id="id36" x="-442" y="-748">
+			<name x="-425" y="-739">DTurning</name>
+			<urgent/>
+		</location>
+		<location id="id37" x="-442" y="-850">
+			<name x="-452" y="-884">ss7</name>
+		</location>
+		<init ref="id21"/>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-884" y="-493">segment&gt;4 &amp;&amp; (C&gt;=3 || 
+collisionDetected_SimSquare.b==false)</label>
+			<label kind="synchronisation" x="-731" y="-561">endexec_SimSquare!</label>
+			<nail x="-646" y="-510"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-884" y="-527">C&gt;5 &amp;&amp; (C&gt;=3 || 
+collisionDetected_SimSquare.b==false)</label>
+			<label kind="synchronisation" x="-705" y="-493">endexec_SimSquare!</label>
+			<nail x="-612" y="-510"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-612" y="-782">C==2</label>
+			<label kind="assignment" x="-612" y="-765">C=0</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id36"/>
+			<label kind="synchronisation" x="-416" y="-833">startexec_SimSquare?</label>
+			<nail x="-408" y="-799"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id37"/>
+			<label kind="guard" x="-510" y="-816">C&lt;2</label>
+			<label kind="synchronisation" x="-612" y="-833">endexec_SimSquare!</label>
+			<nail x="-476" y="-799"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id36"/>
+			<label kind="assignment" x="-340" y="-765">C=0</label>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id35"/>
+			<label kind="synchronisation" x="-229" y="-714">collect_SimSquare!</label>
+			<label kind="assignment" x="-229" y="-697">turn(angular)</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id34"/>
+			<label kind="synchronisation" x="-391" y="-680">collect_SimSquare!</label>
+			<label kind="assignment" x="-391" y="-663">stop()</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id27"/>
+			<label kind="synchronisation" x="-365" y="-416">collect_SimSquare!</label>
+			<label kind="assignment" x="-365" y="-399">avoid()</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id32"/>
+			<label kind="guard" x="-620" y="-714">C==5 &amp;&amp; segment&lt;4</label>
+			<label kind="synchronisation" x="-620" y="-697">collect_SimSquare!</label>
+			<label kind="assignment" x="-620" y="-680">disableCollisionDetection(),
+segment += 1</label>
+			<nail x="-544" y="-646"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="-272" y="-595">end!</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id30"/>
+			<label kind="guard" x="-501" y="-629">C==5 &amp;&amp; segment==4</label>
+			<label kind="synchronisation" x="-501" y="-612">endexec_SimSquare!</label>
+			<label kind="assignment" x="-501" y="-595">stop()</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id23"/>
+			<label kind="guard" x="-637" y="-374">D&gt;=2</label>
+			<nail x="-680" y="-357"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id28"/>
+			<label kind="synchronisation" x="-484" y="-331">startexec_SimSquare?</label>
+			<nail x="-484" y="-323"/>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id29"/>
+			<label kind="guard" x="-569" y="-340">D&lt;2</label>
+			<label kind="synchronisation" x="-680" y="-323">endexec_SimSquare!</label>
+			<nail x="-535" y="-323"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id28"/>
+			<label kind="assignment" x="-459" y="-374">D=0</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id33"/>
+			<label kind="synchronisation" x="-365" y="-484">collect_SimSquare!</label>
+			<label kind="assignment" x="-365" y="-467">disableCollisionDetection()</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-416" y="-535">collisionDetected_SimSquare.b==true &amp;&amp; C&lt;3</label>
+			<nail x="-374" y="-535"/>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id24"/>
+			<label kind="synchronisation" x="-544" y="-510">startexec_SimSquare?</label>
+			<nail x="-510" y="-510"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-884" y="-561">C&lt;5 &amp;&amp; (C&gt;=3 || 
+collisionDetected_SimSquare.b==false)</label>
+			<label kind="synchronisation" x="-731" y="-527">endexec_SimSquare!</label>
+			<nail x="-578" y="-510"/>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id24"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id23"/>
+			<label kind="synchronisation" x="-816" y="-646">collect_SimSquare!</label>
+			<label kind="assignment" x="-867" y="-629">enableCollisionDetection()</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id22"/>
+			<label kind="synchronisation" x="-816" y="-731">collect_SimSquare!</label>
+			<label kind="assignment" x="-833" y="-714">moveForward(linear)</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id19"/>
+			<label kind="synchronisation" x="-833" y="-816">startexec_SimSquare?</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id20"/>
+			<label kind="assignment" x="-790" y="-884">C=0,
+segment=0</label>
+		</transition>
+	</template>
+	<system>system ModSquare_cycle,
+       CtrlSquare_cycle, 
+       SimSquare_cycle,
+       SimSquare;</system>
+	<queries>
+		<query>
+			<formula>A[] not deadlock</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.finish</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>A[] SimSquare.finish imply (ModSquare_cycle.m4 and CtrlSquare_cycle.c4 and SimSquare_cycle.s5)</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>A[] not (ModSquare_cycle.Output_Conflict or CtrlSquare_cycle.Output_Conflict or SimSquare_cycle.Output_Conflict)</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.SMovingForward</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.DTurning</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.SObserving</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.DObserving</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.STurning</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.EObserving</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.SCollision</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimSquare.Waiting</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
