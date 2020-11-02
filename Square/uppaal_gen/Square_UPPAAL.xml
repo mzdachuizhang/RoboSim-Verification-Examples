@@ -825,6 +825,14 @@ segment=0</label>
 			<comment></comment>
 		</query>
 		<query>
+			<formula>A[] not deadlock</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>A[] not (ModSquare_cycle.Output_Conflict or CtrlSquare_cycle.Output_Conflict or SimSquare_cycle.Output_Conflict)</formula>
+			<comment></comment>
+		</query>
+		<query>
 			<formula>E&lt;&gt; SimSquare.DObserving</formula>
 			<comment></comment>
 		</query>
