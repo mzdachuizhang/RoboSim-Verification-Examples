@@ -1198,7 +1198,7 @@ For events, there's another member "Occ" to record if it will happen.
 At the beginning of each cycle, we will change the member "b" for all variables to false.
 */
 
-system  platform_mapping,
+system  //platform_mapping,
         mod_cycle, ctr0_cycle, ctr1_cycle,
         stm0_cycle, stm0,
         stm1_cycle, stm1,
@@ -1206,79 +1206,35 @@ system  platform_mapping,
     </system>
 	<queries>
 		<query>
-			<formula>E&lt;&gt; stm2_cycle.Output_Conflict</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>E&lt;&gt; stm1_cycle.Output_Conflict</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>E&lt;&gt; stm0_cycle.Output_Conflict</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>E&lt;&gt; ctr1_cycle.Output_Conflict</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>E&lt;&gt; ctr0_cycle.Output_Conflict</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>E&lt;&gt; mod_cycle.Output_Conflict</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula></formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=10] {ev0.b}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=10] {x.value}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=10]{ op1.b,op2.b}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>simulate [&lt;=100]{p_model.t}</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula></formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>stm1.ds3 --&gt; stm1.s0</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>stm2.ds3 --&gt; stm2.s0</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>E&lt;&gt; op1.b==true</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>E&lt;&gt; z_stm1.value==1 &amp;&amp; x_stm1.value==1</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula></formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>A[] true</formula>
-			<comment></comment>
-		</query>
-		<query>
 			<formula>A[] not deadlock</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>A[] not (mod_cycle.Output_Conflict or ctr0_cycle.Output_Conflict or ctr1_cycle.Output_Conflict or stm0_cycle.Output_Conflict or stm1_cycle.Output_Conflict or stm2_cycle.Output_Conflict)</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm0.s0</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm0.ds0</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm1.s0</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm1.ds0</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm2.s0</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; stm2.ds0</formula>
 			<comment></comment>
 		</query>
 	</queries>
