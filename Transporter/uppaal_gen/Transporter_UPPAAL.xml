@@ -1371,5 +1371,41 @@ searchObject()</label>
 			<formula>A[] not deadlock</formula>
 			<comment></comment>
 		</query>
+		<query>
+			<formula>A[] not (ModPusher_cycle.Output_Conflict or CtrlPusher_cycle.Output_Conflict or SimPusher_cycle.Output_Conflict)</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.Searching_Watch</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.MovingToObject_Watch</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.CloseInOnObject_Watch</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.Scanning_Watch</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.Scanning_NewCycle</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.MovingAround</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.Pushing_NewCycle</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; SimPusher.Evading</formula>
+			<comment></comment>
+		</query>
 	</queries>
 </nta>
