@@ -61,6 +61,15 @@ This example involves a robot that performs a square trajectory, trying to avoid
 
 - Verification Results
 
+|  TCTL Properties  | Result |  Time |
+| :---:| :----: | :----: |
+| A[] not deadlock | UnSat. | 0.008s |
+| A[] not (ModSquare_cycle.Output_Conflict or CtrlSquare_cycle.Output_Conflict or SimSquare_cycle.Output_Conflict) | Sat. | 0.004s |
+| E<> SimSquare.DObserving | Sat. | 0.001s |
+| E<> SimSquare.STurning | Sat. | 0s |
+| E<> SimSquare.EObserving | Sat. | 0.001s |
+| E<> SimSquare.SCollision | Sat. | 0s |
+| E<> SimSquare.Waiting | Sat. | 0s |
 
 
 ## Transporter
@@ -68,6 +77,19 @@ This example involves a robot that performs a square trajectory, trying to avoid
 The transporter system proposes use of a swarm of small robots for moving an object to a specified goal. The robots move the object by pushing it. The swarm is a fully distributed system: it involves no interaction among the robots. This model captures the behaviour of a single robot; the swarm is formed of a number of robots with the behaviour specified here. This example illustrates simulations with during actions.
 
 - Verification Results
+
+|  TCTL Properties  | Result |  Time |
+| :---:| :----: | :----: |
+| A[] not deadlock | Sat. | 0.002s |
+| A[] not (ModPusher_cycle.Output_Conflict or CtrlPusher_cycle.Output_Conflict or SimPusher_cycle.Output_Conflict) | Sat. | 0.001s |
+| E<> SimPusher.Searching_Watch | Sat. | 0.001s |
+| E<> SimPusher.MovingToObject_Watch | Sat. | 0s |
+| E<> SimPusher.CloseInOnObject_Watch | UnSat. | 0s |
+| E<> SimPusher.Scanning_Watch | UnSat. | 0s |
+| E<> SimPusher.Scanning_NewCycle | UnSat. | 0s |
+| E<> SimPusher.MovingAround | UnSat. | 0s |
+| E<> SimPusher.Pushing_NewCycle | UnSat. | 0s |
+| E<> SimPusher.Evading | UnSat. | 0s |
 
 
 ## 2 Controllers
@@ -78,10 +100,12 @@ This is a model without practical meaning, but it demonstrates RoboSim's ability
 
 |  TCTL Properties  | Result |  Time |
 | :---:| :----: | :----: |
-| 单元格 | 单元格 | 单元格 |
-| 单元格 | 单元格 | 单元格 |
-
-
-
-
+| A[] not deadlock | Sat. | 0.005s |
+| A[] not (mod_cycle.Output_Conflict or ctr0_cycle.Output_Conflict or ctr1_cycle.Output_Conflict or stm0_cycle.Output_Conflict or stm1_cycle.Output_Conflict or stm2_cycle.Output_Conflict) | UnSat. | 0.003s |
+| E<> stm0.s0 | Sat. | 0s |
+| E<> stm0.ds0 | Sat. | 0s |
+| E<> stm1.s0 | Sat. | 0.001s |
+| E<> stm1.ds0 | Sat. | 0.001s |
+| E<> stm2.s0 | Sat. | 0.001s |
+| E<> stm2.ds0 | Sat. | 0.001s |
 
