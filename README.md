@@ -2,13 +2,11 @@
 
 This repository gives RoboSim Verification Example Library information.
 
-Now, we present the following five examples, includeing : **2_Controllers**, **FootBot**, **Square**, **Transporter**, **Alpha Algorithm**. 
+Now, we present the following five examples, includeing : `FootBot`, `Alpha Algorithm`, `Square`, `Transporter`, `2 Controllers`.
 
-The RoboSim model (files with the.rst suffix, and the file "representations.aird") and the corresponding UPPAAL model (files in the directory "uppaal_gen" with .xml suffix) can be found in corresponding folders. Images of the model can also be found in the folder. Note that the file "representations.aird" can be open as graphic model in RoboTool*.
+The RoboSim model (files with the `.rst` suffix, and the file `representations.aird`) and the corresponding UPPAAL model (files in the directory `uppaal_gen` with `.xml` suffix) can be found in corresponding folders. Images of the model can also be found in the folder. Note that the file `representations.aird` can be open as graphic model in RoboTool*.
 
 Next, we will introduce these models briefly, and present their verification results.
-
-
 
 ## FootBot
 
@@ -16,6 +14,15 @@ FootBot is a simple model, which specifies a robot that can move around, detect 
 
 - Verification Results
 
+|  TCTL Properties  | Result |  Time |
+| :---:| :----: | :----: |
+| A[] not deadlock | Sat. | 0.004s |
+| A[] not (CFootBot_cycle.Output_Conflict or Movement_cycle.Output_Conflict or SimSMovement_cycle.Output_Conflict) | Sat. | 0.002s |
+| E<> SimSMovement.SMoving | Sat. | 0s |
+| E<> SimSMovement.DMoving | Sat. | 0s |
+| E<> SimSMovement.Waiting | Sat. | 0s |
+| E<> SimSMovement.STurning | Sat. | 0s |
+| E<> SimSMovement.DTurning | Sat. | 0s |
 
 
 ## Alpha Alogrithm
@@ -23,6 +30,30 @@ FootBot is a simple model, which specifies a robot that can move around, detect 
 This example is the model of a single robot in a swarm acting under the Alpha Algorithm, which involves two machines: one specifying the robot movement, and the other, the communication with the other robots in the swarm. This example shows multiple machines that can be independently simulated. 
 
 - Verification Results
+
+|  TCTL Properties  | Result |  Time |
+| :---:| :----: | :----: |
+| A[] not deadlock | Sat. | 35.810s |
+| A[] not (AggregationSoftware_cycle.Output_Conflict or MovementC_cycle.Output_Conflict or Movement_cycle.Output_Conflict or CommunicationC_cycle.Output_Conflict or Communication_cycle.Output_Conflict) | Sat. | 22.180s |
+| E<> Movement.SMove | Sat. | 0.002s |
+| E<> Movement.DMove | Sat. | 0.002s |
+| E<> Movement.Avoid | Sat. | 0.029s |
+| E<> Movement.Wait_Move | Sat. | 0.033s |
+| E<> Movement.InfoNeighbours | Sat. | 0.887s |
+| E<> Movement.Init | Sat. | 0.983s |
+| E<> Movement.RandomTurn | Sat. | 0.786s |
+| E<> Movement.Turn180 | UnSat. | 17.48s |
+| E<> Movement.Wait_Turn | Sat. | 1.067s |
+| E<> Communication.Broadcast | Sat. | 0.001s |
+| E<> Communication.Receive | Sat. | 0.001s |
+| E<> Communication.NewCycle | Sat. | 0s |
+| A[] Communication.j0 imply Communication.RCC<=Communication.RC | Sat. | 22.287s |
+| A[] (Communication.Broadcast and Communication.RCC>0) imply  Communication.RCC == Communication.RC | Sat. | 21.706s |
+| A[] Movement.tj1 imply Movement.MBC <= 360/Movement.av | Sat. | 21.637s |
+| obstacle_ePuck.b==true --> move_ePuck.b==true | Sat. | 2.091s |
+| A<> (broadcast_Communication.b==true and broadcast_Communication.id!=Communication.id) imply receive_Communication_CommunicationC.b==true | Sat. | 19.617s |
+| (Communication.Broadcast and Communication.RCC>0) --> (broadcast_Communication_CommunicationC.b==true or receive_Communication_CommunicationC.b==true) | Sat. | 50.295s |
+
 
 ## Square
 
