@@ -6,6 +6,8 @@ Now, we present the following five examples, includeing : `FootBot`, `Alpha Algo
 
 The RoboSim model (files with the `.rst` suffix, and the file `representations.aird`) and the corresponding UPPAAL model (files in the directory `uppaal_gen` with `.xml` suffix) can be found in corresponding folders. Images of the model can also be found in the folder. Note that the file `representations.aird` can be open as graphic model in RoboTool*.
 
+The tool demo video can be found in the link https://www.bilibili.com/video/BV1wT4y1c7D5/.
+
 Next, we will introduce these models briefly, and present their verification results.
 
 ## FootBot
