@@ -1,0 +1,17 @@
+module OP_RSMov_move
+exports
+	Timed(OneStep) {
+	D__(id__,
+				l,
+				a) = let
+	AUX(N) = if (N == 0) then SKIP else
+		  SKIP
+	      	      	within AUX(RSMov_move_BOUND)
+	
+	O__(id__,
+				l,
+				a) = D__(id__,
+				l,
+				a)
+	}
+endmodule

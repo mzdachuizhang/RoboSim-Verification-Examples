@@ -1,0 +1,17 @@
+/home/mscf/Dropbox/UFPE/RS2UPPAAL/2021/TASEcaseStudies3005/AlphaAlgorithm/FDR/CSPFiles/mainP2.csp:10:8-13:
+    Couldn't match expected type (a, b, c, d, e) -> f
+            with actual type (g, Int, Int) -> Proc
+    In the expression:
+        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::D__
+    In the expression:
+        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::D__(1, 1, 4, 1, 1)
+    In the assertion:
+        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::D__(1, 1, 4, 1, 1)
+            :[deadlock free [F]]
+    Relevant variable types:
+        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::D__ :: (h, Int,
+                                                                 Int) -> Proc
+
+real	0m0.327s
+user	0m0.298s
+sys	0m0.031s

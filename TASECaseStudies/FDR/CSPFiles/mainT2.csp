@@ -1,0 +1,64 @@
+transparent diamond
+transparent sbisim
+
+const_RSMC_MovementC_stm_ref0_waitt3 = 1
+
+const_RSMC_MovementC_stm_ref0_cTurn180 = 1
+
+const_RSMC_MovementC_stm_ref0_cRandom = 1
+
+const_RCMovC_MovementC_stm_ref0_av = 1
+
+const_RCMovC_MovementC_stm_ref0_MB = 3
+
+const_RSMC_MovementC_stm_ref0_MB = 3
+
+const_RSMC_MovementC_stm_ref0_av = 1
+
+cycle_AgSw_AggregationSoftware_AggregationSoftware = 1
+
+include "main_assertionsV2.csp"
+
+--------------------------------------------------------------------------------------------------------------
+--The state machine Communication starts to enter the state Receive exactly every RC units.
+--------------------------------------------------------------------------------------------------------------
+
+Communication_RC = 2
+
+AnyOther(E) = CHAOS(Events) [|E|> SKIP
+
+ADeadline(E,d) = (CHAOS(Events) [| {tock} |] WAIT(d)) [|E|> SKIP
+
+WAIT(n) = if (n == 0) then SKIP else tock -> WAIT(n-1)
+
+Timed{
+
+EnterExactly(t) = let
+		Initial = ADeadline({|AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::enterV.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::SID_Communication_SReceive|},0)
+		EveryT = ADeadline({|AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::enterV.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::SID_Communication_SReceive|},t) ; EveryT
+	within
+		timed_priority(Initial ; EveryT)
+
+
+assert 	EnterExactly(Communication_RC)
+		[FD=
+                AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
+                
+} 
+
+{-
+--AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::VS__(1,1,1,2)
+
+EnterExactly(t) = 
+	let
+		Initial = ADeadline({|Communication_enterV."Communication_Receive"|},0)
+		EveryT = ADeadline({|Communication_enterV."Communication_Receive"|},t) ; EveryT
+	within
+		timed_priority(Initial ; EveryT)
+
+-- Requirement TB.2
+assert 	EnterExactly(Communication_RC)
+		[FD=
+		T_AggregationSoftware_VS                                       
+
+-}
