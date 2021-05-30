@@ -7,6 +7,9 @@ include "AgSwR.csp"
 --Initially, and after exactly RC time units, when a broadcast.id happens, the events broadcast and receive are offered before RC time units elapse.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
+AnyOther(E) = CHAOS(Events) [|E|> SKIP
+
+Communication_id = 1
 ID = {0,1}
 Communication_RC = 2
 
