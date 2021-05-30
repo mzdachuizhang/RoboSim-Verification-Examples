@@ -1,0 +1,36 @@
+transparent diamond
+transparent sbisim
+
+include "AgSwR.csp"
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+--Initially, and after exactly RC time units, when a broadcast.id happens, the events broadcast and receive are offered before RC time units elapse.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ID = {0,1}
+Communication_RC = 2
+
+SomeHappened(t) = t < Communication_RC & (AnyOther({tock}) ; SomeHappened(t+1))
+		[]
+		t == Communication_RC & NoEvent
+
+NoEvent = AnyOther({|AgSwR::AggregationSoftware::registerWrite.AgSwR::AggregationSoftware::o_broadcastO.Communication_id|}) ; BroadcastHappened(0)
+
+BroadcastHappened(t) = (t < Communication_RC & (AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_broadcast.true ?x-> SomeHappened(t) 
+				[] 
+				AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_receive.true?x:{x|x <- {(Communication_id,x0) | x0 <- ID}} -> SomeHappened(t) 
+				[] 
+				tock -> BroadcastHappened(t+1)))
+			[]
+			t == Communication_RC & NoEvent
+
+
+
+assert CHAOS({|AgSwR::AggregationSoftware::registerWrite.AgSwR::AggregationSoftware::o_move,
+AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_obstacle,tock|}) [| {tock} |] NoEvent [FD= 
+AgSwR::AggregationSoftware::D__(1,1,1,1)
+	
+
+
+
+
