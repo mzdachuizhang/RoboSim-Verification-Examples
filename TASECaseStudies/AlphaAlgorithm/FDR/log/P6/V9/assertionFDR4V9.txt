@@ -1,9 +1,8 @@
 Welcome to FDR Version 4.2.4 copyright 2016 Oxford University Innovation Ltd. All Rights Reserved.
 License: Academic license for non-commercial use only
         Found 2 processes including 1 names
-        Found 2.000 processes including 146 names
-        Found 8.000 processes including 311 names
-        Found 14.000 processes including 427 names
+        Found 6.000 processes including 287 names
+        Found 12.000 processes including 409 names
         Found 16.840 processes including 503 names
         Visited 2 processes and discovered 0 recursive names
         Visited 1.000 processes and discovered 21 recursive names
@@ -24,135 +23,135 @@ License: Academic license for non-commercial use only
         Visited 16.000 processes and discovered 391 recursive names
         Visited 16.337 processes and discovered 401 recursive names
         Visited 1 processes generating 1 machines
-        Constructed 0 states with 0 transitions
-        Constructed 1 states with 0 transitions
-        Constructed 1 of 29 machines
         Constructed 0 states with 4 transitions
         Constructed 7 states with 9 transitions
-        Constructed 2 of 79 machines
+        Constructed 1 of 48 machines
         Constructed 0 states with 6 transitions
         Constructed 3 states with 7 transitions
-        Constructed 0 states with 4 transitions
-        Constructed 3 of 81 machines
-        Constructed 7 states with 9 transitions
-        Constructed 4 of 81 machines
+        Constructed 0 states with 0 transitions
+        Constructed 2 of 54 machines
+        Constructed 1 states with 0 transitions
+        Constructed 3 of 54 machines
         Constructed 0 states with 1 transitions
         Constructed 3 states with 2 transitions
         Constructed 0 states with 1 transitions
-        Constructed 5 of 81 machines
+        Constructed 4 of 55 machines
         Constructed 3 states with 2 transitions
-        Constructed 6 of 81 machines
+        Constructed 5 of 55 machines
         Constructed 0 states with 1 transitions
         Constructed 3 states with 2 transitions
         Constructed 0 states with 1 transitions
-        Constructed 7 of 82 machines
+        Constructed 6 of 55 machines
         Constructed 3 states with 2 transitions
-        Constructed 8 of 82 machines
-        Constructed 0 states with 8 transitions
+        Constructed 7 of 55 machines
         Constructed 0 states with 2 transitions
-        Constructed 11 states with 17 transitions
-        Constructed 0 states with 35 transitions
         Constructed 3 states with 3 transitions
-        Constructed 9 of 83 machines
-        Visited 1.000 processes generating 83 machines
-        Constructed 10 of 83 machines
-        Constructed 0 states
-        Normalised to 1 states
-        Reduced 1 states to 1 equivalence classes
-        Constructed 11 of 107 machines
+        Constructed 8 of 55 machines
         Constructed 0 states with 5 transitions
         Constructed 4 states with 20 transitions
-        Constructed 12 of 150 machines
+        Constructed 9 of 55 machines
+        Constructed 0 states with 35 transitions
         Constructed 0 states with 4 transitions
         Constructed 7 states with 9 transitions
-        Constructed 13 of 150 machines
-        Constructed 266 states with 537 transitions
-        Constructed 14 of 150 machines
-        Constructed 0 states with 1 transitions
-        Constructed 4 states with 3 transitions
-        Constructed 15 of 181 machines
+        Constructed 10 of 55 machines
+        Visited 1.000 processes generating 83 machines
+        Constructed 0 states with 6 transitions
+        Constructed 9 states with 13 transitions
+        Constructed 11 of 217 machines
         Constructed 0 states with 26 transitions
         Constructed 29 states with 53 transitions
-        Constructed 16 of 181 machines
+        Constructed 12 of 244 machines
+        Constructed 0 states with 1 transitions
+        Constructed 4 states with 3 transitions
+        Constructed 13 of 255 machines
+        Constructed 266 states with 537 transitions
+        Constructed 14 of 297 machines
+        Reduced 7 states to 7 equivalence classes
+        Constructed 15 of 303 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 16 of 303 machines
+        Constructed 0 states with 4 transitions
+        Constructed 7 states with 9 transitions
+        Constructed 17 of 303 machines
+        Constructed 0 states with 8 transitions
+        Constructed 11 states with 17 transitions
+        Constructed 0 states
+        Constructed 18 of 307 machines
+        Normalised to 1 states
         Reduced 1 states to 1 equivalence classes
-        Constructed 0 states with 6 transitions
+        Reduced 3 states to 3 equivalence classes
+        Constructed 19 of 307 machines
+        Constructed 20 of 307 machines
+        Reduced 3 states to 3 equivalence classes
+        Reduced 3 states to 3 equivalence classes
+        Constructed 21 of 307 machines
+        Reduced 1 states to 1 equivalence classes
+        Constructed 22 of 307 machines
+        Reduced 3 states to 3 equivalence classes
+        Reduced 3 states to 3 equivalence classes
+        Constructed 23 of 307 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 24 of 307 machines
         Constructed 0 states with 2 transitions
-        Constructed 9 states with 13 transitions
+        Reduced 7 states to 7 equivalence classes
         Constructed 3 states with 3 transitions
-        Constructed 17 of 181 machines
-        Constructed 18 of 181 machines
+        Constructed 25 of 307 machines
+        Constructed 26 of 307 machines
         Constructed 0 states with 1 transitions
         Constructed 2 states with 1 transitions
-        Constructed 19 of 181 machines
         Constructed 0 states with 13 transitions
-        Constructed 0 states with 13 transitions
+        Constructed 27 of 307 machines
         Constructed 47 states with 92 transitions
-        Constructed 20 of 181 machines
+        Constructed 28 of 307 machines
         Constructed 0 states with 13 transitions
-        Constructed 73 states with 131 transitions
-        Constructed 21 of 181 machines
+        Constructed 0 states with 13 transitions
         Constructed 42 states with 91 transitions
-        Constructed 22 of 181 machines
+        Constructed 73 states with 131 transitions
+        Constructed 29 of 307 machines
+        Constructed 30 of 307 machines
         Constructed 0 states with 13 transitions
-        Constructed 23 of 198 machines
+        Constructed 39 states with 85 transitions
+        Constructed 31 of 307 machines
+        Constructed 0 states with 13 transitions
         Constructed 0 states with 13 transitions
         Constructed 37 states with 77 transitions
-        Constructed 24 of 246 machines
+        Constructed 32 of 307 machines
         Constructed 0 states with 13 transitions
-        Constructed 0 states with 13 transitions
+        Constructed 33 of 307 machines
         Constructed 50 states with 97 transitions
-        Constructed 25 of 255 machines
-        Reduced 7 states to 7 equivalence classes
-        Constructed 26 of 301 machines
-        Constructed 39 states with 85 transitions
+        Constructed 34 of 307 machines
         Constructed 0 states with 13 transitions
-        Constructed 27 of 303 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 28 of 307 machines
-        Constructed 50 states with 97 transitions
-        Constructed 29 of 330 machines
-        Reduced 7 states to 7 equivalence classes
-        Constructed 30 of 334 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 31 of 335 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 32 of 336 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 0 states with 13 transitions
-        Constructed 33 of 339 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 34 of 356 machines
         Constructed 30 states with 81 transitions
-        Constructed 35 of 356 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 36 of 356 machines
-        Constructed 0 states with 13 transitions
-        Reduced 11 states to 11 equivalence classes
-        Constructed 37 of 358 machines
-        Constructed 42 states with 93 transitions
-        Constructed 38 of 365 machines
-        Constructed 0 states with 13 transitions
+        Constructed 35 of 307 machines
         Constructed 0 states with 13 transitions
         Constructed 42 states with 93 transitions
-        Constructed 39 of 419 machines
+        Constructed 36 of 307 machines
+        Constructed 0 states with 13 transitions
+        Constructed 42 states with 93 transitions
+        Constructed 37 of 307 machines
         Constructed 157 states with 238 transitions
         Constructed 0 states with 13 transitions
-        Constructed 40 of 444 machines
+        Constructed 38 of 307 machines
+        Constructed 0 states with 13 transitions
+        Constructed 184 states with 287 transitions
+        Constructed 39 of 307 machines
         Constructed 0 states with 1 transitions
         Constructed 5 states with 4 transitions
-        Constructed 43 states with 96 transitions
-        Constructed 41 of 461 machines
-        Constructed 42 of 465 machines
+        Constructed 40 of 307 machines
         Constructed 0 states with 1 transitions
         Constructed 4 states with 4 transitions
-        Constructed 43 of 474 machines
-        Constructed 184 states with 287 transitions
-        Constructed 44 of 474 machines
+        Constructed 43 states with 96 transitions
+        Constructed 41 of 307 machines
+        Constructed 42 of 307 machines
+        Constructed 43 of 307 machines
+        Constructed 0 states with 13 transitions
+        Constructed 50 states with 97 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 44 of 307 machines
+        Constructed 0 states with 2 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 0 states with 2 transitions
         Visited 1.631 processes generating 497 machines
-        Constructed 0 states with 2 transitions
-        Constructed 0 states with 2 transitions
-        Constructed 0 states with 2 transitions
-        Constructed 0 states with 2 transitions
         Constructed 10 states with 33 transitions
         Constructed 45 of 499 machines
         Constructed 0 states with 1 transitions
@@ -173,356 +172,356 @@ License: Academic license for non-commercial use only
         Constructed 0 states with 3 transitions
         Constructed 2 states with 6 transitions
         Constructed 51 of 499 machines
-        Reduced 4 states to 4 equivalence classes
-        Constructed 52 of 499 machines
-        Constructed 10 states with 33 transitions
-        Constructed 53 of 499 machines
-        Reduced 7 states to 7 equivalence classes
-        Constructed 54 of 499 machines
         Constructed 0 states with 14 transitions
         Constructed 1 states with 14 transitions
-        Constructed 55 of 499 machines
+        Constructed 52 of 499 machines
         Constructed 0 states with 2 transitions
         Constructed 3 states with 11 transitions
-        Constructed 56 of 499 machines
+        Constructed 53 of 499 machines
         Constructed 0 states with 3 transitions
         Constructed 2 states with 6 transitions
+        Constructed 54 of 499 machines
+        Constructed 0 states with 6 transitions
+        Constructed 7 states with 18 transitions
+        Constructed 55 of 499 machines
+        Constructed 0 states with 7 transitions
+        Constructed 6 states with 42 transitions
+        Constructed 56 of 499 machines
+        Constructed 0 states with 4 transitions
+        Constructed 13 states with 44 transitions
         Constructed 57 of 499 machines
-        Reduced 4 states to 4 equivalence classes
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
         Constructed 58 of 499 machines
-        Reduced 29 states to 29 equivalence classes
-        Constructed 59 of 499 machines
         Reduced 9 states to 9 equivalence classes
+        Constructed 59 of 499 machines
+        Constructed 0 states with 5 transitions
+        Constructed 4 states with 20 transitions
         Constructed 60 of 499 machines
-        Reduced 2 states to 2 equivalence classes
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 9 transitions
         Constructed 61 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 62 of 499 machines
+        Reduced 29 states to 29 equivalence classes
+        Constructed 63 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 4 states with 18 transitions
+        Constructed 64 of 499 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 65 of 499 machines
+        Constructed 0 states with 4 transitions
+        Constructed 3 states with 12 transitions
+        Constructed 66 of 499 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 9 transitions
+        Constructed 67 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 68 of 499 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 11 transitions
+        Constructed 69 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 70 of 499 machines
+        Constructed 49 equivalence classes
+        Constructed 266 equivalence classes
+        Reduced 266 states to 266 equivalence classes
+        Constructed 71 of 499 machines
+        Reduced 7 states to 7 equivalence classes
+        Constructed 72 of 499 machines
+        Reduced 11 states to 11 equivalence classes
+        Constructed 73 of 499 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 74 of 499 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 75 of 499 machines
         Constructed 35 equivalence classes
         Constructed 47 equivalence classes
         Reduced 47 states to 47 equivalence classes
-        Constructed 62 of 499 machines
-        Constructed 49 equivalence classes
-        Constructed 37 equivalence classes
-        Constructed 61 equivalence classes
-        Constructed 73 equivalence classes
-        Reduced 73 states to 73 equivalence classes
-        Constructed 266 equivalence classes
-        Reduced 266 states to 266 equivalence classes
-        Constructed 63 of 499 machines
-        Constructed 64 of 499 machines
+        Constructed 76 of 499 machines
         Constructed 41 equivalence classes
         Constructed 41 equivalence classes
         Reduced 42 states to 41 equivalence classes
-        Constructed 0 states with 6 transitions
-        Constructed 65 of 499 machines
-        Constructed 0 states with 7 transitions
-        Constructed 7 states with 18 transitions
-        Constructed 66 of 499 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 67 of 499 machines
-        Constructed 0 states with 4 transitions
-        Constructed 13 states with 44 transitions
-        Constructed 68 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 69 of 499 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
-        Constructed 70 of 499 machines
-        Constructed 0 states with 2 transitions
-        Constructed 3 states with 9 transitions
-        Constructed 71 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 72 of 499 machines
-        Reduced 37 states to 37 equivalence classes
-        Constructed 6 states with 42 transitions
-        Constructed 73 of 499 machines
-        Constructed 74 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 4 states with 18 transitions
-        Constructed 75 of 499 machines
-        Constructed 38 equivalence classes
-        Constructed 50 equivalence classes
-        Constructed 0 states with 4 transitions
-        Reduced 50 states to 50 equivalence classes
-        Constructed 3 states with 12 transitions
-        Constructed 76 of 499 machines
-        Constructed 0 states with 2 transitions
         Constructed 77 of 499 machines
-        Constructed 3 states with 9 transitions
+        Constructed 37 equivalence classes
+        Constructed 10 states with 33 transitions
         Constructed 78 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 0 states with 2 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 3 states with 11 transitions
+        Constructed 61 equivalence classes
+        Constructed 73 equivalence classes
+        Reduced 73 states to 73 equivalence classes
         Constructed 79 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 80 of 499 machines
-        Constructed 81 of 499 machines
+        Reduced 37 states to 37 equivalence classes
         Constructed 38 equivalence classes
         Constructed 38 equivalence classes
         Reduced 39 states to 38 equivalence classes
-        Constructed 0 states with 4 transitions
-        Constructed 7 states with 9 transitions
-        Constructed 82 of 499 machines
-        Constructed 0 states with 8 transitions
-        Constructed 11 states with 17 transitions
-        Constructed 83 of 499 machines
-        Constructed 0 states with 10 transitions
-        Constructed 46 states with 81 transitions
-        Constructed 84 of 499 machines
-        Constructed 0 states with 1 transitions
-        Constructed 4 states with 3 transitions
-        Constructed 85 of 499 machines
-        Constructed 0 states with 2 transitions
-        Constructed 3 states with 3 transitions
-        Constructed 86 of 499 machines
-        Constructed 38 equivalence classes
-        Constructed 50 equivalence classes
-        Reduced 50 states to 50 equivalence classes
-        Constructed 87 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 15 states with 18 transitions
-        Constructed 88 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 41 states with 77 transitions
-        Constructed 89 of 499 machines
-        Constructed 90 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 43 states with 79 transitions
-        Constructed 91 of 499 machines
-        Constructed 0 states with 1 transitions
-        Constructed 5 states with 4 transitions
-        Constructed 92 of 499 machines
-        Constructed 0 states with 1 transitions
-        Constructed 4 states with 4 transitions
-        Constructed 93 of 499 machines
+        Constructed 80 of 499 machines
+        Constructed 81 of 499 machines
         Reduced 30 states to 30 equivalence classes
-        Constructed 94 of 499 machines
-        Constructed 95 of 499 machines
-        Constructed 12 states with 37 transitions
-        Constructed 96 of 499 machines
-        Constructed 0 states with 2 transitions
-        Constructed 97 of 499 machines
+        Constructed 82 of 499 machines
         Constructed 40 equivalence classes
         Constructed 41 equivalence classes
         Constructed 42 equivalence classes
         Reduced 42 states to 42 equivalence classes
-        Constructed 98 of 499 machines
-        Constructed 0 states with 1 transitions
-        Constructed 3 states with 47 transitions
-        Constructed 99 of 499 machines
-        Constructed 0 states with 4 transitions
-        Constructed 3 states with 5 transitions
-        Constructed 100 of 499 machines
-        Constructed 0 states with 8 transitions
-        Constructed 3 states with 9 transitions
-        Constructed 101 of 499 machines
-        Constructed 0 states with 1 transitions
-        Constructed 11 states with 134 transitions
-        Constructed 102 of 499 machines
-        Constructed 0 states with 2 transitions
-        Constructed 3 states with 3 transitions
-        Constructed 103 of 499 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
-        Constructed 104 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 105 of 499 machines
-        Constructed 0 states with 2 transitions
-        Constructed 0 states with 6 transitions
-        Constructed 1 states with 6 transitions
-        Constructed 106 of 499 machines
-        Constructed 0 states with 4 transitions
-        Constructed 40 states with 364 transitions
-        Constructed 107 of 499 machines
+        Constructed 83 of 499 machines
         Constructed 40 equivalence classes
         Constructed 41 equivalence classes
         Constructed 42 equivalence classes
         Reduced 42 states to 42 equivalence classes
-        Constructed 108 of 499 machines
-        Constructed 0 states with 9 transitions
-        Constructed 8 states with 72 transitions
-        Constructed 109 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 110 of 499 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
-        Constructed 111 of 499 machines
+        Constructed 84 of 499 machines
         Constructed 43 equivalence classes
         Constructed 108 equivalence classes
         Constructed 133 equivalence classes
         Constructed 145 equivalence classes
         Constructed 157 equivalence classes
         Reduced 157 states to 157 equivalence classes
-        Constructed 112 of 499 machines
-        Constructed 0 states with 2 transitions
-        Constructed 11 states with 42 transitions
-        Constructed 113 of 499 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
-        Constructed 114 of 499 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 115 of 499 machines
+        Constructed 38 equivalence classes
+        Constructed 50 equivalence classes
+        Reduced 50 states to 50 equivalence classes
+        Constructed 85 of 499 machines
+        Constructed 86 of 499 machines
         Reduced 5 states to 5 equivalence classes
-        Constructed 116 of 499 machines
+        Constructed 87 of 499 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 88 of 499 machines
+        Constructed 89 of 499 machines
         Constructed 42 equivalence classes
         Constructed 42 equivalence classes
         Reduced 43 states to 42 equivalence classes
-        Constructed 117 of 499 machines
-        Reduced 4 states to 4 equivalence classes
-        Constructed 118 of 499 machines
         Constructed 45 equivalence classes
+        Constructed 90 of 499 machines
+        Constructed 38 equivalence classes
+        Constructed 50 equivalence classes
+        Reduced 50 states to 50 equivalence classes
         Constructed 135 equivalence classes
         Constructed 160 equivalence classes
         Constructed 172 equivalence classes
+        Constructed 91 of 499 machines
         Constructed 184 equivalence classes
         Reduced 184 states to 184 equivalence classes
-        Constructed 119 of 499 machines
+        Constructed 92 of 499 machines
+        Constructed 0 states with 4 transitions
+        Constructed 7 states with 9 transitions
+        Constructed 93 of 499 machines
+        Constructed 0 states with 10 transitions
+        Constructed 46 states with 81 transitions
+        Constructed 94 of 499 machines
+        Constructed 0 states with 1 transitions
+        Constructed 4 states with 3 transitions
+        Constructed 95 of 499 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 3 transitions
+        Constructed 96 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 15 states with 18 transitions
+        Constructed 97 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 41 states with 77 transitions
+        Constructed 98 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 0 states with 8 transitions
+        Constructed 11 states with 17 transitions
+        Constructed 99 of 499 machines
+        Constructed 43 states with 79 transitions
+        Constructed 100 of 499 machines
+        Constructed 0 states with 1 transitions
+        Constructed 4 states with 4 transitions
+        Constructed 101 of 499 machines
+        Constructed 0 states with 1 transitions
+        Constructed 5 states with 4 transitions
+        Constructed 102 of 499 machines
+        Constructed 0 states with 2 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 12 states with 37 transitions
+        Constructed 103 of 499 machines
+        Constructed 0 states with 1 transitions
+        Constructed 3 states with 47 transitions
+        Constructed 104 of 499 machines
+        Constructed 0 states with 4 transitions
+        Constructed 3 states with 5 transitions
+        Constructed 105 of 499 machines
+        Constructed 0 states with 8 transitions
+        Constructed 3 states with 9 transitions
+        Constructed 106 of 499 machines
+        Constructed 0 states with 1 transitions
+        Constructed 11 states with 134 transitions
+        Constructed 107 of 499 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 3 transitions
+        Constructed 108 of 499 machines
+        Constructed 0 states with 5 transitions
+        Constructed 4 states with 20 transitions
+        Constructed 109 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 110 of 499 machines
+        Constructed 0 states with 6 transitions
+        Constructed 1 states with 6 transitions
+        Constructed 111 of 499 machines
+        Constructed 0 states with 4 transitions
+        Constructed 40 states with 364 transitions
+        Constructed 112 of 499 machines
+        Constructed 0 states with 9 transitions
+        Constructed 8 states with 72 transitions
+        Constructed 113 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 114 of 499 machines
+        Constructed 0 states with 5 transitions
+        Constructed 4 states with 20 transitions
+        Constructed 115 of 499 machines
+        Constructed 0 states with 2 transitions
+        Constructed 11 states with 42 transitions
+        Constructed 116 of 499 machines
+        Constructed 0 states with 5 transitions
+        Constructed 4 states with 20 transitions
+        Constructed 117 of 499 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 118 of 499 machines
         Reduced 10 states to 10 states
         Constructed 3 equivalence classes
         Constructed 4 equivalence classes
         Constructed 4 equivalence classes
         Reduced 10 states to 4 equivalence classes
-        Constructed 120 of 499 machines
+        Constructed 119 of 499 machines
         Constructed 2 equivalence classes
         Constructed 2 equivalence classes
         Reduced 3 states to 2 equivalence classes
+        Constructed 120 of 499 machines
+        Reduced 3 states to 3 equivalence classes
         Constructed 121 of 499 machines
         Reduced 3 states to 3 equivalence classes
         Constructed 122 of 499 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 123 of 499 machines
         Reduced 5 states to 5 equivalence classes
+        Constructed 123 of 499 machines
+        Reduced 3 states to 3 equivalence classes
         Constructed 124 of 499 machines
-        Reduced 3 states to 3 equivalence classes
+        Reduced 2 states to 2 equivalence classes
         Constructed 125 of 499 machines
-        Reduced 2 states to 2 equivalence classes
-        Constructed 126 of 499 machines
-        Reduced 10 states to 10 states
-        Constructed 3 equivalence classes
-        Constructed 4 equivalence classes
-        Constructed 4 equivalence classes
-        Reduced 10 states to 4 equivalence classes
-        Constructed 127 of 499 machines
         Reduced 1 states to 1 equivalence classes
-        Constructed 128 of 499 machines
+        Constructed 126 of 499 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 129 of 499 machines
+        Constructed 127 of 499 machines
         Reduced 2 states to 2 equivalence classes
-        Constructed 130 of 499 machines
-        Constructed 131 of 499 machines
-        Constructed 132 of 499 machines
-        Constructed 133 of 499 machines
-        Constructed 134 of 499 machines
-        Constructed 135 of 499 machines
+        Constructed 128 of 499 machines
         Constructed 3 equivalence classes
         Constructed 3 equivalence classes
         Reduced 7 states to 3 equivalence classes
-        Constructed 136 of 499 machines
+        Constructed 129 of 499 machines
+        Reduced 6 states to 6 equivalence classes
+        Constructed 130 of 499 machines
         Constructed 4 equivalence classes
         Constructed 5 equivalence classes
         Constructed 5 equivalence classes
         Reduced 13 states to 5 equivalence classes
-        Constructed 137 of 499 machines
+        Constructed 131 of 499 machines
         Reduced 2 states to 2 equivalence classes
-        Constructed 138 of 499 machines
+        Constructed 132 of 499 machines
+        Constructed 133 of 499 machines
         Reduced 4 states to 4 equivalence classes
+        Constructed 134 of 499 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 135 of 499 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 136 of 499 machines
+        Constructed 3 equivalence classes
+        Constructed 3 equivalence classes
+        Reduced 4 states to 3 equivalence classes
+        Constructed 137 of 499 machines
+        Constructed 138 of 499 machines
+        Reduced 3 states to 3 equivalence classes
         Constructed 139 of 499 machines
         Reduced 3 states to 3 equivalence classes
         Constructed 140 of 499 machines
         Reduced 2 states to 2 equivalence classes
         Constructed 141 of 499 machines
-        Constructed 142 of 499 machines
-        Reduced 6 states to 6 equivalence classes
-        Constructed 143 of 499 machines
-        Constructed 3 equivalence classes
-        Constructed 3 equivalence classes
-        Reduced 4 states to 3 equivalence classes
-        Constructed 144 of 499 machines
         Reduced 3 states to 3 equivalence classes
+        Constructed 142 of 499 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 143 of 499 machines
+        Constructed 144 of 499 machines
         Constructed 145 of 499 machines
         Constructed 146 of 499 machines
-        Reduced 3 states to 3 equivalence classes
+        Reduced 10 states to 10 states
+        Constructed 3 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 4 equivalence classes
+        Reduced 10 states to 4 equivalence classes
         Constructed 147 of 499 machines
-        Reduced 2 states to 2 equivalence classes
         Constructed 148 of 499 machines
-        Reduced 3 states to 3 equivalence classes
         Constructed 149 of 499 machines
-        Reduced 2 states to 2 equivalence classes
         Constructed 150 of 499 machines
-        Reduced 7 states to 7 equivalence classes
         Constructed 151 of 499 machines
-        Reduced 11 states to 11 equivalence classes
         Constructed 152 of 499 machines
+        Constructed 153 of 499 machines
+        Constructed 154 of 499 machines
+        Constructed 155 of 499 machines
+        Constructed 156 of 499 machines
+        Constructed 157 of 499 machines
+        Reduced 7 states to 7 equivalence classes
+        Constructed 158 of 499 machines
         Constructed 19 equivalence classes
         Constructed 46 equivalence classes
         Reduced 46 states to 46 equivalence classes
-        Constructed 153 of 499 machines
+        Constructed 159 of 499 machines
         Reduced 4 states to 4 equivalence classes
-        Constructed 154 of 499 machines
+        Constructed 160 of 499 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 155 of 499 machines
-        Constructed 156 of 499 machines
+        Constructed 161 of 499 machines
         Constructed 13 equivalence classes
         Constructed 15 equivalence classes
         Reduced 15 states to 15 equivalence classes
-        Constructed 157 of 499 machines
+        Constructed 162 of 499 machines
         Constructed 32 equivalence classes
         Constructed 39 equivalence classes
         Constructed 41 equivalence classes
         Reduced 41 states to 41 equivalence classes
-        Constructed 158 of 499 machines
-        Constructed 159 of 499 machines
+        Constructed 163 of 499 machines
+        Reduced 11 states to 11 equivalence classes
+        Constructed 164 of 499 machines
         Constructed 33 equivalence classes
         Constructed 40 equivalence classes
         Constructed 42 equivalence classes
         Constructed 42 equivalence classes
         Reduced 43 states to 42 equivalence classes
-        Constructed 160 of 499 machines
-        Reduced 5 states to 5 equivalence classes
-        Constructed 161 of 499 machines
+        Constructed 165 of 499 machines
         Reduced 4 states to 4 equivalence classes
-        Constructed 162 of 499 machines
-        Constructed 163 of 499 machines
-        Constructed 164 of 499 machines
+        Constructed 166 of 499 machines
+        Reduced 5 states to 5 equivalence classes
+        Constructed 167 of 499 machines
         Reduced 12 states to 12 states
         Constructed 3 equivalence classes
         Constructed 4 equivalence classes
         Constructed 5 equivalence classes
         Constructed 5 equivalence classes
         Reduced 12 states to 5 equivalence classes
-        Constructed 165 of 499 machines
-        Constructed 166 of 499 machines
-        Constructed 167 of 499 machines
+        Constructed 168 of 499 machines
         Constructed 2 equivalence classes
         Constructed 2 equivalence classes
         Reduced 3 states to 2 equivalence classes
-        Constructed 168 of 499 machines
-        Reduced 3 states to 3 equivalence classes
         Constructed 169 of 499 machines
         Reduced 3 states to 3 equivalence classes
         Constructed 170 of 499 machines
-        Reduced 11 states to 11 equivalence classes
-        Constructed 171 of 499 machines
         Reduced 3 states to 3 equivalence classes
+        Constructed 171 of 499 machines
+        Reduced 11 states to 11 equivalence classes
         Constructed 172 of 499 machines
-        Reduced 4 states to 4 equivalence classes
+        Reduced 3 states to 3 equivalence classes
         Constructed 173 of 499 machines
-        Reduced 2 states to 2 equivalence classes
+        Reduced 4 states to 4 equivalence classes
         Constructed 174 of 499 machines
-        Reduced 1 states to 1 equivalence classes
+        Reduced 2 states to 2 equivalence classes
         Constructed 175 of 499 machines
+        Reduced 1 states to 1 equivalence classes
+        Constructed 176 of 499 machines
         Constructed 8 equivalence classes
         Constructed 11 equivalence classes
         Constructed 12 equivalence classes
         Constructed 12 equivalence classes
         Reduced 40 states to 12 equivalence classes
-        Constructed 176 of 499 machines
         Constructed 177 of 499 machines
         Reduced 8 states to 8 equivalence classes
         Constructed 178 of 499 machines
@@ -555,22 +554,18 @@ License: Academic license for non-commercial use only
         Constructed 197 of 499 machines
         Constructed 198 of 499 machines
         Constructed 199 of 499 machines
+        Constructed 16 states with 43 transitions
         Constructed 200 of 499 machines
         Constructed 201 of 499 machines
         Constructed 202 of 499 machines
         Constructed 203 of 499 machines
         Constructed 204 of 499 machines
-        Constructed 16 states with 43 transitions
-        Constructed 205 of 499 machines
-        Constructed 206 of 499 machines
         Constructed 0 formats
         Constructed 2 formats
+        Constructed 205 of 499 machines
+        Constructed 206 of 499 machines
         Constructed 207 of 499 machines
         Constructed 208 of 499 machines
-        Constructed 209 of 499 machines
-        Constructed 210 of 499 machines
-        Constructed 211 of 499 machines
-        Constructed 212 of 499 machines
         Reduced 16 states to 16 states
         Constructed 3 equivalence classes
         Constructed 4 equivalence classes
@@ -579,17 +574,22 @@ License: Academic license for non-commercial use only
         Constructed 7 equivalence classes
         Constructed 7 equivalence classes
         Reduced 16 states to 7 equivalence classes
+        Constructed 209 of 499 machines
+        Constructed 210 of 499 machines
+        Constructed 211 of 499 machines
+        Constructed 212 of 499 machines
+        Constructed 0 formats
+        Constructed 2 formats
         Constructed 213 of 499 machines
-        Constructed 0 formats
-        Constructed 2 formats
-        Constructed 214 of 499 machines
-        Constructed 215 of 499 machines
-        Constructed 0 formats
-        Constructed 2 formats
+        Constructed 214 of 504 machines
+        Constructed 215 of 504 machines
         Constructed 216 of 504 machines
         Constructed 217 of 504 machines
         Constructed 0 formats
         Constructed 2 formats
+        Constructed 0 formats
+        Constructed 2 formats
+        Constructed 12 states with 37 transitions
         Constructed 218 of 504 machines
         Constructed 219 of 504 machines
         Constructed 220 of 504 machines
@@ -600,10 +600,14 @@ License: Academic license for non-commercial use only
         Constructed 225 of 504 machines
         Constructed 226 of 504 machines
         Constructed 227 of 504 machines
-        Constructed 228 of 509 machines
-        Constructed 0 formats
-        Constructed 2 formats
-        Constructed 229 of 509 machines
+        Constructed 228 of 504 machines
+        Constructed 229 of 504 machines
+        Reduced 12 states to 12 states
+        Constructed 3 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 5 equivalence classes
+        Constructed 5 equivalence classes
+        Reduced 12 states to 5 equivalence classes
         Constructed 230 of 509 machines
         Constructed 231 of 509 machines
         Constructed 232 of 509 machines
@@ -612,19 +616,14 @@ License: Academic license for non-commercial use only
         Constructed 235 of 509 machines
         Constructed 236 of 509 machines
         Constructed 237 of 509 machines
-        Constructed 12 states with 37 transitions
         Constructed 238 of 509 machines
+        Constructed 0 formats
+        Constructed 2 formats
         Constructed 239 of 509 machines
-        Constructed 240 of 519 machines
-        Reduced 12 states to 12 states
-        Constructed 3 equivalence classes
-        Constructed 4 equivalence classes
-        Constructed 5 equivalence classes
-        Constructed 5 equivalence classes
-        Reduced 12 states to 5 equivalence classes
-        Constructed 241 of 519 machines
+        Constructed 240 of 509 machines
         Constructed 0 states with 1 transitions
         Constructing high-level wrapper
+        Constructed 241 of 509 machines
         Constructed 242 of 519 machines
         Constructed 243 of 519 machines
         Constructed 244 of 519 machines
@@ -639,9 +638,16 @@ License: Academic license for non-commercial use only
         Constructed 253 of 519 machines
         Constructed 254 of 519 machines
         Constructed 255 of 519 machines
-        Constructed 256 of 529 machines
-        Constructed 257 of 529 machines
+        Constructed 256 of 519 machines
+        Constructed 12 states with 49 transitions
+        Constructed 257 of 519 machines
         Constructed 258 of 529 machines
+        Reduced 12 states to 12 states
+        Constructed 3 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 5 equivalence classes
+        Constructed 5 equivalence classes
+        Reduced 12 states to 5 equivalence classes
         Constructed 259 of 529 machines
         Constructed 260 of 529 machines
         Constructed 261 of 529 machines
@@ -652,26 +658,24 @@ License: Academic license for non-commercial use only
         Constructed 266 of 529 machines
         Constructed 267 of 529 machines
         Constructed 268 of 529 machines
-        Constructed 12 states with 49 transitions
         Constructed 269 of 529 machines
         Constructed 270 of 529 machines
-        Reduced 12 states to 12 states
-        Constructed 3 equivalence classes
-        Constructed 4 equivalence classes
-        Constructed 5 equivalence classes
-        Constructed 5 equivalence classes
-        Reduced 12 states to 5 equivalence classes
         Constructed 271 of 529 machines
         Constructed 272 of 529 machines
+        Enumerated to 105 states and 270 transitions
+        Reduced 105 states to 105 states
+        Constructed 102 equivalence classes
+        Constructed 102 equivalence classes
+        Reduced 105 states to 102 equivalence classes
         Constructed 273 of 529 machines
         Constructed 274 of 529 machines
-        Constructed 0 states with 1 transitions
-        Constructing high-level wrapper
         Constructed 275 of 529 machines
         Constructed 276 of 529 machines
-        Constructed 277 of 559 machines
-        Constructed 278 of 559 machines
-        Constructed 279 of 559 machines
+        Constructed 277 of 529 machines
+        Constructed 0 states with 1 transitions
+        Constructing high-level wrapper
+        Constructed 278 of 529 machines
+        Constructed 279 of 529 machines
         Constructed 280 of 559 machines
         Constructed 281 of 559 machines
         Constructed 282 of 559 machines
@@ -682,11 +686,6 @@ License: Academic license for non-commercial use only
         Constructed 287 of 559 machines
         Constructed 288 of 559 machines
         Constructed 289 of 559 machines
-        Enumerated to 105 states and 270 transitions
-        Reduced 105 states to 105 states
-        Constructed 102 equivalence classes
-        Constructed 102 equivalence classes
-        Reduced 105 states to 102 equivalence classes
         Constructed 290 of 559 machines
         Constructed 291 of 559 machines
         Constructed 292 of 559 machines
@@ -707,15 +706,19 @@ License: Academic license for non-commercial use only
         Constructed 307 of 559 machines
         Constructed 308 of 559 machines
         Constructed 309 of 559 machines
+        Constructed 310 of 559 machines
         Enumerated to 151 states and 377 transitions
         Reduced 151 states to 151 states
         Constructed 94 equivalence classes
         Constructed 148 equivalence classes
         Constructed 148 equivalence classes
         Reduced 151 states to 148 equivalence classes
-        Constructed 310 of 559 machines
         Constructed 311 of 559 machines
         Constructed 312 of 559 machines
+        Enumerated to 2.045 states and 9.175 transitions
+        Constructed 1.000 states
+        Constructed 2.000 states
+        Reduced 2.045 states to 2.045 states
         Enumerated to 90 states and 159 transitions
         Reduced 90 states to 90 states
         Constructed 46 equivalence classes
@@ -737,6 +740,13 @@ License: Academic license for non-commercial use only
         Constructed 317 of 562 machines
         Constructed 318 of 562 machines
         Constructed 319 of 562 machines
+        Constructed 909 equivalence classes
+        Constructed 1.777 equivalence classes
+        Constructed 1.777 equivalence classes
+        Reduced 2.045 states to 1.777 equivalence classes
+        Constructed 320 of 562 machines
+        Constructed 321 of 562 machines
+        Constructed 322 of 562 machines
         Enumerated to 399 states and 748 transitions
         Reduced 399 states to 399 states
         Constructed 224 equivalence classes
@@ -747,30 +757,19 @@ License: Academic license for non-commercial use only
         Constructed 276 equivalence classes
         Constructed 276 equivalence classes
         Reduced 399 states to 276 equivalence classes
-        Constructed 320 of 562 machines
-        Constructed 321 of 562 machines
-        Constructed 322 of 562 machines
-        Constructed 323 of 567 machines
-        Constructed 324 of 567 machines
-        Constructed 325 of 567 machines
+        Constructed 323 of 562 machines
+        Constructed 324 of 562 machines
+        Constructed 325 of 562 machines
         Constructed 326 of 567 machines
         Constructed 327 of 567 machines
         Constructed 328 of 567 machines
-        Enumerated to 2.045 states and 9.175 transitions
-        Constructed 1.000 states
-        Constructed 2.000 states
-        Reduced 2.045 states to 2.045 states
-        Enumerated to 1.740 states and 5.786 transitions
-        Constructed 1.000 states
-        Reduced 1.740 states to 1.740 states
-        Constructed 909 equivalence classes
-        Constructed 1.777 equivalence classes
-        Constructed 1.777 equivalence classes
-        Reduced 2.045 states to 1.777 equivalence classes
-        Constructed 314 equivalence classes
         Constructed 329 of 567 machines
         Constructed 330 of 567 machines
         Constructed 331 of 567 machines
+        Enumerated to 1.740 states and 5.786 transitions
+        Constructed 1.000 states
+        Reduced 1.740 states to 1.740 states
+        Constructed 314 equivalence classes
         Constructed 735 equivalence classes
         Constructed 1.321 equivalence classes
         Constructed 1.369 equivalence classes
@@ -788,8 +787,8 @@ License: Academic license for non-commercial use only
         Constructed 334 of 569 machines
         Constructed 335 of 569 machines
         Constructed 336 of 569 machines
-        Constructed 10.169 states and 41.151 transitions
         Enumerated to 1.739 states and 5.784 transitions
+        Constructed 10.169 states and 41.151 transitions
         Constructed 315 equivalence classes
         Constructed 739 equivalence classes
         Constructed 1.321 equivalence classes
@@ -812,7 +811,7 @@ License: Academic license for non-commercial use only
         Constructed 344 of 575 machines
         Constructed 345 of 575 machines
         Constructed 346 of 575 machines
-        Constructed 20.194 states and 83.436 transitions
+        Constructed 20.158 states and 81.373 transitions
         Enumerated to 1.763 states and 4.278 transitions
         Constructed 207 equivalence classes
         Constructed 262 equivalence classes
@@ -846,9 +845,9 @@ License: Academic license for non-commercial use only
         Constructed 1.321 equivalence classes
         Constructed 1.321 equivalence classes
         Reduced 1.763 states to 1.321 equivalence classes
+        Constructed 30.174 states and 122.990 transitions
         Constructed 347 of 575 machines
         Constructed 348 of 575 machines
-        Constructed 30.145 states and 123.822 transitions
         Constructed 349 of 576 machines
         Constructed 350 of 576 machines
         Enumerated to 1.321 states and 3.595 transitions
@@ -895,8 +894,8 @@ License: Academic license for non-commercial use only
         Constructed 353 of 578 machines
         Constructed 354 of 578 machines
         Constructed 355 of 578 machines
-        Enumerated to 799 states and 2.305 transitions
         Constructed 40.134 states and 163.511 transitions
+        Enumerated to 799 states and 2.305 transitions
         Constructed 178 equivalence classes
         Constructed 202 equivalence classes
         Constructed 227 equivalence classes
@@ -975,7 +974,7 @@ License: Academic license for non-commercial use only
         Reduced 457 states to 397 equivalence classes
         Constructed 360 of 579 machines
         Constructed 361 of 579 machines
-        Constructed 362 of 581 machines
+        Constructed 362 of 580 machines
         Constructed 363 of 581 machines
         Constructed 364 of 581 machines
         Constructed 50.109 states and 204.067 transitions
@@ -1091,11 +1090,11 @@ License: Academic license for non-commercial use only
         Constructed 374 of 583 machines
         Constructed 375 of 585 machines
         Constructed 376 of 585 machines
+        Constructed 60.113 states and 245.191 transitions
         Constructed 377 of 585 machines
-        Constructed 60.123 states and 245.155 transitions
         Enumerated to 4.428 states and 26.729 transitions
+        Constructed 70.096 states and 283.889 transitions
         Constructed 278 equivalence classes
-        Constructed 70.093 states and 285.199 transitions
         Constructed 478 equivalence classes
         Constructed 672 equivalence classes
         Constructed 867 equivalence classes
@@ -1159,16 +1158,16 @@ License: Academic license for non-commercial use only
         Constructed 2.071 equivalence classes
         Constructed 2.071 equivalence classes
         Reduced 4.428 states to 2.071 equivalence classes
+        Constructed 80.096 states and 327.480 transitions
         Constructed 378 of 585 machines
         Constructed 379 of 585 machines
         Constructed 380 of 586 machines
         Constructed 381 of 586 machines
-        Constructed 80.128 states and 324.671 transitions
         Enumerated to 2.071 states and 11.417 transitions
         Constructed 1.000 states
         Constructed 2.000 states
         Reduced 2.071 states to 2.071 states
-        Constructed 90.085 states and 365.049 transitions
+        Constructed 90.095 states and 367.531 transitions
         Constructed 272 equivalence classes
         Constructed 471 equivalence classes
         Constructed 664 equivalence classes
@@ -1227,12 +1226,12 @@ License: Academic license for non-commercial use only
         Constructed 2.044 equivalence classes
         Constructed 2.048 equivalence classes
         Constructed 2.052 equivalence classes
+        Constructed 100.121 states and 407.195 transitions
         Constructed 2.055 equivalence classes
         Constructed 2.056 equivalence classes
         Constructed 2.056 equivalence classes
         Reduced 2.071 states to 2.056 equivalence classes
         Constructed 382 of 586 machines
-        Constructed 100.117 states and 407.132 transitions
         Constructed 274 equivalence classes
         Constructed 474 equivalence classes
         Constructed 667 equivalence classes
@@ -1296,15 +1295,15 @@ License: Academic license for non-commercial use only
         Reduced 2.056 states to 2.056 equivalence classes
         Constructed 383 of 586 machines
         Constructed 384 of 586 machines
+        Constructed 110.093 states and 446.642 transitions
         Constructed 385 of 588 machines
         Constructed 386 of 588 machines
         Constructed 387 of 588 machines
-        Constructed 110.093 states and 446.642 transitions
         Constructed 10.143 states and 36.513 transitions
-        Constructed 120.097 states and 492.941 transitions
+        Constructed 120.063 states and 492.773 transitions
         Enumerated to 11.560 states and 41.536 transitions
+        Constructed 130.025 states and 538.884 transitions
         Constructed 503 equivalence classes
-        Constructed 130.027 states and 538.885 transitions
         Constructed 1.616 equivalence classes
         Constructed 2.811 equivalence classes
         Constructed 4.033 equivalence classes
@@ -1366,16 +1365,14 @@ License: Academic license for non-commercial use only
         Constructed 10.593 equivalence classes
         Constructed 10.593 equivalence classes
         Reduced 11.560 states to 10.593 equivalence classes
-        Constructed 388 of 588 machines
-        Constructed 389 of 588 machines
-        Constructed 390 of 589 machines
-        Constructed 391 of 589 machines
         Enumerated to 134.848 states and 557.964 transitions
         Constructed 1.000 states
         Constructed 2.000 states
         Constructed 3.000 states
+        Constructed 388 of 588 machines
         Constructed 4.000 states
         Constructed 5.000 states
+        Constructed 389 of 588 machines
         Constructed 6.000 states
         Constructed 7.000 states
         Constructed 8.000 states
@@ -1390,7 +1387,9 @@ License: Academic license for non-commercial use only
         Constructed 17.000 states
         Constructed 18.000 states
         Constructed 19.000 states
+        Constructed 390 of 589 machines
         Constructed 20.000 states
+        Constructed 391 of 589 machines
         Constructed 21.000 states
         Constructed 22.000 states
         Constructed 23.000 states
@@ -1398,7 +1397,6 @@ License: Academic license for non-commercial use only
         Constructed 25.000 states
         Constructed 26.000 states
         Constructed 27.000 states
-        Constructed 10.050 states and 37.026 transitions
         Constructed 28.000 states
         Constructed 29.000 states
         Constructed 30.000 states
@@ -1411,26 +1409,14 @@ License: Academic license for non-commercial use only
         Constructed 37.000 states
         Constructed 38.000 states
         Constructed 39.000 states
-        Enumerated to 10.593 states and 39.214 transitions
         Constructed 40.000 states
-        Constructed 1.000 states
         Constructed 41.000 states
-        Constructed 2.000 states
-        Constructed 3.000 states
         Constructed 42.000 states
-        Constructed 4.000 states
         Constructed 43.000 states
-        Constructed 5.000 states
-        Constructed 6.000 states
         Constructed 44.000 states
         Constructed 45.000 states
-        Constructed 7.000 states
-        Constructed 8.000 states
         Constructed 46.000 states
-        Constructed 9.000 states
         Constructed 47.000 states
-        Constructed 10.000 states
-        Reduced 10.593 states to 10.593 states
         Constructed 48.000 states
         Constructed 49.000 states
         Constructed 50.000 states
@@ -1444,6 +1430,7 @@ License: Academic license for non-commercial use only
         Constructed 58.000 states
         Constructed 59.000 states
         Constructed 60.000 states
+        Constructed 10.050 states and 37.026 transitions
         Constructed 61.000 states
         Constructed 62.000 states
         Constructed 63.000 states
@@ -1457,15 +1444,27 @@ License: Academic license for non-commercial use only
         Constructed 71.000 states
         Constructed 72.000 states
         Constructed 73.000 states
+        Enumerated to 10.593 states and 39.214 transitions
         Constructed 74.000 states
+        Constructed 1.000 states
         Constructed 75.000 states
+        Constructed 2.000 states
         Constructed 76.000 states
+        Constructed 3.000 states
         Constructed 77.000 states
+        Constructed 4.000 states
+        Constructed 5.000 states
         Constructed 78.000 states
+        Constructed 6.000 states
         Constructed 79.000 states
+        Constructed 7.000 states
         Constructed 80.000 states
+        Constructed 8.000 states
         Constructed 81.000 states
+        Constructed 9.000 states
+        Constructed 10.000 states
         Constructed 82.000 states
+        Reduced 10.593 states to 10.593 states
         Constructed 83.000 states
         Constructed 84.000 states
         Constructed 85.000 states
@@ -1493,7 +1492,6 @@ License: Academic license for non-commercial use only
         Constructed 107.000 states
         Constructed 108.000 states
         Constructed 109.000 states
-        Constructed 231 equivalence classes
         Constructed 110.000 states
         Constructed 111.000 states
         Constructed 112.000 states
@@ -1507,13 +1505,11 @@ License: Academic license for non-commercial use only
         Constructed 120.000 states
         Constructed 121.000 states
         Constructed 122.000 states
-        Constructed 407 equivalence classes
         Constructed 123.000 states
         Constructed 124.000 states
         Constructed 125.000 states
         Constructed 126.000 states
         Constructed 127.000 states
-        Constructed 578 equivalence classes
         Constructed 128.000 states
         Constructed 129.000 states
         Constructed 130.000 states
@@ -1522,6 +1518,9 @@ License: Academic license for non-commercial use only
         Constructed 133.000 states
         Constructed 134.000 states
         Reduced 134.848 states to 134.848 states
+        Constructed 231 equivalence classes
+        Constructed 407 equivalence classes
+        Constructed 578 equivalence classes
         Constructed 762 equivalence classes
         Constructed 863 equivalence classes
         Constructed 995 equivalence classes
@@ -2025,6 +2024,7 @@ License: Academic license for non-commercial use only
         Constructed 169 equivalence classes
         Constructed 169 equivalence classes
         Reduced 190 states to 169 equivalence classes
+        Constructed 14.898 equivalence classes
         Constructed 442 of 605 machines
         Constructed 443 of 605 machines
         Constructed 444 of 607 machines
@@ -2046,7 +2046,6 @@ License: Academic license for non-commercial use only
         Constructed 460 of 608 machines
         Constructed 461 of 608 machines
         Constructed 462 of 608 machines
-        Constructed 14.898 equivalence classes
         Constructed 56.880 equivalence classes
         Constructed 93.594 equivalence classes
         Constructed 114.641 equivalence classes
@@ -2063,17 +2062,17 @@ License: Academic license for non-commercial use only
         Constructed 466 of 610 machines
         Constructed 467 of 610 machines
         Constructed 10.169 states and 41.156 transitions
-        Constructed 20.194 states and 83.445 transitions
-        Constructed 30.144 states and 123.830 transitions
+        Constructed 20.158 states and 81.379 transitions
+        Constructed 30.174 states and 122.996 transitions
         Constructed 40.133 states and 163.522 transitions
         Constructed 50.108 states and 204.076 transitions
-        Constructed 60.126 states and 245.158 transitions
-        Constructed 70.093 states and 285.202 transitions
-        Constructed 80.130 states and 324.674 transitions
-        Constructed 90.085 states and 365.055 transitions
-        Constructed 100.115 states and 407.134 transitions
+        Constructed 60.110 states and 245.197 transitions
+        Constructed 70.096 states and 283.892 transitions
+        Constructed 80.093 states and 327.495 transitions
+        Constructed 90.095 states and 367.531 transitions
+        Constructed 100.120 states and 407.198 transitions
         Constructed 110.094 states and 446.649 transitions
-        Constructed 120.095 states and 492.949 transitions
+        Constructed 120.060 states and 492.782 transitions
         Constructed 130.025 states and 538.887 transitions
         Enumerated to 134.845 states and 557.958 transitions
         Constructed 14.884 equivalence classes
@@ -2099,30 +2098,30 @@ License: Academic license for non-commercial use only
         Constructed 477 of 616 machines
         Constructed 10.172 states and 35.040 transitions
         Constructed 20.167 states and 72.783 transitions
-        Constructed 30.169 states and 109.301 transitions
-        Constructed 40.166 states and 147.793 transitions
-        Constructed 50.162 states and 183.699 transitions
-        Constructed 60.169 states and 220.569 transitions
-        Constructed 70.163 states and 259.115 transitions
-        Constructed 80.167 states and 294.230 transitions
-        Constructed 90.164 states and 332.264 transitions
+        Constructed 30.165 states and 109.177 transitions
+        Constructed 40.171 states and 143.818 transitions
+        Constructed 50.169 states and 182.530 transitions
+        Constructed 60.164 states and 220.758 transitions
+        Constructed 70.165 states and 259.058 transitions
+        Constructed 80.165 states and 294.159 transitions
+        Constructed 90.167 states and 332.275 transitions
         Constructed 100.167 states and 371.103 transitions
         Constructed 110.163 states and 409.530 transitions
-        Constructed 120.169 states and 446.072 transitions
-        Constructed 130.160 states and 484.194 transitions
-        Constructed 140.170 states and 521.096 transitions
-        Constructed 150.170 states and 556.003 transitions
-        Constructed 160.157 states and 595.527 transitions
+        Constructed 120.169 states and 444.607 transitions
+        Constructed 130.161 states and 480.745 transitions
+        Constructed 140.160 states and 519.336 transitions
+        Constructed 150.169 states and 556.904 transitions
+        Constructed 160.162 states and 595.605 transitions
         Constructed 170.152 states and 631.051 transitions
         Constructed 180.166 states and 668.347 transitions
         Constructed 190.162 states and 709.014 transitions
         Constructed 200.141 states and 744.771 transitions
-        Constructed 210.138 states and 781.736 transitions
-        Constructed 220.129 states and 818.690 transitions
-        Constructed 230.129 states and 854.400 transitions
+        Constructed 210.131 states and 782.367 transitions
+        Constructed 220.137 states and 816.459 transitions
+        Constructed 230.122 states and 854.571 transitions
         Constructed 240.082 states and 892.162 transitions
         Constructed 250.035 states and 934.164 transitions
-        Constructed 260.029 states and 977.528 transitions
+        Constructed 260.029 states and 976.974 transitions
         Enumerated to 267.240 states and 1.009.287 transitions
         Constructed 12.629 equivalence classes
         Constructed 15.392 equivalence classes
@@ -2187,17 +2186,17 @@ License: Academic license for non-commercial use only
         Constructed 479 of 616 machines
         Constructed 480 of 617 machines
         Constructed 481 of 617 machines
-        Constructed 10.080 states and 37.370 transitions
-        Constructed 20.078 states and 75.959 transitions
+        Constructed 10.080 states and 37.704 transitions
+        Constructed 20.082 states and 75.888 transitions
         Constructed 30.055 states and 114.714 transitions
         Constructed 40.050 states and 154.735 transitions
-        Constructed 50.059 states and 193.325 transitions
-        Constructed 60.054 states and 234.426 transitions
-        Constructed 70.047 states and 273.028 transitions
-        Constructed 80.055 states and 313.652 transitions
+        Constructed 50.043 states and 192.195 transitions
+        Constructed 60.054 states and 231.244 transitions
+        Constructed 70.049 states and 273.652 transitions
+        Constructed 80.050 states and 313.826 transitions
         Constructed 90.044 states and 354.265 transitions
         Constructed 100.043 states and 394.355 transitions
-        Constructed 110.026 states and 439.255 transitions
+        Constructed 110.029 states and 439.255 transitions
         Enumerated to 117.233 states and 471.275 transitions
         Constructed 1.000 states
         Constructed 2.000 states
@@ -2380,14 +2379,14 @@ License: Academic license for non-commercial use only
         Constructed 484 of 619 machines
         Constructed 485 of 619 machines
         Constructed 486 of 619 machines
-        Constructed 10.086 states and 39.865 transitions
-        Constructed 20.091 states and 82.157 transitions
+        Constructed 10.095 states and 40.574 transitions
+        Constructed 20.081 states and 82.211 transitions
         Constructed 30.061 states and 121.833 transitions
-        Constructed 40.058 states and 163.634 transitions
-        Constructed 50.057 states and 205.762 transitions
-        Constructed 60.059 states and 244.731 transitions
-        Constructed 70.061 states and 288.260 transitions
-        Constructed 80.051 states and 329.480 transitions
+        Constructed 40.058 states and 161.780 transitions
+        Constructed 50.050 states and 203.622 transitions
+        Constructed 60.056 states and 246.058 transitions
+        Constructed 70.054 states and 288.279 transitions
+        Constructed 80.052 states and 329.469 transitions
         Constructed 90.036 states and 376.800 transitions
         Enumerated to 96.653 states and 407.711 transitions
         Constructed 12.016 equivalence classes
@@ -2451,13 +2450,13 @@ License: Academic license for non-commercial use only
         Constructed 488 of 619 machines
         Constructed 489 of 620 machines
         Constructed 490 of 620 machines
-        Constructed 10.071 states and 40.061 transitions
-        Constructed 20.068 states and 82.293 transitions
+        Constructed 10.073 states and 40.715 transitions
+        Constructed 20.071 states and 82.335 transitions
         Constructed 30.051 states and 121.858 transitions
-        Constructed 40.047 states and 163.656 transitions
-        Constructed 50.049 states and 205.743 transitions
-        Constructed 60.045 states and 244.737 transitions
-        Constructed 70.051 states and 288.294 transitions
+        Constructed 40.046 states and 161.791 transitions
+        Constructed 50.038 states and 203.624 transitions
+        Constructed 60.043 states and 246.072 transitions
+        Constructed 70.044 states and 288.296 transitions
         Constructed 80.042 states and 329.482 transitions
         Constructed 90.036 states and 376.800 transitions
         Enumerated to 96.653 states and 407.711 transitions
@@ -2615,15 +2614,15 @@ License: Academic license for non-commercial use only
         Constructed 494 of 620 machines
         Constructed 495 of 621 machines
         Constructed 496 of 621 machines
-        Constructed 10.070 states and 40.094 transitions
-        Constructed 20.068 states and 82.305 transitions
+        Constructed 10.071 states and 40.725 transitions
+        Constructed 20.071 states and 82.343 transitions
         Constructed 30.046 states and 123.006 transitions
-        Constructed 40.051 states and 164.616 transitions
-        Constructed 50.051 states and 207.065 transitions
-        Constructed 60.050 states and 248.605 transitions
+        Constructed 40.046 states and 163.979 transitions
+        Constructed 50.046 states and 206.576 transitions
+        Constructed 60.046 states and 249.785 transitions
         Constructed 70.042 states and 291.409 transitions
-        Constructed 80.045 states and 336.146 transitions
-        Constructed 90.024 states and 383.158 transitions
+        Constructed 80.040 states and 336.140 transitions
+        Constructed 90.028 states and 383.156 transitions
         Enumerated to 92.539 states and 395.373 transitions
         Constructed 10.943 equivalence classes
         Constructed 13.519 equivalence classes
@@ -2682,33 +2681,33 @@ License: Academic license for non-commercial use only
         Constructed 499 of 623 machines
         Constructed 500 of 623 machines
         Constructed 501 of 623 machines
-        Constructed 10.287 states and 42.188 transitions
-        Constructed 20.289 states and 86.613 transitions
-        Constructed 30.286 states and 133.113 transitions
-        Constructed 40.286 states and 180.543 transitions
-        Constructed 50.293 states and 226.911 transitions
-        Constructed 60.279 states and 274.759 transitions
-        Constructed 70.252 states and 319.319 transitions
-        Constructed 80.255 states and 363.991 transitions
-        Constructed 90.253 states and 412.149 transitions
-        Constructed 100.254 states and 457.232 transitions
-        Constructed 110.254 states and 505.691 transitions
-        Constructed 120.239 states and 552.940 transitions
-        Constructed 130.254 states and 600.634 transitions
-        Constructed 140.256 states and 647.867 transitions
-        Constructed 150.261 states and 693.048 transitions
-        Constructed 160.254 states and 739.522 transitions
-        Constructed 170.262 states and 782.077 transitions
-        Constructed 180.251 states and 832.684 transitions
-        Constructed 190.239 states and 876.341 transitions
-        Constructed 200.254 states and 920.382 transitions
-        Constructed 210.243 states and 967.758 transitions
-        Constructed 220.242 states and 1.018.785 transitions
-        Constructed 230.237 states and 1.072.667 transitions
-        Constructed 240.248 states and 1.123.150 transitions
-        Constructed 250.046 states and 1.177.153 transitions
-        Constructed 260.059 states and 1.227.387 transitions
-        Constructed 270.063 states and 1.277.520 transitions
+        Constructed 10.295 states and 42.206 transitions
+        Constructed 20.297 states and 86.627 transitions
+        Constructed 30.299 states and 133.087 transitions
+        Constructed 40.294 states and 180.544 transitions
+        Constructed 50.287 states and 226.970 transitions
+        Constructed 60.288 states and 274.885 transitions
+        Constructed 70.261 states and 319.308 transitions
+        Constructed 80.262 states and 363.830 transitions
+        Constructed 90.260 states and 412.157 transitions
+        Constructed 100.256 states and 457.185 transitions
+        Constructed 110.261 states and 505.672 transitions
+        Constructed 120.244 states and 552.932 transitions
+        Constructed 130.263 states and 600.603 transitions
+        Constructed 140.265 states and 647.883 transitions
+        Constructed 150.267 states and 693.592 transitions
+        Constructed 160.263 states and 739.518 transitions
+        Constructed 170.274 states and 782.046 transitions
+        Constructed 180.260 states and 832.672 transitions
+        Constructed 190.247 states and 876.343 transitions
+        Constructed 200.251 states and 920.391 transitions
+        Constructed 210.248 states and 967.746 transitions
+        Constructed 220.253 states and 1.018.777 transitions
+        Constructed 230.241 states and 1.072.605 transitions
+        Constructed 240.251 states and 1.123.225 transitions
+        Constructed 250.048 states and 1.177.155 transitions
+        Constructed 260.068 states and 1.227.328 transitions
+        Constructed 270.040 states and 1.277.919 transitions
         Enumerated to 277.617 states and 1.318.394 transitions
         Constructed 14.922 equivalence classes
         Constructed 26.575 equivalence classes
@@ -2775,24 +2774,24 @@ License: Academic license for non-commercial use only
         Constructed 503 of 623 machines
         Constructed 504 of 624 machines
         Constructed 505 of 624 machines
-        Constructed 10.188 states and 44.795 transitions
-        Constructed 20.183 states and 92.637 transitions
-        Constructed 30.172 states and 142.269 transitions
-        Constructed 40.180 states and 191.053 transitions
-        Constructed 50.160 states and 238.388 transitions
-        Constructed 60.161 states and 286.680 transitions
-        Constructed 70.148 states and 335.336 transitions
-        Constructed 80.154 states and 385.469 transitions
-        Constructed 90.144 states and 436.276 transitions
-        Constructed 100.155 states and 485.114 transitions
-        Constructed 110.137 states and 534.228 transitions
-        Constructed 120.136 states and 581.535 transitions
-        Constructed 130.150 states and 628.391 transitions
-        Constructed 140.152 states and 674.691 transitions
-        Constructed 150.140 states and 729.731 transitions
-        Constructed 160.145 states and 785.246 transitions
-        Constructed 170.058 states and 839.730 transitions
-        Constructed 180.050 states and 892.377 transitions
+        Constructed 10.199 states and 44.714 transitions
+        Constructed 20.189 states and 92.644 transitions
+        Constructed 30.179 states and 142.261 transitions
+        Constructed 40.193 states and 191.220 transitions
+        Constructed 50.172 states and 238.278 transitions
+        Constructed 60.156 states and 286.001 transitions
+        Constructed 70.154 states and 335.320 transitions
+        Constructed 80.157 states and 385.469 transitions
+        Constructed 90.142 states and 436.250 transitions
+        Constructed 100.163 states and 484.792 transitions
+        Constructed 110.149 states and 534.209 transitions
+        Constructed 120.145 states and 581.514 transitions
+        Constructed 130.156 states and 628.394 transitions
+        Constructed 140.156 states and 674.703 transitions
+        Constructed 150.147 states and 729.859 transitions
+        Constructed 160.140 states and 785.220 transitions
+        Constructed 170.060 states and 839.732 transitions
+        Constructed 180.044 states and 892.147 transitions
         Enumerated to 186.842 states and 929.625 transitions
         Constructed 1.000 states
         Constructed 2.000 states
@@ -3102,27 +3101,27 @@ License: Academic license for non-commercial use only
         Constructed 509 of 626 machines
         Constructed 510 of 626 machines
         Constructed 511 of 626 machines
-        Constructed 10.255 states and 38.752 transitions
-        Constructed 20.247 states and 82.094 transitions
-        Constructed 30.246 states and 127.286 transitions
-        Constructed 40.251 states and 172.211 transitions
-        Constructed 50.225 states and 214.426 transitions
-        Constructed 60.229 states and 260.319 transitions
-        Constructed 70.232 states and 306.146 transitions
-        Constructed 80.224 states and 349.774 transitions
-        Constructed 90.212 states and 395.845 transitions
-        Constructed 100.228 states and 440.365 transitions
-        Constructed 110.225 states and 481.791 transitions
-        Constructed 120.231 states and 526.301 transitions
-        Constructed 130.231 states and 568.093 transitions
-        Constructed 140.219 states and 618.163 transitions
-        Constructed 150.220 states and 669.239 transitions
-        Constructed 160.170 states and 720.771 transitions
-        Constructed 170.168 states and 766.283 transitions
-        Constructed 180.158 states and 810.955 transitions
-        Constructed 190.156 states and 858.817 transitions
-        Constructed 200.055 states and 905.379 transitions
-        Constructed 210.048 states and 953.641 transitions
+        Constructed 10.263 states and 38.760 transitions
+        Constructed 20.255 states and 82.110 transitions
+        Constructed 30.254 states and 127.345 transitions
+        Constructed 40.260 states and 172.221 transitions
+        Constructed 50.232 states and 214.435 transitions
+        Constructed 60.237 states and 260.326 transitions
+        Constructed 70.240 states and 306.153 transitions
+        Constructed 80.233 states and 349.782 transitions
+        Constructed 90.220 states and 395.852 transitions
+        Constructed 100.236 states and 440.372 transitions
+        Constructed 110.234 states and 481.799 transitions
+        Constructed 120.235 states and 527.508 transitions
+        Constructed 130.230 states and 568.028 transitions
+        Constructed 140.226 states and 618.172 transitions
+        Constructed 150.225 states and 670.098 transitions
+        Constructed 160.178 states and 720.775 transitions
+        Constructed 170.175 states and 766.287 transitions
+        Constructed 180.165 states and 810.959 transitions
+        Constructed 190.161 states and 858.812 transitions
+        Constructed 200.057 states and 905.381 transitions
+        Constructed 210.045 states and 953.647 transitions
         Enumerated to 214.458 states and 976.549 transitions
         Constructed 18.319 equivalence classes
         Constructed 34.132 equivalence classes
@@ -6421,13 +6420,13 @@ License: Academic license for non-commercial use only
         Constructed 667 of 670 machines
         Constructed 668 of 670 machines
         Constructed 669 of 670 machines
-        Constructed 670 of 681 machines
-        Constructed 671 of 681 machines
-        Constructed 672 of 681 machines
-        Constructed 673 of 681 machines
-        Constructed 674 of 681 machines
-        Constructed 675 of 681 machines
-        Constructed 676 of 681 machines
+        Constructed 670 of 679 machines
+        Constructed 671 of 679 machines
+        Constructed 672 of 679 machines
+        Constructed 673 of 679 machines
+        Constructed 674 of 679 machines
+        Constructed 675 of 679 machines
+        Constructed 676 of 679 machines
         Constructed 677 of 681 machines
         Constructed 678 of 681 machines
         Constructed 679 of 681 machines
@@ -6437,14 +6436,14 @@ License: Academic license for non-commercial use only
         Next level storage overhead is 4,1512 bytes per state (415,12 MB per 100 million states)
         Using BTree blocks of size 8 KiB and next-level blocks of size 8 KiB
         On ply 1
-        On ply 2 - visited 1 state pairs and 18 transitions in 0,001 seconds at 1.000 state pairs and 18.000 transitions per second using 210MB total storage.
-        On ply 3 - visited 18 state pairs and 227 transitions in 0,002 seconds at 9.000 state pairs and 113.500 transitions per second using 210MB total storage.
-        On ply 4 - visited 131 state pairs and 1.251 transitions in 0,004 seconds at 32.750 state pairs and 312.750 transitions per second using 210MB total storage.
-        On ply 5 - visited 537 state pairs and 4.073 transitions in 0,009 seconds at 59.666,7 state pairs and 452.556 transitions per second using 210MB total storage.
-        On ply 6 - visited 1.455 state pairs and 9.231 transitions in 0,016 seconds at 90.937,5 state pairs and 576.938 transitions per second using 210MB total storage.
-        On ply 7 - visited 2.885 state pairs and 15.840 transitions in 0,032 seconds at 90.156,2 state pairs and 495.000 transitions per second using 210MB total storage.
-        On ply 8 - visited 4.481 state pairs and 21.958 transitions in 0,045 seconds at 99.577,8 state pairs and 487.956 transitions per second using 210MB total storage.
-        On ply 9 - visited 5.787 state pairs and 26.400 transitions in 0,056 seconds at 103.339 state pairs and 471.429 transitions per second using 210MB total storage.
+        On ply 2 - visited 1 state pairs and 18 transitions in 0 seconds at inf state pairs and inf transitions per second using 210MB total storage.
+        On ply 3 - visited 18 state pairs and 227 transitions in 0 seconds at inf state pairs and inf transitions per second using 210MB total storage.
+        On ply 4 - visited 131 state pairs and 1.251 transitions in 0,003 seconds at 43.666,7 state pairs and 417.000 transitions per second using 210MB total storage.
+        On ply 5 - visited 537 state pairs and 4.073 transitions in 0,007 seconds at 76.714,3 state pairs and 581.857 transitions per second using 210MB total storage.
+        On ply 6 - visited 1.455 state pairs and 9.231 transitions in 0,014 seconds at 103.929 state pairs and 659.357 transitions per second using 210MB total storage.
+        On ply 7 - visited 2.885 state pairs and 15.840 transitions in 0,024 seconds at 120.208 state pairs and 660.000 transitions per second using 210MB total storage.
+        On ply 8 - visited 4.481 state pairs and 21.958 transitions in 0,036 seconds at 124.472 state pairs and 609.944 transitions per second using 210MB total storage.
+        On ply 9 - visited 5.787 state pairs and 26.400 transitions in 0,047 seconds at 123.128 state pairs and 561.702 transitions per second using 210MB total storage.
         Finished
         Reconstructing counterexamples
 not STOP
