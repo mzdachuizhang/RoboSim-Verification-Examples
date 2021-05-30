@@ -1,0 +1,5 @@
+Error reading /home/madiel/Dropbox/UFPE/RS2UPPAAL/2021/TASEcaseStudies3005/AlphaAlgorithm/UPPAAL/files/AlphaAlgorith.xml
+
+real	0m0,004s
+user	0m0,001s
+sys	0m0,003s

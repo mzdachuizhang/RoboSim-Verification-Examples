@@ -1,0 +1,17 @@
+Options for the verification:
+  Generating no trace
+  Search order is breadth first
+  Using conservative space optimisation
+  Seed is 1622379699
+  State space representation uses minimal constraint systems
+[2K
+Verifying formula 1 at /nta/queries/query[1]/formula
+ -- Throughput: 289988 states/sec, Load: 14594 states[K -- Throughput: 295339 states/sec, Load: 10087 states[K -- Throughput: 274440 states/sec, Load: 37313 states[K -- Throughput: 271116 states/sec, Load: 53985 states[K -- Throughput: 257167 states/sec, Load: 50235 states[K -- Throughput: 298747 states/sec, Load: 26856 states[K -- Throughput: 277171 states/sec, Load: 26256 states[K -- Throughput: 307324 states/sec, Load: 10097 states[K -- Throughput: 239929 states/sec, Load: 32855 states[K -- Throughput: 265033 states/sec, Load: 40398 states[K -- Throughput: 259037 states/sec, Load: 13049 states[K -- Throughput: 273805 states/sec, Load: 38171 states[K -- Throughput: 289959 states/sec, Load: 29177 states[K -- Throughput: 199054 states/sec, Load: 60825 states[K -- Throughput: 333032 states/sec, Load: 16346 states[K -- Throughput: 304948 states/sec, Load: 10874 states[K -- Throughput: 261487 states/sec, Load: 17804 states[K -- Throughput: 253414 states/sec, Load: 45046 states[K -- Throughput: 246036 states/sec, Load: 93671 states[K -- Throughput: 252291 states/sec, Load: 107434 states[K -- Throughput: 287480 states/sec, Load: 61475 states[K -- Throughput: 217335 states/sec, Load: 38983 states[K -- Throughput: 274327 states/sec, Load: 29024 states[K -- Throughput: 293254 states/sec, Load: 27479 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6818900 states
+ -- CPU user time used : 25180 ms
+ -- Virtual memory used : 628464 KiB
+ -- Resident memory used : 601496 KiB
+[2K
+Verifying formula 2 at /nta/queries/query[2]/formula
+ -- Throughput: 7 states/sec, Load: 128 states[K -- Throughput: 434896 states/sec, Load: 3102 states[K -- Throughput: 453386 states/sec, Load: 14907 states[K -- Throughput: 420608 states/sec, Load: 52545 states[K -- Throughput: 425072 states/sec, Load: 31060 states[K -- Throughput: 448222 states/sec, Load: 17039 states[K -- Throughput: 381766 states/sec, Load: 42638 states[K -- Throughput: 354892 states/sec, Load: 29247 states[K -- Throughput: 436643 states/sec, Load: 52605 states[K -- Throughput: 461600 states/sec, Load: 8144 states[K -- Throughput: 424477 states/sec, Load: 14481 states[K -- Throughput: 434131 states/sec, Load: 24618 states[K
