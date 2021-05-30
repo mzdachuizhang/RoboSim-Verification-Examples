@@ -1,0 +1,165 @@
+Options for the verification:
+  Generating no trace
+  Search order is breadth first
+  Using conservative space optimisation
+  Seed is 1622382148
+  State space representation uses minimal constraint systems
+[2K
+Verifying formula 1 at /nta/queries/query[1]/formula
+ -- Throughput: 148145 states/sec, Load: 25226 states[K -- Throughput: 165218 states/sec, Load: 16995 states[K -- Throughput: 170935 states/sec, Load: 4431 states[K -- Throughput: 159651 states/sec, Load: 11462 states[K -- Throughput: 153180 states/sec, Load: 26642 states[K -- Throughput: 166412 states/sec, Load: 37248 states[K -- Throughput: 175023 states/sec, Load: 18463 states[K -- Throughput: 140690 states/sec, Load: 48489 states[K -- Throughput: 160110 states/sec, Load: 46226 states[K -- Throughput: 150154 states/sec, Load: 30608 states[K -- Throughput: 165573 states/sec, Load: 27615 states[K -- Throughput: 149800 states/sec, Load: 43816 states[K -- Throughput: 171629 states/sec, Load: 26692 states[K -- Throughput: 174700 states/sec, Load: 23561 states[K -- Throughput: 137454 states/sec, Load: 44369 states[K -- Throughput: 156222 states/sec, Load: 33152 states[K -- Throughput: 162397 states/sec, Load: 10896 states[K -- Throughput: 142027 states/sec, Load: 33981 states[K -- Throughput: 126506 states/sec, Load: 40477 states[K -- Throughput: 186162 states/sec, Load: 14461 states[K -- Throughput: 145586 states/sec, Load: 52337 states[K -- Throughput: 187389 states/sec, Load: 24486 states[K -- Throughput: 156628 states/sec, Load: 34620 states[K -- Throughput: 148231 states/sec, Load: 63669 states[K -- Throughput: 158778 states/sec, Load: 61617 states[K -- Throughput: 188311 states/sec, Load: 20815 states[K -- Throughput: 182923 states/sec, Load: 13255 states[K -- Throughput: 165742 states/sec, Load: 13139 states[K -- Throughput: 144845 states/sec, Load: 24490 states[K -- Throughput: 151935 states/sec, Load: 17841 states[K -- Throughput: 133673 states/sec, Load: 55678 states[K -- Throughput: 157117 states/sec, Load: 45998 states[K -- Throughput: 178426 states/sec, Load: 10787 states[K -- Throughput: 130159 states/sec, Load: 62280 states[K -- Throughput: 121750 states/sec, Load: 107313 states[K -- Throughput: 190531 states/sec, Load: 64142 states[K -- Throughput: 159103 states/sec, Load: 34728 states[K -- Throughput: 137160 states/sec, Load: 62575 states[K -- Throughput: 101710 states/sec, Load: 64298 states[K -- Throughput: 182826 states/sec, Load: 37726 states[K -- Throughput: 176025 states/sec, Load: 13963 states[K -- Throughput: 157035 states/sec, Load: 26804 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6818900 states
+ -- CPU user time used : 43600 ms
+ -- Virtual memory used : 627328 KiB
+ -- Resident memory used : 600692 KiB
+[2K
+Verifying formula 2 at /nta/queries/query[2]/formula
+ -- Throughput: 4 states/sec, Load: 128 states[K -- Throughput: 249167 states/sec, Load: 18762 states[K -- Throughput: 263888 states/sec, Load: 5944 states[K -- Throughput: 243044 states/sec, Load: 37061 states[K -- Throughput: 275601 states/sec, Load: 35193 states[K -- Throughput: 247508 states/sec, Load: 50758 states[K -- Throughput: 225460 states/sec, Load: 50365 states[K -- Throughput: 265148 states/sec, Load: 31015 states[K -- Throughput: 257628 states/sec, Load: 41151 states[K -- Throughput: 278380 states/sec, Load: 20183 states[K -- Throughput: 224242 states/sec, Load: 42988 states[K -- Throughput: 232845 states/sec, Load: 37368 states[K -- Throughput: 210304 states/sec, Load: 28821 states[K -- Throughput: 238761 states/sec, Load: 55628 states[K -- Throughput: 278137 states/sec, Load: 25574 states[K -- Throughput: 259188 states/sec, Load: 20294 states[K -- Throughput: 238287 states/sec, Load: 59805 states[K -- Throughput: 286842 states/sec, Load: 16478 states[K -- Throughput: 269527 states/sec, Load: 12473 states[K -- Throughput: 229775 states/sec, Load: 18295 states[K -- Throughput: 220768 states/sec, Load: 50913 states[K -- Throughput: 243254 states/sec, Load: 19429 states[K -- Throughput: 224110 states/sec, Load: 32812 states[K -- Throughput: 216456 states/sec, Load: 59484 states[K -- Throughput: 232832 states/sec, Load: 28471 states[K -- Throughput: 159494 states/sec, Load: 47816 states[K -- Throughput: 249318 states/sec, Load: 29142 states[K -- Throughput: 260780 states/sec, Load: 11922 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6818900 states
+ -- CPU user time used : 29710 ms
+ -- Virtual memory used : 627328 KiB
+ -- Resident memory used : 600704 KiB
+[2K
+Verifying formula 3 at /nta/queries/query[3]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 633 states
+ -- States explored : 542 states
+ -- CPU user time used : 1780 ms
+ -- Virtual memory used : 627296 KiB
+ -- Resident memory used : 600704 KiB
+[2K
+Verifying formula 4 at /nta/queries/query[4]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 1221 states
+ -- States explored : 1309 states
+ -- CPU user time used : 10 ms
+ -- Virtual memory used : 528980 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 5 at /nta/queries/query[5]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 8620 states
+ -- States explored : 12642 states
+ -- CPU user time used : 50 ms
+ -- Virtual memory used : 528980 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 6 at /nta/queries/query[6]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 10551 states
+ -- States explored : 15045 states
+ -- CPU user time used : 50 ms
+ -- Virtual memory used : 528980 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 7 at /nta/queries/query[7]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K -- Throughput: 243370 states/sec, Load: 18762 states[K[2K -- Formula is satisfied.
+ -- States stored : 226347 states
+ -- States explored : 320696 states
+ -- CPU user time used : 1250 ms
+ -- Virtual memory used : 528980 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 8 at /nta/queries/query[8]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K -- Throughput: 245956 states/sec, Load: 18762 states[K -- Throughput: 260086 states/sec, Load: 5590 states[K[2K -- Formula is satisfied.
+ -- States stored : 375376 states
+ -- States explored : 527805 states
+ -- CPU user time used : 2100 ms
+ -- Virtual memory used : 528980 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 9 at /nta/queries/query[9]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K -- Throughput: 245674 states/sec, Load: 18762 states[K -- Throughput: 259249 states/sec, Load: 5572 states[K[2K -- Formula is satisfied.
+ -- States stored : 394833 states
+ -- States explored : 551263 states
+ -- CPU user time used : 2260 ms
+ -- Virtual memory used : 414320 KiB
+ -- Resident memory used : 408412 KiB
+[2K
+Verifying formula 10 at /nta/queries/query[10]/formula
+ -- Throughput: 2 states/sec, Load: 128 states[K -- Throughput: 244449 states/sec, Load: 18762 states[K -- Throughput: 259612 states/sec, Load: 5383 states[K -- Throughput: 245257 states/sec, Load: 37089 states[K -- Throughput: 293944 states/sec, Load: 37193 states[K -- Throughput: 256473 states/sec, Load: 44822 states[K -- Throughput: 227648 states/sec, Load: 51156 states[K -- Throughput: 267219 states/sec, Load: 29967 states[K -- Throughput: 262119 states/sec, Load: 29355 states[K -- Throughput: 273100 states/sec, Load: 16355 states[K -- Throughput: 226469 states/sec, Load: 33152 states[K -- Throughput: 242955 states/sec, Load: 37490 states[K -- Throughput: 207982 states/sec, Load: 40583 states[K -- Throughput: 265685 states/sec, Load: 55601 states[K -- Throughput: 277269 states/sec, Load: 17019 states[K -- Throughput: 269957 states/sec, Load: 8146 states[K -- Throughput: 247834 states/sec, Load: 37857 states[K -- Throughput: 294208 states/sec, Load: 10541 states[K -- Throughput: 251707 states/sec, Load: 28064 states[K -- Throughput: 242864 states/sec, Load: 12179 states[K -- Throughput: 226392 states/sec, Load: 45566 states[K -- Throughput: 217758 states/sec, Load: 93845 states[K -- Throughput: 226234 states/sec, Load: 106684 states[K -- Throughput: 250524 states/sec, Load: 66727 states[K -- Throughput: 229894 states/sec, Load: 62585 states[K -- Throughput: 171580 states/sec, Load: 57228 states[K -- Throughput: 270846 states/sec, Load: 8696 states[K -- Throughput: 260282 states/sec, Load: 18083 states[K[2K -- Formula is NOT satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6818900 states
+ -- CPU user time used : 27670 ms
+ -- Virtual memory used : 627312 KiB
+ -- Resident memory used : 600568 KiB
+[2K
+Verifying formula 11 at /nta/queries/query[11]/formula
+ -- Throughput: 1 states/sec, Load: 128 states[K -- Throughput: 254606 states/sec, Load: 18762 states[K -- Throughput: 272674 states/sec, Load: 4602 states[K[2K -- Formula is satisfied.
+ -- States stored : 464196 states
+ -- States explored : 661801 states
+ -- CPU user time used : 4010 ms
+ -- Virtual memory used : 627312 KiB
+ -- Resident memory used : 600568 KiB
+[2K
+Verifying formula 12 at /nta/queries/query[12]/formula
+ -- Throughput: 1 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 499 states
+ -- States explored : 453 states
+ -- CPU user time used : 130 ms
+ -- Virtual memory used : 528996 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 13 at /nta/queries/query[13]/formula
+ -- Throughput: 1 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 1086 states
+ -- States explored : 1146 states
+ -- CPU user time used : 10 ms
+ -- Virtual memory used : 528996 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 14 at /nta/queries/query[14]/formula
+ -- Throughput: 1 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 2047 states
+ -- States explored : 2201 states
+ -- CPU user time used : 10 ms
+ -- Virtual memory used : 528996 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 15 at /nta/queries/query[15]/formula
+[2K -- Formula is satisfied.
+ -- States explored : 0 states
+ -- CPU user time used : 0 ms
+ -- Virtual memory used : 528996 KiB
+ -- Resident memory used : 522980 KiB
+[2K
+Verifying formula 16 at /nta/queries/query[16]/formula
+ -- Throughput: 1 states/sec, Load: 5 states[K -- Throughput: 253801 states/sec, Load: 18849 states[K -- Throughput: 267870 states/sec, Load: 5260 states[K -- Throughput: 247375 states/sec, Load: 37041 states[K -- Throughput: 278859 states/sec, Load: 28890 states[K -- Throughput: 247894 states/sec, Load: 43279 states[K -- Throughput: 227866 states/sec, Load: 50845 states[K -- Throughput: 269005 states/sec, Load: 30993 states[K -- Throughput: 262467 states/sec, Load: 30772 states[K -- Throughput: 279540 states/sec, Load: 16204 states[K -- Throughput: 224123 states/sec, Load: 32801 states[K -- Throughput: 241297 states/sec, Load: 37490 states[K -- Throughput: 205605 states/sec, Load: 40545 states[K -- Throughput: 261909 states/sec, Load: 55623 states[K -- Throughput: 276205 states/sec, Load: 20009 states[K -- Throughput: 266495 states/sec, Load: 9193 states[K -- Throughput: 250613 states/sec, Load: 42111 states[K -- Throughput: 292267 states/sec, Load: 11936 states[K -- Throughput: 257926 states/sec, Load: 20801 states[K -- Throughput: 237555 states/sec, Load: 13552 states[K -- Throughput: 226751 states/sec, Load: 45308 states[K -- Throughput: 214838 states/sec, Load: 94030 states[K -- Throughput: 224468 states/sec, Load: 106644 states[K -- Throughput: 255580 states/sec, Load: 62077 states[K -- Throughput: 228326 states/sec, Load: 53955 states[K -- Throughput: 167166 states/sec, Load: 63230 states[K -- Throughput: 269040 states/sec, Load: 8615 states[K -- Throughput: 256895 states/sec, Load: 17435 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6820550 states
+ -- CPU user time used : 28380 ms
+ -- Virtual memory used : 627372 KiB
+ -- Resident memory used : 621184 KiB
+[2K
+Verifying formula 17 at /nta/queries/query[17]/formula
+ -- Throughput: 1 states/sec, Load: 128 states[K -- Throughput: 248293 states/sec, Load: 18762 states[K -- Throughput: 261710 states/sec, Load: 5944 states[K -- Throughput: 240746 states/sec, Load: 37073 states[K -- Throughput: 276872 states/sec, Load: 37189 states[K -- Throughput: 243442 states/sec, Load: 53325 states[K -- Throughput: 221581 states/sec, Load: 49447 states[K -- Throughput: 260110 states/sec, Load: 30913 states[K -- Throughput: 253398 states/sec, Load: 47496 states[K -- Throughput: 276176 states/sec, Load: 26260 states[K -- Throughput: 221769 states/sec, Load: 47069 states[K -- Throughput: 246004 states/sec, Load: 7025 states[K -- Throughput: 197927 states/sec, Load: 34446 states[K -- Throughput: 265951 states/sec, Load: 6597 states[K -- Throughput: 247771 states/sec, Load: 25711 states[K -- Throughput: 255533 states/sec, Load: 27584 states[K -- Throughput: 243414 states/sec, Load: 51031 states[K -- Throughput: 277621 states/sec, Load: 16597 states[K -- Throughput: 276602 states/sec, Load: 14681 states[K -- Throughput: 227708 states/sec, Load: 18075 states[K -- Throughput: 219146 states/sec, Load: 55936 states[K -- Throughput: 240877 states/sec, Load: 24806 states[K -- Throughput: 220885 states/sec, Load: 63290 states[K -- Throughput: 216554 states/sec, Load: 82551 states[K -- Throughput: 235535 states/sec, Load: 37824 states[K -- Throughput: 226458 states/sec, Load: 43004 states[K -- Throughput: 162557 states/sec, Load: 29056 states[K -- Throughput: 268429 states/sec, Load: 19917 states[K -- Throughput: 248249 states/sec, Load: 2421 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6818900 states
+ -- CPU user time used : 29990 ms
+ -- Virtual memory used : 627372 KiB
+ -- Resident memory used : 621392 KiB
+[2K
+Verifying formula 18 at /nta/queries/query[18]/formula
+ -- Throughput: 1 states/sec, Load: 128 states[K -- Throughput: 253273 states/sec, Load: 18762 states[K -- Throughput: 269403 states/sec, Load: 4973 states[K -- Throughput: 250375 states/sec, Load: 37041 states[K -- Throughput: 282491 states/sec, Load: 25828 states[K -- Throughput: 251660 states/sec, Load: 38193 states[K -- Throughput: 230475 states/sec, Load: 51003 states[K -- Throughput: 272119 states/sec, Load: 26163 states[K -- Throughput: 259767 states/sec, Load: 26608 states[K -- Throughput: 276096 states/sec, Load: 14540 states[K -- Throughput: 223240 states/sec, Load: 32801 states[K -- Throughput: 242978 states/sec, Load: 33233 states[K -- Throughput: 205121 states/sec, Load: 39927 states[K -- Throughput: 265471 states/sec, Load: 55603 states[K -- Throughput: 267798 states/sec, Load: 13323 states[K -- Throughput: 264684 states/sec, Load: 8195 states[K -- Throughput: 247461 states/sec, Load: 40197 states[K -- Throughput: 287897 states/sec, Load: 11416 states[K -- Throughput: 255867 states/sec, Load: 21763 states[K -- Throughput: 235691 states/sec, Load: 15350 states[K -- Throughput: 225517 states/sec, Load: 44757 states[K -- Throughput: 215059 states/sec, Load: 94147 states[K -- Throughput: 226037 states/sec, Load: 106609 states[K -- Throughput: 259419 states/sec, Load: 58292 states[K -- Throughput: 231808 states/sec, Load: 43560 states[K -- Throughput: 164999 states/sec, Load: 61766 states[K -- Throughput: 271743 states/sec, Load: 8472 states[K -- Throughput: 258167 states/sec, Load: 17459 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6818900 states
+ -- CPU user time used : 29310 ms
+ -- Virtual memory used : 627372 KiB
+ -- Resident memory used : 621392 KiB
+[2K
+Verifying formula 19 at /nta/queries/query[19]/formula
+ -- Throughput: 0 states/sec, Load: 128 states[K -- Throughput: 1 states/sec, Load: 7399 states[K -- Throughput: 232083 states/sec, Load: 41913 states[K -- Throughput: 220635 states/sec, Load: 28992 states[K -- Throughput: 266062 states/sec, Load: 8530 states[K -- Throughput: 246301 states/sec, Load: 19758 states[K -- Throughput: 236243 states/sec, Load: 10225 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 14788368 states
+ -- CPU user time used : 65090 ms
+ -- Virtual memory used : 946220 KiB
+ -- Resident memory used : 919712 KiB
+[2K
+Verifying formula 20 at /nta/queries/query[20]/formula
+ -- Throughput: 0 states/sec, Load: 128 states[K[2K -- Formula is satisfied.
+ -- States stored : 4646425 states
+ -- States explored : 6818900 states
+ -- CPU user time used : 30710 ms
+ -- Virtual memory used : 946220 KiB
+ -- Resident memory used : 919712 KiB
