@@ -1,0 +1,33 @@
+transparent diamond
+transparent sbisim
+
+include "AgSwR.csp"
+
+--------------------------------------------------------------------------------------------------------------
+--No more than 360/av time units are spent in the state Turning. 
+--------------------------------------------------------------------------------------------------------------
+
+Communication_RC = 2
+Movement_av = 180
+
+AnyOther(E) = CHAOS(Events) [|E|> SKIP
+
+ADeadline(E,d) = (CHAOS(Events) [| {tock} |] WAIT(d)) [|E|> SKIP
+
+WAIT(n) = if (n == 0) then SKIP else tock -> WAIT(n-1)
+
+Timed{
+
+MovementStateSpent(t,x) =
+let
+Main = AnyOther({|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::enterV.x|}) ; ADeadline({|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::exitV.x|},t) ; Main
+within
+timed_priority(Main)
+
+assert MovementStateSpent(360/Movement_av,AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_Turning) 
+[FD= 
+AgSwR::AggregationSoftware::VS__(1,1,4,1,1)
+--AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
+
+
+} 

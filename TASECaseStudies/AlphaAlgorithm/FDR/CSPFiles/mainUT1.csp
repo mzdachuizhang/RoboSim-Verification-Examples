@@ -1,0 +1,70 @@
+transparent diamond
+transparent sbisim
+
+const_RSMC_MovementC_stm_ref0_waitt3 = 1
+
+const_RSMC_MovementC_stm_ref0_cTurn180 = 1
+
+const_RSMC_MovementC_stm_ref0_cRandom = 1
+
+const_RCMovC_MovementC_stm_ref0_av = 1
+
+const_RCMovC_MovementC_stm_ref0_MB = 3
+
+const_RSMC_MovementC_stm_ref0_MB = 3
+
+const_RSMC_MovementC_stm_ref0_av = 1
+
+cycle_AgSw_AggregationSoftware_AggregationSoftware = 1
+
+--MB = 3
+--av = 180
+
+include "main_assertionsV2.csp"
+
+------------------------------------------------------------------------------------
+--The communication behaviour should consist of a broadcast followed by a receive event.
+------------------------------------------------------------------------------------
+
+Communication_id = 1
+
+Spec1 = let
+Responds = 
+( |~|x:AgSw_ID @ AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::o_receive.(Communication_id,x) -> Responds ) |~| SKIP
+
+Run = AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true?x:diff(AgSw_ID,{Communication_id}) -> AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::o_receive!(x,Communication_id) -> Run |~| SKIP
+
+Main = AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true.Communication_id -> (Responds|||Run); Main
+within
+Main
+
+assert Spec1 [F= AgSwRS::AggregationSoftware::D__(1,1,1,1,4,1,1,1,1,1,2)\diff(Events,{|AgSwRS::AggregationSoftware::registerWrite.AgSwRS::AggregationSoftware::o_receive.(1,1),
+AgSwRS::AggregationSoftware::registerRead.AgSwRS::AggregationSoftware::i_broadcast.true.Communication_id|})
+
+
+{-
+
+assert Spec1 [F= AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::D__(1,1,1,2)\diff(Events,{|AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::o_receive,
+AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true|})
+
+
+assert Spec1 [F= AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::D__(1,1,1,2)\diff(Events,{|AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::o_receive,
+AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwRS::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true|}
+
+Dunopt__(id__,cycle_RSC_Communication_Communication,
+						    const_RSC_Communication_id,
+						    const_RSC_Communication_RC
+Spec1 = let
+Responds = 
+( |~|x:AgSw_ID @ AgSwRS::AggregationSoftware::registerWrite.AgSwRS::AggregationSoftware::o_receive.(Communication_id,x) -> Responds ) |~| SKIP
+
+Run = AgSwRS::AggregationSoftware::registerRead.AgSwRS::AggregationSoftware::i_broadcast.true?x:diff(AgSw_ID,{Communication_id}) -> AgSwRS::AggregationSoftware::registerWrite.AgSwRS::AggregationSoftware::o_receive!(x,Communication_id) -> Run |~| SKIP
+
+Main = AgSwRS::AggregationSoftware::registerRead.AgSwRS::AggregationSoftware::i_broadcast.true.Communication_id -> (Responds|||Run); Main
+within
+Main
+
+assert Spec1 [F= sbisim(diamond(AgSwRS::AggregationSoftware::D__(1,1,1,1,2,1,1,1,1,1,2)\diff(Events,{|AgSwRS::AggregationSoftware::registerWrite.AgSwRS::AggregationSoftware::o_receive,
+AgSwRS::AggregationSoftware::registerRead.AgSwRS::AggregationSoftware::i_broadcast.true|})))
+
+-}

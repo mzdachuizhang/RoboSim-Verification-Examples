@@ -1,0 +1,14 @@
+include "defs/timed_definitions.csp"
+include "defs/RSCC.csp"
+include "defs/robochart_defs.csp"
+include "defs/core_defs.csp"
+include "defs/RSC_defs.csp"
+include "defs/RSMov_defs.csp"
+include "defs/RSCC_defs.csp"
+include "defs/AgSwR_defs.csp"
+include "instantiations.csp"
+include "defs/RSMC_defs.csp"
+transparent wbisim
+transparent chase
+		
+channel r__

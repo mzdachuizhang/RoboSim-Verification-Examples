@@ -1,0 +1,47 @@
+transparent diamond
+transparent sbisim
+
+include "AgSwR.csp"
+
+--------------------------------------------------------------------------------------------------------------
+--The robot should start moving, and after every obstacle, move at least once.
+--------------------------------------------------------------------------------------------------------------
+
+
+{-
+Spec2 = let
+Moves = AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.1 -> (Moves |~| SKIP)
+Run = |~|x:AgSw_Position @ AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.x -> 
+         Moves; Run
+within
+Moves; Run
+assert Spec2 [F= AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::D__(1,1,1,1,2,1,1,1,1)\diff(Events,{|AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::o_move,
+AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwRS::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.false|})
+
+-}
+
+AgSw_Position = {RSMov_Position_left,RSMov_Position_right}
+
+Spec2 = let
+---HERE read -> write -> TOCK -> read -> write
+Start = AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left ->
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0 -> SKIP
+Moves =  AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left ->
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0 -> (Moves |~| SKIP)
+Run = --|~|x:AgSw_Position @ 
+       --AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left -> 
+        Moves; Run
+within
+Start ; Moves ; Run
+assert Spec2 [F= AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::D__(1,1)\diff(Events,{|
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0,
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left|})
+
+P3 = AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::D__(1,1)\diff(Events,{|
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0,
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left|})
+
+
+assert Spec2 [T= P3
+assert P3 [T= Spec2
+
