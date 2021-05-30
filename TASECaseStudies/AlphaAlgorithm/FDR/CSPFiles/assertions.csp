@@ -1,7 +1,7 @@
 include "AgSwR.csp"
 
-assert AgSwR::AggregationSoftware::D__(1,1,1):[deadlock-free[F]]
-assert AgSwR::AggregationSoftware::D__(1,1,1):[livelock-free[FD]]
+assert AgSwR::AggregationSoftware::D__(1,1,1,1):[deadlock-free[F]]
+assert AgSwR::AggregationSoftware::D__(1,1,1,1):[livelock-free[FD]]
 
 ----------------------------------------------------------------------
 --No more than RC time units are spent in the state Receive. 
@@ -12,7 +12,18 @@ ADeadline(E,d) = (CHAOS(Events) [| {tock} |] WAIT(d)) [|E|> SKIP
 
 WAIT(n) = if (n == 0) then SKIP else tock -> WAIT(n-1)
 
+{-
 
+
+VS__(id__,cycle_RSMC_MovementC_MovementC,
+				    const_RSMC_MovementC_stm_ref0_MB,
+				    const_RSMC_MovementC_stm_ref0_cWait,
+				    const_RSMC_MovementC_stm_ref0_cTurn180,
+				    const_RSMC_MovementC_stm_ref0_cRandom,
+				    const_RSMC_MovementC_stm_ref0_alpha,
+				    const_RSCC_CommunicationC_stm_ref0_id
+
+-}
 
 
 Timed{
@@ -26,8 +37,7 @@ within
 
 assert 	CommunicationStateSpent(2,AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::SID_Communication_SReceive)
 		[FD=
-                AgSwR::AggregationSoftware::VS__(1,1,1)
-                --(1,1,1,1,4,1,1,1,1,1,2)
+                AgSwR::AggregationSoftware::VS__(1,1,1,1)
 		
 }
 
@@ -49,7 +59,7 @@ EnterExactly(t) = let
 
 assert 	EnterExactly(Communication_RC)
 		[FD=
-                AgSwR::AggregationSoftware::VS__(1,1,1)
+                AgSwR::AggregationSoftware::VS__(1,1,1,1)
                 --AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
                 
 } 
@@ -76,7 +86,7 @@ timed_priority(Main)
 
 assert MovementStateSpent(360/Movement_av,AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_Turning) 
 [FD= 
-AgSwR::AggregationSoftware::VS__(1,1,1)
+AgSwR::AggregationSoftware::VS__(1,1,1,1)
 --AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
 
 ----------------------------------
@@ -84,20 +94,24 @@ AgSwR::AggregationSoftware::VS__(1,1,1)
 ---------------------------------
 
 --VS__(1,1,1,1,4,1,1,1,1,1,2) 
-assert not STOP [T= AgSwR::AggregationSoftware::VS__(1,1,1) |\ {|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::enteredV.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_MovementAndAvoidance_SMove|}
+assert not STOP [T= AgSwR::AggregationSoftware::VS__(1,1,1,1) |\ {|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::enteredV.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_MovementAndAvoidance_SMove|}
 
 --------------------------------------------------------------------------------------------
 -- State Turn180 is reachable.
 --------------------------------------------------------------------------------------------
 
-assert not STOP [T= AgSwR::AggregationSoftware::VS__(1,1,1) |\ {|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::enteredV.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_Turning_Turn180|}
+assert not STOP [T= AgSwR::AggregationSoftware::VS__(1,1,1,1) |\ {|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::enteredV.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_Turning_Turn180|}
 
 
 ------------------------------------------------------------------------------------
 --The behaviour of communication should consist of  a broadcast followed by a receive event.
 ------------------------------------------------------------------------------------
+
+
 {-
-AgSw_ID = {0,1}
+
+
+RegisterReadP = AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_broadcast.true.Communication_id -> SKIP
 
 Spec1 = let
 Responds = 
@@ -105,47 +119,131 @@ Responds =
 
 Run = AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true?x:diff(AgSw_ID,{Communication_id}) -> AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_receiveO!(x,Communication_id) -> Run |~| SKIP
 
-Main = AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_broadcastO.0 -> (Responds|||Run); Main
+Main = 
+        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_broadcastO.0 -> (Responds|||Run); Main
 
 --Main = AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true.Communication_id -> (Responds|||Run); Main
 within
 Main
+-}
+
+{-
+AgSw_ID = {0,1}
+Spec1 = let
+--Responds => receiveIn
+Responds = 
+( |~|x:AgSw_ID @ AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::i_receive.true.(Communication_id,x) -> Responds ) [] SKIP
+--|~| 
+
+
+RunP8 = AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true?x:diff(AgSw_ID,{Communication_id}) -> AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_receiveO!(x,Communication_id) -> RuP8 |~| SKIP
+
+Main = --AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.true.Communication_id 
+        
+         ;
+         AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_broadcastO.Communication_id
+         -> (Responds|||RunP8); Main
+within
+Main
+
 
 assert Spec1\{|AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerRead.
  AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::i_broadcast.
- true.1|} [F= AgSwR::AggregationSoftware::D__(1,1,1)\diff(Events,{|AgSwR::AggregationSoftware::registerWrite.AgSwR::AggregationSoftware::o_receiveO.(1,1),
+ true.1|} [F= AgSwR::AggregationSoftware::D__(1,1,1)\diff(Events,{|AgSwR::AggregationSoftware::registerWrite.AgSwR::AggregationSoftware::o_receiveO.(0,1),
 AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_broadcast.true.Communication_id,
+--AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_receive.true.(1,0),
+AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_broadcastO.Communication_id
+|})
+
+
+P1 = AgSwR::AggregationSoftware::D__(1,1,4,1,1,1,1)\diff(Events,{|AgSwR::AggregationSoftware::registerWrite.AgSwR::AggregationSoftware::o_receiveO.(0,1),
+AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_broadcast.true.Communication_id,
+AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_receive.true.(1,0),
 AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_broadcastO.Communication_id|})
 
+P2 = AgSwR::AggregationSoftware::D__(1,1,4,1,1,1,1)\diff(Events,{|AgSwR::AggregationSoftware::registerWrite.AgSwR::AggregationSoftware::o_receiveO.(0,1),
+AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_broadcast.true.Communication_id,
+AgSwR::AggregationSoftware::registerRead.AgSwR::AggregationSoftware::i_receive.true.(1,0),
+AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::o_broadcastO.Communication_id|})
 -}
-
-
-
 -----------------------------------------------------------------------------
 --The robot should start moving, and after every obstacle, move at least once. 
 -----------------------------------------------------------------------------
 
 AgSw_Position = {RSMov_Position_left,RSMov_Position_right}
+{-
+
 
 Spec2 = let
----HERE read -> write -> read -> write
-Moves = AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left ->
+---HERE read -> write -> TOCK -> read -> write
+Start = AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left ->
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0 -> SKIP
+Moves =  AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left ->
 AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0 -> (Moves |~| SKIP)
-Run = |~|x:AgSw_Position @ AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left -> 
-         Moves; Run
+Run = --|~|x:AgSw_Position @ 
+       --AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left -> 
+        Moves; Run
 within
-Moves; Run
+Start ; Moves ; STOP  --; Run
 assert Spec2 [F= AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::D__(1,1)\diff(Events,{|
 AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0,
 AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left|})
 
+P3 = AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::D__(1,1)\diff(Events,{|
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0,
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left|})
 
+
+assert Spec2 [T= P3
+assert P3 [T= Spec2
+-}
+
+---HERE read -> write -> TOCK -> read -> write
+
+Spec2 = let
+    Start2 = (AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left -> SKIP)
+            |~| 
+            (AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0 -> SKIP)
+            
+    Start = (|~|x:AgSw_Position @ AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.x -> SKIP)
+            |~| 
+            (|~|x:AgSw_Position @ AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.false.x -> SKIP )
+            ; AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0 -> SKIP
+ {- ok
+    Moves =   AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left ->
+              AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.0.0 -> (Moves  |~| SKIP)
+              -}
+  Moves =   (AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left ->
+              AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.0.0 -> (Moves  |~| Start |~| SKIP))            
+            |~|
+            (|~| x:AgSw_Position @  AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.false.x -> Moves )
+   
+    --Run = Moves ; Run          
+
+within
+    --Ok    Moves
+    Moves  
+
+assert Spec2 [F= AgSwR::AggregationSoftware::D__(1,1,1,1)\diff(Events,{|
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.0.0,
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left,
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.false|})
+
+ImplP9 = StartImp ; MovesImpl
+
+StartImp = AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0 -> SKIP
+
+MovesImpl = AgSwR::AggregationSoftware::D__(1,1,1,1)\diff(Events,{|
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerWrite.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::o_move.1.0,
+AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::registerRead.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::i_obstacle.true.RSMov_Position_left|})
+
+assert Spec2 [F= ImplP9
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 --Initially, and after exactly RC time units, when a broadcast.id happens, the events broadcast and receive are offered before RC time units elapse.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-
+{-
 --ID = {0,1}
 
 SomeHappened(t) = t < Communication_RC & (AnyOther({tock}) ; SomeHappened(t+1))
@@ -175,7 +273,7 @@ AgSwR::AggregationSoftware::D__(1,1,1)
 
 
 
-
+-}
 
 
 

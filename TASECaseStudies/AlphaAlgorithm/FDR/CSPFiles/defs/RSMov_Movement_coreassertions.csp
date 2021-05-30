@@ -10,12 +10,10 @@ channel r__
 -- generate RSMov_Movement
 P_RSMov_Movement = let
 	id = 0
-	const_RSMov_Movement_MB = 4
 	const_RSMov_Movement_alpha = 1
 within
 	RSMov_Movement::O__(
 		id,
-		const_RSMov_Movement_MB,
 		const_RSMov_Movement_alpha
 	)
 assert P_RSMov_Movement :[deadlock-free]	

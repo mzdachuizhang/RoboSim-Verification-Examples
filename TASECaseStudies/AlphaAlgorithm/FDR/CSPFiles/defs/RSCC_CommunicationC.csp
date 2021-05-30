@@ -11,36 +11,36 @@ exports
 	
 	-- inputs, evars, rvars and outputs as calculated internally
 	-- outputs = {
-	--	(CommunicationC::robots,stm_ref0::robots),
 	--	(CommunicationC::broadcastO,stm_ref0::broadcastO),
+	--	(CommunicationC::robots,stm_ref0::robots),
 	--	(CommunicationC::receiveO,stm_ref0::receiveO)
 	--	 }
 	-- inputs = {
-	--	(CommunicationC::broadcast,stm_ref0::broadcast),
-	--	(CommunicationC::receive,stm_ref0::receive)
+	--	(CommunicationC::receive,stm_ref0::receive),
+	--	(CommunicationC::broadcast,stm_ref0::broadcast)
 	--	 }
 	-- evars = {}
 	-- dvars = {}
 	
 	-- declaring registerRead/Write datatypes
-	datatype RegisterDataInput = i_broadcast.Bool.RSC_ID
-		| i_receive.Bool.{(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}
+	datatype RegisterDataInput = i_receive.Bool.{(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}
+		| i_broadcast.Bool.RSC_ID
 	
-	datatype RegisterDataOutput = o_robots.core_nat
-		| o_broadcast.RSC_ID
-		| o_receive.{(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}
-		| o_broadcastO.RSC_ID
+	datatype RegisterDataOutput = o_broadcastO.RSC_ID
+		| o_robots.core_nat
 		| o_receiveO.{(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}
+		| o_receive.{(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}
+		| o_broadcast.RSC_ID
 	
 	
 	nametype RegisterOutputs = {|
-	o_robots,
 	o_broadcastO,
+	o_robots,
 	o_receiveO|}
 	
 	nametype RegisterInputs = {|
-	i_broadcast,
-	i_receive|}
+	i_receive,
+	i_broadcast|}
 	
 	channel registerRead 	: RegisterDataInput
 	channel registerWrite 	: RegisterDataOutput
@@ -53,8 +53,8 @@ exports
 	
 	
 	-- (Rule 8) cycleController(...) : CSPProcess
-	datatype SOutputEvents = SOutput_robots
-		| SOutput_broadcastO
+	datatype SOutputEvents = SOutput_broadcastO
+		| SOutput_robots
 		| SOutput_receiveO
 	
 	DVarsEvents = {}
@@ -65,27 +65,27 @@ exports
 			    const_RSCC_CommunicationC_stm_ref0_id) =
 	let
 				
-		project_stm_ref0(stm_ref0::o_robots.x__) = SOutput_robots
 		project_stm_ref0(stm_ref0::o_broadcastO.x__) = SOutput_broadcastO
+		project_stm_ref0(stm_ref0::o_robots.x__) = SOutput_robots
 		project_stm_ref0(stm_ref0::o_receiveO.x__) = SOutput_receiveO
 	
-		connected_stm_ref0(stm_ref0::o_robots.x__) = true
 		connected_stm_ref0(stm_ref0::o_broadcastO.x__) = true
+		connected_stm_ref0(stm_ref0::o_robots.x__) = true
 		connected_stm_ref0(stm_ref0::o_receiveO.x__) = true
 		connected_stm_ref0(_) = false
 	
-		lift_stm_ref0(stm_ref0::o_robots.x__) = o_robots.x__
 		lift_stm_ref0(stm_ref0::o_broadcastO.x__) = o_broadcastO.x__
+		lift_stm_ref0(stm_ref0::o_robots.x__) = o_robots.x__
 		lift_stm_ref0(stm_ref0::o_receiveO.x__) = o_receiveO.x__
 		
 		CycleController =
 			-- read inputs from the controller and pass to state machines
 			(
-			((registerRead.i_broadcast?x__ ->
-				((stm_ref0::registerRead.stm_ref0::i_broadcast!x__ -> SKIP)))
+			((registerRead.i_receive?x__ ->
+				((stm_ref0::registerRead.stm_ref0::i_receive!x__ -> SKIP)))
 				|||
-			(registerRead.i_receive?x__ ->
-				((stm_ref0::registerRead.stm_ref0::i_receive!x__ -> SKIP))))
+			(registerRead.i_broadcast?x__ ->
+				((stm_ref0::registerRead.stm_ref0::i_broadcast!x__ -> SKIP))))
 			-- ensure state machines read the values being communicated via evars
 					);
 			-- synchronize on events related to evars to erase memory
@@ -142,14 +142,14 @@ exports
 		
 		
 		datatype RegisterDataOutput = o_receiveO.{(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}
-			| o_robots.core_nat
 			| o_broadcastO.RSC_ID
+			| o_robots.core_nat
 		
 		
 		nametype RegisterOutputs = {|
 		o_receiveO,
-		o_robots,
-		o_broadcastO|}
+		o_broadcastO,
+		o_robots|}
 		
 		nametype RegisterInputs = {|
 		i_broadcast,
@@ -250,15 +250,15 @@ exports
 		
 		
 		Communication_SBroadcast_triggers = {|
-			internal__.TID_Communication_t6,
-			internal__.TID_Communication_t3,
-			internal__.TID_Communication_t4,
-			internal__.TID_Communication_t8,
-			internal__.TID_Communication_t2,
 			internal__.TID_Communication_t1,
-			internal__.TID_Communication_t5,
+			internal__.TID_Communication_t8,
+			internal__.TID_Communication_t6,
 			internal__.TID_Communication_t9,
-			internal__.TID_Communication_t7
+			internal__.TID_Communication_t4,
+			internal__.TID_Communication_t5,
+			internal__.TID_Communication_t2,
+			internal__.TID_Communication_t7,
+			internal__.TID_Communication_t3
 		|}
 		
 		State_Communication_SBroadcast(id__,
@@ -275,7 +275,7 @@ exports
 					T_Communication_t1(id__,
 							    const_RSC_Communication_id)
 					[]
-					internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Communication_t6,TID_Communication_t3,TID_Communication_t4,TID_Communication_t8,TID_Communication_t2,TID_Communication_t1,TID_Communication_t5,TID_Communication_t9,TID_Communication_t7}) -> exit?y____:diff(SIDS,{SID_Communication_SBroadcast})!SID_Communication_SBroadcast -> (
+					internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Communication_t1,TID_Communication_t8,TID_Communication_t6,TID_Communication_t9,TID_Communication_t4,TID_Communication_t5,TID_Communication_t2,TID_Communication_t7,TID_Communication_t3}) -> exit?y____:diff(SIDS,{SID_Communication_SBroadcast})!SID_Communication_SBroadcast -> (
 							SKIP;
 							exited!y____!SID_Communication_SBroadcast -> SKIP);
 							State_Communication_SBroadcast(id__,
@@ -299,15 +299,15 @@ exports
 		
 		
 		Communication_SReceive_triggers = {|
-			internal__.TID_Communication_t6,
-			internal__.TID_Communication_t3,
-			internal__.TID_Communication_t4,
 			internal__.TID_Communication_t8,
-			internal__.TID_Communication_t2,
+			internal__.TID_Communication_t6,
 			internal__.TID_Communication_t1,
-			internal__.TID_Communication_t5,
 			internal__.TID_Communication_t9,
-			internal__.TID_Communication_t7
+			internal__.TID_Communication_t4,
+			internal__.TID_Communication_t5,
+			internal__.TID_Communication_t2,
+			internal__.TID_Communication_t7,
+			internal__.TID_Communication_t3
 		|}
 		
 		State_Communication_SReceive(id__,
@@ -317,6 +317,13 @@ exports
 								SKIP;exited.SID_Communication_SReceive.SID_Communication_SReceive -> SKIP;
 								J_Communication_j0(id__,
 										    const_RSC_Communication_id)
+			J_Communication_j2(id__,
+					    const_RSC_Communication_id) = (
+						(internal__!TID_Communication_t9 -> enter!SID_Communication_SReceive!SID_Communication_NewCycle -> entered!SID_Communication_SReceive!SID_Communication_NewCycle ->
+						State_Communication_SReceive(id__,
+								    const_RSC_Communication_id)
+						)
+						)
 			J_Communication_j1(id__,
 					    const_RSC_Communication_id) = (
 						(internal__!TID_Communication_t5 -> get_broadcast?b__?x__ -> set_y!x__ -> SKIP
@@ -326,17 +333,10 @@ exports
 						;get_y?y -> registerWrite.o_receiveO.(y,0) -> SKIP;J_Communication_j2(id__,
 								    const_RSC_Communication_id))
 						)
-			J_Communication_j2(id__,
-					    const_RSC_Communication_id) = (
-						(internal__!TID_Communication_t9 -> enter!SID_Communication_SReceive!SID_Communication_NewCycle -> entered!SID_Communication_SReceive!SID_Communication_NewCycle ->
-						State_Communication_SReceive(id__,
-								    const_RSC_Communication_id)
-						)
-						)
 			J_Communication_j0(id__,
 					    const_RSC_Communication_id) = (
 						(internal__!TID_Communication_t3 -> get_receive?b__?x__ -> set_x!x__ -> SKIP
-						;get_neighs?neighs -> get_x?x -> true & (set_neighs!set_toolkit_union(neighs,{tuple2_2(x)}) -> SKIP);J_Communication_j1(id__,
+						;get_x?x -> get_neighs?neighs -> true & (set_neighs!set_toolkit_union(neighs,{tuple2_2(x)}) -> SKIP);J_Communication_j1(id__,
 								    const_RSC_Communication_id))[]
 						(internal__!TID_Communication_t4 -> get_receive?b__?x__ -> set_x!x__ -> SKIP
 						;J_Communication_j1(id__,
@@ -352,7 +352,7 @@ exports
 					T_Communication_t2(id__,
 							    const_RSC_Communication_id)
 					[]
-					internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Communication_t6,TID_Communication_t3,TID_Communication_t4,TID_Communication_t8,TID_Communication_t2,TID_Communication_t1,TID_Communication_t5,TID_Communication_t9,TID_Communication_t7}) -> exit?y____:diff(SIDS,{SID_Communication_SReceive})!SID_Communication_SReceive -> (
+					internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Communication_t8,TID_Communication_t6,TID_Communication_t1,TID_Communication_t9,TID_Communication_t4,TID_Communication_t5,TID_Communication_t2,TID_Communication_t7,TID_Communication_t3}) -> exit?y____:diff(SIDS,{SID_Communication_SReceive})!SID_Communication_SReceive -> (
 							SKIP;
 							exited!y____!SID_Communication_SReceive -> SKIP);
 							State_Communication_SReceive(id__,
@@ -376,15 +376,15 @@ exports
 		
 		
 		Communication_NewCycle_triggers = {|
-			internal__.TID_Communication_t6,
-			internal__.TID_Communication_t3,
-			internal__.TID_Communication_t4,
 			internal__.TID_Communication_t8,
-			internal__.TID_Communication_t2,
+			internal__.TID_Communication_t6,
 			internal__.TID_Communication_t1,
-			internal__.TID_Communication_t5,
 			internal__.TID_Communication_t9,
-			internal__.TID_Communication_t7
+			internal__.TID_Communication_t4,
+			internal__.TID_Communication_t5,
+			internal__.TID_Communication_t2,
+			internal__.TID_Communication_t7,
+			internal__.TID_Communication_t3
 		|}
 		
 		State_Communication_NewCycle(id__,
@@ -394,6 +394,11 @@ exports
 								SKIP;exited.SID_Communication_NewCycle.SID_Communication_NewCycle -> SKIP;
 								J_Communication_j0(id__,
 										    const_RSC_Communication_id))
+			J_Communication_j2(id__,
+					    const_RSC_Communication_id) = (
+						(internal__!TID_Communication_t9 -> enter!SID_Communication_NewCycle!SID_Communication_NewCycle -> State_Communication_NewCycle_execute(id__,SID_Communication_NewCycle)
+						)
+						)
 			J_Communication_j1(id__,
 					    const_RSC_Communication_id) = (
 						(internal__!TID_Communication_t5 -> get_broadcast?b__?x__ -> set_y!x__ -> SKIP
@@ -403,15 +408,10 @@ exports
 						;get_y?y -> registerWrite.o_receiveO.(y,0) -> SKIP;J_Communication_j2(id__,
 								    const_RSC_Communication_id))
 						)
-			J_Communication_j2(id__,
-					    const_RSC_Communication_id) = (
-						(internal__!TID_Communication_t9 -> enter!SID_Communication_NewCycle!SID_Communication_NewCycle -> State_Communication_NewCycle_execute(id__,SID_Communication_NewCycle)
-						)
-						)
 			J_Communication_j0(id__,
 					    const_RSC_Communication_id) = (
 						(internal__!TID_Communication_t3 -> get_receive?b__?x__ -> set_x!x__ -> SKIP
-						;get_neighs?neighs -> get_x?x -> true & (set_neighs!set_toolkit_union(neighs,{tuple2_2(x)}) -> SKIP);J_Communication_j1(id__,
+						;get_x?x -> get_neighs?neighs -> true & (set_neighs!set_toolkit_union(neighs,{tuple2_2(x)}) -> SKIP);J_Communication_j1(id__,
 								    const_RSC_Communication_id))[]
 						(internal__!TID_Communication_t4 -> get_receive?b__?x__ -> set_x!x__ -> SKIP
 						;J_Communication_j1(id__,
@@ -427,7 +427,7 @@ exports
 					T_Communication_t7(id__,
 							    const_RSC_Communication_id)
 					[]
-					internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Communication_t6,TID_Communication_t3,TID_Communication_t4,TID_Communication_t8,TID_Communication_t2,TID_Communication_t1,TID_Communication_t5,TID_Communication_t9,TID_Communication_t7}) -> exit?y____:diff(SIDS,{SID_Communication_NewCycle})!SID_Communication_NewCycle -> (
+					internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Communication_t8,TID_Communication_t6,TID_Communication_t1,TID_Communication_t9,TID_Communication_t4,TID_Communication_t5,TID_Communication_t2,TID_Communication_t7,TID_Communication_t3}) -> exit?y____:diff(SIDS,{SID_Communication_NewCycle})!SID_Communication_NewCycle -> (
 							SKIP;
 							exited!y____!SID_Communication_NewCycle -> SKIP);
 							State_Communication_NewCycle(id__,
@@ -714,37 +714,37 @@ exports
 		-- optimised memory
 		-- Sets of named elements identified according to transition conditions:
 		-- {}
+		-- {x,id,WC_TID_Communication_t4_0,receive,WC_TID_Communication_t3_0}
 		-- {WC_TID_Communication_t3_0,broadcast}
-		-- {WC_TID_Communication_t4_0,id,x,receive,WC_TID_Communication_t3_0}
 		-- Summary of all identified named elements:
 		-- {
-		-- WC_TID_Communication_t4_0
-		-- id
-		-- y
 		-- x
+		-- y
+		-- neighs
+		-- id
+		-- WC_TID_Communication_t4_0
 		-- receive
 		-- WC_TID_Communication_t3_0
 		-- broadcast
-		-- neighs
 		-- }
 		
 		-- Allocation plan:
 		-- 0:{}
 		--	=> {
-		--		TID_Communication_t9,
-		--		TID_Communication_t7,
 		--		TID_Communication_t0,
+		--		TID_Communication_t7,
 		--		TID_Communication_t1,
+		--		TID_Communication_t9,
 		--		TID_Communication_t2}
+		-- 2:{x,id,WC_TID_Communication_t4_0,receive,WC_TID_Communication_t3_0}
+		--	=> {
+		--		TID_Communication_t4,
+		--		TID_Communication_t8,
+		--		TID_Communication_t3}
 		-- 1:{WC_TID_Communication_t3_0,broadcast}
 		--	=> {
 		--		TID_Communication_t5,
 		--		TID_Communication_t6}
-		-- 2:{WC_TID_Communication_t4_0,id,x,receive,WC_TID_Communication_t3_0}
-		--	=> {
-		--		TID_Communication_t3,
-		--		TID_Communication_t8,
-		--		TID_Communication_t4}
 		
 		-- Memory transition processes
 		MemoryTransitions_opt_0(id__) =
@@ -753,17 +753,56 @@ exports
 				Update = Current(id__)
 				Current(id__)
 				 	   = 
-				 	   internal__!TID_Communication_t9 -> Update
+				 	   internal__!TID_Communication_t0 -> Update
 				 	   []
 				 	   endexec__!TID_Communication_t7 -> Update
 				 	   []
-				 	   internal__!TID_Communication_t0 -> Update
-				 	   []
 				 	   internal__!TID_Communication_t1 -> Update
+				 	   []
+				 	   internal__!TID_Communication_t9 -> Update
 				 	   []
 				 	   internal__!TID_Communication_t2 -> Update
 				 	   	 []
 				 	   	 startexec -> Update
+			within
+				Update
+		)
+		MemoryTransitions_opt_2(id__,
+			 const_RSC_Communication_id) =
+		(
+			let
+				Update = 
+				get_x?x ->
+				getWC.WC_TID_Communication_t4_0_ID?WC_TID_Communication_t4_0 ->
+				get_receive?receive ->
+				getWC.WC_TID_Communication_t3_0_ID?WC_TID_Communication_t3_0 ->
+				Current(id__,
+					 x,
+					 WC_TID_Communication_t4_0,
+					 receive,
+					 WC_TID_Communication_t3_0)
+				Current(id__,
+					 x,
+					 WC_TID_Communication_t4_0,
+					 receive,
+					 WC_TID_Communication_t3_0)
+				 	   = 
+				 	   ((not ((((((member(receive,{true.x | x <- {(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}, ((tuple2_1(x)==const_RSC_Communication_id))})) and (WC_TID_Communication_t3_0))) or (WC_TID_Communication_t4_0))))))&(internal__!TID_Communication_t4 -> Update)
+				 	   []
+				 	   (WC_TID_Communication_t4_0)&(internal__!TID_Communication_t8 -> Update)
+				 	   []
+				 	   ((member(receive,{true.x | x <- {(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}, ((tuple2_1(x)==const_RSC_Communication_id))}) and WC_TID_Communication_t3_0))&(internal__!TID_Communication_t3 -> Update)
+				 	   	 []
+				 	   	 startexec -> Update
+				 	   	 
+				 	   	 []
+				 	   	 set_x?x__ -> Update
+				 	   	 []
+				 	   	 
+				 	   	 setWC.WC_TID_Communication_t4_0_ID?x__ -> Update
+				 	   	 []
+				 	   	 
+				 	   	 setWC.WC_TID_Communication_t3_0_ID?x__ -> Update
 			within
 				Update
 		)
@@ -791,61 +830,27 @@ exports
 			within
 				Update
 		)
-		MemoryTransitions_opt_2(id__,
-			 const_RSC_Communication_id) =
-		(
-			let
-				Update = 
-				getWC.WC_TID_Communication_t4_0_ID?WC_TID_Communication_t4_0 ->
-				get_x?x ->
-				get_receive?receive ->
-				getWC.WC_TID_Communication_t3_0_ID?WC_TID_Communication_t3_0 ->
-				Current(id__,
-					 WC_TID_Communication_t4_0,
-					 x,
-					 receive,
-					 WC_TID_Communication_t3_0)
-				Current(id__,
-					 WC_TID_Communication_t4_0,
-					 x,
-					 receive,
-					 WC_TID_Communication_t3_0)
-				 	   = 
-				 	   ((member(receive,{true.x | x <- {(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}, ((tuple2_1(x)==const_RSC_Communication_id))}) and WC_TID_Communication_t3_0))&(internal__!TID_Communication_t3 -> Update)
-				 	   []
-				 	   (WC_TID_Communication_t4_0)&(internal__!TID_Communication_t8 -> Update)
-				 	   []
-				 	   ((not ((((((member(receive,{true.x | x <- {(x0__,x1__) | x0__ <- RSC_ID,x1__ <- RSC_ID}, ((tuple2_1(x)==const_RSC_Communication_id))})) and (WC_TID_Communication_t3_0))) or (WC_TID_Communication_t4_0))))))&(internal__!TID_Communication_t4 -> Update)
-				 	   	 []
-				 	   	 startexec -> Update
-				 	   	 
-				 	   	 []
-				 	   	 setWC.WC_TID_Communication_t4_0_ID?x__ -> Update
-				 	   	 []
-				 	   	 
-				 	   	 set_x?x__ -> Update
-				 	   	 []
-				 	   	 
-				 	   	 setWC.WC_TID_Communication_t3_0_ID?x__ -> Update
-			within
-				Update
-		)
 		
 		-- Memory cell processes
-		Memory_opt_WC_TID_Communication_t4_0(x__) = ( 
-			getWC.WC_TID_Communication_t4_0_ID!x__ -> Memory_opt_WC_TID_Communication_t4_0(x__)
+		Memory_opt_x(x__) = ( 
+			get_x!x__ -> Memory_opt_x(x__)
 			[]
-			setWC.WC_TID_Communication_t4_0_ID?x__ -> Memory_opt_WC_TID_Communication_t4_0(x__)
+			set_x?x__ -> Memory_opt_x(x__)
 		)
 		Memory_opt_y(x__) = ( 
 			get_y!x__ -> Memory_opt_y(x__)
 			[]
 			set_y?x__ -> Memory_opt_y(x__)
 		)
-		Memory_opt_x(x__) = ( 
-			get_x!x__ -> Memory_opt_x(x__)
+		Memory_opt_neighs(x__) = ( 
+			get_neighs!x__ -> Memory_opt_neighs(x__)
 			[]
-			set_x?x__ -> Memory_opt_x(x__)
+			set_neighs?x__ -> Memory_opt_neighs(x__)
+		)
+		Memory_opt_WC_TID_Communication_t4_0(x__) = ( 
+			getWC.WC_TID_Communication_t4_0_ID!x__ -> Memory_opt_WC_TID_Communication_t4_0(x__)
+			[]
+			setWC.WC_TID_Communication_t4_0_ID?x__ -> Memory_opt_WC_TID_Communication_t4_0(x__)
 		)
 		Memory_opt_receive(x__) = (
 			get_receive!x__ -> Memory_opt_receive(x__)
@@ -862,70 +867,65 @@ exports
 			[]
 			registerRead.i_broadcast?x__ -> Memory_opt_broadcast(x__)
 		)
-		Memory_opt_neighs(x__) = ( 
-			get_neighs!x__ -> Memory_opt_neighs(x__)
-			[]
-			set_neighs?x__ -> Memory_opt_neighs(x__)
-		)
 		
 		-- Composition of memory, StateMachine and Memory transition processes
 		
 		MemorySTM_opt(id__,cycle_RSC_Communication_Communication,
 				    const_RSC_Communication_id) =
 			dbisim(
-			  sbisim(Memory_opt_WC_TID_Communication_t3_0(false)
-			      	[| {|getWC.WC_TID_Communication_t3_0_ID,setWC.WC_TID_Communication_t3_0_ID|} |] 
+			  sbisim(Memory_opt_x((0,0))
+			      	[| {|get_x,set_x|} |] 
 			      	dbisim(
-			      	  sbisim(Memory_opt_broadcast(false.0)
-			      	      	[| {|registerRead.i_broadcast,get_broadcast|} |] 
-			      	      	sbisim(	
-			      	      	  dbisim(
-			      	      	    sbisim(dbisim(
-			      	      	      sbisim(Memory_opt_WC_TID_Communication_t4_0(false)
-			      	      	          	[| {|getWC.WC_TID_Communication_t4_0_ID,setWC.WC_TID_Communication_t4_0_ID|} |] 
-			      	      	          	dbisim(
-			      	      	          	  sbisim(Memory_opt_x((0,0))
-			      	      	          	      	[| {|get_x,set_x|} |] 
-			      	      	          	      	dbisim(
-			      	      	          	      	  sbisim(Memory_opt_receive(false.(0,0))
-			      	      	          	      	      	[| {|registerRead.i_receive,get_receive|} |] 
-			      	      	          	      	      	sbisim(	
-			      	      	          	      	      	  dbisim(
-			      	      	          	      	      	    sbisim(sbisim(	
-			      	      	          	      	      	      dbisim(
-			      	      	          	      	      	        sbisim(dbisim(sbisim(Memory_opt_y(0)
-			      	      	          	      	      	              	[| {|set_y,get_y|} |] 
-			      	      	          	      	      	              	dbisim(sbisim(Memory_opt_neighs({})
-			      	      	          	      	      	              	      	[| {|get_neighs,set_neighs|} |] 
-			      	      	          	      	      	              	      	STM_core(id__,cycle_RSC_Communication_Communication,
-			      	      	          	      	      	              	      			    const_RSC_Communication_id)
-			      	      	          	      	      	              	      	)\ {|get_neighs,set_neighs|}
-			      	      	          	      	      	              	      )
-			      	      	          	      	      	              	)\ {|set_y,get_y|}
-			      	      	          	      	      	              )
-			      	      	          	      	      	          	  [| union({|startexec|},{|internal__.TID_Communication_t2,internal__.TID_Communication_t9,internal__.TID_Communication_t1,internal__.TID_Communication_t0,endexec__.TID_Communication_t7|}) |]
-			      	      	          	      	      	          	  MemoryTransitions_opt_0(id__)
-			      	      	          	      	      	          	  )\{|internal__.TID_Communication_t2,internal__.TID_Communication_t9,internal__.TID_Communication_t1,internal__.TID_Communication_t0|})
-			      	      	          	      	      	          	  [[ endexec__.TID_Communication_t7 <- endexec ]]
-			      	      	          	      	      	          )
-			      	      	          	      	      	      	  [| union({|startexec|},{|internal__.TID_Communication_t4,internal__.TID_Communication_t3,setWC.WC_TID_Communication_t4_0_ID,internal__.TID_Communication_t8,setWC.WC_TID_Communication_t3_0_ID,set_x|}) |]
-			      	      	          	      	      	      	  MemoryTransitions_opt_2(id__,
-			      	      	          	      	      	      	  	 const_RSC_Communication_id)
-			      	      	          	      	      	      	  )\{|internal__.TID_Communication_t4,internal__.TID_Communication_t3,internal__.TID_Communication_t8|})
-			      	      	          	      	      	      )
-			      	      	          	      	      	) \ {|get_receive|}
-			      	      	          	      	      )
-			      	      	          	      	) \ {|get_x,set_x|}
-			      	      	          	      )
-			      	      	          	) \ {|getWC.WC_TID_Communication_t4_0_ID,setWC.WC_TID_Communication_t4_0_ID|}
-			      	      	          )
-			      	      	      	  [| union({|startexec|},{|internal__.TID_Communication_t5,internal__.TID_Communication_t6,setWC.WC_TID_Communication_t3_0_ID|}) |]
-			      	      	      	  MemoryTransitions_opt_1(id__)
-			      	      	      	  )\{|internal__.TID_Communication_t5,internal__.TID_Communication_t6|})
+			      	  sbisim(Memory_opt_WC_TID_Communication_t4_0(false)
+			      	      	[| {|getWC.WC_TID_Communication_t4_0_ID,setWC.WC_TID_Communication_t4_0_ID|} |] 
+			      	      	dbisim(
+			      	      	  sbisim(Memory_opt_receive(false.(0,0))
+			      	      	      	[| {|registerRead.i_receive,get_receive|} |] 
+			      	      	      	dbisim(
+			      	      	      	  sbisim(Memory_opt_WC_TID_Communication_t3_0(false)
+			      	      	      	      	[| {|getWC.WC_TID_Communication_t3_0_ID,setWC.WC_TID_Communication_t3_0_ID|} |] 
+			      	      	      	      	sbisim(	
+			      	      	      	      	  dbisim(
+			      	      	      	      	    sbisim(dbisim(
+			      	      	      	      	      sbisim(Memory_opt_broadcast(false.0)
+			      	      	      	      	          	[| {|registerRead.i_broadcast,get_broadcast|} |] 
+			      	      	      	      	          	sbisim(	
+			      	      	      	      	          	  dbisim(
+			      	      	      	      	          	    sbisim(sbisim(	
+			      	      	      	      	          	      dbisim(
+			      	      	      	      	          	        sbisim(dbisim(sbisim(Memory_opt_y(0)
+			      	      	      	      	          	              	[| {|set_y,get_y|} |] 
+			      	      	      	      	          	              	dbisim(sbisim(Memory_opt_neighs({})
+			      	      	      	      	          	              	      	[| {|get_neighs,set_neighs|} |] 
+			      	      	      	      	          	              	      	STM_core(id__,cycle_RSC_Communication_Communication,
+			      	      	      	      	          	              	      			    const_RSC_Communication_id)
+			      	      	      	      	          	              	      	)\ {|get_neighs,set_neighs|}
+			      	      	      	      	          	              	      )
+			      	      	      	      	          	              	)\ {|set_y,get_y|}
+			      	      	      	      	          	              )
+			      	      	      	      	          	          	  [| union({|startexec|},{|internal__.TID_Communication_t2,internal__.TID_Communication_t9,internal__.TID_Communication_t1,internal__.TID_Communication_t0,endexec__.TID_Communication_t7|}) |]
+			      	      	      	      	          	          	  MemoryTransitions_opt_0(id__)
+			      	      	      	      	          	          	  )\{|internal__.TID_Communication_t2,internal__.TID_Communication_t9,internal__.TID_Communication_t1,internal__.TID_Communication_t0|})
+			      	      	      	      	          	          	  [[ endexec__.TID_Communication_t7 <- endexec ]]
+			      	      	      	      	          	          )
+			      	      	      	      	          	      	  [| union({|startexec|},{|internal__.TID_Communication_t5,internal__.TID_Communication_t6,setWC.WC_TID_Communication_t3_0_ID|}) |]
+			      	      	      	      	          	      	  MemoryTransitions_opt_1(id__)
+			      	      	      	      	          	      	  )\{|internal__.TID_Communication_t5,internal__.TID_Communication_t6|})
+			      	      	      	      	          	      )
+			      	      	      	      	          	) \ {|get_broadcast|}
+			      	      	      	      	          )
+			      	      	      	      	      	  [| union({|startexec|},{|internal__.TID_Communication_t4,internal__.TID_Communication_t3,setWC.WC_TID_Communication_t4_0_ID,internal__.TID_Communication_t8,setWC.WC_TID_Communication_t3_0_ID,set_x|}) |]
+			      	      	      	      	      	  MemoryTransitions_opt_2(id__,
+			      	      	      	      	      	  	 const_RSC_Communication_id)
+			      	      	      	      	      	  )\{|internal__.TID_Communication_t4,internal__.TID_Communication_t3,internal__.TID_Communication_t8|})
+			      	      	      	      	      )
+			      	      	      	      	) \ {|getWC.WC_TID_Communication_t3_0_ID,setWC.WC_TID_Communication_t3_0_ID|}
+			      	      	      	      )
+			      	      	      	) \ {|get_receive|}
 			      	      	      )
-			      	      	) \ {|get_broadcast|}
+			      	      	) \ {|getWC.WC_TID_Communication_t4_0_ID,setWC.WC_TID_Communication_t4_0_ID|}
 			      	      )
-			      	) \ {|getWC.WC_TID_Communication_t3_0_ID,setWC.WC_TID_Communication_t3_0_ID|}
+			      	) \ {|get_x,set_x|}
 			      )
 		
 		-- main process
@@ -1060,14 +1060,14 @@ exports
 		
 	
 		datatype SOutputEvents = SOutput_receiveO
-			| SOutput_robots
 			| SOutput_broadcastO
+			| SOutput_robots
 		
 		cycle(cycle_RSC_Communication_Communication) =
 			let
 				project(o_receiveO.x__) = SOutput_receiveO
-				project(o_robots.x__) = SOutput_robots
 				project(o_broadcastO.x__) = SOutput_broadcastO
+				project(o_robots.x__) = SOutput_robots
 		
 				Cycle =
 					(registerRead.i_broadcast?x__ -> SKIP
@@ -1089,8 +1089,8 @@ exports
 		cycle_opt(cycle_RSC_Communication_Communication) =
 			let
 				project(o_receiveO.x__) = SOutput_receiveO
-				project(o_robots.x__) = SOutput_robots
 				project(o_broadcastO.x__) = SOutput_broadcastO
+				project(o_robots.x__) = SOutput_robots
 		
 				Cycle =
 					(registerRead.i_broadcast?x__ -> SKIP

@@ -19,8 +19,8 @@ exports
 	channel terminate
 	
 	-- declaring registerRead/Write datatypes
-	datatype RegisterDataInput = i_obstacle.Bool.RSMov_Position
-		| i_neighbours.Bool.core_nat
+	datatype RegisterDataInput = i_neighbours.Bool.core_nat
+		| i_obstacle.Bool.RSMov_Position
 	
 	
 	datatype RegisterDataOutput = o_move.core_real.core_real
@@ -30,8 +30,8 @@ exports
 	o_move|}
 	
 	nametype RegisterInputs = {|
-	i_obstacle,
-	i_neighbours|}
+	i_neighbours,
+	i_obstacle|}
 	
 	channel registerRead 	: RegisterDataInput
 	channel registerWrite 	: RegisterDataOutput
@@ -190,46 +190,36 @@ exports
 	|}
 	
 	State_Movement_MovementAndAvoidance_SMove_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_MovementAndAvoidance_SMove(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_MovementAndAvoidance_int_int,Movement_MovementAndAvoidance_SMove_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_MovementAndAvoidance_Avoid_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_MovementAndAvoidance_Avoid(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_MovementAndAvoidance_int_int,Movement_MovementAndAvoidance_Avoid_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_MovementAndAvoidance_DMove_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_MovementAndAvoidance_DMove(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_MovementAndAvoidance_int_int,Movement_MovementAndAvoidance_DMove_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_MovementAndAvoidance_Wait_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_MovementAndAvoidance_Wait(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_MovementAndAvoidance_int_int,Movement_MovementAndAvoidance_Wait_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_MovementAndAvoidance(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = (
 		State_Movement_MovementAndAvoidance_aux(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 			[|
 				union(
@@ -245,21 +235,17 @@ exports
 			|]
 		(
 			State_Movement_MovementAndAvoidance_SMove_R(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha)
 				[|inter(CS_Movement_MovementAndAvoidance_SMove_sync,union(union(CS_Movement_MovementAndAvoidance_Avoid_sync,CS_Movement_MovementAndAvoidance_DMove_sync),CS_Movement_MovementAndAvoidance_Wait_sync))|]
 			(
 				State_Movement_MovementAndAvoidance_Avoid_R(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 					[|inter(CS_Movement_MovementAndAvoidance_Avoid_sync,union(CS_Movement_MovementAndAvoidance_DMove_sync,CS_Movement_MovementAndAvoidance_Wait_sync))|]
 				(
 					State_Movement_MovementAndAvoidance_DMove_R(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 						[|inter(CS_Movement_MovementAndAvoidance_DMove_sync,CS_Movement_MovementAndAvoidance_Wait_sync)|]
 					State_Movement_MovementAndAvoidance_Wait_R(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 				)
 			)
@@ -267,52 +253,46 @@ exports
 	)
 	
 	Movement_MovementAndAvoidance_triggers = {|
-		internal__.TID_Movement_t2,
-		internal__.TID_Movement_MovementAndAvoidance_t8,
-		internal__.TID_Movement_t3,
-		internal__.TID_Movement_MovementAndAvoidance_t4,
-		internal__.TID_Movement_MovementAndAvoidance_t3,
-		internal__.TID_Movement_MovementAndAvoidance_t2,
-		internal__.TID_Movement_t5,
-		internal__.TID_Movement_MovementAndAvoidance_t0,
-		internal__.TID_Movement_MovementAndAvoidance_t1,
-		internal__.TID_Movement_t4,
-		internal__.TID_Movement_MovementAndAvoidance_t5,
 		internal__.TID_Movement_t1,
+		internal__.TID_Movement_MovementAndAvoidance_t8,
+		internal__.TID_Movement_MovementAndAvoidance_t4,
+		internal__.TID_Movement_MovementAndAvoidance_t2,
+		internal__.TID_Movement_t3,
+		internal__.TID_Movement_t2,
+		internal__.TID_Movement_MovementAndAvoidance_t0,
+		internal__.TID_Movement_MovementAndAvoidance_t5,
+		internal__.TID_Movement_MovementAndAvoidance_t1,
+		internal__.TID_Movement_MovementAndAvoidance_t6,
+		internal__.TID_Movement_t4,
 		internal__.TID_Movement_MovementAndAvoidance_t7,
-		internal__.TID_Movement_MovementAndAvoidance_t6
+		internal__.TID_Movement_t5,
+		internal__.TID_Movement_MovementAndAvoidance_t3
 	|}
 	
 	State_Movement_MovementAndAvoidance_aux(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_t1(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_t1 ->  exit.SID_Movement_MovementAndAvoidance.SID_Movement_MovementAndAvoidance -> SKIP;
 							exit!SID_Movement_MovementAndAvoidance?z____:{SID_Movement_MovementAndAvoidance_SMove,SID_Movement_MovementAndAvoidance_Avoid,SID_Movement_MovementAndAvoidance_DMove,SID_Movement_MovementAndAvoidance_Wait} -> exited!SID_Movement_MovementAndAvoidance!z____ -> 
 									SKIP;
 							SKIP;exited.SID_Movement_MovementAndAvoidance.SID_Movement_MovementAndAvoidance -> SKIP;
 							DoClockReset({clockReset.CLID_MBC});enter!SID_Movement_MovementAndAvoidance!SID_Movement_InfoNeighbours -> entered!SID_Movement_MovementAndAvoidance!SID_Movement_InfoNeighbours ->
 							State_Movement_MovementAndAvoidance_aux(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		State_Movement_MovementAndAvoidance_aux_execute(id__,o____) = SKIP; 
 		I_Movement_MovementAndAvoidance_i0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha);
 			entered!o____!SID_Movement_MovementAndAvoidance ->
 			(SKIP; STOP /\ (
 				T_Movement_t1(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_t2,TID_Movement_MovementAndAvoidance_t8,TID_Movement_t3,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t3,TID_Movement_MovementAndAvoidance_t2,TID_Movement_t5,TID_Movement_MovementAndAvoidance_t0,TID_Movement_MovementAndAvoidance_t1,TID_Movement_t4,TID_Movement_MovementAndAvoidance_t5,TID_Movement_t1,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t6}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance})!SID_Movement_MovementAndAvoidance -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_t1,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t2,TID_Movement_t3,TID_Movement_t2,TID_Movement_MovementAndAvoidance_t0,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t6,TID_Movement_t4,TID_Movement_MovementAndAvoidance_t7,TID_Movement_t5,TID_Movement_MovementAndAvoidance_t3}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance})!SID_Movement_MovementAndAvoidance -> (
 						exit!SID_Movement_MovementAndAvoidance?z____:{SID_Movement_MovementAndAvoidance_SMove,SID_Movement_MovementAndAvoidance_Avoid,SID_Movement_MovementAndAvoidance_DMove,SID_Movement_MovementAndAvoidance_Wait} -> exited!SID_Movement_MovementAndAvoidance!z____ -> 
 								SKIP;
 						SKIP;
 						exited!y____!SID_Movement_MovementAndAvoidance -> SKIP);
 						State_Movement_MovementAndAvoidance_aux(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -333,26 +313,23 @@ exports
 	
 	
 	Movement_MovementAndAvoidance_SMove_triggers = {|
-		internal__.TID_Movement_MovementAndAvoidance_t7,
+		internal__.TID_Movement_MovementAndAvoidance_t5,
+		internal__.TID_Movement_MovementAndAvoidance_t1,
+		internal__.TID_Movement_MovementAndAvoidance_t6,
 		internal__.TID_Movement_MovementAndAvoidance_t8,
 		internal__.TID_Movement_MovementAndAvoidance_t4,
-		internal__.TID_Movement_MovementAndAvoidance_t3,
+		internal__.TID_Movement_MovementAndAvoidance_t7,
 		internal__.TID_Movement_MovementAndAvoidance_t2,
-		internal__.TID_Movement_MovementAndAvoidance_t1,
-		internal__.TID_Movement_MovementAndAvoidance_t5,
-		internal__.TID_Movement_MovementAndAvoidance_t6
+		internal__.TID_Movement_MovementAndAvoidance_t3
 	|}
 	
 	State_Movement_MovementAndAvoidance_SMove(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_MovementAndAvoidance_t1(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_MovementAndAvoidance_t1 ->  exit.SID_Movement_MovementAndAvoidance_SMove.SID_Movement_MovementAndAvoidance_SMove -> SKIP;
 							SKIP;exited.SID_Movement_MovementAndAvoidance_SMove.SID_Movement_MovementAndAvoidance_SMove -> SKIP;
 							enter!SID_Movement_MovementAndAvoidance_SMove!SID_Movement_MovementAndAvoidance_DMove -> entered!SID_Movement_MovementAndAvoidance_SMove!SID_Movement_MovementAndAvoidance_DMove ->
 							State_Movement_MovementAndAvoidance_SMove(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		State_Movement_MovementAndAvoidance_SMove_execute(id__,o____) = true&CALL__move(
 					id__,
@@ -362,14 +339,12 @@ exports
 			entered!o____!SID_Movement_MovementAndAvoidance_SMove ->
 			(SKIP; STOP /\ (
 				T_Movement_MovementAndAvoidance_t1(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t3,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t6}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_SMove})!SID_Movement_MovementAndAvoidance_SMove -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t6,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t3}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_SMove})!SID_Movement_MovementAndAvoidance_SMove -> (
 						SKIP;
 						exited!y____!SID_Movement_MovementAndAvoidance_SMove -> SKIP);
 						State_Movement_MovementAndAvoidance_SMove(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -390,30 +365,27 @@ exports
 	
 	
 	Movement_MovementAndAvoidance_Avoid_triggers = {|
-		internal__.TID_Movement_MovementAndAvoidance_t7,
+		internal__.TID_Movement_MovementAndAvoidance_t5,
+		internal__.TID_Movement_MovementAndAvoidance_t6,
+		internal__.TID_Movement_MovementAndAvoidance_t1,
 		internal__.TID_Movement_MovementAndAvoidance_t8,
 		internal__.TID_Movement_MovementAndAvoidance_t4,
-		internal__.TID_Movement_MovementAndAvoidance_t3,
+		internal__.TID_Movement_MovementAndAvoidance_t7,
 		internal__.TID_Movement_MovementAndAvoidance_t2,
-		internal__.TID_Movement_MovementAndAvoidance_t1,
-		internal__.TID_Movement_MovementAndAvoidance_t5,
-		internal__.TID_Movement_MovementAndAvoidance_t6
+		internal__.TID_Movement_MovementAndAvoidance_t3
 	|}
 	
 	State_Movement_MovementAndAvoidance_Avoid(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_MovementAndAvoidance_t5(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_MovementAndAvoidance_t5 ->  exit.SID_Movement_MovementAndAvoidance_Avoid.SID_Movement_MovementAndAvoidance_Avoid -> SKIP;
 							SKIP;exited.SID_Movement_MovementAndAvoidance_Avoid.SID_Movement_MovementAndAvoidance_Avoid -> SKIP;
 							enter!SID_Movement_MovementAndAvoidance_Avoid!SID_Movement_MovementAndAvoidance_Wait -> entered!SID_Movement_MovementAndAvoidance_Avoid!SID_Movement_MovementAndAvoidance_Wait ->
 							State_Movement_MovementAndAvoidance_Avoid(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		State_Movement_MovementAndAvoidance_Avoid_execute(id__,o____) = get_p?p -> true&(if ((p==RSMov_Position_left)) then (true&CALL__move(
 					id__,
-					1,
+					0,
 					0
 				)) else (true&CALL__move(
 					id__,
@@ -423,14 +395,12 @@ exports
 			entered!o____!SID_Movement_MovementAndAvoidance_Avoid ->
 			(SKIP; STOP /\ (
 				T_Movement_MovementAndAvoidance_t5(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t3,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t6}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_Avoid})!SID_Movement_MovementAndAvoidance_Avoid -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t6,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t3}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_Avoid})!SID_Movement_MovementAndAvoidance_Avoid -> (
 						SKIP;
 						exited!y____!SID_Movement_MovementAndAvoidance_Avoid -> SKIP);
 						State_Movement_MovementAndAvoidance_Avoid(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -451,35 +421,30 @@ exports
 	
 	
 	Movement_MovementAndAvoidance_DMove_triggers = {|
-		internal__.TID_Movement_MovementAndAvoidance_t7,
+		internal__.TID_Movement_MovementAndAvoidance_t5,
+		internal__.TID_Movement_MovementAndAvoidance_t6,
+		internal__.TID_Movement_MovementAndAvoidance_t1,
 		internal__.TID_Movement_MovementAndAvoidance_t8,
 		internal__.TID_Movement_MovementAndAvoidance_t4,
-		internal__.TID_Movement_MovementAndAvoidance_t3,
+		internal__.TID_Movement_MovementAndAvoidance_t7,
 		internal__.TID_Movement_MovementAndAvoidance_t2,
-		internal__.TID_Movement_MovementAndAvoidance_t1,
-		internal__.TID_Movement_MovementAndAvoidance_t5,
-		internal__.TID_Movement_MovementAndAvoidance_t6
+		internal__.TID_Movement_MovementAndAvoidance_t3
 	|}
 	
 	State_Movement_MovementAndAvoidance_DMove(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_MovementAndAvoidance_t4(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = endexec__.TID_Movement_MovementAndAvoidance_t4 -> startexec ->  (exit.SID_Movement_MovementAndAvoidance_DMove.SID_Movement_MovementAndAvoidance_DMove -> SKIP;
 							SKIP;exited.SID_Movement_MovementAndAvoidance_DMove.SID_Movement_MovementAndAvoidance_DMove -> SKIP;
 							J_Movement_MovementAndAvoidance_j0(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha))
 		J_Movement_MovementAndAvoidance_j0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_MovementAndAvoidance_t2 -> enter!SID_Movement_MovementAndAvoidance_DMove!SID_Movement_MovementAndAvoidance_DMove -> State_Movement_MovementAndAvoidance_DMove_execute(id__,SID_Movement_MovementAndAvoidance_DMove)
 					)[]
 					(internal__!TID_Movement_MovementAndAvoidance_t3 -> get_obstacle?b__?x__ -> set_p!x__ -> SKIP
 					;enter!SID_Movement_MovementAndAvoidance_DMove!SID_Movement_MovementAndAvoidance_Avoid -> entered!SID_Movement_MovementAndAvoidance_DMove!SID_Movement_MovementAndAvoidance_Avoid ->
 					State_Movement_MovementAndAvoidance_DMove(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 					)
 					)
@@ -487,14 +452,12 @@ exports
 			entered!o____!SID_Movement_MovementAndAvoidance_DMove ->
 			(SKIP; STOP /\ (
 				T_Movement_MovementAndAvoidance_t4(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t3,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t6}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_DMove})!SID_Movement_MovementAndAvoidance_DMove -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t6,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t3}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_DMove})!SID_Movement_MovementAndAvoidance_DMove -> (
 						SKIP;
 						exited!y____!SID_Movement_MovementAndAvoidance_DMove -> SKIP);
 						State_Movement_MovementAndAvoidance_DMove(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -515,34 +478,29 @@ exports
 	
 	
 	Movement_MovementAndAvoidance_Wait_triggers = {|
-		internal__.TID_Movement_MovementAndAvoidance_t7,
+		internal__.TID_Movement_MovementAndAvoidance_t5,
+		internal__.TID_Movement_MovementAndAvoidance_t6,
+		internal__.TID_Movement_MovementAndAvoidance_t1,
 		internal__.TID_Movement_MovementAndAvoidance_t8,
 		internal__.TID_Movement_MovementAndAvoidance_t4,
-		internal__.TID_Movement_MovementAndAvoidance_t3,
+		internal__.TID_Movement_MovementAndAvoidance_t7,
 		internal__.TID_Movement_MovementAndAvoidance_t2,
-		internal__.TID_Movement_MovementAndAvoidance_t1,
-		internal__.TID_Movement_MovementAndAvoidance_t6,
-		internal__.TID_Movement_MovementAndAvoidance_t5
+		internal__.TID_Movement_MovementAndAvoidance_t3
 	|}
 	
 	State_Movement_MovementAndAvoidance_Wait(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_MovementAndAvoidance_t6(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = endexec__.TID_Movement_MovementAndAvoidance_t6 -> startexec ->  (exit.SID_Movement_MovementAndAvoidance_Wait.SID_Movement_MovementAndAvoidance_Wait -> SKIP;
 							SKIP;exited.SID_Movement_MovementAndAvoidance_Wait.SID_Movement_MovementAndAvoidance_Wait -> SKIP;
 							J_Movement_MovementAndAvoidance_j1(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha))
 		J_Movement_MovementAndAvoidance_j1(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_MovementAndAvoidance_t7 -> enter!SID_Movement_MovementAndAvoidance_Wait!SID_Movement_MovementAndAvoidance_Wait -> State_Movement_MovementAndAvoidance_Wait_execute(id__,SID_Movement_MovementAndAvoidance_Wait)
 					)[]
 					(internal__!TID_Movement_MovementAndAvoidance_t8 -> enter!SID_Movement_MovementAndAvoidance_Wait!SID_Movement_MovementAndAvoidance_SMove -> entered!SID_Movement_MovementAndAvoidance_Wait!SID_Movement_MovementAndAvoidance_SMove ->
 					State_Movement_MovementAndAvoidance_Wait(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 					)
 					)
@@ -550,14 +508,12 @@ exports
 			entered!o____!SID_Movement_MovementAndAvoidance_Wait ->
 			(SKIP; STOP /\ (
 				T_Movement_MovementAndAvoidance_t6(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t3,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t6,TID_Movement_MovementAndAvoidance_t5}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_Wait})!SID_Movement_MovementAndAvoidance_Wait -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_MovementAndAvoidance_t5,TID_Movement_MovementAndAvoidance_t6,TID_Movement_MovementAndAvoidance_t1,TID_Movement_MovementAndAvoidance_t8,TID_Movement_MovementAndAvoidance_t4,TID_Movement_MovementAndAvoidance_t7,TID_Movement_MovementAndAvoidance_t2,TID_Movement_MovementAndAvoidance_t3}) -> exit?y____:diff(SIDS,{SID_Movement_MovementAndAvoidance_Wait})!SID_Movement_MovementAndAvoidance_Wait -> (
 						SKIP;
 						exited!y____!SID_Movement_MovementAndAvoidance_Wait -> SKIP);
 						State_Movement_MovementAndAvoidance_Wait(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -603,64 +559,50 @@ exports
 	|}
 	
 	State_Movement_Turning_SInit_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_Turning_SInit(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_Turning_int_int,Movement_Turning_SInit_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_Turning_Turn180_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_Turning_Turn180(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_Turning_int_int,Movement_Turning_Turn180_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_Turning_RandomTurn_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_Turning_RandomTurn(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_Turning_int_int,Movement_Turning_RandomTurn_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_Turning_f0_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_Turning_f0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_Turning_int_int,Movement_Turning_f0_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_Turning_WaitTurn180_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_Turning_WaitTurn180(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_Turning_int_int,Movement_Turning_WaitTurn180_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_Turning_WaitRandomTurn_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_Turning_WaitRandomTurn(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	 		[|diff(Movement_Turning_int_int,Movement_Turning_WaitRandomTurn_triggers)|]
 	 	SKIP
 	 		
 	State_Movement_Turning(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = (
 		State_Movement_Turning_aux(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 			[|
 				union(
@@ -676,31 +618,25 @@ exports
 			|]
 		(
 			State_Movement_Turning_SInit_R(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha)
 				[|inter(CS_Movement_Turning_SInit_sync,union(union(union(union(CS_Movement_Turning_Turn180_sync,CS_Movement_Turning_RandomTurn_sync),CS_Movement_Turning_f0_sync),CS_Movement_Turning_WaitTurn180_sync),CS_Movement_Turning_WaitRandomTurn_sync))|]
 			(
 				State_Movement_Turning_Turn180_R(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 					[|inter(CS_Movement_Turning_Turn180_sync,union(union(union(CS_Movement_Turning_RandomTurn_sync,CS_Movement_Turning_f0_sync),CS_Movement_Turning_WaitTurn180_sync),CS_Movement_Turning_WaitRandomTurn_sync))|]
 				(
 					State_Movement_Turning_RandomTurn_R(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 						[|inter(CS_Movement_Turning_RandomTurn_sync,union(union(CS_Movement_Turning_f0_sync,CS_Movement_Turning_WaitTurn180_sync),CS_Movement_Turning_WaitRandomTurn_sync))|]
 					(
 						State_Movement_Turning_f0_R(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 							[|inter(CS_Movement_Turning_f0_sync,union(CS_Movement_Turning_WaitTurn180_sync,CS_Movement_Turning_WaitRandomTurn_sync))|]
 						(
 							State_Movement_Turning_WaitTurn180_R(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 								[|inter(CS_Movement_Turning_WaitTurn180_sync,CS_Movement_Turning_WaitRandomTurn_sync)|]
 							State_Movement_Turning_WaitRandomTurn_R(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 						)
 					)
@@ -710,55 +646,49 @@ exports
 	)
 	
 	Movement_Turning_triggers = {|
-		internal__.TID_Movement_t2,
-		internal__.TID_Movement_Turning_t16,
-		internal__.TID_Movement_Turning_t10,
-		internal__.TID_Movement_Turning_t12,
-		internal__.TID_Movement_t3,
+		internal__.TID_Movement_t1,
 		internal__.TID_Movement_Turning_t0,
-		internal__.TID_Movement_t5,
-		internal__.TID_Movement_Turning_t15,
+		internal__.TID_Movement_Turning_t3,
+		internal__.TID_Movement_Turning_t1,
+		internal__.TID_Movement_Turning_t12,
+		internal__.TID_Movement_Turning_t2,
+		internal__.TID_Movement_t3,
+		internal__.TID_Movement_t2,
+		internal__.TID_Movement_Turning_t13,
+		internal__.TID_Movement_Turning_t4,
 		internal__.TID_Movement_Turning_t9,
 		internal__.TID_Movement_t4,
-		internal__.TID_Movement_Turning_t13,
-		internal__.TID_Movement_t1,
-		internal__.TID_Movement_Turning_t1,
-		internal__.TID_Movement_Turning_t4,
-		internal__.TID_Movement_Turning_t3,
-		internal__.TID_Movement_Turning_t2,
-		internal__.TID_Movement_Turning_t5
+		internal__.TID_Movement_t5,
+		internal__.TID_Movement_Turning_t16,
+		internal__.TID_Movement_Turning_t5,
+		internal__.TID_Movement_Turning_t10,
+		internal__.TID_Movement_Turning_t15
 	|}
 	
 	State_Movement_Turning_aux(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_t2(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_t2 ->  exit.SID_Movement_Turning.SID_Movement_Turning -> SKIP;
 							exit!SID_Movement_Turning?z____:{SID_Movement_Turning_SInit,SID_Movement_Turning_Turn180,SID_Movement_Turning_RandomTurn,SID_Movement_Turning_f0,SID_Movement_Turning_WaitTurn180,SID_Movement_Turning_WaitRandomTurn} -> exited!SID_Movement_Turning!z____ -> 
 									SKIP;
 							SKIP;exited.SID_Movement_Turning.SID_Movement_Turning -> SKIP;
 							enter!SID_Movement_Turning!SID_Movement_MovementAndAvoidance -> entered!SID_Movement_Turning!SID_Movement_MovementAndAvoidance ->
 							State_Movement_Turning_aux(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		State_Movement_Turning_aux_execute(id__,o____) = true & (set_turned!false -> SKIP); 
 		I_Movement_Turning_i0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha);
 			entered!o____!SID_Movement_Turning ->
 			(SKIP; STOP /\ (
 				T_Movement_t2(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_t2,TID_Movement_Turning_t16,TID_Movement_Turning_t10,TID_Movement_Turning_t12,TID_Movement_t3,TID_Movement_Turning_t0,TID_Movement_t5,TID_Movement_Turning_t15,TID_Movement_Turning_t9,TID_Movement_t4,TID_Movement_Turning_t13,TID_Movement_t1,TID_Movement_Turning_t1,TID_Movement_Turning_t4,TID_Movement_Turning_t3,TID_Movement_Turning_t2,TID_Movement_Turning_t5}) -> exit?y____:diff(SIDS,{SID_Movement_Turning})!SID_Movement_Turning -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_t1,TID_Movement_Turning_t0,TID_Movement_Turning_t3,TID_Movement_Turning_t1,TID_Movement_Turning_t12,TID_Movement_Turning_t2,TID_Movement_t3,TID_Movement_t2,TID_Movement_Turning_t13,TID_Movement_Turning_t4,TID_Movement_Turning_t9,TID_Movement_t4,TID_Movement_t5,TID_Movement_Turning_t16,TID_Movement_Turning_t5,TID_Movement_Turning_t10,TID_Movement_Turning_t15}) -> exit?y____:diff(SIDS,{SID_Movement_Turning})!SID_Movement_Turning -> (
 						exit!SID_Movement_Turning?z____:{SID_Movement_Turning_SInit,SID_Movement_Turning_Turn180,SID_Movement_Turning_RandomTurn,SID_Movement_Turning_f0,SID_Movement_Turning_WaitTurn180,SID_Movement_Turning_WaitRandomTurn} -> exited!SID_Movement_Turning!z____ -> 
 								SKIP;
 						SKIP;
 						exited!y____!SID_Movement_Turning -> SKIP);
 						State_Movement_Turning_aux(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -779,40 +709,34 @@ exports
 	
 	
 	Movement_Turning_SInit_triggers = {|
-		internal__.TID_Movement_Turning_t13,
-		internal__.TID_Movement_Turning_t16,
+		internal__.TID_Movement_Turning_t3,
 		internal__.TID_Movement_Turning_t1,
 		internal__.TID_Movement_Turning_t12,
-		internal__.TID_Movement_Turning_t10,
-		internal__.TID_Movement_Turning_t4,
-		internal__.TID_Movement_Turning_t3,
-		internal__.TID_Movement_Turning_t15,
 		internal__.TID_Movement_Turning_t2,
+		internal__.TID_Movement_Turning_t4,
+		internal__.TID_Movement_Turning_t13,
+		internal__.TID_Movement_Turning_t5,
+		internal__.TID_Movement_Turning_t16,
 		internal__.TID_Movement_Turning_t9,
-		internal__.TID_Movement_Turning_t5
+		internal__.TID_Movement_Turning_t10,
+		internal__.TID_Movement_Turning_t15
 	|}
 	
 	State_Movement_Turning_SInit(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_Turning_t1(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t1 ->  exit.SID_Movement_Turning_SInit.SID_Movement_Turning_SInit -> SKIP;
 							SKIP;exited.SID_Movement_Turning_SInit.SID_Movement_Turning_SInit -> SKIP;
 							J_Movement_Turning_j0(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		J_Movement_Turning_j0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_Turning_t2 -> enter!SID_Movement_Turning_SInit!SID_Movement_Turning_Turn180 -> entered!SID_Movement_Turning_SInit!SID_Movement_Turning_Turn180 ->
 					State_Movement_Turning_SInit(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 					)[]
 					(internal__!TID_Movement_Turning_t3 -> enter!SID_Movement_Turning_SInit!SID_Movement_Turning_RandomTurn -> entered!SID_Movement_Turning_SInit!SID_Movement_Turning_RandomTurn ->
 					State_Movement_Turning_SInit(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 					)
 					)
@@ -820,14 +744,12 @@ exports
 			entered!o____!SID_Movement_Turning_SInit ->
 			(SKIP; STOP /\ (
 				T_Movement_Turning_t1(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t13,TID_Movement_Turning_t16,TID_Movement_Turning_t1,TID_Movement_Turning_t12,TID_Movement_Turning_t10,TID_Movement_Turning_t4,TID_Movement_Turning_t3,TID_Movement_Turning_t15,TID_Movement_Turning_t2,TID_Movement_Turning_t9,TID_Movement_Turning_t5}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_SInit})!SID_Movement_Turning_SInit -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t3,TID_Movement_Turning_t1,TID_Movement_Turning_t12,TID_Movement_Turning_t2,TID_Movement_Turning_t4,TID_Movement_Turning_t13,TID_Movement_Turning_t5,TID_Movement_Turning_t16,TID_Movement_Turning_t9,TID_Movement_Turning_t10,TID_Movement_Turning_t15}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_SInit})!SID_Movement_Turning_SInit -> (
 						SKIP;
 						exited!y____!SID_Movement_Turning_SInit -> SKIP);
 						State_Movement_Turning_SInit(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -848,28 +770,23 @@ exports
 	
 	
 	Movement_Turning_Turn180_triggers = {|
-		internal__.TID_Movement_Turning_t13,
 		internal__.TID_Movement_Turning_t12,
 		internal__.TID_Movement_Turning_t4,
+		internal__.TID_Movement_Turning_t13,
 		internal__.TID_Movement_Turning_t9
 	|}
 	
 	State_Movement_Turning_Turn180(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_Turning_t9(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t9 ->  exit.SID_Movement_Turning_Turn180.SID_Movement_Turning_Turn180 -> SKIP;
 							SKIP;exited.SID_Movement_Turning_Turn180.SID_Movement_Turning_Turn180 -> SKIP;
 							J_Movement_Turning_j1(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		J_Movement_Turning_j1(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_Turning_t4 -> endexec -> startexec -> SKIP;enter!SID_Movement_Turning_Turn180!SID_Movement_Turning_WaitTurn180 -> entered!SID_Movement_Turning_Turn180!SID_Movement_Turning_WaitTurn180 ->
 					State_Movement_Turning_Turn180(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 					)
 					)
@@ -881,14 +798,12 @@ exports
 			entered!o____!SID_Movement_Turning_Turn180 ->
 			(SKIP; STOP /\ (
 				T_Movement_Turning_t9(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t13,TID_Movement_Turning_t12,TID_Movement_Turning_t4,TID_Movement_Turning_t9}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_Turn180})!SID_Movement_Turning_Turn180 -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t12,TID_Movement_Turning_t4,TID_Movement_Turning_t13,TID_Movement_Turning_t9}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_Turn180})!SID_Movement_Turning_Turn180 -> (
 						SKIP;
 						exited!y____!SID_Movement_Turning_Turn180 -> SKIP);
 						State_Movement_Turning_Turn180(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -909,28 +824,23 @@ exports
 	
 	
 	Movement_Turning_RandomTurn_triggers = {|
+		internal__.TID_Movement_Turning_t5,
 		internal__.TID_Movement_Turning_t16,
 		internal__.TID_Movement_Turning_t10,
-		internal__.TID_Movement_Turning_t15,
-		internal__.TID_Movement_Turning_t5
+		internal__.TID_Movement_Turning_t15
 	|}
 	
 	State_Movement_Turning_RandomTurn(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_Turning_t10(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t10 ->  exit.SID_Movement_Turning_RandomTurn.SID_Movement_Turning_RandomTurn -> SKIP;
 							SKIP;exited.SID_Movement_Turning_RandomTurn.SID_Movement_Turning_RandomTurn -> SKIP;
 							J_Movement_Turning_j2(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		J_Movement_Turning_j2(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_Turning_t5 -> endexec -> startexec -> SKIP;enter!SID_Movement_Turning_RandomTurn!SID_Movement_Turning_WaitRandomTurn -> entered!SID_Movement_Turning_RandomTurn!SID_Movement_Turning_WaitRandomTurn ->
 					State_Movement_Turning_RandomTurn(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 					)
 					)
@@ -942,14 +852,12 @@ exports
 			entered!o____!SID_Movement_Turning_RandomTurn ->
 			(SKIP; STOP /\ (
 				T_Movement_Turning_t10(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t16,TID_Movement_Turning_t10,TID_Movement_Turning_t15,TID_Movement_Turning_t5}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_RandomTurn})!SID_Movement_Turning_RandomTurn -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t5,TID_Movement_Turning_t16,TID_Movement_Turning_t10,TID_Movement_Turning_t15}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_RandomTurn})!SID_Movement_Turning_RandomTurn -> (
 						SKIP;
 						exited!y____!SID_Movement_Turning_RandomTurn -> SKIP);
 						State_Movement_Turning_RandomTurn(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -973,7 +881,6 @@ exports
 	|}
 	
 	State_Movement_Turning_f0(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		State_Movement_Turning_f0_execute(id__,o____) = SKIP; 
 			entered!o____!SID_Movement_Turning_f0 ->
@@ -982,7 +889,6 @@ exports
 						SKIP;
 						exited!y____!SID_Movement_Turning_f0 -> SKIP);
 						State_Movement_Turning_f0(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -1003,31 +909,25 @@ exports
 	
 	
 	Movement_Turning_WaitTurn180_triggers = {|
-		internal__.TID_Movement_Turning_t13,
 		internal__.TID_Movement_Turning_t12,
+		internal__.TID_Movement_Turning_t13,
 		internal__.TID_Movement_Turning_t4
 	|}
 	
 	State_Movement_Turning_WaitTurn180(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_Turning_t12(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t12 ->  exit.SID_Movement_Turning_WaitTurn180.SID_Movement_Turning_WaitTurn180 -> SKIP;
 							SKIP;exited.SID_Movement_Turning_WaitTurn180.SID_Movement_Turning_WaitTurn180 -> SKIP;
 							true & (set_turned!true -> SKIP);enter!SID_Movement_Turning_WaitTurn180!SID_Movement_Turning_f0 -> entered!SID_Movement_Turning_WaitTurn180!SID_Movement_Turning_f0 ->
 							State_Movement_Turning_WaitTurn180(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		T_Movement_Turning_t13(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t13 ->  exit.SID_Movement_Turning_WaitTurn180.SID_Movement_Turning_WaitTurn180 -> SKIP;
 							SKIP;exited.SID_Movement_Turning_WaitTurn180.SID_Movement_Turning_WaitTurn180 -> SKIP;
 							J_Movement_Turning_j1(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		J_Movement_Turning_j1(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_Turning_t4 -> endexec -> startexec -> SKIP;enter!SID_Movement_Turning_WaitTurn180!SID_Movement_Turning_WaitTurn180 -> State_Movement_Turning_WaitTurn180_execute(id__,SID_Movement_Turning_WaitTurn180)
 					)
@@ -1036,17 +936,14 @@ exports
 			entered!o____!SID_Movement_Turning_WaitTurn180 ->
 			(SKIP; STOP /\ (
 				T_Movement_Turning_t12(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)[]
 				T_Movement_Turning_t13(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t13,TID_Movement_Turning_t12,TID_Movement_Turning_t4}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_WaitTurn180})!SID_Movement_Turning_WaitTurn180 -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t12,TID_Movement_Turning_t13,TID_Movement_Turning_t4}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_WaitTurn180})!SID_Movement_Turning_WaitTurn180 -> (
 						SKIP;
 						exited!y____!SID_Movement_Turning_WaitTurn180 -> SKIP);
 						State_Movement_Turning_WaitTurn180(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -1068,30 +965,24 @@ exports
 	
 	Movement_Turning_WaitRandomTurn_triggers = {|
 		internal__.TID_Movement_Turning_t16,
-		internal__.TID_Movement_Turning_t15,
-		internal__.TID_Movement_Turning_t5
+		internal__.TID_Movement_Turning_t5,
+		internal__.TID_Movement_Turning_t15
 	|}
 	
 	State_Movement_Turning_WaitRandomTurn(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_Turning_t15(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t15 ->  exit.SID_Movement_Turning_WaitRandomTurn.SID_Movement_Turning_WaitRandomTurn -> SKIP;
 							SKIP;exited.SID_Movement_Turning_WaitRandomTurn.SID_Movement_Turning_WaitRandomTurn -> SKIP;
 							J_Movement_Turning_j2(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		T_Movement_Turning_t16(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t16 ->  exit.SID_Movement_Turning_WaitRandomTurn.SID_Movement_Turning_WaitRandomTurn -> SKIP;
 							SKIP;exited.SID_Movement_Turning_WaitRandomTurn.SID_Movement_Turning_WaitRandomTurn -> SKIP;
 							true & (set_turned!true -> SKIP);enter!SID_Movement_Turning_WaitRandomTurn!SID_Movement_Turning_f0 -> entered!SID_Movement_Turning_WaitRandomTurn!SID_Movement_Turning_f0 ->
 							State_Movement_Turning_WaitRandomTurn(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 		J_Movement_Turning_j2(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_Turning_t5 -> endexec -> startexec -> SKIP;enter!SID_Movement_Turning_WaitRandomTurn!SID_Movement_Turning_WaitRandomTurn -> State_Movement_Turning_WaitRandomTurn_execute(id__,SID_Movement_Turning_WaitRandomTurn)
 					)
@@ -1100,17 +991,14 @@ exports
 			entered!o____!SID_Movement_Turning_WaitRandomTurn ->
 			(SKIP; STOP /\ (
 				T_Movement_Turning_t15(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)[]
 				T_Movement_Turning_t16(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t16,TID_Movement_Turning_t15,TID_Movement_Turning_t5}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_WaitRandomTurn})!SID_Movement_Turning_WaitRandomTurn -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_Turning_t16,TID_Movement_Turning_t5,TID_Movement_Turning_t15}) -> exit?y____:diff(SIDS,{SID_Movement_Turning_WaitRandomTurn})!SID_Movement_Turning_WaitRandomTurn -> (
 						SKIP;
 						exited!y____!SID_Movement_Turning_WaitRandomTurn -> SKIP);
 						State_Movement_Turning_WaitRandomTurn(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -1131,30 +1019,25 @@ exports
 	
 	
 	Movement_InfoNeighbours_triggers = {|
-		internal__.TID_Movement_t2,
 		internal__.TID_Movement_t1,
-		internal__.TID_Movement_t3,
+		internal__.TID_Movement_t4,
 		internal__.TID_Movement_t5,
-		internal__.TID_Movement_t4
+		internal__.TID_Movement_t3,
+		internal__.TID_Movement_t2
 	|}
 	
 	State_Movement_InfoNeighbours(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_t5(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = endexec__.TID_Movement_t5 -> startexec ->  (exit.SID_Movement_InfoNeighbours.SID_Movement_InfoNeighbours -> SKIP;
 							SKIP;exited.SID_Movement_InfoNeighbours.SID_Movement_InfoNeighbours -> SKIP;
 							J_Movement_j0(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha))
 		J_Movement_j0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (
 					(internal__!TID_Movement_t4 -> get_neighbours?b__?x__ -> set_n!x__ -> SKIP
 					;enter!SID_Movement_InfoNeighbours!SID_Movement_Turning -> entered!SID_Movement_InfoNeighbours!SID_Movement_Turning ->
 					State_Movement_InfoNeighbours(id__,
-							    const_RSMov_Movement_MB,
 							    const_RSMov_Movement_alpha)
 					)[]
 					(internal__!TID_Movement_t3 -> enter!SID_Movement_InfoNeighbours!SID_Movement_InfoNeighbours -> State_Movement_InfoNeighbours_execute(id__,SID_Movement_InfoNeighbours)
@@ -1164,14 +1047,12 @@ exports
 			entered!o____!SID_Movement_InfoNeighbours ->
 			(SKIP; STOP /\ (
 				T_Movement_t5(id__,
-						    const_RSMov_Movement_MB,
 						    const_RSMov_Movement_alpha)
 				[]
-				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_t2,TID_Movement_t1,TID_Movement_t3,TID_Movement_t5,TID_Movement_t4}) -> exit?y____:diff(SIDS,{SID_Movement_InfoNeighbours})!SID_Movement_InfoNeighbours -> (
+				internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_Movement_t1,TID_Movement_t4,TID_Movement_t5,TID_Movement_t3,TID_Movement_t2}) -> exit?y____:diff(SIDS,{SID_Movement_InfoNeighbours})!SID_Movement_InfoNeighbours -> (
 						SKIP;
 						exited!y____!SID_Movement_InfoNeighbours -> SKIP);
 						State_Movement_InfoNeighbours(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 			))
 	within
@@ -1179,72 +1060,56 @@ exports
 	
 	
 	I_Movement_MovementAndAvoidance_i0(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_MovementAndAvoidance_t0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_MovementAndAvoidance_t0 -> DoClockReset({clockReset.CLID_MBC});enter!SID_Movement_MovementAndAvoidance!SID_Movement_MovementAndAvoidance_SMove -> entered!SID_Movement_MovementAndAvoidance!SID_Movement_MovementAndAvoidance_SMove ->
 		SKIP
 	within
 		T_Movement_MovementAndAvoidance_t0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	
 	I_Movement_i0(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_t0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_t0 -> enter!SID_Movement!SID_Movement_MovementAndAvoidance -> entered!SID_Movement!SID_Movement_MovementAndAvoidance ->
 		SKIP
 	within
 		T_Movement_t0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	
 	I_Movement_Turning_i0(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = let
 		T_Movement_Turning_t0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = internal__!TID_Movement_Turning_t0 -> enter!SID_Movement_Turning!SID_Movement_Turning_SInit -> entered!SID_Movement_Turning!SID_Movement_Turning_SInit ->
 		SKIP
 	within
 		T_Movement_Turning_t0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 	
 	
 	State_Movement_MovementAndAvoidance_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_MovementAndAvoidance(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 			[|diff(int_int,Movement_MovementAndAvoidance_triggers)|]
 		SKIP
 			 		
 	State_Movement_Turning_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_Turning(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 			[|diff(int_int,Movement_Turning_triggers)|]
 		SKIP
 			 		
 	State_Movement_InfoNeighbours_R(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		State_Movement_InfoNeighbours(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 			[|diff(int_int,Movement_InfoNeighbours_triggers)|]
 		SKIP
 			 		
 		
 	STM(id__,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) = 
 		let
 			Ending = endexec -> (startexec -> Ending [] terminate -> SKIP)
@@ -1254,7 +1119,6 @@ exports
 					(
 						(
 						I_Movement_i0(id__,
-								    const_RSMov_Movement_MB,
 								    const_RSMov_Movement_alpha)
 							[|
 								{|enter.x____.y____, entered.x____.y____, exit.x____.y____, exited.x____.y____ |
@@ -1263,16 +1127,13 @@ exports
 							|}|]
 						(
 							State_Movement_MovementAndAvoidance_R(id__,
-									    const_RSMov_Movement_MB,
 									    const_RSMov_Movement_alpha)
 								[|inter(CS_Movement_MovementAndAvoidance_sync,union(CS_Movement_Turning_sync,CS_Movement_InfoNeighbours_sync))|]
 							(
 								State_Movement_Turning_R(id__,
-										    const_RSMov_Movement_MB,
 										    const_RSMov_Movement_alpha)
 									[|inter(CS_Movement_Turning_sync,CS_Movement_InfoNeighbours_sync)|]
 								State_Movement_InfoNeighbours_R(id__,
-										    const_RSMov_Movement_MB,
 										    const_RSMov_Movement_alpha)
 							)
 						)
@@ -1363,7 +1224,6 @@ exports
 		 WC_TID_Movement_t1_0,
 		 WC_TID_Movement_MovementAndAvoidance_t2_0,
 		 WC_TID_Movement_MovementAndAvoidance_t8_0,
-		 const_RSMov_Movement_MB,
 		 const_RSMov_Movement_alpha,
 		 obstacle,
 		 neighbours) = (
@@ -1441,7 +1301,6 @@ exports
 	 			 			 	
 	 	)
 	MemoryTransitions_Movement(id__,
-		 const_RSMov_Movement_MB,
 		 const_RSMov_Movement_alpha) =
 		(
 		getV_n?n ->	
@@ -1461,12 +1320,10 @@ exports
 		 	 WC_TID_Movement_t1_0,
 		 	 WC_TID_Movement_MovementAndAvoidance_t2_0,
 		 	 WC_TID_Movement_MovementAndAvoidance_t8_0,
-		 	 const_RSMov_Movement_MB,
 		 	 const_RSMov_Movement_alpha,
 		 	 obstacle,
 		 	 neighbours);
 		 MemoryTransitions_Movement(id__,
-		 	 const_RSMov_Movement_MB,
 		 	 const_RSMov_Movement_alpha)
 		)
 	
@@ -1525,12 +1382,10 @@ exports
 	
 	-- complete memory process
 	MemoryN(id__,
-		 const_RSMov_Movement_MB,
 		 const_RSMov_Movement_alpha) = 
 		(MemoryVariables 
 		 [| MemoryVariablesSyncSet |] 
 		 (	startexec -> wbisim(MemoryTransitions_Movement(id__,
-		 	 const_RSMov_Movement_MB,
 		 	 const_RSMov_Movement_alpha))
 		 	[| union({|startexec|},union(Transitions,diff(EndExecs,{endexec}))) |]
 		 	-- The following process is an equivalent way to specify that between endexec
@@ -1561,71 +1416,71 @@ exports
 	-- optimised memory
 	-- Sets of named elements identified according to transition conditions:
 	-- {}
+	-- {WC_TID_Movement_MovementAndAvoidance_t7_0}
+	-- {n,alpha}
 	-- {turned}
 	-- {WC_TID_Movement_MovementAndAvoidance_t8_0}
-	-- {n,alpha}
-	-- {neighbours}
-	-- {WC_TID_Movement_t1_0}
 	-- {WC_TID_Movement_MovementAndAvoidance_t2_0,obstacle}
-	-- {WC_TID_Movement_MovementAndAvoidance_t7_0}
+	-- {WC_TID_Movement_t1_0}
+	-- {neighbours}
 	-- Summary of all identified named elements:
 	-- {
-	-- WC_TID_Movement_MovementAndAvoidance_t2_0
+	-- WC_TID_Movement_MovementAndAvoidance_t7_0
+	-- n
 	-- turned
 	-- WC_TID_Movement_MovementAndAvoidance_t8_0
-	-- n
-	-- neighbours
-	-- WC_TID_Movement_t1_0
 	-- alpha
+	-- WC_TID_Movement_MovementAndAvoidance_t2_0
 	-- p
-	-- WC_TID_Movement_MovementAndAvoidance_t7_0
+	-- WC_TID_Movement_t1_0
 	-- obstacle
+	-- neighbours
 	-- }
 	
 	-- Allocation plan:
 	-- 0:{}
 	--	=> {
-	--		TID_Movement_Turning_t5,
-	--		TID_Movement_MovementAndAvoidance_t6,
-	--		TID_Movement_Turning_t0,
-	--		TID_Movement_MovementAndAvoidance_t1,
-	--		TID_Movement_Turning_t1,
-	--		TID_Movement_Turning_t4,
-	--		TID_Movement_t0,
-	--		TID_Movement_MovementAndAvoidance_t0,
 	--		TID_Movement_Turning_t9,
-	--		TID_Movement_MovementAndAvoidance_t4,
-	--		TID_Movement_MovementAndAvoidance_t5,
+	--		TID_Movement_t0,
 	--		TID_Movement_t5,
-	--		TID_Movement_Turning_t10}
-	-- 1:{turned}
+	--		TID_Movement_MovementAndAvoidance_t0,
+	--		TID_Movement_MovementAndAvoidance_t6,
+	--		TID_Movement_Turning_t4,
+	--		TID_Movement_Turning_t0,
+	--		TID_Movement_Turning_t5,
+	--		TID_Movement_MovementAndAvoidance_t4,
+	--		TID_Movement_Turning_t10,
+	--		TID_Movement_MovementAndAvoidance_t5,
+	--		TID_Movement_MovementAndAvoidance_t1,
+	--		TID_Movement_Turning_t1}
+	-- 1:{WC_TID_Movement_MovementAndAvoidance_t7_0}
 	--	=> {
-	--		TID_Movement_t2}
-	-- 2:{WC_TID_Movement_MovementAndAvoidance_t8_0}
-	--	=> {
-	--		TID_Movement_MovementAndAvoidance_t8,
-	--		TID_Movement_Turning_t16,
-	--		TID_Movement_Turning_t12}
+	--		TID_Movement_Turning_t13,
+	--		TID_Movement_Turning_t15,
+	--		TID_Movement_MovementAndAvoidance_t7}
 	-- 6:{n,alpha}
 	--	=> {
 	--		TID_Movement_Turning_t3,
 	--		TID_Movement_Turning_t2}
-	-- 3:{neighbours}
+	-- 2:{turned}
 	--	=> {
-	--		TID_Movement_t3,
-	--		TID_Movement_t4}
-	-- 4:{WC_TID_Movement_t1_0}
+	--		TID_Movement_t2}
+	-- 3:{WC_TID_Movement_MovementAndAvoidance_t8_0}
 	--	=> {
-	--		TID_Movement_t1}
+	--		TID_Movement_MovementAndAvoidance_t8,
+	--		TID_Movement_Turning_t12,
+	--		TID_Movement_Turning_t16}
 	-- 7:{WC_TID_Movement_MovementAndAvoidance_t2_0,obstacle}
 	--	=> {
 	--		TID_Movement_MovementAndAvoidance_t2,
 	--		TID_Movement_MovementAndAvoidance_t3}
-	-- 5:{WC_TID_Movement_MovementAndAvoidance_t7_0}
+	-- 4:{WC_TID_Movement_t1_0}
 	--	=> {
-	--		TID_Movement_Turning_t15,
-	--		TID_Movement_MovementAndAvoidance_t7,
-	--		TID_Movement_Turning_t13}
+	--		TID_Movement_t1}
+	-- 5:{neighbours}
+	--	=> {
+	--		TID_Movement_t4,
+	--		TID_Movement_t3}
 	
 	-- Memory transition processes
 	MemoryTransitions_opt_0(id__) =
@@ -1634,31 +1489,31 @@ exports
 			Update = Current(id__)
 			Current(id__)
 			 	   = 
-			 	   internal__!TID_Movement_Turning_t5 -> Update
+			 	   internal__!TID_Movement_Turning_t9 -> Update
+			 	   []
+			 	   internal__!TID_Movement_t0 -> Update
+			 	   []
+			 	   endexec__!TID_Movement_t5 -> Update
+			 	   []
+			 	   internal__!TID_Movement_MovementAndAvoidance_t0 -> Update
 			 	   []
 			 	   endexec__!TID_Movement_MovementAndAvoidance_t6 -> Update
 			 	   []
+			 	   internal__!TID_Movement_Turning_t4 -> Update
+			 	   []
 			 	   internal__!TID_Movement_Turning_t0 -> Update
+			 	   []
+			 	   internal__!TID_Movement_Turning_t5 -> Update
+			 	   []
+			 	   endexec__!TID_Movement_MovementAndAvoidance_t4 -> Update
+			 	   []
+			 	   internal__!TID_Movement_Turning_t10 -> Update
+			 	   []
+			 	   internal__!TID_Movement_MovementAndAvoidance_t5 -> Update
 			 	   []
 			 	   internal__!TID_Movement_MovementAndAvoidance_t1 -> Update
 			 	   []
 			 	   internal__!TID_Movement_Turning_t1 -> Update
-			 	   []
-			 	   internal__!TID_Movement_Turning_t4 -> Update
-			 	   []
-			 	   internal__!TID_Movement_t0 -> Update
-			 	   []
-			 	   internal__!TID_Movement_MovementAndAvoidance_t0 -> Update
-			 	   []
-			 	   internal__!TID_Movement_Turning_t9 -> Update
-			 	   []
-			 	   endexec__!TID_Movement_MovementAndAvoidance_t4 -> Update
-			 	   []
-			 	   internal__!TID_Movement_MovementAndAvoidance_t5 -> Update
-			 	   []
-			 	   endexec__!TID_Movement_t5 -> Update
-			 	   []
-			 	   internal__!TID_Movement_Turning_t10 -> Update
 			 	   	 []
 			 	   	 startexec -> Update
 		within
@@ -1668,41 +1523,22 @@ exports
 	(
 		let
 			Update = 
-			get_turned?turned ->
+			getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID?WC_TID_Movement_MovementAndAvoidance_t7_0 ->
 			Current(id__,
-				 turned)
+				 WC_TID_Movement_MovementAndAvoidance_t7_0)
 			Current(id__,
-				 turned)
+				 WC_TID_Movement_MovementAndAvoidance_t7_0)
 			 	   = 
-			 	   (turned)&(internal__!TID_Movement_t2 -> Update)
+			 	   (WC_TID_Movement_MovementAndAvoidance_t7_0)&(internal__!TID_Movement_Turning_t13 -> Update)
+			 	   []
+			 	   (WC_TID_Movement_MovementAndAvoidance_t7_0)&(internal__!TID_Movement_Turning_t15 -> Update)
+			 	   []
+			 	   (WC_TID_Movement_MovementAndAvoidance_t7_0)&(internal__!TID_Movement_MovementAndAvoidance_t7 -> Update)
 			 	   	 []
 			 	   	 startexec -> Update
 			 	   	 
 			 	   	 []
-			 	   	 set_turned?x__ -> Update
-		within
-			Update
-	)
-	MemoryTransitions_opt_2(id__) =
-	(
-		let
-			Update = 
-			getWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID?WC_TID_Movement_MovementAndAvoidance_t8_0 ->
-			Current(id__,
-				 WC_TID_Movement_MovementAndAvoidance_t8_0)
-			Current(id__,
-				 WC_TID_Movement_MovementAndAvoidance_t8_0)
-			 	   = 
-			 	   (WC_TID_Movement_MovementAndAvoidance_t8_0)&(internal__!TID_Movement_MovementAndAvoidance_t8 -> Update)
-			 	   []
-			 	   (WC_TID_Movement_MovementAndAvoidance_t8_0)&(internal__!TID_Movement_Turning_t16 -> Update)
-			 	   []
-			 	   (WC_TID_Movement_MovementAndAvoidance_t8_0)&(internal__!TID_Movement_Turning_t12 -> Update)
-			 	   	 []
-			 	   	 startexec -> Update
-			 	   	 
-			 	   	 []
-			 	   	 setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID?x__ -> Update
+			 	   	 setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID?x__ -> Update
 		within
 			Update
 	)
@@ -1728,40 +1564,45 @@ exports
 		within
 			Update
 	)
-	MemoryTransitions_opt_3(id__) =
+	MemoryTransitions_opt_2(id__) =
 	(
 		let
 			Update = 
-			get_neighbours?neighbours ->
+			get_turned?turned ->
 			Current(id__,
-				 neighbours)
+				 turned)
 			Current(id__,
-				 neighbours)
+				 turned)
 			 	   = 
-			 	   ((not (member(neighbours,{true.x__ | x__ <- core_nat}))))&(internal__!TID_Movement_t3 -> Update)
-			 	   []
-			 	   (member(neighbours,{true.n | n <- core_nat}))&(internal__!TID_Movement_t4 -> Update)
-			 	   	 []
-			 	   	 startexec -> Update
-		within
-			Update
-	)
-	MemoryTransitions_opt_4(id__) =
-	(
-		let
-			Update = 
-			getWC.WC_TID_Movement_t1_0_ID?WC_TID_Movement_t1_0 ->
-			Current(id__,
-				 WC_TID_Movement_t1_0)
-			Current(id__,
-				 WC_TID_Movement_t1_0)
-			 	   = 
-			 	   (WC_TID_Movement_t1_0)&(internal__!TID_Movement_t1 -> Update)
+			 	   (turned)&(internal__!TID_Movement_t2 -> Update)
 			 	   	 []
 			 	   	 startexec -> Update
 			 	   	 
 			 	   	 []
-			 	   	 setWC.WC_TID_Movement_t1_0_ID?x__ -> Update
+			 	   	 set_turned?x__ -> Update
+		within
+			Update
+	)
+	MemoryTransitions_opt_3(id__) =
+	(
+		let
+			Update = 
+			getWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID?WC_TID_Movement_MovementAndAvoidance_t8_0 ->
+			Current(id__,
+				 WC_TID_Movement_MovementAndAvoidance_t8_0)
+			Current(id__,
+				 WC_TID_Movement_MovementAndAvoidance_t8_0)
+			 	   = 
+			 	   (WC_TID_Movement_MovementAndAvoidance_t8_0)&(internal__!TID_Movement_MovementAndAvoidance_t8 -> Update)
+			 	   []
+			 	   (WC_TID_Movement_MovementAndAvoidance_t8_0)&(internal__!TID_Movement_Turning_t12 -> Update)
+			 	   []
+			 	   (WC_TID_Movement_MovementAndAvoidance_t8_0)&(internal__!TID_Movement_Turning_t16 -> Update)
+			 	   	 []
+			 	   	 startexec -> Update
+			 	   	 
+			 	   	 []
+			 	   	 setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID?x__ -> Update
 		within
 			Update
 	)
@@ -1789,35 +1630,54 @@ exports
 		within
 			Update
 	)
-	MemoryTransitions_opt_5(id__) =
+	MemoryTransitions_opt_4(id__) =
 	(
 		let
 			Update = 
-			getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID?WC_TID_Movement_MovementAndAvoidance_t7_0 ->
+			getWC.WC_TID_Movement_t1_0_ID?WC_TID_Movement_t1_0 ->
 			Current(id__,
-				 WC_TID_Movement_MovementAndAvoidance_t7_0)
+				 WC_TID_Movement_t1_0)
 			Current(id__,
-				 WC_TID_Movement_MovementAndAvoidance_t7_0)
+				 WC_TID_Movement_t1_0)
 			 	   = 
-			 	   (WC_TID_Movement_MovementAndAvoidance_t7_0)&(internal__!TID_Movement_Turning_t15 -> Update)
-			 	   []
-			 	   (WC_TID_Movement_MovementAndAvoidance_t7_0)&(internal__!TID_Movement_MovementAndAvoidance_t7 -> Update)
-			 	   []
-			 	   (WC_TID_Movement_MovementAndAvoidance_t7_0)&(internal__!TID_Movement_Turning_t13 -> Update)
+			 	   (WC_TID_Movement_t1_0)&(internal__!TID_Movement_t1 -> Update)
 			 	   	 []
 			 	   	 startexec -> Update
 			 	   	 
 			 	   	 []
-			 	   	 setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID?x__ -> Update
+			 	   	 setWC.WC_TID_Movement_t1_0_ID?x__ -> Update
+		within
+			Update
+	)
+	MemoryTransitions_opt_5(id__) =
+	(
+		let
+			Update = 
+			get_neighbours?neighbours ->
+			Current(id__,
+				 neighbours)
+			Current(id__,
+				 neighbours)
+			 	   = 
+			 	   (member(neighbours,{true.n | n <- core_nat}))&(internal__!TID_Movement_t4 -> Update)
+			 	   []
+			 	   ((not (member(neighbours,{true.x__ | x__ <- core_nat}))))&(internal__!TID_Movement_t3 -> Update)
+			 	   	 []
+			 	   	 startexec -> Update
 		within
 			Update
 	)
 	
 	-- Memory cell processes
-	Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(x__) = ( 
-		getWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID!x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(x__)
+	Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(x__) = ( 
+		getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID!x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(x__)
 		[]
-		setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID?x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(x__)
+		setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID?x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(x__)
+	)
+	Memory_opt_n(x__) = ( 
+		get_n!x__ -> Memory_opt_n(x__)
+		[]
+		set_n?x__ -> Memory_opt_n(x__)
 	)
 	Memory_opt_turned(x__) = ( 
 		get_turned!x__ -> Memory_opt_turned(x__)
@@ -1829,140 +1689,133 @@ exports
 		[]
 		setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID?x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t8_0(x__)
 	)
-	Memory_opt_n(x__) = ( 
-		get_n!x__ -> Memory_opt_n(x__)
+	Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(x__) = ( 
+		getWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID!x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(x__)
 		[]
-		set_n?x__ -> Memory_opt_n(x__)
-	)
-	Memory_opt_neighbours(x__) = (
-		get_neighbours!x__ -> Memory_opt_neighbours(x__)
-		[]
-		registerRead.i_neighbours?x__ -> Memory_opt_neighbours(x__)
-	)
-	Memory_opt_WC_TID_Movement_t1_0(x__) = ( 
-		getWC.WC_TID_Movement_t1_0_ID!x__ -> Memory_opt_WC_TID_Movement_t1_0(x__)
-		[]
-		setWC.WC_TID_Movement_t1_0_ID?x__ -> Memory_opt_WC_TID_Movement_t1_0(x__)
+		setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID?x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(x__)
 	)
 	Memory_opt_p(x__) = ( 
 		get_p!x__ -> Memory_opt_p(x__)
 		[]
 		set_p?x__ -> Memory_opt_p(x__)
 	)
-	Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(x__) = ( 
-		getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID!x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(x__)
+	Memory_opt_WC_TID_Movement_t1_0(x__) = ( 
+		getWC.WC_TID_Movement_t1_0_ID!x__ -> Memory_opt_WC_TID_Movement_t1_0(x__)
 		[]
-		setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID?x__ -> Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(x__)
+		setWC.WC_TID_Movement_t1_0_ID?x__ -> Memory_opt_WC_TID_Movement_t1_0(x__)
 	)
 	Memory_opt_obstacle(x__) = (
 		get_obstacle!x__ -> Memory_opt_obstacle(x__)
 		[]
 		registerRead.i_obstacle?x__ -> Memory_opt_obstacle(x__)
 	)
+	Memory_opt_neighbours(x__) = (
+		get_neighbours!x__ -> Memory_opt_neighbours(x__)
+		[]
+		registerRead.i_neighbours?x__ -> Memory_opt_neighbours(x__)
+	)
 	
 	-- Composition of memory, StateMachine and Memory transition processes
 	
 	MemorySTM_opt(id__,cycle_RSMov_Movement_Movement,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) =
 		dbisim(
-		  sbisim(Memory_opt_turned(true)
-		      	[| {|set_turned,get_turned|} |] 
+		  sbisim(Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(false)
+		      	[| {|setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID|} |] 
 		      	sbisim(	
 		      	  dbisim(
 		      	    sbisim(dbisim(
-		      	      sbisim(Memory_opt_WC_TID_Movement_MovementAndAvoidance_t8_0(false)
-		      	          	[| {|setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID|} |] 
+		      	      sbisim(Memory_opt_n(0)
+		      	          	[| {|set_n,get_n|} |] 
 		      	          	sbisim(	
 		      	          	  dbisim(
 		      	          	    sbisim(dbisim(
-		      	          	      sbisim(Memory_opt_n(0)
-		      	          	          	[| {|set_n,get_n|} |] 
+		      	          	      sbisim(Memory_opt_turned(true)
+		      	          	          	[| {|set_turned,get_turned|} |] 
 		      	          	          	sbisim(	
 		      	          	          	  dbisim(
 		      	          	          	    sbisim(dbisim(
-		      	          	          	      sbisim(Memory_opt_neighbours(false.0)
-		      	          	          	          	[| {|registerRead.i_neighbours,get_neighbours|} |] 
+		      	          	          	      sbisim(Memory_opt_WC_TID_Movement_MovementAndAvoidance_t8_0(false)
+		      	          	          	          	[| {|setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID|} |] 
 		      	          	          	          	sbisim(	
 		      	          	          	          	  dbisim(
 		      	          	          	          	    sbisim(dbisim(
-		      	          	          	          	      sbisim(Memory_opt_WC_TID_Movement_t1_0(false)
-		      	          	          	          	          	[| {|getWC.WC_TID_Movement_t1_0_ID,setWC.WC_TID_Movement_t1_0_ID|} |] 
-		      	          	          	          	          	sbisim(	
-		      	          	          	          	          	  dbisim(
-		      	          	          	          	          	    sbisim(dbisim(
-		      	          	          	          	          	      sbisim(Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(false)
-		      	          	          	          	          	          	[| {|getWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID,setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID|} |] 
-		      	          	          	          	          	          	dbisim(
-		      	          	          	          	          	          	  sbisim(Memory_opt_obstacle(false.RSMov_Position_left)
-		      	          	          	          	          	          	      	[| {|get_obstacle,registerRead.i_obstacle|} |] 
-		      	          	          	          	          	          	      	sbisim(	
-		      	          	          	          	          	          	      	  dbisim(
-		      	          	          	          	          	          	      	    sbisim(dbisim(
-		      	          	          	          	          	          	      	      sbisim(Memory_opt_WC_TID_Movement_MovementAndAvoidance_t7_0(false)
-		      	          	          	          	          	          	      	          	[| {|setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID|} |] 
-		      	          	          	          	          	          	      	          	sbisim(	
-		      	          	          	          	          	          	      	          	  dbisim(
-		      	          	          	          	          	          	      	          	    sbisim(sbisim(	
-		      	          	          	          	          	          	      	          	      dbisim(
-		      	          	          	          	          	          	      	          	        sbisim(dbisim(sbisim(Memory_opt_p(RSMov_Position_left)
-		      	          	          	          	          	          	      	          	              	[| {|set_p,get_p|} |] 
-		      	          	          	          	          	          	      	          	              	STM_core(id__,cycle_RSMov_Movement_Movement,
-		      	          	          	          	          	          	      	          	              			    const_RSMov_Movement_MB,
-		      	          	          	          	          	          	      	          	              			    const_RSMov_Movement_alpha)
-		      	          	          	          	          	          	      	          	              	)\ {|set_p,get_p|}
-		      	          	          	          	          	          	      	          	              )
-		      	          	          	          	          	          	      	          	          	  [| union({|startexec|},{|internal__.TID_Movement_Turning_t9,internal__.TID_Movement_Turning_t5,internal__.TID_Movement_Turning_t4,internal__.TID_Movement_Turning_t1,internal__.TID_Movement_Turning_t0,internal__.TID_Movement_MovementAndAvoidance_t5,internal__.TID_Movement_Turning_t10,internal__.TID_Movement_t0,internal__.TID_Movement_MovementAndAvoidance_t0,internal__.TID_Movement_MovementAndAvoidance_t1,endexec__.TID_Movement_MovementAndAvoidance_t4,endexec__.TID_Movement_t5,endexec__.TID_Movement_MovementAndAvoidance_t6|}) |]
-		      	          	          	          	          	          	      	          	          	  MemoryTransitions_opt_0(id__)
-		      	          	          	          	          	          	      	          	          	  )\{|internal__.TID_Movement_Turning_t9,internal__.TID_Movement_Turning_t5,internal__.TID_Movement_Turning_t4,internal__.TID_Movement_Turning_t1,internal__.TID_Movement_Turning_t0,internal__.TID_Movement_MovementAndAvoidance_t5,internal__.TID_Movement_Turning_t10,internal__.TID_Movement_t0,internal__.TID_Movement_MovementAndAvoidance_t0,internal__.TID_Movement_MovementAndAvoidance_t1|})
-		      	          	          	          	          	          	      	          	          	  [[ endexec__.TID_Movement_MovementAndAvoidance_t6 <- endexec ]]
-		      	          	          	          	          	          	      	          	          	  [[ endexec__.TID_Movement_MovementAndAvoidance_t4 <- endexec ]]
-		      	          	          	          	          	          	      	          	          	  [[ endexec__.TID_Movement_t5 <- endexec ]]
-		      	          	          	          	          	          	      	          	          )
-		      	          	          	          	          	          	      	          	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID,internal__.TID_Movement_Turning_t15,internal__.TID_Movement_MovementAndAvoidance_t7,internal__.TID_Movement_Turning_t13|}) |]
-		      	          	          	          	          	          	      	          	      	  MemoryTransitions_opt_5(id__)
-		      	          	          	          	          	          	      	          	      	  )\{|internal__.TID_Movement_Turning_t15,internal__.TID_Movement_MovementAndAvoidance_t7,internal__.TID_Movement_Turning_t13|})
-		      	          	          	          	          	          	      	          	      )
-		      	          	          	          	          	          	      	          	) \ {|setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID|}
-		      	          	          	          	          	          	      	          )
-		      	          	          	          	          	          	      	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID,internal__.TID_Movement_MovementAndAvoidance_t2,internal__.TID_Movement_MovementAndAvoidance_t3|}) |]
-		      	          	          	          	          	          	      	      	  MemoryTransitions_opt_7(id__)
-		      	          	          	          	          	          	      	      	  )\{|internal__.TID_Movement_MovementAndAvoidance_t2,internal__.TID_Movement_MovementAndAvoidance_t3|})
-		      	          	          	          	          	          	      	      )
-		      	          	          	          	          	          	      	) \ {|get_obstacle|}
-		      	          	          	          	          	          	      )
-		      	          	          	          	          	          	) \ {|getWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID,setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID|}
-		      	          	          	          	          	          )
-		      	          	          	          	          	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_t1_0_ID,internal__.TID_Movement_t1|}) |]
-		      	          	          	          	          	      	  MemoryTransitions_opt_4(id__)
-		      	          	          	          	          	      	  )\{|internal__.TID_Movement_t1|})
+		      	          	          	          	      sbisim(Memory_opt_WC_TID_Movement_MovementAndAvoidance_t2_0(false)
+		      	          	          	          	          	[| {|getWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID,setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID|} |] 
+		      	          	          	          	          	dbisim(
+		      	          	          	          	          	  sbisim(Memory_opt_obstacle(false.RSMov_Position_left)
+		      	          	          	          	          	      	[| {|get_obstacle,registerRead.i_obstacle|} |] 
+		      	          	          	          	          	      	sbisim(	
+		      	          	          	          	          	      	  dbisim(
+		      	          	          	          	          	      	    sbisim(dbisim(
+		      	          	          	          	          	      	      sbisim(Memory_opt_WC_TID_Movement_t1_0(false)
+		      	          	          	          	          	      	          	[| {|getWC.WC_TID_Movement_t1_0_ID,setWC.WC_TID_Movement_t1_0_ID|} |] 
+		      	          	          	          	          	      	          	sbisim(	
+		      	          	          	          	          	      	          	  dbisim(
+		      	          	          	          	          	      	          	    sbisim(dbisim(
+		      	          	          	          	          	      	          	      sbisim(Memory_opt_neighbours(false.0)
+		      	          	          	          	          	      	          	          	[| {|registerRead.i_neighbours,get_neighbours|} |] 
+		      	          	          	          	          	      	          	          	sbisim(	
+		      	          	          	          	          	      	          	          	  dbisim(
+		      	          	          	          	          	      	          	          	    sbisim(sbisim(	
+		      	          	          	          	          	      	          	          	      dbisim(
+		      	          	          	          	          	      	          	          	        sbisim(dbisim(sbisim(Memory_opt_p(RSMov_Position_left)
+		      	          	          	          	          	      	          	          	              	[| {|set_p,get_p|} |] 
+		      	          	          	          	          	      	          	          	              	STM_core(id__,cycle_RSMov_Movement_Movement,
+		      	          	          	          	          	      	          	          	              			    const_RSMov_Movement_alpha)
+		      	          	          	          	          	      	          	          	              	)\ {|set_p,get_p|}
+		      	          	          	          	          	      	          	          	              )
+		      	          	          	          	          	      	          	          	          	  [| union({|startexec|},{|internal__.TID_Movement_Turning_t9,internal__.TID_Movement_Turning_t5,internal__.TID_Movement_Turning_t4,internal__.TID_Movement_Turning_t1,internal__.TID_Movement_Turning_t0,internal__.TID_Movement_MovementAndAvoidance_t5,internal__.TID_Movement_Turning_t10,internal__.TID_Movement_t0,internal__.TID_Movement_MovementAndAvoidance_t0,internal__.TID_Movement_MovementAndAvoidance_t1,endexec__.TID_Movement_t5,endexec__.TID_Movement_MovementAndAvoidance_t4,endexec__.TID_Movement_MovementAndAvoidance_t6|}) |]
+		      	          	          	          	          	      	          	          	          	  MemoryTransitions_opt_0(id__)
+		      	          	          	          	          	      	          	          	          	  )\{|internal__.TID_Movement_Turning_t9,internal__.TID_Movement_Turning_t5,internal__.TID_Movement_Turning_t4,internal__.TID_Movement_Turning_t1,internal__.TID_Movement_Turning_t0,internal__.TID_Movement_MovementAndAvoidance_t5,internal__.TID_Movement_Turning_t10,internal__.TID_Movement_t0,internal__.TID_Movement_MovementAndAvoidance_t0,internal__.TID_Movement_MovementAndAvoidance_t1|})
+		      	          	          	          	          	      	          	          	          	  [[ endexec__.TID_Movement_t5 <- endexec ]]
+		      	          	          	          	          	      	          	          	          	  [[ endexec__.TID_Movement_MovementAndAvoidance_t6 <- endexec ]]
+		      	          	          	          	          	      	          	          	          	  [[ endexec__.TID_Movement_MovementAndAvoidance_t4 <- endexec ]]
+		      	          	          	          	          	      	          	          	          )
+		      	          	          	          	          	      	          	          	      	  [| union({|startexec|},{|internal__.TID_Movement_t3,internal__.TID_Movement_t4|}) |]
+		      	          	          	          	          	      	          	          	      	  MemoryTransitions_opt_5(id__)
+		      	          	          	          	          	      	          	          	      	  )\{|internal__.TID_Movement_t3,internal__.TID_Movement_t4|})
+		      	          	          	          	          	      	          	          	      )
+		      	          	          	          	          	      	          	          	) \ {|get_neighbours|}
+		      	          	          	          	          	      	          	          )
+		      	          	          	          	          	      	          	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_t1_0_ID,internal__.TID_Movement_t1|}) |]
+		      	          	          	          	          	      	          	      	  MemoryTransitions_opt_4(id__)
+		      	          	          	          	          	      	          	      	  )\{|internal__.TID_Movement_t1|})
+		      	          	          	          	          	      	          	      )
+		      	          	          	          	          	      	          	) \ {|getWC.WC_TID_Movement_t1_0_ID,setWC.WC_TID_Movement_t1_0_ID|}
+		      	          	          	          	          	      	          )
+		      	          	          	          	          	      	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID,internal__.TID_Movement_MovementAndAvoidance_t2,internal__.TID_Movement_MovementAndAvoidance_t3|}) |]
+		      	          	          	          	          	      	      	  MemoryTransitions_opt_7(id__)
+		      	          	          	          	          	      	      	  )\{|internal__.TID_Movement_MovementAndAvoidance_t2,internal__.TID_Movement_MovementAndAvoidance_t3|})
+		      	          	          	          	          	      	      )
+		      	          	          	          	          	      	) \ {|get_obstacle|}
 		      	          	          	          	          	      )
-		      	          	          	          	          	) \ {|getWC.WC_TID_Movement_t1_0_ID,setWC.WC_TID_Movement_t1_0_ID|}
+		      	          	          	          	          	) \ {|getWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID,setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID|}
 		      	          	          	          	          )
-		      	          	          	          	      	  [| union({|startexec|},{|internal__.TID_Movement_t3,internal__.TID_Movement_t4|}) |]
+		      	          	          	          	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID,internal__.TID_Movement_MovementAndAvoidance_t8,internal__.TID_Movement_Turning_t16,internal__.TID_Movement_Turning_t12|}) |]
 		      	          	          	          	      	  MemoryTransitions_opt_3(id__)
-		      	          	          	          	      	  )\{|internal__.TID_Movement_t3,internal__.TID_Movement_t4|})
+		      	          	          	          	      	  )\{|internal__.TID_Movement_MovementAndAvoidance_t8,internal__.TID_Movement_Turning_t16,internal__.TID_Movement_Turning_t12|})
 		      	          	          	          	      )
-		      	          	          	          	) \ {|get_neighbours|}
+		      	          	          	          	) \ {|setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID|}
 		      	          	          	          )
-		      	          	          	      	  [| union({|startexec|},{|set_n,internal__.TID_Movement_Turning_t3,internal__.TID_Movement_Turning_t2|}) |]
-		      	          	          	      	  MemoryTransitions_opt_6(id__,
-		      	          	          	      	  	 const_RSMov_Movement_alpha)
-		      	          	          	      	  )\{|internal__.TID_Movement_Turning_t3,internal__.TID_Movement_Turning_t2|})
+		      	          	          	      	  [| union({|startexec|},{|set_turned,internal__.TID_Movement_t2|}) |]
+		      	          	          	      	  MemoryTransitions_opt_2(id__)
+		      	          	          	      	  )\{|internal__.TID_Movement_t2|})
 		      	          	          	      )
-		      	          	          	) \ {|set_n,get_n|}
+		      	          	          	) \ {|set_turned,get_turned|}
 		      	          	          )
-		      	          	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID,internal__.TID_Movement_MovementAndAvoidance_t8,internal__.TID_Movement_Turning_t16,internal__.TID_Movement_Turning_t12|}) |]
-		      	          	      	  MemoryTransitions_opt_2(id__)
-		      	          	      	  )\{|internal__.TID_Movement_MovementAndAvoidance_t8,internal__.TID_Movement_Turning_t16,internal__.TID_Movement_Turning_t12|})
+		      	          	      	  [| union({|startexec|},{|set_n,internal__.TID_Movement_Turning_t3,internal__.TID_Movement_Turning_t2|}) |]
+		      	          	      	  MemoryTransitions_opt_6(id__,
+		      	          	      	  	 const_RSMov_Movement_alpha)
+		      	          	      	  )\{|internal__.TID_Movement_Turning_t3,internal__.TID_Movement_Turning_t2|})
 		      	          	      )
-		      	          	) \ {|setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID|}
+		      	          	) \ {|set_n,get_n|}
 		      	          )
-		      	      	  [| union({|startexec|},{|set_turned,internal__.TID_Movement_t2|}) |]
+		      	      	  [| union({|startexec|},{|setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID,internal__.TID_Movement_Turning_t15,internal__.TID_Movement_MovementAndAvoidance_t7,internal__.TID_Movement_Turning_t13|}) |]
 		      	      	  MemoryTransitions_opt_1(id__)
-		      	      	  )\{|internal__.TID_Movement_t2|})
+		      	      	  )\{|internal__.TID_Movement_Turning_t15,internal__.TID_Movement_MovementAndAvoidance_t7,internal__.TID_Movement_Turning_t13|})
 		      	      )
-		      	) \ {|set_turned,get_turned|}
+		      	) \ {|setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID,getWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID|}
 		      )
 	
 	-- main process
@@ -2029,16 +1882,13 @@ exports
 	|}
 
 	STM_core(id__,cycle_RSMov_Movement_Movement,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) =
 		sbisim(	
 			dbisim(
 			(wbisim(STM(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha))
 			[| union(WCsync,WCresets) |]
 			Clocks(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha))\WCresets
 			)
 			[| union({|startexec|},union(Transitions,EndExecs)) |]
@@ -2054,12 +1904,10 @@ exports
 	
 	-- optimized main process
 	AUX_opt(id__,cycle_RSMov_Movement_Movement,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) =
 		prioritise(
 		  dbisim(
 			(MemorySTM_opt(id__,cycle_RSMov_Movement_Movement,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha))
 			\union(union(MachineMemoryHidingSet,MachineInternalEvents),{|startexec|}))
 			[|{|terminate|}|>SKIP
@@ -2067,7 +1915,6 @@ exports
 	
 	-- main process
 	AUX(id__,cycle_RSMov_Movement_Movement,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) =
 		prioritise(
 			(
@@ -2077,18 +1924,15 @@ exports
 		 					,registerRead
 		 					,registerWrite,startexec,tock |} |]
 		 			(MemoryN(id__,
-		 					    const_RSMov_Movement_MB,
 		 					    const_RSMov_Movement_alpha) 
 		 	 		[| union(WCsets,WCsync) |] 
 		 	 		Clocks(id__,
-		 	 				    const_RSMov_Movement_MB,
 		 	 				    const_RSMov_Movement_alpha)
 		 			)\WCsets
 		 		)
 		 		[| union(MachineMemorySyncSet,{| startexec,endexec,endexec__
 		 										 ,terminate |}) |]
 		 		wbisim(STM(id__,
-		 				    const_RSMov_Movement_MB,
 		 				    const_RSMov_Movement_alpha))
 			)[[ endexec__.x____ <- endexec | x____ <- TIDS ]]
 		\union(union(MachineMemoryHidingSet,MachineInternalEvents),{|startexec|})
@@ -2096,7 +1940,6 @@ exports
 		,<{},{tock}>)
 	
 	internal_(id__,cycle_RSMov_Movement_Movement,
-			    const_RSMov_Movement_MB,
 			    const_RSMov_Movement_alpha) =
 		prioritise(
 					(
@@ -2106,18 +1949,15 @@ exports
 				 					,registerRead
 				 					,registerWrite,startexec,terminate,tock |} |]
 				 			(MemoryN(id__,
-				 					    const_RSMov_Movement_MB,
 				 					    const_RSMov_Movement_alpha) 
 				 	 		[| union(WCsets,WCsync) |] 
 				 	 		Clocks(id__,
-				 	 				    const_RSMov_Movement_MB,
 				 	 				    const_RSMov_Movement_alpha)
 				 			)\WCsets
 				 		)
 				 		[| union(MachineMemorySyncSet,{| startexec,endexec,endexec__
 				 										  |}) |]
 				 		wbisim(STM(id__,
-				 				    const_RSMov_Movement_MB,
 				 				    const_RSMov_Movement_alpha))
 					)[[ endexec__.x____ <- endexec | x____ <- TIDS ]]
 				\union(MachineMemoryHidingSet,{|startexec|})
@@ -2133,8 +1973,8 @@ exports
 			project(o_move.x__) = SOutput_move
 	
 			Cycle =
-				(registerRead.i_obstacle?x__ -> SKIP
-					||| registerRead.i_neighbours?x__ -> SKIP);
+				(registerRead.i_neighbours?x__ -> SKIP
+					||| registerRead.i_obstacle?x__ -> SKIP);
 				startexec -> CollectOutputs(SOutputEvents);
 				(wait(cycle_RSMov_Movement_Movement) [] terminate -> SKIP);
 				Cycle
@@ -2154,8 +1994,8 @@ exports
 			project(o_move.x__) = SOutput_move
 	
 			Cycle =
-				(registerRead.i_obstacle?x__ -> SKIP
-					||| registerRead.i_neighbours?x__ -> SKIP);
+				(registerRead.i_neighbours?x__ -> SKIP
+					||| registerRead.i_obstacle?x__ -> SKIP);
 				startexec -> CollectOutputs(SOutputEvents);
 				(wait(cycle_RSMov_Movement_Movement) [] terminate -> SKIP);
 				Cycle
@@ -2195,23 +2035,18 @@ exports
 		-- Set of pairs capturing waiting condition processes and their alphabet.
 		-- It includes the corresponding set of the defined operations.
 		WCset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = Union({
 			{
 			({|clockReset.CLID_MBC,setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID,internal__.TID_Movement_MovementAndAvoidance_t7,internal__.TID_Movement_Turning_t15,internal__.TID_Movement_Turning_t13 | x <- SIDS|},P_WC_TID_Movement_MovementAndAvoidance_t7_0(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha)),
 			
 			({|clockReset.CLID_MBC,internal__.TID_Movement_t1,setWC.WC_TID_Movement_t1_0_ID | x <- SIDS|},P_WC_TID_Movement_t1_0(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha)),
 			
 			({|clockReset.CLID_MBC,setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID,internal__.TID_Movement_MovementAndAvoidance_t2,internal__.TID_Movement_MovementAndAvoidance_t3 | x <- SIDS|},P_WC_TID_Movement_MovementAndAvoidance_t2_0(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha)),
 			
 			({|clockReset.CLID_MBC,setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID,internal__.TID_Movement_MovementAndAvoidance_t8,internal__.TID_Movement_Turning_t16,internal__.TID_Movement_Turning_t12 | x <- SIDS|},P_WC_TID_Movement_MovementAndAvoidance_t8_0(id__,
-					    const_RSMov_Movement_MB,
 					    const_RSMov_Movement_alpha))
 			}
 			})
@@ -2242,82 +2077,56 @@ exports
 			})
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t7_0_reset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = clockReset.CLID_MBC -> setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID.true -> P_WC_TID_Movement_MovementAndAvoidance_t7_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t7_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (TimedInterrupt(RUN({|tock,internal__.TID_Movement_MovementAndAvoidance_t7,internal__.TID_Movement_Turning_t15,internal__.TID_Movement_Turning_t13|}),1) ; setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID.false -> RUN({|tock,internal__.TID_Movement_MovementAndAvoidance_t7,internal__.TID_Movement_Turning_t15,internal__.TID_Movement_Turning_t13|})) /\ P_WC_TID_Movement_MovementAndAvoidance_t7_0_reset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_t1_0_reset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = clockReset.CLID_MBC -> setWC.WC_TID_Movement_t1_0_ID.false -> P_WC_TID_Movement_t1_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_t1_0_monitor(id__,
-				    const_RSMov_Movement_MB,
-				    const_RSMov_Movement_alpha) = (TimedInterrupt(RUN({|tock,internal__.TID_Movement_t1|}),const_RSMov_Movement_MB) ; setWC.WC_TID_Movement_t1_0_ID.true -> RUN({|tock,internal__.TID_Movement_t1|})) /\ P_WC_TID_Movement_t1_0_reset(id__,
-				    const_RSMov_Movement_MB,
+				    const_RSMov_Movement_alpha) = (TimedInterrupt(RUN({|tock,internal__.TID_Movement_t1|}),4) ; setWC.WC_TID_Movement_t1_0_ID.true -> RUN({|tock,internal__.TID_Movement_t1|})) /\ P_WC_TID_Movement_t1_0_reset(id__,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t2_0_reset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = clockReset.CLID_MBC -> setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID.true -> P_WC_TID_Movement_MovementAndAvoidance_t2_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t2_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (TimedInterrupt(RUN({|tock,internal__.TID_Movement_MovementAndAvoidance_t2,internal__.TID_Movement_MovementAndAvoidance_t3|}),2) ; setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID.false -> RUN({|tock,internal__.TID_Movement_MovementAndAvoidance_t2,internal__.TID_Movement_MovementAndAvoidance_t3|})) /\ P_WC_TID_Movement_MovementAndAvoidance_t2_0_reset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t8_0_reset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = clockReset.CLID_MBC -> setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID.false -> P_WC_TID_Movement_MovementAndAvoidance_t8_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t8_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = (TimedInterrupt(RUN({|tock,internal__.TID_Movement_MovementAndAvoidance_t8,internal__.TID_Movement_Turning_t16,internal__.TID_Movement_Turning_t12|}),1) ; setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID.true -> RUN({|tock,internal__.TID_Movement_MovementAndAvoidance_t8,internal__.TID_Movement_Turning_t16,internal__.TID_Movement_Turning_t12|})) /\ P_WC_TID_Movement_MovementAndAvoidance_t8_0_reset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t7_0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = setWC.WC_TID_Movement_MovementAndAvoidance_t7_0_ID.true -> P_WC_TID_Movement_MovementAndAvoidance_t7_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_t1_0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = setWC.WC_TID_Movement_t1_0_ID.false -> P_WC_TID_Movement_t1_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t2_0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = setWC.WC_TID_Movement_MovementAndAvoidance_t2_0_ID.true -> P_WC_TID_Movement_MovementAndAvoidance_t2_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		P_WC_TID_Movement_MovementAndAvoidance_t8_0(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = setWC.WC_TID_Movement_MovementAndAvoidance_t8_0_ID.false -> P_WC_TID_Movement_MovementAndAvoidance_t8_0_monitor(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		
 		-- Clocks process
 		Clocks(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = || (alpha, P) : WCset(id__,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) @ [alpha] wbisim(P)
 
 		-- collects all clockResets including those of operations
@@ -2327,42 +2136,30 @@ exports
 
 		-- With no internal events visible
 		Dunopt__(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = timed_priority(AUX(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) \ union(internal_events,ClockResets))
 
 		D__(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = timed_priority(AUX_opt(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) \ union(internal_events,ClockResets))
 
 		O__(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = D__(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 
 		-- With enter/entered/exit/exited events visible
 		FVS__(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = timed_priority(AUX(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) \ ClockResets)
 
 		-- With enterV/enteredV/exitV/exitedV events visible
 		VS__(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = ShowV(timed_priority(AUX(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) \ ClockResets))
 
 		-- With clock resets visible
 		FVS_C__(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha) = AUX(id__,cycle_RSMov_Movement_Movement,
-				    const_RSMov_Movement_MB,
 				    const_RSMov_Movement_alpha)
 		}
 endmodule
