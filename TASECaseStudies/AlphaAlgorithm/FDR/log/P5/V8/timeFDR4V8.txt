@@ -1,20 +1,4 @@
-/home/mscf/Dropbox/UFPE/RS2UPPAAL/2021/TASEcaseStudies3005/AlphaAlgorithm/FDR/CSPFiles/mainP5.csp:29:1-6:
-    Couldn't match expected type (a, b, c, d, e) -> f
-            with actual type (g, Int, Int) -> Proc
-    In the expression:
-        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__
-    In the expression:
-        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__(1, 1, 4, 1,
-                                                              1)
-    In the assertion:
-        MovementStateSpent(360/Movement_av,
-                           AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_Turning)
-            [FD= AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__(1, 1, 4,
-                                                                       1, 1)
-    Relevant variable types:
-        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__ :: (h, Int,
-                                                                  Int) -> Proc
 
-real	0m0.428s
-user	0m0.404s
-sys	0m0.020s
+real	1m10.726s
+user	1m58.559s
+sys	0m1.796s
