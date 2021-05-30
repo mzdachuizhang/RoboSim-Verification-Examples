@@ -26,8 +26,8 @@ timed_priority(Main)
 
 assert MovementStateSpent(360/Movement_av,AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_Turning) 
 [FD= 
-AgSwR::AggregationSoftware::VS__(1,1,4,1,1)
---AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
+AgSwR::AggregationSoftware::VS__(1,1,1,1)
+
 
 
 } 

@@ -43,9 +43,7 @@ within
 
 assert 	CommunicationStateSpent(Communication_RC,AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::SID_Communication_SReceive)
 		[FD=
-                AgSwR::AggregationSoftware::VS__(1,1,4,1,1)
+                AgSwR::AggregationSoftware::VS__(1,1,1,1)
                 
-                
-                --AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
 		
 }

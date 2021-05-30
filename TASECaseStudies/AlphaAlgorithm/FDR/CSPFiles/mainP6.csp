@@ -8,9 +8,7 @@ include "AgSwR.csp"
 --State SMove is reachable. 
 --------------------------------------------------------------------------------------------------------------
 
-assert not STOP [T= AgSwR::AggregationSoftware::VS__(1,1,4,1,1) |\ {|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::enteredV.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_MovementAndAvoidance_SMove|}
+assert not STOP [T= AgSwR::AggregationSoftware::VS__(1,1,1,1) |\ {|AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::enteredV.AgSwR::AggregationSoftware::ctrl_ref0::stm_ref0::SID_Movement_MovementAndAvoidance_SMove|}
                 
-                
---AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
-		
+        
 

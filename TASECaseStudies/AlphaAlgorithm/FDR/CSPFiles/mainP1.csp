@@ -9,9 +9,8 @@ include "AgSwR.csp"
 --------------------------------------------------------------------------------------------------------------
 
 
-assert AgSwR::AggregationSoftware::D__(1,1,4,1,1):[deadlock-free[F]]
+assert AgSwR::AggregationSoftware::D__(1,1,1,1):[deadlock-free[F]]
                 
-                
---AgSwRS::AggregationSoftware::VS__(1,1,1,1,4,1,1,1,1,1,2)
+               
 		
 
