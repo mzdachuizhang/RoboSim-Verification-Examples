@@ -2,9 +2,9 @@
 
 echo "FootBot verification"
 
-path="/home/madiel/Dropbox/UFPE/RS2UPPAAL/2021/TASEcaseStudies3005/FootBot/FDR"
+path="/TASEcaseStudies3005/FootBot/FDR"
 
-pathFDR4="/home/madiel/tools/fdr4/bin/"
+pathFDR4="/tools/fdr4/bin/"
 
 cd $pathFDR4
 
