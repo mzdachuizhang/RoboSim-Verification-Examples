@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo "Alpha Algorithm verification - UPPAAL"
+echo "FootBot verification - UPPAAL"
 
-path="/home/mscf/Dropbox/UFPE/RS2UPPAAL/2021/TASEcaseStudies3005/CFootBot/UPPAAL"
+path="/TASEcaseStudies/FootBot/UPPAAL"
 
-pathUPPAAL="/home/mscf/tools/uppaal/bin-Linux"
+pathUPPAAL="/tools/uppaal/bin-Linux"
 
 cd $pathUPPAAL
 
