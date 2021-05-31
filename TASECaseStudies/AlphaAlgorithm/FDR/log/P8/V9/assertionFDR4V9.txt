@@ -1,10 +1,10 @@
 Welcome to FDR Version 4.2.4 copyright 2016 Oxford University Innovation Ltd. All Rights Reserved.
 License: Academic license for non-commercial use only
         Found 6 processes including 1 names
-        Found 4.000 processes including 222 names
-        Found 6.000 processes including 260 names
-        Found 12.000 processes including 350 names
-        Found 14.000 processes including 403 names
+        Found 2.000 processes including 149 names
+        Found 8.000 processes including 344 names
+        Found 10.000 processes including 403 names
+        Found 16.000 processes including 476 names
         Found 16.834 processes including 504 names
         Visited 6 processes and discovered 1 recursive names
         Visited 1.000 processes and discovered 21 recursive names
@@ -27,518 +27,515 @@ License: Academic license for non-commercial use only
         Visited 1 processes generating 1 machines
         Constructed 0 states with 1 transitions
         Constructed 4 states with 4 transitions
-        Constructed 1 of 18 machines
-        Constructed 0 states with 4 transitions
-        Constructed 7 states with 9 transitions
-        Constructed 0 states with 8 transitions
-        Constructed 11 states with 17 transitions
-        Constructed 2 of 18 machines
-        Constructed 3 of 18 machines
+        Constructed 1 of 48 machines
         Constructed 0 states with 6 transitions
         Constructed 3 states with 7 transitions
-        Constructed 4 of 18 machines
+        Constructed 2 of 76 machines
+        Visited 1.000 processes generating 84 machines
+        Constructed 0 states with 8 transitions
+        Constructed 11 states with 17 transitions
+        Constructed 3 of 132 machines
         Constructed 0 states with 1 transitions
         Constructed 3 states with 2 transitions
-        Constructed 5 of 18 machines
+        Constructed 4 of 144 machines
         Constructed 0 states with 4 transitions
+        Constructed 0 states with 1 transitions
+        Constructed 3 states with 2 transitions
+        Constructed 5 of 163 machines
         Constructed 7 states with 9 transitions
         Constructed 0 states with 1 transitions
-        Constructed 6 of 18 machines
+        Constructed 6 of 166 machines
         Constructed 3 states with 2 transitions
-        Constructed 7 of 18 machines
         Constructed 0 states with 1 transitions
-        Constructed 3 states with 2 transitions
-        Constructed 8 of 18 machines
-        Constructed 0 states
-        Normalised to 4 states
-        Reduced 4 states to 4 equivalence classes
-        Constructed 9 of 18 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 10 of 18 machines
-        Reduced 7 states to 7 equivalence classes
-        Reduced 3 states to 3 equivalence classes
-        Constructed 11 of 18 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 12 of 18 machines
-        Constructed 13 of 18 machines
-        Reduced 7 states to 7 equivalence classes
-        Constructed 14 of 18 machines
-        Reduced 11 states to 11 equivalence classes
-        Constructed 15 of 18 machines
-        Constructed 16 of 18 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 17 of 37 machines
-        Constructed 0 states with 1 transitions
-        Constructed 3 states with 2 transitions
-        Constructed 18 of 48 machines
         Constructed 0 states with 35 transitions
+        Constructed 0 states with 4 transitions
+        Visited 1.623 processes generating 490 machines
+        Constructed 7 states with 9 transitions
+        Constructed 7 of 490 machines
+        Constructed 3 states with 2 transitions
+        Constructed 8 of 492 machines
         Constructed 0 states with 2 transitions
         Constructed 3 states with 3 transitions
-        Constructed 19 of 54 machines
-        Constructed 266 states with 537 transitions
-        Constructed 20 of 56 machines
+        Constructed 9 of 492 machines
         Constructed 0 states with 5 transitions
         Constructed 4 states with 20 transitions
-        Constructed 21 of 56 machines
-        Constructed 22 of 56 machines
+        Constructed 10 of 492 machines
+        Constructed 266 states with 537 transitions
+        Constructed 11 of 492 machines
         Constructed 0 states with 4 transitions
         Constructed 7 states with 9 transitions
-        Constructed 0 states with 6 transitions
-        Constructed 9 states with 13 transitions
-        Constructed 23 of 56 machines
+        Constructed 12 of 492 machines
+        Constructed 13 of 492 machines
         Constructed 0 states with 26 transitions
         Constructed 29 states with 53 transitions
-        Constructed 24 of 62 machines
-        Constructed 0 states with 1 transitions
-        Constructed 4 states with 3 transitions
-        Constructed 25 of 65 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 26 of 76 machines
+        Constructed 14 of 492 machines
+        Constructed 0 states
+        Normalised to 4 states
         Constructed 0 states with 2 transitions
         Constructed 3 states with 3 transitions
-        Constructed 27 of 79 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 28 of 79 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 15 of 492 machines
         Constructed 0 states with 0 transitions
+        Constructed 16 of 492 machines
         Constructed 1 states with 0 transitions
-        Constructed 29 of 80 machines
-        Visited 1.000 processes generating 84 machines
-        Constructed 49 equivalence classes
-        Constructed 266 equivalence classes
-        Reduced 266 states to 266 equivalence classes
-        Constructed 30 of 174 machines
-        Reduced 7 states to 7 equivalence classes
-        Constructed 31 of 254 machines
+        Constructed 17 of 492 machines
         Constructed 0 states with 13 transitions
-        Constructed 47 states with 92 transitions
-        Constructed 32 of 304 machines
         Constructed 0 states with 1 transitions
         Constructed 2 states with 1 transitions
-        Constructed 33 of 308 machines
+        Constructed 18 of 492 machines
+        Constructed 0 states with 6 transitions
+        Constructed 9 states with 13 transitions
+        Constructed 19 of 492 machines
+        Constructed 47 states with 92 transitions
         Constructed 0 states with 13 transitions
-        Constructed 73 states with 131 transitions
-        Constructed 34 of 346 machines
-        Reduced 29 states to 29 equivalence classes
-        Constructed 35 of 368 machines
+        Constructed 20 of 492 machines
+        Constructed 0 states with 13 transitions
         Constructed 0 states with 13 transitions
         Constructed 42 states with 91 transitions
-        Constructed 36 of 416 machines
-        Constructed 0 states with 13 transitions
+        Constructed 73 states with 131 transitions
+        Constructed 21 of 492 machines
         Constructed 39 states with 85 transitions
-        Constructed 37 of 471 machines
-        Reduced 4 states to 4 equivalence classes
-        Constructed 38 of 475 machines
-        Visited 1.623 processes generating 490 machines
-        Reduced 4 states to 4 equivalence classes
-        Constructed 0 states with 13 transitions
-        Constructed 39 of 492 machines
-        Constructed 157 states with 238 transitions
-        Constructed 40 of 492 machines
-        Constructed 41 of 492 machines
-        Constructed 0 states with 13 transitions
-        Constructed 0 states with 13 transitions
-        Constructed 50 states with 97 transitions
-        Constructed 37 states with 77 transitions
-        Constructed 42 of 492 machines
-        Constructed 43 of 492 machines
-        Constructed 44 of 492 machines
+        Constructed 22 of 492 machines
+        Constructed 0 states with 1 transitions
+        Constructed 4 states with 3 transitions
+        Constructed 23 of 492 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 45 of 492 machines
-        Reduced 1 states to 1 equivalence classes
+        Constructed 24 of 492 machines
         Constructed 0 states with 13 transitions
-        Constructed 46 of 492 machines
+        Constructed 0 states with 13 transitions
+        Constructed 0 states with 13 transitions
+        Constructed 37 states with 77 transitions
+        Constructed 25 of 492 machines
+        Constructed 0 states with 13 transitions
+        Constructed 157 states with 238 transitions
         Constructed 50 states with 97 transitions
-        Constructed 47 of 492 machines
+        Constructed 26 of 492 machines
+        Constructed 27 of 492 machines
         Constructed 0 states with 13 transitions
         Constructed 0 states with 13 transitions
         Constructed 30 states with 81 transitions
-        Constructed 48 of 492 machines
         Constructed 42 states with 93 transitions
-        Constructed 49 of 492 machines
-        Constructed 0 states with 13 transitions
+        Constructed 28 of 492 machines
+        Constructed 29 of 492 machines
         Constructed 0 states with 13 transitions
         Constructed 42 states with 93 transitions
-        Constructed 50 of 492 machines
+        Constructed 30 of 492 machines
         Constructed 0 states with 13 transitions
         Constructed 43 states with 96 transitions
-        Constructed 51 of 492 machines
+        Constructed 31 of 492 machines
         Constructed 0 states with 1 transitions
         Constructed 5 states with 4 transitions
-        Constructed 52 of 492 machines
-        Constructed 184 states with 287 transitions
+        Constructed 0 states with 13 transitions
+        Constructed 32 of 492 machines
         Constructed 0 states with 1 transitions
         Constructed 4 states with 4 transitions
-        Constructed 53 of 492 machines
-        Constructed 54 of 492 machines
-        Constructed 55 of 492 machines
+        Constructed 33 of 492 machines
+        Constructed 34 of 492 machines
+        Constructed 50 states with 97 transitions
+        Constructed 184 states with 287 transitions
+        Constructed 35 of 492 machines
+        Constructed 36 of 492 machines
         Constructed 0 states with 2 transitions
         Constructed 0 states with 2 transitions
         Constructed 0 states with 2 transitions
         Constructed 0 states with 2 transitions
         Constructed 10 states with 33 transitions
-        Constructed 56 of 492 machines
+        Constructed 37 of 492 machines
+        Constructed 10 states with 33 transitions
+        Constructed 38 of 492 machines
         Constructed 0 states with 1 transitions
-        Constructed 10 states with 33 transitions
-        Constructed 57 of 492 machines
-        Constructed 0 states with 6 transitions
         Constructed 3 states with 115 transitions
+        Constructed 39 of 492 machines
+        Constructed 0 states with 6 transitions
         Constructed 3 states with 7 transitions
-        Constructed 58 of 492 machines
-        Constructed 59 of 492 machines
+        Constructed 40 of 492 machines
         Constructed 0 states with 4 transitions
         Constructed 3 states with 5 transitions
-        Constructed 60 of 492 machines
+        Constructed 41 of 492 machines
         Constructed 0 states with 1 transitions
         Constructed 5 states with 85 transitions
+        Constructed 42 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 43 of 492 machines
         Constructed 0 states with 2 transitions
-        Constructed 61 of 492 machines
         Constructed 3 states with 3 transitions
+        Constructed 44 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 45 of 492 machines
+        Constructed 0 states with 14 transitions
+        Constructed 1 states with 14 transitions
+        Constructed 46 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 47 of 492 machines
+        Reduced 7 states to 7 equivalence classes
+        Constructed 48 of 492 machines
+        Reduced 11 states to 11 equivalence classes
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 11 transitions
+        Constructed 49 of 492 machines
+        Constructed 50 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 0 states with 6 transitions
+        Constructed 7 states with 18 transitions
+        Constructed 51 of 492 machines
+        Constructed 2 states with 6 transitions
+        Constructed 52 of 492 machines
+        Constructed 0 states with 7 transitions
+        Constructed 0 states with 4 transitions
+        Constructed 6 states with 42 transitions
+        Constructed 53 of 492 machines
+        Constructed 13 states with 44 transitions
+        Constructed 54 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 0 states with 5 transitions
+        Constructed 55 of 492 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 9 transitions
+        Constructed 56 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 57 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 4 states with 18 transitions
+        Constructed 58 of 492 machines
+        Constructed 4 states with 20 transitions
+        Constructed 59 of 492 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 9 transitions
+        Constructed 0 states with 4 transitions
+        Constructed 3 states with 12 transitions
+        Constructed 60 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 61 of 492 machines
         Constructed 62 of 492 machines
         Constructed 0 states with 3 transitions
         Constructed 2 states with 6 transitions
         Constructed 63 of 492 machines
-        Constructed 0 states with 14 transitions
-        Constructed 1 states with 14 transitions
-        Constructed 0 states with 2 transitions
-        Constructed 64 of 492 machines
-        Constructed 3 states with 11 transitions
-        Constructed 65 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 0 states with 6 transitions
-        Constructed 66 of 492 machines
-        Constructed 7 states with 18 transitions
-        Constructed 67 of 492 machines
-        Constructed 0 states with 7 transitions
-        Constructed 0 states with 4 transitions
-        Constructed 13 states with 44 transitions
-        Constructed 68 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 69 of 492 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
-        Constructed 70 of 492 machines
-        Constructed 0 states with 2 transitions
-        Constructed 3 states with 9 transitions
-        Constructed 71 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 72 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 4 states with 18 transitions
-        Constructed 73 of 492 machines
-        Constructed 0 states with 4 transitions
-        Constructed 3 states with 12 transitions
-        Constructed 6 states with 42 transitions
-        Constructed 74 of 492 machines
-        Constructed 75 of 492 machines
-        Constructed 0 states with 2 transitions
-        Constructed 3 states with 9 transitions
-        Constructed 76 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 77 of 492 machines
-        Constructed 0 states with 2 transitions
-        Constructed 3 states with 11 transitions
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 78 of 492 machines
-        Constructed 79 of 492 machines
-        Reduced 2 states to 2 equivalence classes
-        Constructed 80 of 492 machines
         Constructed 0 states with 4 transitions
         Constructed 7 states with 9 transitions
-        Constructed 81 of 492 machines
-        Constructed 0 states with 8 transitions
-        Constructed 11 states with 17 transitions
-        Constructed 82 of 492 machines
+        Constructed 64 of 492 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 11 transitions
+        Constructed 65 of 492 machines
         Constructed 0 states with 10 transitions
         Constructed 46 states with 81 transitions
-        Constructed 83 of 492 machines
+        Constructed 66 of 492 machines
         Constructed 0 states with 1 transitions
         Constructed 4 states with 3 transitions
-        Constructed 84 of 492 machines
+        Constructed 67 of 492 machines
         Constructed 0 states with 2 transitions
         Constructed 3 states with 3 transitions
-        Constructed 85 of 492 machines
+        Constructed 68 of 492 machines
         Constructed 0 states with 3 transitions
         Constructed 15 states with 18 transitions
-        Constructed 86 of 492 machines
+        Constructed 69 of 492 machines
+        Constructed 0 states with 8 transitions
+        Constructed 11 states with 17 transitions
         Constructed 0 states with 3 transitions
+        Constructed 70 of 492 machines
+        Constructed 41 states with 77 transitions
+        Constructed 71 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 0 states with 1 transitions
+        Constructed 5 states with 4 transitions
+        Constructed 72 of 492 machines
+        Constructed 43 states with 79 transitions
+        Constructed 0 states with 1 transitions
+        Constructed 4 states with 4 transitions
+        Constructed 73 of 492 machines
+        Constructed 74 of 492 machines
+        Constructed 12 states with 37 transitions
+        Constructed 75 of 492 machines
+        Constructed 0 states with 1 transitions
+        Constructed 3 states with 47 transitions
+        Constructed 76 of 492 machines
+        Constructed 0 states with 2 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 0 states with 4 transitions
+        Constructed 3 states with 5 transitions
+        Constructed 77 of 492 machines
+        Constructed 0 states with 8 transitions
+        Constructed 3 states with 9 transitions
+        Constructed 78 of 492 machines
+        Constructed 0 states with 1 transitions
+        Constructed 11 states with 134 transitions
+        Constructed 79 of 492 machines
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 3 transitions
+        Constructed 80 of 492 machines
+        Constructed 0 states with 5 transitions
+        Constructed 4 states with 20 transitions
+        Constructed 81 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 82 of 492 machines
+        Constructed 0 states with 6 transitions
+        Constructed 1 states with 6 transitions
+        Constructed 83 of 492 machines
+        Constructed 0 states with 4 transitions
+        Constructed 40 states with 364 transitions
+        Constructed 84 of 492 machines
+        Constructed 0 states with 9 transitions
+        Constructed 8 states with 72 transitions
+        Constructed 85 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 86 of 492 machines
+        Constructed 0 states with 5 transitions
+        Constructed 4 states with 20 transitions
+        Constructed 87 of 492 machines
+        Constructed 0 states with 2 transitions
+        Constructed 11 states with 42 transitions
+        Constructed 88 of 492 machines
+        Constructed 0 states with 5 transitions
+        Constructed 4 states with 20 transitions
+        Constructed 89 of 492 machines
+        Constructed 0 states with 3 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 90 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 91 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 92 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 93 of 492 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 94 of 492 machines
+        Constructed 49 equivalence classes
+        Constructed 266 equivalence classes
+        Reduced 266 states to 266 equivalence classes
+        Constructed 95 of 492 machines
+        Reduced 7 states to 7 equivalence classes
+        Constructed 96 of 492 machines
+        Reduced 7 states to 7 equivalence classes
+        Constructed 97 of 492 machines
+        Reduced 29 states to 29 equivalence classes
+        Constructed 98 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 99 of 492 machines
+        Reduced 1 states to 1 equivalence classes
+        Constructed 100 of 492 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 101 of 492 machines
+        Reduced 9 states to 9 equivalence classes
+        Constructed 102 of 492 machines
         Constructed 35 equivalence classes
         Constructed 47 equivalence classes
         Reduced 47 states to 47 equivalence classes
-        Constructed 41 states with 77 transitions
-        Constructed 87 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 43 states with 79 transitions
-        Constructed 88 of 492 machines
-        Constructed 0 states with 1 transitions
-        Constructed 5 states with 4 transitions
-        Constructed 89 of 492 machines
+        Constructed 103 of 492 machines
+        Constructed 41 equivalence classes
+        Constructed 41 equivalence classes
+        Reduced 42 states to 41 equivalence classes
+        Constructed 104 of 492 machines
         Constructed 37 equivalence classes
         Constructed 61 equivalence classes
         Constructed 73 equivalence classes
         Reduced 73 states to 73 equivalence classes
-        Constructed 90 of 492 machines
-        Constructed 91 of 492 machines
-        Constructed 0 states with 1 transitions
-        Constructed 4 states with 4 transitions
-        Constructed 92 of 492 machines
-        Constructed 0 states with 2 transitions
-        Constructed 0 states with 2 transitions
-        Constructed 12 states with 37 transitions
-        Constructed 93 of 492 machines
-        Constructed 0 states with 1 transitions
-        Constructed 3 states with 47 transitions
-        Constructed 94 of 492 machines
-        Constructed 0 states with 4 transitions
-        Constructed 3 states with 5 transitions
-        Constructed 95 of 492 machines
-        Constructed 0 states with 8 transitions
-        Constructed 3 states with 9 transitions
-        Constructed 96 of 492 machines
-        Constructed 0 states with 1 transitions
-        Constructed 11 states with 134 transitions
-        Constructed 97 of 492 machines
-        Constructed 0 states with 2 transitions
-        Constructed 3 states with 3 transitions
-        Constructed 98 of 492 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
-        Constructed 99 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 100 of 492 machines
-        Constructed 0 states with 6 transitions
-        Constructed 1 states with 6 transitions
-        Constructed 101 of 492 machines
-        Constructed 0 states with 4 transitions
-        Constructed 40 states with 364 transitions
-        Constructed 102 of 492 machines
-        Constructed 41 equivalence classes
-        Constructed 41 equivalence classes
-        Reduced 42 states to 41 equivalence classes
-        Constructed 103 of 492 machines
-        Constructed 0 states with 9 transitions
-        Constructed 8 states with 72 transitions
-        Constructed 104 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
         Constructed 105 of 492 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
+        Reduced 4 states to 4 equivalence classes
         Constructed 106 of 492 machines
-        Constructed 0 states with 2 transitions
-        Constructed 11 states with 42 transitions
+        Reduced 37 states to 37 equivalence classes
         Constructed 107 of 492 machines
-        Constructed 0 states with 5 transitions
-        Constructed 4 states with 20 transitions
-        Constructed 108 of 492 machines
-        Constructed 0 states with 3 transitions
-        Constructed 2 states with 6 transitions
-        Constructed 109 of 492 machines
-        Constructed 38 equivalence classes
-        Constructed 38 equivalence classes
-        Reduced 39 states to 38 equivalence classes
-        Constructed 110 of 492 machines
-        Constructed 111 of 492 machines
-        Constructed 112 of 492 machines
         Constructed 43 equivalence classes
         Constructed 108 equivalence classes
         Constructed 133 equivalence classes
         Constructed 145 equivalence classes
         Constructed 157 equivalence classes
         Reduced 157 states to 157 equivalence classes
-        Constructed 113 of 492 machines
+        Constructed 108 of 492 machines
         Constructed 38 equivalence classes
         Constructed 50 equivalence classes
         Reduced 50 states to 50 equivalence classes
+        Constructed 109 of 492 machines
+        Constructed 40 equivalence classes
+        Constructed 41 equivalence classes
+        Constructed 42 equivalence classes
+        Reduced 42 states to 42 equivalence classes
+        Constructed 110 of 492 machines
+        Reduced 30 states to 30 equivalence classes
+        Constructed 111 of 492 machines
+        Constructed 40 equivalence classes
+        Constructed 41 equivalence classes
+        Constructed 42 equivalence classes
+        Reduced 42 states to 42 equivalence classes
+        Constructed 112 of 492 machines
+        Constructed 42 equivalence classes
+        Constructed 42 equivalence classes
+        Reduced 43 states to 42 equivalence classes
+        Constructed 113 of 492 machines
+        Reduced 5 states to 5 equivalence classes
         Constructed 114 of 492 machines
+        Reduced 4 states to 4 equivalence classes
         Constructed 115 of 492 machines
-        Reduced 37 states to 37 equivalence classes
+        Constructed 38 equivalence classes
+        Constructed 38 equivalence classes
+        Reduced 39 states to 38 equivalence classes
         Constructed 116 of 492 machines
         Constructed 38 equivalence classes
         Constructed 50 equivalence classes
         Reduced 50 states to 50 equivalence classes
         Constructed 117 of 492 machines
-        Reduced 30 states to 30 equivalence classes
-        Constructed 118 of 492 machines
-        Constructed 40 equivalence classes
-        Constructed 41 equivalence classes
-        Constructed 42 equivalence classes
-        Reduced 42 states to 42 equivalence classes
-        Constructed 119 of 492 machines
-        Constructed 40 equivalence classes
-        Constructed 41 equivalence classes
-        Constructed 42 equivalence classes
-        Reduced 42 states to 42 equivalence classes
-        Constructed 120 of 492 machines
-        Constructed 42 equivalence classes
-        Constructed 42 equivalence classes
-        Reduced 43 states to 42 equivalence classes
-        Constructed 121 of 492 machines
-        Reduced 5 states to 5 equivalence classes
-        Constructed 122 of 492 machines
         Constructed 45 equivalence classes
         Constructed 135 equivalence classes
         Constructed 160 equivalence classes
         Constructed 172 equivalence classes
         Constructed 184 equivalence classes
         Reduced 184 states to 184 equivalence classes
-        Constructed 16 states with 43 transitions
-        Constructed 123 of 492 machines
-        Reduced 4 states to 4 equivalence classes
-        Constructed 124 of 492 machines
-        Constructed 125 of 492 machines
-        Reduced 9 states to 9 equivalence classes
-        Constructed 126 of 492 machines
+        Constructed 118 of 492 machines
         Reduced 10 states to 10 states
         Constructed 3 equivalence classes
         Constructed 4 equivalence classes
         Constructed 4 equivalence classes
         Reduced 10 states to 4 equivalence classes
-        Constructed 127 of 492 machines
+        Constructed 119 of 492 machines
+        Reduced 10 states to 10 states
+        Constructed 3 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 4 equivalence classes
+        Reduced 10 states to 4 equivalence classes
+        Constructed 120 of 492 machines
         Constructed 2 equivalence classes
         Constructed 2 equivalence classes
         Reduced 3 states to 2 equivalence classes
-        Constructed 128 of 492 machines
+        Constructed 121 of 492 machines
         Reduced 3 states to 3 equivalence classes
+        Constructed 122 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 123 of 492 machines
+        Reduced 5 states to 5 equivalence classes
+        Constructed 124 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 125 of 492 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 126 of 492 machines
+        Reduced 1 states to 1 equivalence classes
+        Constructed 127 of 492 machines
+        Constructed 128 of 492 machines
         Constructed 129 of 492 machines
         Reduced 3 states to 3 equivalence classes
         Constructed 130 of 492 machines
-        Reduced 5 states to 5 equivalence classes
-        Constructed 131 of 492 machines
-        Reduced 10 states to 10 states
-        Reduced 3 states to 3 equivalence classes
-        Constructed 3 equivalence classes
-        Constructed 132 of 492 machines
-        Constructed 4 equivalence classes
-        Constructed 4 equivalence classes
-        Reduced 10 states to 4 equivalence classes
-        Reduced 2 states to 2 equivalence classes
-        Constructed 133 of 492 machines
-        Constructed 134 of 492 machines
-        Reduced 1 states to 1 equivalence classes
-        Reduced 3 states to 3 equivalence classes
-        Constructed 135 of 492 machines
-        Constructed 136 of 492 machines
-        Reduced 2 states to 2 equivalence classes
         Constructed 3 equivalence classes
         Constructed 3 equivalence classes
         Reduced 7 states to 3 equivalence classes
-        Constructed 137 of 492 machines
+        Constructed 131 of 492 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 132 of 492 machines
+        Reduced 6 states to 6 equivalence classes
+        Constructed 133 of 492 machines
         Constructed 4 equivalence classes
         Constructed 5 equivalence classes
         Constructed 5 equivalence classes
         Reduced 13 states to 5 equivalence classes
-        Constructed 138 of 492 machines
-        Constructed 139 of 492 machines
+        Constructed 134 of 492 machines
         Reduced 2 states to 2 equivalence classes
-        Constructed 140 of 492 machines
-        Reduced 4 states to 4 equivalence classes
+        Constructed 135 of 492 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 141 of 492 machines
-        Constructed 142 of 492 machines
+        Constructed 136 of 492 machines
         Reduced 2 states to 2 equivalence classes
-        Constructed 143 of 492 machines
+        Constructed 137 of 492 machines
         Constructed 3 equivalence classes
         Constructed 3 equivalence classes
         Reduced 4 states to 3 equivalence classes
+        Constructed 138 of 492 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 139 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 140 of 492 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 141 of 492 machines
+        Reduced 3 states to 3 equivalence classes
+        Constructed 142 of 492 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 143 of 492 machines
+        Reduced 7 states to 7 equivalence classes
         Constructed 144 of 492 machines
         Reduced 3 states to 3 equivalence classes
         Constructed 145 of 492 machines
-        Reduced 6 states to 6 equivalence classes
-        Constructed 146 of 492 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 147 of 492 machines
-        Reduced 2 states to 2 equivalence classes
-        Constructed 148 of 492 machines
-        Reduced 2 states to 2 equivalence classes
-        Constructed 149 of 492 machines
-        Reduced 3 states to 3 equivalence classes
-        Constructed 150 of 492 machines
-        Constructed 12 states with 37 transitions
-        Constructed 151 of 492 machines
-        Reduced 7 states to 7 equivalence classes
-        Constructed 152 of 492 machines
         Constructed 19 equivalence classes
         Constructed 46 equivalence classes
         Reduced 46 states to 46 equivalence classes
-        Constructed 153 of 492 machines
+        Constructed 146 of 492 machines
         Reduced 4 states to 4 equivalence classes
-        Constructed 154 of 492 machines
+        Constructed 147 of 492 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 155 of 492 machines
-        Reduced 11 states to 11 equivalence classes
+        Constructed 148 of 492 machines
         Constructed 13 equivalence classes
         Constructed 15 equivalence classes
-        Constructed 156 of 492 machines
+        Reduced 15 states to 15 equivalence classes
+        Constructed 149 of 492 machines
+        Reduced 11 states to 11 equivalence classes
+        Constructed 150 of 492 machines
         Constructed 32 equivalence classes
         Constructed 39 equivalence classes
         Constructed 41 equivalence classes
         Reduced 41 states to 41 equivalence classes
-        Constructed 157 of 492 machines
-        Reduced 15 states to 15 equivalence classes
-        Constructed 158 of 492 machines
-        Constructed 159 of 492 machines
+        Constructed 151 of 492 machines
         Reduced 5 states to 5 equivalence classes
-        Constructed 160 of 492 machines
+        Constructed 152 of 492 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 153 of 492 machines
         Constructed 33 equivalence classes
         Constructed 40 equivalence classes
         Constructed 42 equivalence classes
         Constructed 42 equivalence classes
         Reduced 43 states to 42 equivalence classes
-        Constructed 161 of 492 machines
-        Reduced 4 states to 4 equivalence classes
-        Constructed 162 of 492 machines
+        Constructed 154 of 492 machines
         Reduced 12 states to 12 states
         Constructed 3 equivalence classes
         Constructed 4 equivalence classes
         Constructed 5 equivalence classes
         Constructed 5 equivalence classes
         Reduced 12 states to 5 equivalence classes
-        Constructed 163 of 492 machines
+        Constructed 155 of 492 machines
         Constructed 2 equivalence classes
         Constructed 2 equivalence classes
         Reduced 3 states to 2 equivalence classes
-        Constructed 164 of 492 machines
+        Constructed 156 of 492 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 165 of 492 machines
+        Constructed 157 of 492 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 166 of 492 machines
+        Constructed 158 of 492 machines
         Reduced 11 states to 11 equivalence classes
+        Constructed 159 of 492 machines
         Reduced 3 states to 3 equivalence classes
-        Constructed 12 states with 49 transitions
+        Constructed 160 of 492 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 161 of 492 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 162 of 492 machines
+        Reduced 1 states to 1 equivalence classes
+        Constructed 163 of 492 machines
+        Constructed 8 equivalence classes
+        Constructed 11 equivalence classes
+        Constructed 12 equivalence classes
+        Constructed 12 equivalence classes
+        Reduced 40 states to 12 equivalence classes
+        Constructed 164 of 492 machines
+        Reduced 8 states to 8 equivalence classes
+        Constructed 165 of 492 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 166 of 492 machines
+        Reduced 4 states to 4 equivalence classes
         Constructed 167 of 492 machines
+        Constructed 4 equivalence classes
+        Constructed 5 equivalence classes
+        Constructed 5 equivalence classes
+        Reduced 11 states to 5 equivalence classes
         Constructed 168 of 492 machines
         Reduced 4 states to 4 equivalence classes
         Constructed 169 of 492 machines
         Reduced 2 states to 2 equivalence classes
         Constructed 170 of 492 machines
         Constructed 171 of 492 machines
-        Reduced 1 states to 1 equivalence classes
         Constructed 172 of 492 machines
-        Reduced 8 states to 8 equivalence classes
         Constructed 173 of 492 machines
         Constructed 174 of 492 machines
-        Reduced 2 states to 2 equivalence classes
-        Reduced 4 states to 4 equivalence classes
         Constructed 175 of 492 machines
         Constructed 176 of 492 machines
-        Constructed 8 equivalence classes
-        Constructed 11 equivalence classes
-        Constructed 12 equivalence classes
-        Constructed 12 equivalence classes
-        Reduced 40 states to 12 equivalence classes
         Constructed 177 of 492 machines
-        Reduced 4 states to 4 equivalence classes
-        Constructed 4 equivalence classes
-        Constructed 5 equivalence classes
-        Constructed 5 equivalence classes
-        Reduced 2 states to 2 equivalence classes
-        Reduced 11 states to 5 equivalence classes
         Constructed 178 of 492 machines
         Constructed 179 of 492 machines
         Constructed 180 of 492 machines
@@ -550,23 +547,10 @@ License: Academic license for non-commercial use only
         Constructed 186 of 492 machines
         Constructed 187 of 492 machines
         Constructed 188 of 492 machines
-        Reduced 16 states to 16 states
         Constructed 189 of 492 machines
-        Constructed 3 equivalence classes
-        Constructed 4 equivalence classes
-        Constructed 5 equivalence classes
-        Constructed 6 equivalence classes
-        Constructed 7 equivalence classes
-        Constructed 7 equivalence classes
-        Reduced 16 states to 7 equivalence classes
         Constructed 190 of 492 machines
+        Constructed 16 states with 43 transitions
         Constructed 191 of 492 machines
-        Reduced 12 states to 12 states
-        Constructed 3 equivalence classes
-        Constructed 4 equivalence classes
-        Constructed 5 equivalence classes
-        Constructed 5 equivalence classes
-        Reduced 12 states to 5 equivalence classes
         Constructed 192 of 492 machines
         Constructed 193 of 492 machines
         Constructed 194 of 492 machines
@@ -574,13 +558,15 @@ License: Academic license for non-commercial use only
         Constructed 196 of 492 machines
         Constructed 197 of 492 machines
         Constructed 198 of 492 machines
-        Reduced 12 states to 12 states
+        Constructed 199 of 492 machines
+        Reduced 16 states to 16 states
         Constructed 3 equivalence classes
         Constructed 4 equivalence classes
         Constructed 5 equivalence classes
-        Constructed 5 equivalence classes
-        Reduced 12 states to 5 equivalence classes
-        Constructed 199 of 492 machines
+        Constructed 6 equivalence classes
+        Constructed 7 equivalence classes
+        Constructed 7 equivalence classes
+        Reduced 16 states to 7 equivalence classes
         Constructed 200 of 492 machines
         Constructed 201 of 492 machines
         Constructed 202 of 492 machines
@@ -597,17 +583,20 @@ License: Academic license for non-commercial use only
         Constructed 0 formats
         Constructed 2 formats
         Constructed 213 of 492 machines
+        Constructed 214 of 492 machines
         Constructed 0 formats
         Constructed 2 formats
-        Constructed 214 of 492 machines
         Constructed 215 of 492 machines
         Constructed 0 formats
         Constructed 2 formats
         Constructed 216 of 492 machines
         Constructed 217 of 492 machines
-        Constructed 218 of 502 machines
-        Constructed 219 of 502 machines
-        Constructed 220 of 502 machines
+        Constructed 0 formats
+        Constructed 2 formats
+        Constructed 218 of 492 machines
+        Constructed 219 of 492 machines
+        Constructed 220 of 497 machines
+        Constructed 12 states with 37 transitions
         Constructed 221 of 502 machines
         Constructed 222 of 502 machines
         Constructed 223 of 502 machines
@@ -622,74 +611,76 @@ License: Academic license for non-commercial use only
         Constructed 232 of 502 machines
         Constructed 233 of 502 machines
         Constructed 234 of 502 machines
+        Reduced 12 states to 12 states
+        Constructed 3 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 5 equivalence classes
+        Constructed 5 equivalence classes
+        Reduced 12 states to 5 equivalence classes
         Constructed 235 of 502 machines
         Constructed 236 of 502 machines
         Constructed 237 of 502 machines
         Constructed 238 of 502 machines
         Constructed 239 of 502 machines
+        Constructed 0 states with 1 transitions
+        Constructing high-level wrapper
         Constructed 240 of 502 machines
         Constructed 241 of 502 machines
         Constructed 242 of 502 machines
         Constructed 0 formats
         Constructed 2 formats
         Constructed 243 of 502 machines
-        Constructed 0 formats
-        Constructed 2 formats
         Constructed 244 of 502 machines
         Constructed 245 of 502 machines
-        Constructed 246 of 502 machines
-        Constructed 247 of 512 machines
-        Constructed 248 of 512 machines
-        Constructed 249 of 512 machines
-        Constructed 250 of 512 machines
-        Constructed 251 of 512 machines
-        Constructed 252 of 512 machines
-        Constructed 253 of 512 machines
-        Constructed 254 of 512 machines
-        Constructed 255 of 512 machines
-        Constructed 256 of 512 machines
-        Constructed 257 of 512 machines
-        Constructed 258 of 512 machines
-        Constructed 259 of 512 machines
-        Constructed 260 of 512 machines
-        Constructed 261 of 512 machines
-        Constructed 262 of 512 machines
-        Constructed 0 states with 1 transitions
-        Constructing high-level wrapper
-        Constructed 263 of 512 machines
-        Constructed 264 of 512 machines
-        Constructed 265 of 512 machines
-        Constructed 0 states with 1 transitions
-        Constructing high-level wrapper
-        Constructed 266 of 512 machines
+        Constructed 246 of 522 machines
+        Constructed 247 of 522 machines
+        Constructed 248 of 522 machines
+        Constructed 249 of 522 machines
+        Constructed 250 of 522 machines
+        Constructed 251 of 522 machines
+        Constructed 252 of 522 machines
+        Constructed 253 of 522 machines
+        Constructed 254 of 522 machines
+        Constructed 255 of 522 machines
+        Constructed 256 of 522 machines
+        Constructed 257 of 522 machines
+        Constructed 258 of 522 machines
+        Constructed 259 of 522 machines
+        Constructed 260 of 522 machines
+        Constructed 261 of 522 machines
+        Constructed 262 of 522 machines
+        Constructed 263 of 522 machines
+        Constructed 264 of 522 machines
+        Constructed 265 of 522 machines
+        Constructed 266 of 522 machines
         Constructed 267 of 522 machines
         Constructed 268 of 522 machines
         Constructed 269 of 522 machines
+        Constructed 12 states with 49 transitions
         Constructed 270 of 522 machines
+        Enumerated to 105 states and 270 transitions
+        Reduced 105 states to 105 states
+        Constructed 102 equivalence classes
+        Constructed 102 equivalence classes
+        Reduced 105 states to 102 equivalence classes
         Constructed 271 of 522 machines
         Constructed 272 of 522 machines
+        Reduced 12 states to 12 states
+        Constructed 3 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 5 equivalence classes
+        Constructed 5 equivalence classes
+        Reduced 12 states to 5 equivalence classes
         Constructed 273 of 522 machines
         Constructed 274 of 522 machines
         Constructed 275 of 522 machines
         Constructed 276 of 522 machines
         Constructed 277 of 522 machines
         Constructed 278 of 522 machines
-        Enumerated to 2.045 states and 9.175 transitions
-        Constructed 1.000 states
-        Constructed 2.000 states
-        Reduced 2.045 states to 2.045 states
-        Constructed 909 equivalence classes
-        Constructed 1.777 equivalence classes
-        Constructed 1.777 equivalence classes
-        Reduced 2.045 states to 1.777 equivalence classes
-        Enumerated to 151 states and 377 transitions
-        Reduced 151 states to 151 states
-        Constructed 94 equivalence classes
-        Constructed 148 equivalence classes
-        Constructed 148 equivalence classes
-        Reduced 151 states to 148 equivalence classes
-        Constructed 279 of 552 machines
-        Constructed 280 of 552 machines
+        Constructed 0 states with 1 transitions
+        Constructing high-level wrapper
+        Constructed 279 of 522 machines
+        Constructed 280 of 522 machines
         Constructed 281 of 552 machines
         Constructed 282 of 552 machines
         Constructed 283 of 552 machines
@@ -721,15 +712,14 @@ License: Academic license for non-commercial use only
         Constructed 309 of 552 machines
         Constructed 310 of 552 machines
         Constructed 311 of 552 machines
+        Enumerated to 151 states and 377 transitions
+        Reduced 151 states to 151 states
+        Constructed 94 equivalence classes
+        Constructed 148 equivalence classes
+        Constructed 148 equivalence classes
+        Reduced 151 states to 148 equivalence classes
         Constructed 312 of 552 machines
         Constructed 313 of 552 machines
-        Enumerated to 105 states and 270 transitions
-        Reduced 105 states to 105 states
-        Constructed 102 equivalence classes
-        Constructed 102 equivalence classes
-        Reduced 105 states to 102 equivalence classes
-        Constructed 314 of 552 machines
-        Constructed 315 of 552 machines
         Enumerated to 90 states and 159 transitions
         Reduced 90 states to 90 states
         Constructed 46 equivalence classes
@@ -744,14 +734,17 @@ License: Academic license for non-commercial use only
         Constructed 87 equivalence classes
         Constructed 87 equivalence classes
         Reduced 90 states to 87 equivalence classes
+        Constructed 314 of 552 machines
+        Constructed 315 of 552 machines
         Constructed 316 of 552 machines
-        Constructed 317 of 552 machines
-        Constructed 318 of 552 machines
-        Constructed 319 of 552 machines
+        Constructed 317 of 555 machines
+        Constructed 318 of 555 machines
+        Constructed 319 of 555 machines
         Constructed 320 of 555 machines
-        Constructed 321 of 555 machines
-        Constructed 322 of 555 machines
-        Constructed 323 of 555 machines
+        Enumerated to 2.045 states and 9.175 transitions
+        Constructed 1.000 states
+        Constructed 2.000 states
+        Reduced 2.045 states to 2.045 states
         Enumerated to 399 states and 748 transitions
         Reduced 399 states to 399 states
         Constructed 224 equivalence classes
@@ -762,18 +755,25 @@ License: Academic license for non-commercial use only
         Constructed 276 equivalence classes
         Constructed 276 equivalence classes
         Reduced 399 states to 276 equivalence classes
-        Constructed 324 of 555 machines
-        Constructed 325 of 555 machines
-        Constructed 326 of 555 machines
+        Constructed 321 of 555 machines
+        Constructed 322 of 555 machines
+        Constructed 323 of 555 machines
+        Constructed 324 of 560 machines
+        Constructed 325 of 560 machines
+        Constructed 326 of 560 machines
         Constructed 327 of 560 machines
         Constructed 328 of 560 machines
         Constructed 329 of 560 machines
-        Constructed 330 of 560 machines
-        Constructed 331 of 560 machines
-        Constructed 332 of 560 machines
         Enumerated to 1.740 states and 5.786 transitions
         Constructed 1.000 states
         Reduced 1.740 states to 1.740 states
+        Constructed 909 equivalence classes
+        Constructed 1.777 equivalence classes
+        Constructed 1.777 equivalence classes
+        Reduced 2.045 states to 1.777 equivalence classes
+        Constructed 330 of 560 machines
+        Constructed 331 of 560 machines
+        Constructed 332 of 560 machines
         Constructed 314 equivalence classes
         Constructed 735 equivalence classes
         Constructed 1.321 equivalence classes
@@ -787,10 +787,10 @@ License: Academic license for non-commercial use only
         Constructed 1.739 equivalence classes
         Constructed 1.739 equivalence classes
         Reduced 1.740 states to 1.739 equivalence classes
+        Constructed 10.155 states and 41.174 transitions
         Constructed 333 of 560 machines
         Constructed 334 of 560 machines
         Constructed 335 of 562 machines
-        Constructed 10.155 states and 41.174 transitions
         Constructed 336 of 562 machines
         Constructed 337 of 562 machines
         Enumerated to 1.739 states and 5.784 transitions
@@ -807,8 +807,8 @@ License: Academic license for non-commercial use only
         Constructed 1.739 equivalence classes
         Reduced 1.739 states to 1.739 equivalence classes
         Constructed 338 of 562 machines
-        Constructed 20.168 states and 83.433 transitions
         Constructed 339 of 562 machines
+        Constructed 20.168 states and 83.433 transitions
         Constructed 340 of 562 machines
         Constructed 341 of 568 machines
         Constructed 342 of 568 machines
@@ -855,10 +855,10 @@ License: Academic license for non-commercial use only
         Constructed 349 of 568 machines
         Constructed 350 of 569 machines
         Constructed 351 of 569 machines
+        Constructed 40.104 states and 163.498 transitions
         Enumerated to 1.321 states and 3.595 transitions
         Constructed 1.000 states
         Reduced 1.321 states to 1.321 states
-        Constructed 40.104 states and 163.498 transitions
         Constructed 175 equivalence classes
         Constructed 199 equivalence classes
         Constructed 224 equivalence classes
@@ -898,6 +898,7 @@ License: Academic license for non-commercial use only
         Constructed 352 of 569 machines
         Constructed 353 of 569 machines
         Constructed 354 of 571 machines
+        Constructed 50.091 states and 204.030 transitions
         Constructed 355 of 571 machines
         Constructed 356 of 571 machines
         Enumerated to 799 states and 2.305 transitions
@@ -941,7 +942,6 @@ License: Academic license for non-commercial use only
         Constructed 358 of 571 machines
         Constructed 359 of 572 machines
         Constructed 360 of 572 machines
-        Constructed 50.091 states and 204.030 transitions
         Enumerated to 457 states and 1.296 transitions
         Reduced 457 states to 457 states
         Constructed 166 equivalence classes
@@ -1020,8 +1020,8 @@ License: Academic license for non-commercial use only
         Constructed 366 of 574 machines
         Constructed 367 of 574 machines
         Constructed 368 of 575 machines
-        Constructed 369 of 575 machines
         Constructed 60.081 states and 243.903 transitions
+        Constructed 369 of 575 machines
         Enumerated to 397 states and 1.212 transitions
         Reduced 397 states to 397 states
         Constructed 150 equivalence classes
@@ -1097,12 +1097,11 @@ License: Academic license for non-commercial use only
         Constructed 376 of 578 machines
         Constructed 377 of 578 machines
         Constructed 378 of 578 machines
-        Constructed 70.070 states and 285.264 transitions
         Enumerated to 4.428 states and 26.729 transitions
+        Constructed 70.070 states and 285.264 transitions
         Constructed 278 equivalence classes
         Constructed 478 equivalence classes
         Constructed 672 equivalence classes
-        Constructed 80.091 states and 324.683 transitions
         Constructed 867 equivalence classes
         Constructed 1.058 equivalence classes
         Constructed 1.138 equivalence classes
@@ -1129,6 +1128,7 @@ License: Academic license for non-commercial use only
         Constructed 1.785 equivalence classes
         Constructed 1.805 equivalence classes
         Constructed 1.827 equivalence classes
+        Constructed 80.091 states and 324.683 transitions
         Constructed 1.848 equivalence classes
         Constructed 1.865 equivalence classes
         Constructed 1.881 equivalence classes
@@ -1173,11 +1173,11 @@ License: Academic license for non-commercial use only
         Constructed 1.000 states
         Constructed 2.000 states
         Reduced 2.071 states to 2.071 states
-        Constructed 100.086 states and 406.152 transitions
         Constructed 273 equivalence classes
         Constructed 472 equivalence classes
         Constructed 665 equivalence classes
         Constructed 861 equivalence classes
+        Constructed 100.086 states and 406.152 transitions
         Constructed 1.055 equivalence classes
         Constructed 1.135 equivalence classes
         Constructed 1.210 equivalence classes
@@ -1232,7 +1232,6 @@ License: Academic license for non-commercial use only
         Constructed 2.044 equivalence classes
         Constructed 2.048 equivalence classes
         Constructed 2.052 equivalence classes
-        Constructed 110.063 states and 446.766 transitions
         Constructed 2.055 equivalence classes
         Constructed 2.056 equivalence classes
         Constructed 2.056 equivalence classes
@@ -1258,6 +1257,7 @@ License: Academic license for non-commercial use only
         Constructed 1.627 equivalence classes
         Constructed 1.649 equivalence classes
         Constructed 1.675 equivalence classes
+        Constructed 110.063 states and 446.766 transitions
         Constructed 1.696 equivalence classes
         Constructed 1.711 equivalence classes
         Constructed 1.723 equivalence classes
@@ -1274,7 +1274,6 @@ License: Academic license for non-commercial use only
         Constructed 1.906 equivalence classes
         Constructed 1.913 equivalence classes
         Constructed 1.916 equivalence classes
-        Constructed 120.081 states and 492.856 transitions
         Constructed 1.921 equivalence classes
         Constructed 1.930 equivalence classes
         Constructed 1.940 equivalence classes
@@ -1305,9 +1304,10 @@ License: Academic license for non-commercial use only
         Constructed 386 of 581 machines
         Constructed 387 of 581 machines
         Constructed 388 of 581 machines
+        Constructed 120.081 states and 492.856 transitions
         Constructed 10.128 states and 36.593 transitions
-        Constructed 130.059 states and 538.350 transitions
         Enumerated to 11.560 states and 41.536 transitions
+        Constructed 130.059 states and 538.350 transitions
         Constructed 503 equivalence classes
         Constructed 1.616 equivalence classes
         Constructed 2.811 equivalence classes
@@ -1371,20 +1371,20 @@ License: Academic license for non-commercial use only
         Constructed 10.593 equivalence classes
         Reduced 11.560 states to 10.593 equivalence classes
         Enumerated to 134.848 states and 557.964 transitions
+        Constructed 389 of 581 machines
+        Constructed 390 of 581 machines
         Constructed 1.000 states
         Constructed 2.000 states
-        Constructed 389 of 581 machines
         Constructed 3.000 states
-        Constructed 390 of 581 machines
         Constructed 4.000 states
         Constructed 5.000 states
         Constructed 6.000 states
         Constructed 7.000 states
         Constructed 8.000 states
-        Constructed 9.000 states
-        Constructed 10.000 states
         Constructed 391 of 582 machines
         Constructed 392 of 582 machines
+        Constructed 9.000 states
+        Constructed 10.000 states
         Constructed 11.000 states
         Constructed 12.000 states
         Constructed 13.000 states
@@ -1396,23 +1396,23 @@ License: Academic license for non-commercial use only
         Constructed 19.000 states
         Constructed 20.000 states
         Constructed 21.000 states
+        Constructed 10.045 states and 37.057 transitions
         Constructed 22.000 states
         Constructed 23.000 states
         Constructed 24.000 states
-        Constructed 10.045 states and 37.057 transitions
         Constructed 25.000 states
         Constructed 26.000 states
         Constructed 27.000 states
-        Constructed 28.000 states
         Enumerated to 10.593 states and 39.214 transitions
-        Constructed 29.000 states
+        Constructed 28.000 states
         Constructed 1.000 states
-        Constructed 30.000 states
+        Constructed 29.000 states
         Constructed 2.000 states
-        Constructed 31.000 states
+        Constructed 30.000 states
         Constructed 3.000 states
-        Constructed 32.000 states
+        Constructed 31.000 states
         Constructed 4.000 states
+        Constructed 32.000 states
         Constructed 5.000 states
         Constructed 33.000 states
         Constructed 6.000 states
@@ -1420,12 +1420,12 @@ License: Academic license for non-commercial use only
         Constructed 7.000 states
         Constructed 35.000 states
         Constructed 8.000 states
-        Constructed 9.000 states
         Constructed 36.000 states
-        Constructed 10.000 states
-        Reduced 10.593 states to 10.593 states
+        Constructed 9.000 states
         Constructed 37.000 states
+        Constructed 10.000 states
         Constructed 38.000 states
+        Reduced 10.593 states to 10.593 states
         Constructed 39.000 states
         Constructed 40.000 states
         Constructed 41.000 states
@@ -1468,83 +1468,102 @@ License: Academic license for non-commercial use only
         Constructed 78.000 states
         Constructed 79.000 states
         Constructed 80.000 states
-        Constructed 234 equivalence classes
         Constructed 81.000 states
         Constructed 82.000 states
         Constructed 83.000 states
         Constructed 84.000 states
         Constructed 85.000 states
         Constructed 86.000 states
-        Constructed 410 equivalence classes
         Constructed 87.000 states
         Constructed 88.000 states
-        Constructed 583 equivalence classes
         Constructed 89.000 states
         Constructed 90.000 states
+        Constructed 234 equivalence classes
         Constructed 91.000 states
-        Constructed 768 equivalence classes
         Constructed 92.000 states
         Constructed 93.000 states
-        Constructed 875 equivalence classes
         Constructed 94.000 states
         Constructed 95.000 states
-        Constructed 1.010 equivalence classes
         Constructed 96.000 states
-        Constructed 1.162 equivalence classes
         Constructed 97.000 states
-        Constructed 1.350 equivalence classes
         Constructed 98.000 states
-        Constructed 1.541 equivalence classes
+        Constructed 410 equivalence classes
         Constructed 99.000 states
-        Constructed 1.725 equivalence classes
         Constructed 100.000 states
-        Constructed 1.913 equivalence classes
-        Constructed 2.090 equivalence classes
         Constructed 101.000 states
-        Constructed 2.238 equivalence classes
+        Constructed 583 equivalence classes
         Constructed 102.000 states
-        Constructed 2.376 equivalence classes
-        Constructed 2.529 equivalence classes
         Constructed 103.000 states
+        Constructed 104.000 states
+        Constructed 105.000 states
+        Constructed 768 equivalence classes
+        Constructed 106.000 states
+        Constructed 107.000 states
+        Constructed 875 equivalence classes
+        Constructed 108.000 states
+        Constructed 1.010 equivalence classes
+        Constructed 109.000 states
+        Constructed 110.000 states
+        Constructed 1.162 equivalence classes
+        Constructed 111.000 states
+        Constructed 1.350 equivalence classes
+        Constructed 112.000 states
+        Constructed 113.000 states
+        Constructed 1.541 equivalence classes
+        Constructed 114.000 states
+        Constructed 1.725 equivalence classes
+        Constructed 115.000 states
+        Constructed 1.913 equivalence classes
+        Constructed 116.000 states
+        Constructed 2.090 equivalence classes
+        Constructed 117.000 states
+        Constructed 2.238 equivalence classes
+        Constructed 118.000 states
+        Constructed 2.376 equivalence classes
+        Constructed 119.000 states
+        Constructed 2.529 equivalence classes
+        Constructed 120.000 states
         Constructed 2.686 equivalence classes
         Constructed 2.848 equivalence classes
-        Constructed 104.000 states
+        Constructed 121.000 states
         Constructed 2.995 equivalence classes
+        Constructed 122.000 states
         Constructed 3.131 equivalence classes
-        Constructed 105.000 states
         Constructed 3.278 equivalence classes
-        Constructed 106.000 states
+        Constructed 123.000 states
         Constructed 3.440 equivalence classes
+        Constructed 124.000 states
         Constructed 3.583 equivalence classes
-        Constructed 107.000 states
         Constructed 3.709 equivalence classes
+        Constructed 125.000 states
         Constructed 3.810 equivalence classes
-        Constructed 108.000 states
         Constructed 3.896 equivalence classes
+        Constructed 126.000 states
         Constructed 3.973 equivalence classes
-        Constructed 109.000 states
         Constructed 4.045 equivalence classes
+        Constructed 127.000 states
         Constructed 4.096 equivalence classes
         Constructed 4.130 equivalence classes
         Constructed 4.160 equivalence classes
-        Constructed 110.000 states
+        Constructed 128.000 states
         Constructed 4.183 equivalence classes
         Constructed 4.205 equivalence classes
         Constructed 4.221 equivalence classes
         Constructed 4.233 equivalence classes
         Constructed 4.245 equivalence classes
+        Constructed 129.000 states
         Constructed 4.265 equivalence classes
         Constructed 4.290 equivalence classes
         Constructed 4.314 equivalence classes
-        Constructed 111.000 states
         Constructed 4.340 equivalence classes
         Constructed 4.364 equivalence classes
+        Constructed 130.000 states
         Constructed 4.394 equivalence classes
         Constructed 4.425 equivalence classes
         Constructed 4.451 equivalence classes
         Constructed 4.471 equivalence classes
-        Constructed 112.000 states
         Constructed 4.485 equivalence classes
+        Constructed 131.000 states
         Constructed 4.499 equivalence classes
         Constructed 4.513 equivalence classes
         Constructed 4.527 equivalence classes
@@ -1552,34 +1571,15 @@ License: Academic license for non-commercial use only
         Constructed 4.536 equivalence classes
         Constructed 4.536 equivalence classes
         Reduced 10.593 states to 4.536 equivalence classes
-        Constructed 113.000 states
-        Constructed 114.000 states
-        Constructed 115.000 states
-        Constructed 116.000 states
-        Constructed 117.000 states
-        Constructed 118.000 states
-        Constructed 119.000 states
-        Constructed 120.000 states
-        Constructed 121.000 states
-        Constructed 122.000 states
-        Constructed 123.000 states
-        Constructed 124.000 states
-        Constructed 125.000 states
-        Constructed 126.000 states
-        Constructed 127.000 states
-        Constructed 128.000 states
-        Constructed 129.000 states
-        Constructed 393 of 582 machines
-        Constructed 130.000 states
-        Constructed 394 of 582 machines
-        Constructed 395 of 584 machines
-        Constructed 131.000 states
         Constructed 132.000 states
-        Constructed 396 of 584 machines
-        Constructed 397 of 584 machines
         Constructed 133.000 states
         Constructed 134.000 states
         Reduced 134.848 states to 134.848 states
+        Constructed 393 of 582 machines
+        Constructed 394 of 582 machines
+        Constructed 395 of 584 machines
+        Constructed 396 of 584 machines
+        Constructed 397 of 584 machines
         Enumerated to 4.870 states and 16.694 transitions
         Constructed 251 equivalence classes
         Constructed 486 equivalence classes
@@ -2031,7 +2031,7 @@ License: Academic license for non-commercial use only
         Reduced 190 states to 169 equivalence classes
         Constructed 443 of 598 machines
         Constructed 444 of 598 machines
-        Constructed 445 of 600 machines
+        Constructed 445 of 599 machines
         Constructed 446 of 600 machines
         Constructed 447 of 600 machines
         Constructed 448 of 600 machines
@@ -6417,11 +6417,11 @@ License: Academic license for non-commercial use only
         Constructed 660 of 663 machines
         Constructed 661 of 663 machines
         Constructed 662 of 663 machines
-        Constructed 663 of 667 machines
-        Constructed 664 of 667 machines
-        Constructed 665 of 668 machines
-        Constructed 666 of 669 machines
-        Constructed 667 of 670 machines
+        Constructed 663 of 674 machines
+        Constructed 664 of 674 machines
+        Constructed 665 of 674 machines
+        Constructed 666 of 674 machines
+        Constructed 667 of 674 machines
         Constructed 668 of 674 machines
         Constructed 669 of 674 machines
         Constructed 670 of 674 machines
@@ -6434,315 +6434,315 @@ License: Academic license for non-commercial use only
         Using BTree blocks of size 8 KiB and next-level blocks of size 8 KiB
         On ply 1
         On ply 2 - visited 1 state pairs and 18 transitions in 0 seconds at inf state pairs and inf transitions per second using 210MB total storage.
-        On ply 3 - visited 18 state pairs and 227 transitions in 0,001 seconds at 18.000 state pairs and 227.000 transitions per second using 210MB total storage.
-        On ply 4 - visited 131 state pairs and 1.251 transitions in 0,003 seconds at 43.666,7 state pairs and 417.000 transitions per second using 210MB total storage.
-        On ply 5 - visited 537 state pairs and 4.073 transitions in 0,007 seconds at 76.714,3 state pairs and 581.857 transitions per second using 210MB total storage.
+        On ply 3 - visited 18 state pairs and 227 transitions in 0 seconds at inf state pairs and inf transitions per second using 210MB total storage.
+        On ply 4 - visited 131 state pairs and 1.251 transitions in 0,002 seconds at 65.500 state pairs and 625.500 transitions per second using 210MB total storage.
+        On ply 5 - visited 537 state pairs and 4.073 transitions in 0,006 seconds at 89.500 state pairs and 678.833 transitions per second using 210MB total storage.
         On ply 6 - visited 1.455 state pairs and 9.231 transitions in 0,014 seconds at 103.929 state pairs and 659.357 transitions per second using 210MB total storage.
-        On ply 7 - visited 2.885 state pairs and 15.840 transitions in 0,024 seconds at 120.208 state pairs and 660.000 transitions per second using 210MB total storage.
+        On ply 7 - visited 2.885 state pairs and 15.840 transitions in 0,026 seconds at 110.962 state pairs and 609.231 transitions per second using 210MB total storage.
         On ply 8 - visited 4.481 state pairs and 21.958 transitions in 0,036 seconds at 124.472 state pairs and 609.944 transitions per second using 210MB total storage.
         On ply 9 - visited 5.787 state pairs and 26.400 transitions in 0,045 seconds at 128.600 state pairs and 586.667 transitions per second using 210MB total storage.
-        On ply 10 - visited 6.797 state pairs and 30.414 transitions in 0,055 seconds at 123.582 state pairs and 552.982 transitions per second using 210MB total storage.
+        On ply 10 - visited 6.797 state pairs and 30.414 transitions in 0,053 seconds at 128.245 state pairs and 573.849 transitions per second using 210MB total storage.
         On ply 11 - visited 7.889 state pairs and 36.085 transitions in 0,064 seconds at 123.266 state pairs and 563.828 transitions per second using 210MB total storage.
-        On ply 12 - visited 9.401 state pairs and 45.164 transitions in 0,076 seconds at 123.697 state pairs and 594.263 transitions per second using 210MB total storage.
-        On ply 13 - visited 11.695 state pairs and 59.360 transitions in 0,094 seconds at 124.415 state pairs and 631.489 transitions per second using 210MB total storage.
-        On ply 14 - visited 15.059 state pairs and 79.876 transitions in 0,119 seconds at 126.546 state pairs and 671.227 transitions per second using 210MB total storage.
-        On ply 15 - visited 19.641 state pairs and 107.762 transitions in 0,151 seconds at 130.073 state pairs and 713.656 transitions per second using 210MB total storage.
-        On ply 16 - visited 25.570 state pairs and 143.923 transitions in 0,194 seconds at 131.804 state pairs and 741.871 transitions per second using 210MB total storage.
-        On ply 17 - visited 32.996 state pairs and 189.413 transitions in 0,241 seconds at 136.913 state pairs and 785.946 transitions per second using 210MB total storage.
-        On ply 18 - visited 42.147 state pairs and 245.380 transitions in 0,308 seconds at 136.841 state pairs and 796.688 transitions per second using 210MB total storage.
-        On ply 19 - visited 53.133 state pairs and 311.332 transitions in 0,393 seconds at 135.198 state pairs and 792.193 transitions per second using 210MB total storage.
-        On ply 20 - visited 65.622 state pairs and 383.707 transitions in 0,472 seconds at 139.030 state pairs and 812.939 transitions per second using 210MB total storage.
-        On ply 21 - visited 78.819 state pairs and 456.965 transitions in 0,554 seconds at 142.273 state pairs and 824.847 transitions per second using 210MB total storage.
-        On ply 22 - visited 91.803 state pairs and 526.514 transitions in 0,634 seconds at 144.800 state pairs and 830.464 transitions per second using 210MB total storage.
-        On ply 23 - visited 104.043 state pairs and 591.090 transitions in 0,71 seconds at 146.539 state pairs and 832.521 transitions per second using 210MB total storage.
-        On ply 24 - visited 115.610 state pairs and 652.311 transitions in 0,783 seconds at 147.650 state pairs and 833.092 transitions per second using 210MB total storage.
-        On ply 25 - visited 126.874 state pairs and 712.260 transitions in 0,851 seconds at 149.088 state pairs and 836.968 transitions per second using 210MB total storage.
-        On ply 26 - visited 138.046 state pairs and 771.574 transitions in 0,922 seconds at 149.725 state pairs and 836.848 transitions per second using 210MB total storage.
-        On ply 27 - visited 149.052 state pairs and 830.168 transitions in 0,986 seconds at 151.168 state pairs and 841.955 transitions per second using 210MB total storage.
-        On ply 28 - visited 159.884 state pairs and 889.107 transitions in 1,052 seconds at 151.981 state pairs and 845.159 transitions per second using 210MB total storage.
-        On ply 29 - visited 170.782 state pairs and 949.900 transitions in 1,118 seconds at 152.757 state pairs and 849.642 transitions per second using 210MB total storage.
-        On ply 30 - visited 181.908 state pairs and 1.012.582 transitions in 1,187 seconds at 153.250 state pairs and 853.060 transitions per second using 210MB total storage.
-        On ply 31 - visited 193.140 state pairs and 1.075.701 transitions in 1,254 seconds at 154.019 state pairs and 857.816 transitions per second using 210MB total storage.
-        On ply 32 - visited 204.192 state pairs and 1.137.337 transitions in 1,327 seconds at 153.875 state pairs and 857.074 transitions per second using 210MB total storage.
-        On ply 33 - visited 214.786 state pairs and 1.196.101 transitions in 1,397 seconds at 153.748 state pairs and 856.193 transitions per second using 210MB total storage.
-        On ply 34 - visited 224.774 state pairs and 1.251.426 transitions in 1,458 seconds at 154.166 state pairs and 858.317 transitions per second using 210MB total storage.
-        On ply 35 - visited 234.098 state pairs and 1.302.960 transitions in 1,516 seconds at 154.418 state pairs and 859.472 transitions per second using 210MB total storage.
-        On ply 36 - visited 242.688 state pairs and 1.350.152 transitions in 1,57 seconds at 154.578 state pairs and 859.969 transitions per second using 210MB total storage.
-        On ply 37 - visited 250.446 state pairs and 1.392.336 transitions in 1,618 seconds at 154.787 state pairs and 860.529 transitions per second using 210MB total storage.
-        On ply 38 - visited 257.268 state pairs and 1.428.853 transitions in 1,662 seconds at 154.794 state pairs and 859.719 transitions per second using 210MB total storage.
-        On ply 39 - visited 263.060 state pairs and 1.459.185 transitions in 1,698 seconds at 154.923 state pairs and 859.355 transitions per second using 210MB total storage.
-        On ply 40 - visited 267.768 state pairs and 1.483.153 transitions in 1,728 seconds at 154.958 state pairs and 858.306 transitions per second using 210MB total storage.
-        On ply 41 - visited 271.400 state pairs and 1.500.959 transitions in 1,752 seconds at 154.909 state pairs and 856.712 transitions per second using 210MB total storage.
-        On ply 42 - visited 274.016 state pairs and 1.513.117 transitions in 1,773 seconds at 154.549 state pairs and 853.422 transitions per second using 210MB total storage.
-        On ply 43 - visited 275.734 state pairs and 1.520.584 transitions in 1,785 seconds at 154.473 state pairs and 851.868 transitions per second using 210MB total storage.
-        On ply 44 - visited 276.752 state pairs and 1.524.715 transitions in 1,794 seconds at 154.265 state pairs and 849.897 transitions per second using 210MB total storage.
-        On ply 45 - visited 277.298 state pairs and 1.526.758 transitions in 1,799 seconds at 154.140 state pairs and 848.670 transitions per second using 210MB total storage.
-        On ply 46 - visited 277.552 state pairs and 1.527.587 transitions in 1,802 seconds at 154.024 state pairs and 847.718 transitions per second using 210MB total storage.
-        On ply 47 - visited 277.642 state pairs and 1.527.825 transitions in 1,804 seconds at 153.904 state pairs and 846.910 transitions per second using 210MB total storage.
-        On ply 48 - visited 277.663 state pairs and 1.527.882 transitions in 1,805 seconds at 153.830 state pairs and 846.472 transitions per second using 210MB total storage.
-        On ply 49 - visited 277.682 state pairs and 1.528.094 transitions in 1,806 seconds at 153.755 state pairs and 846.121 transitions per second using 210MB total storage.
-        On ply 50 - visited 277.795 state pairs and 1.529.118 transitions in 1,807 seconds at 153.733 state pairs and 846.219 transitions per second using 210MB total storage.
-        On ply 51 - visited 278.202 state pairs and 1.531.957 transitions in 1,811 seconds at 153.618 state pairs and 845.918 transitions per second using 210MB total storage.
-        On ply 52 - visited 279.137 state pairs and 1.537.260 transitions in 1,818 seconds at 153.541 state pairs and 845.578 transitions per second using 210MB total storage.
-        On ply 53 - visited 280.648 state pairs and 1.544.287 transitions in 1,832 seconds at 153.192 state pairs and 842.951 transitions per second using 210MB total storage.
-        On ply 54 - visited 282.426 state pairs and 1.551.164 transitions in 1,842 seconds at 153.326 state pairs and 842.109 transitions per second using 210MB total storage.
-        On ply 55 - visited 284.003 state pairs and 1.556.511 transitions in 1,856 seconds at 153.019 state pairs and 838.637 transitions per second using 210MB total storage.
-        On ply 56 - visited 285.279 state pairs and 1.560.837 transitions in 1,864 seconds at 153.047 state pairs and 837.359 transitions per second using 210MB total storage.
-        On ply 57 - visited 286.444 state pairs and 1.564.761 transitions in 1,873 seconds at 152.933 state pairs and 835.430 transitions per second using 210MB total storage.
-        On ply 58 - visited 287.486 state pairs and 1.568.119 transitions in 1,881 seconds at 152.837 state pairs and 833.662 transitions per second using 210MB total storage.
-        On ply 59 - visited 288.445 state pairs and 1.571.297 transitions in 1,89 seconds at 152.616 state pairs and 831.374 transitions per second using 210MB total storage.
-        On ply 60 - visited 289.409 state pairs and 1.574.388 transitions in 1,898 seconds at 152.481 state pairs and 829.498 transitions per second using 210MB total storage.
-        On ply 61 - visited 290.340 state pairs and 1.577.282 transitions in 1,905 seconds at 152.409 state pairs and 827.970 transitions per second using 210MB total storage.
-        On ply 62 - visited 291.210 state pairs and 1.580.040 transitions in 1,913 seconds at 152.227 state pairs and 825.949 transitions per second using 210MB total storage.
-        On ply 63 - visited 292.091 state pairs and 1.582.973 transitions in 1,919 seconds at 152.210 state pairs and 824.895 transitions per second using 210MB total storage.
-        On ply 64 - visited 293.032 state pairs and 1.586.039 transitions in 1,926 seconds at 152.145 state pairs and 823.489 transitions per second using 210MB total storage.
-        On ply 65 - visited 293.946 state pairs and 1.588.823 transitions in 1,935 seconds at 151.910 state pairs and 821.097 transitions per second using 210MB total storage.
-        On ply 66 - visited 294.747 state pairs and 1.591.177 transitions in 1,94 seconds at 151.931 state pairs and 820.194 transitions per second using 210MB total storage.
-        On ply 67 - visited 295.416 state pairs and 1.593.096 transitions in 1,946 seconds at 151.807 state pairs and 818.652 transitions per second using 210MB total storage.
-        On ply 68 - visited 295.959 state pairs and 1.594.637 transitions in 1,949 seconds at 151.852 state pairs and 818.182 transitions per second using 210MB total storage.
-        On ply 69 - visited 296.381 state pairs and 1.595.827 transitions in 1,954 seconds at 151.679 state pairs and 816.698 transitions per second using 210MB total storage.
-        On ply 70 - visited 296.748 state pairs and 1.596.846 transitions in 1,957 seconds at 151.634 state pairs and 815.966 transitions per second using 210MB total storage.
-        On ply 71 - visited 297.046 state pairs and 1.597.568 transitions in 1,959 seconds at 151.631 state pairs and 815.502 transitions per second using 210MB total storage.
-        On ply 72 - visited 297.246 state pairs and 1.598.050 transitions in 1,962 seconds at 151.502 state pairs and 814.501 transitions per second using 210MB total storage.
-        On ply 73 - visited 297.400 state pairs and 1.598.453 transitions in 1,966 seconds at 151.272 state pairs and 813.048 transitions per second using 210MB total storage.
-        On ply 74 - visited 297.535 state pairs and 1.598.806 transitions in 1,968 seconds at 151.186 state pairs and 812.401 transitions per second using 210MB total storage.
-        On ply 75 - visited 297.659 state pairs and 1.599.275 transitions in 1,969 seconds at 151.173 state pairs and 812.227 transitions per second using 210MB total storage.
-        On ply 76 - visited 297.853 state pairs and 1.600.490 transitions in 1,971 seconds at 151.118 state pairs and 812.019 transitions per second using 210MB total storage.
-        On ply 77 - visited 298.319 state pairs and 1.603.445 transitions in 1,976 seconds at 150.971 state pairs and 811.460 transitions per second using 210MB total storage.
-        On ply 78 - visited 299.278 state pairs and 1.608.679 transitions in 1,983 seconds at 150.922 state pairs and 811.235 transitions per second using 210MB total storage.
-        On ply 79 - visited 300.729 state pairs and 1.615.327 transitions in 1,996 seconds at 150.666 state pairs and 809.282 transitions per second using 210MB total storage.
-        On ply 80 - visited 302.337 state pairs and 1.621.462 transitions in 2,008 seconds at 150.566 state pairs and 807.501 transitions per second using 210MB total storage.
-        On ply 81 - visited 303.646 state pairs and 1.625.811 transitions in 2,02 seconds at 150.320 state pairs and 804.857 transitions per second using 210MB total storage.
-        On ply 82 - visited 304.616 state pairs and 1.629.157 transitions in 2,026 seconds at 150.353 state pairs and 804.125 transitions per second using 210MB total storage.
-        On ply 83 - visited 305.511 state pairs and 1.632.705 transitions in 2,035 seconds at 150.128 state pairs and 802.312 transitions per second using 210MB total storage.
-        On ply 84 - visited 306.529 state pairs and 1.637.374 transitions in 2,042 seconds at 150.112 state pairs and 801.848 transitions per second using 210MB total storage.
-        On ply 85 - visited 307.960 state pairs and 1.644.117 transitions in 2,054 seconds at 149.932 state pairs and 800.446 transitions per second using 210MB total storage.
-        On ply 86 - visited 309.873 state pairs and 1.652.089 transitions in 2,067 seconds at 149.914 state pairs and 799.269 transitions per second using 210MB total storage.
-        On ply 87 - visited 311.866 state pairs and 1.659.237 transitions in 2,081 seconds at 149.864 state pairs and 797.327 transitions per second using 210MB total storage.
-        On ply 88 - visited 313.478 state pairs and 1.664.349 transitions in 2,094 seconds at 149.703 state pairs and 794.818 transitions per second using 210MB total storage.
-        On ply 89 - visited 314.664 state pairs and 1.668.039 transitions in 2,102 seconds at 149.697 state pairs and 793.549 transitions per second using 210MB total storage.
-        On ply 90 - visited 315.630 state pairs and 1.671.003 transitions in 2,11 seconds at 149.588 state pairs and 791.945 transitions per second using 210MB total storage.
-        On ply 91 - visited 316.418 state pairs and 1.673.315 transitions in 2,117 seconds at 149.465 state pairs and 790.418 transitions per second using 210MB total storage.
-        On ply 92 - visited 317.130 state pairs and 1.675.513 transitions in 2,122 seconds at 149.449 state pairs and 789.591 transitions per second using 210MB total storage.
-        On ply 93 - visited 317.854 state pairs and 1.677.687 transitions in 2,128 seconds at 149.367 state pairs and 788.387 transitions per second using 210MB total storage.
-        On ply 94 - visited 318.542 state pairs and 1.679.786 transitions in 2,133 seconds at 149.340 state pairs and 787.523 transitions per second using 210MB total storage.
-        On ply 95 - visited 319.218 state pairs and 1.681.953 transitions in 2,138 seconds at 149.307 state pairs and 786.695 transitions per second using 210MB total storage.
-        On ply 96 - visited 319.926 state pairs and 1.684.252 transitions in 2,145 seconds at 149.150 state pairs and 785.199 transitions per second using 210MB total storage.
-        On ply 97 - visited 320.685 state pairs and 1.686.736 transitions in 2,15 seconds at 149.156 state pairs and 784.528 transitions per second using 210MB total storage.
-        On ply 98 - visited 321.496 state pairs and 1.689.295 transitions in 2,157 seconds at 149.048 state pairs and 783.169 transitions per second using 210MB total storage.
-        On ply 99 - visited 322.327 state pairs and 1.691.840 transitions in 2,164 seconds at 148.950 state pairs and 781.811 transitions per second using 210MB total storage.
-        On ply 100 - visited 323.145 state pairs and 1.694.314 transitions in 2,173 seconds at 148.709 state pairs and 779.712 transitions per second using 210MB total storage.
-        On ply 101 - visited 323.933 state pairs and 1.696.762 transitions in 2,181 seconds at 148.525 state pairs and 777.974 transitions per second using 210MB total storage.
-        On ply 102 - visited 324.707 state pairs and 1.699.187 transitions in 2,188 seconds at 148.404 state pairs and 776.594 transitions per second using 210MB total storage.
-        On ply 103 - visited 325.463 state pairs and 1.701.496 transitions in 2,193 seconds at 148.410 state pairs and 775.876 transitions per second using 210MB total storage.
-        On ply 104 - visited 326.151 state pairs and 1.703.501 transitions in 2,199 seconds at 148.318 state pairs and 774.671 transitions per second using 210MB total storage.
-        On ply 105 - visited 326.741 state pairs and 1.705.227 transitions in 2,204 seconds at 148.249 state pairs and 773.696 transitions per second using 210MB total storage.
-        On ply 106 - visited 327.275 state pairs and 1.706.834 transitions in 2,209 seconds at 148.155 state pairs and 772.673 transitions per second using 210MB total storage.
-        On ply 107 - visited 327.793 state pairs and 1.708.417 transitions in 2,214 seconds at 148.055 state pairs and 771.643 transitions per second using 210MB total storage.
-        On ply 108 - visited 328.317 state pairs and 1.710.084 transitions in 2,218 seconds at 148.024 state pairs and 771.003 transitions per second using 210MB total storage.
-        On ply 109 - visited 328.871 state pairs and 1.711.852 transitions in 2,222 seconds at 148.007 state pairs and 770.410 transitions per second using 210MB total storage.
-        On ply 110 - visited 329.417 state pairs and 1.713.538 transitions in 2,228 seconds at 147.853 state pairs and 769.092 transitions per second using 210MB total storage.
-        On ply 111 - visited 329.909 state pairs and 1.715.070 transitions in 2,231 seconds at 147.875 state pairs and 768.745 transitions per second using 210MB total storage.
-        On ply 112 - visited 330.369 state pairs and 1.716.526 transitions in 2,236 seconds at 147.750 state pairs and 767.677 transitions per second using 210MB total storage.
-        On ply 113 - visited 330.804 state pairs and 1.717.881 transitions in 2,24 seconds at 147.680 state pairs and 766.911 transitions per second using 210MB total storage.
-        On ply 114 - visited 331.207 state pairs and 1.719.285 transitions in 2,243 seconds at 147.663 state pairs and 766.511 transitions per second using 210MB total storage.
-        On ply 115 - visited 331.668 state pairs and 1.721.407 transitions in 2,248 seconds at 147.539 state pairs and 765.750 transitions per second using 210MB total storage.
-        On ply 116 - visited 332.397 state pairs and 1.725.249 transitions in 2,254 seconds at 147.470 state pairs and 765.417 transitions per second using 210MB total storage.
-        On ply 117 - visited 333.608 state pairs and 1.731.299 transitions in 2,262 seconds at 147.484 state pairs and 765.384 transitions per second using 210MB total storage.
-        On ply 118 - visited 335.277 state pairs and 1.738.596 transitions in 2,275 seconds at 147.375 state pairs and 764.218 transitions per second using 210MB total storage.
-        On ply 119 - visited 337.041 state pairs and 1.745.181 transitions in 2,291 seconds at 147.115 state pairs and 761.755 transitions per second using 210MB total storage.
-        On ply 120 - visited 338.452 state pairs and 1.749.820 transitions in 2,302 seconds at 147.025 state pairs and 760.130 transitions per second using 210MB total storage.
-        On ply 121 - visited 339.470 state pairs and 1.753.132 transitions in 2,309 seconds at 147.020 state pairs and 759.260 transitions per second using 210MB total storage.
-        On ply 122 - visited 340.267 state pairs and 1.755.660 transitions in 2,315 seconds at 146.984 state pairs and 758.384 transitions per second using 210MB total storage.
-        On ply 123 - visited 340.847 state pairs and 1.757.388 transitions in 2,32 seconds at 146.917 state pairs and 757.495 transitions per second using 210MB total storage.
-        On ply 124 - visited 341.302 state pairs and 1.758.801 transitions in 2,324 seconds at 146.860 state pairs and 756.799 transitions per second using 210MB total storage.
-        On ply 125 - visited 341.718 state pairs and 1.760.023 transitions in 2,327 seconds at 146.849 state pairs and 756.349 transitions per second using 210MB total storage.
-        On ply 126 - visited 342.073 state pairs and 1.760.980 transitions in 2,33 seconds at 146.812 state pairs and 755.785 transitions per second using 210MB total storage.
-        On ply 127 - visited 342.347 state pairs and 1.761.679 transitions in 2,334 seconds at 146.678 state pairs and 754.790 transitions per second using 210MB total storage.
-        On ply 128 - visited 342.546 state pairs and 1.762.193 transitions in 2,336 seconds at 146.638 state pairs and 754.363 transitions per second using 210MB total storage.
-        On ply 129 - visited 342.705 state pairs and 1.762.579 transitions in 2,338 seconds at 146.580 state pairs and 753.883 transitions per second using 210MB total storage.
-        On ply 130 - visited 342.815 state pairs and 1.762.817 transitions in 2,339 seconds at 146.565 state pairs and 753.663 transitions per second using 210MB total storage.
-        On ply 131 - visited 342.885 state pairs and 1.762.995 transitions in 2,34 seconds at 146.532 state pairs and 753.417 transitions per second using 210MB total storage.
-        On ply 132 - visited 342.944 state pairs and 1.763.128 transitions in 2,344 seconds at 146.307 state pairs and 752.188 transitions per second using 210MB total storage.
-        On ply 133 - visited 342.986 state pairs and 1.763.219 transitions in 2,345 seconds at 146.263 state pairs and 751.906 transitions per second using 210MB total storage.
-        On ply 134 - visited 343.018 state pairs and 1.763.291 transitions in 2,345 seconds at 146.276 state pairs and 751.936 transitions per second using 210MB total storage.
-        On ply 135 - visited 343.044 state pairs and 1.763.346 transitions in 2,346 seconds at 146.225 state pairs and 751.639 transitions per second using 210MB total storage.
-        On ply 136 - visited 343.063 state pairs and 1.763.384 transitions in 2,346 seconds at 146.233 state pairs and 751.656 transitions per second using 210MB total storage.
-        On ply 137 - visited 343.076 state pairs and 1.763.407 transitions in 2,347 seconds at 146.176 state pairs and 751.345 transitions per second using 210MB total storage.
-        On ply 138 - visited 343.084 state pairs and 1.763.420 transitions in 2,348 seconds at 146.118 state pairs and 751.031 transitions per second using 210MB total storage.
-        On ply 139 - visited 343.089 state pairs and 1.763.441 transitions in 2,348 seconds at 146.120 state pairs and 751.040 transitions per second using 210MB total storage.
-        On ply 140 - visited 343.107 state pairs and 1.763.651 transitions in 2,35 seconds at 146.003 state pairs and 750.490 transitions per second using 210MB total storage.
-        On ply 141 - visited 343.220 state pairs and 1.764.675 transitions in 2,352 seconds at 145.927 state pairs and 750.287 transitions per second using 210MB total storage.
-        On ply 142 - visited 343.626 state pairs and 1.767.497 transitions in 2,357 seconds at 145.790 state pairs and 749.893 transitions per second using 210MB total storage.
-        On ply 143 - visited 344.544 state pairs and 1.772.655 transitions in 2,367 seconds at 145.561 state pairs and 748.904 transitions per second using 210MB total storage.
-        On ply 144 - visited 345.974 state pairs and 1.779.264 transitions in 2,377 seconds at 145.551 state pairs and 748.533 transitions per second using 210MB total storage.
-        On ply 145 - visited 347.570 state pairs and 1.785.378 transitions in 2,39 seconds at 145.427 state pairs and 747.020 transitions per second using 210MB total storage.
-        On ply 146 - visited 348.872 state pairs and 1.789.704 transitions in 2,399 seconds at 145.424 state pairs and 746.021 transitions per second using 210MB total storage.
-        On ply 147 - visited 349.824 state pairs and 1.792.840 transitions in 2,408 seconds at 145.276 state pairs and 744.535 transitions per second using 210MB total storage.
-        On ply 148 - visited 350.606 state pairs and 1.795.365 transitions in 2,417 seconds at 145.058 state pairs and 742.807 transitions per second using 210MB total storage.
-        On ply 149 - visited 351.219 state pairs and 1.797.237 transitions in 2,421 seconds at 145.072 state pairs and 742.353 transitions per second using 210MB total storage.
-        On ply 150 - visited 351.745 state pairs and 1.798.967 transitions in 2,426 seconds at 144.990 state pairs and 741.536 transitions per second using 210MB total storage.
-        On ply 151 - visited 352.285 state pairs and 1.800.684 transitions in 2,43 seconds at 144.973 state pairs and 741.022 transitions per second using 210MB total storage.
-        On ply 152 - visited 352.808 state pairs and 1.802.296 transitions in 2,434 seconds at 144.950 state pairs and 740.467 transitions per second using 210MB total storage.
-        On ply 153 - visited 353.308 state pairs and 1.803.854 transitions in 2,439 seconds at 144.858 state pairs and 739.588 transitions per second using 210MB total storage.
-        On ply 154 - visited 353.798 state pairs and 1.805.398 transitions in 2,442 seconds at 144.880 state pairs and 739.311 transitions per second using 210MB total storage.
-        On ply 155 - visited 354.301 state pairs and 1.807.185 transitions in 2,448 seconds at 144.731 state pairs and 738.229 transitions per second using 210MB total storage.
-        On ply 156 - visited 354.908 state pairs and 1.809.707 transitions in 2,455 seconds at 144.565 state pairs and 737.152 transitions per second using 210MB total storage.
-        On ply 157 - visited 355.730 state pairs and 1.813.263 transitions in 2,461 seconds at 144.547 state pairs and 736.799 transitions per second using 210MB total storage.
-        On ply 158 - visited 356.777 state pairs and 1.817.601 transitions in 2,468 seconds at 144.561 state pairs and 736.467 transitions per second using 210MB total storage.
-        On ply 159 - visited 357.965 state pairs and 1.822.209 transitions in 2,479 seconds at 144.399 state pairs and 735.058 transitions per second using 210MB total storage.
-        On ply 160 - visited 359.142 state pairs and 1.826.363 transitions in 2,487 seconds at 144.408 state pairs and 734.364 transitions per second using 210MB total storage.
-        On ply 161 - visited 360.153 state pairs and 1.829.681 transitions in 2,495 seconds at 144.350 state pairs and 733.339 transitions per second using 210MB total storage.
-        On ply 162 - visited 360.983 state pairs and 1.832.346 transitions in 2,502 seconds at 144.278 state pairs and 732.353 transitions per second using 210MB total storage.
-        On ply 163 - visited 361.691 state pairs and 1.834.542 transitions in 2,508 seconds at 144.215 state pairs and 731.476 transitions per second using 210MB total storage.
-        On ply 164 - visited 362.299 state pairs and 1.836.365 transitions in 2,514 seconds at 144.113 state pairs and 730.455 transitions per second using 210MB total storage.
-        On ply 165 - visited 362.837 state pairs and 1.838.006 transitions in 2,518 seconds at 144.097 state pairs and 729.947 transitions per second using 210MB total storage.
-        On ply 166 - visited 363.347 state pairs and 1.839.628 transitions in 2,522 seconds at 144.071 state pairs and 729.432 transitions per second using 210MB total storage.
-        On ply 167 - visited 363.859 state pairs and 1.841.278 transitions in 2,529 seconds at 143.875 state pairs and 728.066 transitions per second using 210MB total storage.
-        On ply 168 - visited 364.361 state pairs and 1.842.896 transitions in 2,533 seconds at 143.846 state pairs and 727.555 transitions per second using 210MB total storage.
-        On ply 169 - visited 364.839 state pairs and 1.844.462 transitions in 2,538 seconds at 143.751 state pairs and 726.738 transitions per second using 210MB total storage.
-        On ply 170 - visited 365.313 state pairs and 1.846.079 transitions in 2,543 seconds at 143.654 state pairs and 725.945 transitions per second using 210MB total storage.
-        On ply 171 - visited 365.797 state pairs and 1.847.766 transitions in 2,547 seconds at 143.619 state pairs and 725.468 transitions per second using 210MB total storage.
-        On ply 172 - visited 366.283 state pairs and 1.849.494 transitions in 2,552 seconds at 143.528 state pairs and 724.723 transitions per second using 210MB total storage.
-        On ply 173 - visited 366.769 state pairs and 1.851.250 transitions in 2,557 seconds at 143.437 state pairs and 723.993 transitions per second using 210MB total storage.
-        On ply 174 - visited 367.247 state pairs and 1.852.972 transitions in 2,561 seconds at 143.400 state pairs and 723.535 transitions per second using 210MB total storage.
-        On ply 175 - visited 367.695 state pairs and 1.854.583 transitions in 2,565 seconds at 143.351 state pairs and 723.034 transitions per second using 210MB total storage.
-        On ply 176 - visited 368.101 state pairs and 1.856.065 transitions in 2,57 seconds at 143.230 state pairs and 722.204 transitions per second using 210MB total storage.
-        On ply 177 - visited 368.473 state pairs and 1.857.428 transitions in 2,573 seconds at 143.208 state pairs and 721.892 transitions per second using 210MB total storage.
-        On ply 178 - visited 368.814 state pairs and 1.858.717 transitions in 2,579 seconds at 143.007 state pairs and 720.712 transitions per second using 210MB total storage.
-        On ply 179 - visited 369.149 state pairs and 1.860.147 transitions in 2,582 seconds at 142.970 state pairs and 720.429 transitions per second using 210MB total storage.
-        On ply 180 - visited 369.560 state pairs and 1.862.308 transitions in 2,587 seconds at 142.853 state pairs and 719.872 transitions per second using 210MB total storage.
-        On ply 181 - visited 370.231 state pairs and 1.866.120 transitions in 2,593 seconds at 142.781 state pairs and 719.676 transitions per second using 210MB total storage.
-        On ply 182 - visited 371.366 state pairs and 1.872.032 transitions in 2,6 seconds at 142.833 state pairs and 720.012 transitions per second using 210MB total storage.
-        On ply 183 - visited 372.935 state pairs and 1.879.053 transitions in 2,613 seconds at 142.723 state pairs and 719.117 transitions per second using 210MB total storage.
-        On ply 184 - visited 374.575 state pairs and 1.885.250 transitions in 2,625 seconds at 142.695 state pairs and 718.190 transitions per second using 210MB total storage.
-        On ply 185 - visited 375.848 state pairs and 1.889.458 transitions in 2,634 seconds at 142.691 state pairs and 717.334 transitions per second using 210MB total storage.
-        On ply 186 - visited 376.732 state pairs and 1.892.366 transitions in 2,643 seconds at 142.540 state pairs and 715.992 transitions per second using 210MB total storage.
-        On ply 187 - visited 377.414 state pairs and 1.894.572 transitions in 2,649 seconds at 142.474 state pairs and 715.203 transitions per second using 210MB total storage.
-        On ply 188 - visited 377.917 state pairs and 1.896.267 transitions in 2,654 seconds at 142.395 state pairs and 714.494 transitions per second using 210MB total storage.
-        On ply 189 - visited 378.420 state pairs and 1.898.620 transitions in 2,659 seconds at 142.317 state pairs and 714.035 transitions per second using 210MB total storage.
-        On ply 190 - visited 379.220 state pairs and 1.902.789 transitions in 2,667 seconds at 142.190 state pairs and 713.457 transitions per second using 210MB total storage.
-        On ply 191 - visited 380.523 state pairs and 1.909.219 transitions in 2,678 seconds at 142.092 state pairs and 712.927 transitions per second using 210MB total storage.
-        On ply 192 - visited 382.309 state pairs and 1.916.991 transitions in 2,693 seconds at 141.964 state pairs and 711.842 transitions per second using 210MB total storage.
-        On ply 193 - visited 384.221 state pairs and 1.924.167 transitions in 2,705 seconds at 142.041 state pairs and 711.337 transitions per second using 210MB total storage.
-        On ply 194 - visited 385.827 state pairs and 1.929.751 transitions in 2,717 seconds at 142.005 state pairs and 710.251 transitions per second using 210MB total storage.
-        On ply 195 - visited 387.162 state pairs and 1.934.770 transitions in 2,728 seconds at 141.922 state pairs and 709.227 transitions per second using 210MB total storage.
-        On ply 196 - visited 388.486 state pairs and 1.939.967 transitions in 2,737 seconds at 141.939 state pairs and 708.793 transitions per second using 210MB total storage.
-        On ply 197 - visited 389.794 state pairs and 1.945.077 transitions in 2,748 seconds at 141.846 state pairs and 707.816 transitions per second using 210MB total storage.
-        On ply 198 - visited 391.109 state pairs and 1.950.143 transitions in 2,758 seconds at 141.809 state pairs and 707.086 transitions per second using 210MB total storage.
-        On ply 199 - visited 392.391 state pairs and 1.954.748 transitions in 2,77 seconds at 141.657 state pairs and 705.685 transitions per second using 210MB total storage.
-        On ply 200 - visited 393.519 state pairs and 1.958.655 transitions in 2,779 seconds at 141.605 state pairs and 704.806 transitions per second using 210MB total storage.
-        On ply 201 - visited 394.512 state pairs and 1.962.109 transitions in 2,786 seconds at 141.605 state pairs and 704.275 transitions per second using 210MB total storage.
-        On ply 202 - visited 395.425 state pairs and 1.965.294 transitions in 2,794 seconds at 141.526 state pairs and 703.398 transitions per second using 210MB total storage.
-        On ply 203 - visited 396.277 state pairs and 1.968.266 transitions in 2,802 seconds at 141.426 state pairs and 702.450 transitions per second using 210MB total storage.
-        On ply 204 - visited 397.065 state pairs and 1.971.084 transitions in 2,808 seconds at 141.405 state pairs and 701.953 transitions per second using 210MB total storage.
-        On ply 205 - visited 397.825 state pairs and 1.973.883 transitions in 2,815 seconds at 141.323 state pairs and 701.202 transitions per second using 210MB total storage.
-        On ply 206 - visited 398.581 state pairs and 1.976.659 transitions in 2,821 seconds at 141.291 state pairs and 700.694 transitions per second using 210MB total storage.
-        On ply 207 - visited 399.339 state pairs and 1.979.448 transitions in 2,828 seconds at 141.209 state pairs and 699.946 transitions per second using 210MB total storage.
-        On ply 208 - visited 400.119 state pairs and 1.982.221 transitions in 2,833 seconds at 141.235 state pairs and 699.690 transitions per second using 210MB total storage.
-        On ply 209 - visited 400.865 state pairs and 1.984.732 transitions in 2,842 seconds at 141.050 state pairs and 698.357 transitions per second using 210MB total storage.
-        On ply 210 - visited 401.505 state pairs and 1.986.822 transitions in 2,848 seconds at 140.978 state pairs and 697.620 transitions per second using 210MB total storage.
-        On ply 211 - visited 402.023 state pairs and 1.988.480 transitions in 2,854 seconds at 140.863 state pairs and 696.734 transitions per second using 210MB total storage.
-        On ply 212 - visited 402.449 state pairs and 1.989.834 transitions in 2,858 seconds at 140.815 state pairs and 696.233 transitions per second using 210MB total storage.
-        On ply 213 - visited 402.811 state pairs and 1.990.921 transitions in 2,861 seconds at 140.794 state pairs and 695.883 transitions per second using 210MB total storage.
-        On ply 214 - visited 403.096 state pairs and 1.991.845 transitions in 2,864 seconds at 140.746 state pairs and 695.477 transitions per second using 210MB total storage.
-        On ply 215 - visited 403.392 state pairs and 1.993.385 transitions in 2,867 seconds at 140.702 state pairs and 695.286 transitions per second using 210MB total storage.
-        On ply 216 - visited 403.949 state pairs and 1.996.666 transitions in 2,873 seconds at 140.602 state pairs and 694.976 transitions per second using 210MB total storage.
-        On ply 217 - visited 405.003 state pairs and 2.002.225 transitions in 2,883 seconds at 140.480 state pairs and 694.494 transitions per second using 210MB total storage.
-        On ply 218 - visited 406.549 state pairs and 2.009.168 transitions in 2,897 seconds at 140.334 state pairs and 693.534 transitions per second using 210MB total storage.
-        On ply 219 - visited 408.240 state pairs and 2.015.543 transitions in 2,908 seconds at 140.385 state pairs and 693.103 transitions per second using 210MB total storage.
-        On ply 220 - visited 409.614 state pairs and 2.020.049 transitions in 2,919 seconds at 140.327 state pairs and 692.035 transitions per second using 210MB total storage.
-        On ply 221 - visited 410.613 state pairs and 2.023.290 transitions in 2,929 seconds at 140.189 state pairs and 690.778 transitions per second using 210MB total storage.
-        On ply 222 - visited 411.421 state pairs and 2.025.858 transitions in 2,935 seconds at 140.178 state pairs and 690.241 transitions per second using 210MB total storage.
-        On ply 223 - visited 412.035 state pairs and 2.027.632 transitions in 2,941 seconds at 140.100 state pairs and 689.436 transitions per second using 210MB total storage.
-        On ply 224 - visited 412.499 state pairs and 2.028.981 transitions in 2,945 seconds at 140.068 state pairs and 688.958 transitions per second using 210MB total storage.
-        On ply 225 - visited 412.887 state pairs and 2.030.185 transitions in 2,949 seconds at 140.009 state pairs and 688.432 transitions per second using 210MB total storage.
-        On ply 226 - visited 413.264 state pairs and 2.031.891 transitions in 2,953 seconds at 139.947 state pairs and 688.077 transitions per second using 210MB total storage.
-        On ply 227 - visited 413.852 state pairs and 2.035.179 transitions in 2,959 seconds at 139.862 state pairs and 687.793 transitions per second using 210MB total storage.
-        On ply 228 - visited 414.902 state pairs and 2.040.649 transitions in 2,968 seconds at 139.792 state pairs and 687.550 transitions per second using 210MB total storage.
-        On ply 229 - visited 416.434 state pairs and 2.047.528 transitions in 2,979 seconds at 139.790 state pairs and 687.321 transitions per second using 210MB total storage.
-        On ply 230 - visited 418.150 state pairs and 2.054.020 transitions in 2,991 seconds at 139.803 state pairs and 686.734 transitions per second using 210MB total storage.
-        On ply 231 - visited 419.620 state pairs and 2.058.874 transitions in 3,004 seconds at 139.687 state pairs and 685.377 transitions per second using 210MB total storage.
-        On ply 232 - visited 420.770 state pairs and 2.062.616 transitions in 3,013 seconds at 139.652 state pairs and 684.572 transitions per second using 210MB total storage.
-        On ply 233 - visited 421.756 state pairs and 2.065.797 transitions in 3,02 seconds at 139.654 state pairs and 684.039 transitions per second using 210MB total storage.
-        On ply 234 - visited 422.584 state pairs and 2.068.368 transitions in 3,027 seconds at 139.605 state pairs and 683.306 transitions per second using 210MB total storage.
-        On ply 235 - visited 423.326 state pairs and 2.070.752 transitions in 3,034 seconds at 139.527 state pairs and 682.515 transitions per second using 210MB total storage.
-        On ply 236 - visited 424.056 state pairs and 2.073.039 transitions in 3,04 seconds at 139.492 state pairs and 681.921 transitions per second using 210MB total storage.
-        On ply 237 - visited 424.728 state pairs and 2.075.139 transitions in 3,045 seconds at 139.484 state pairs and 681.491 transitions per second using 210MB total storage.
-        On ply 238 - visited 425.362 state pairs and 2.077.167 transitions in 3,051 seconds at 139.417 state pairs and 680.815 transitions per second using 210MB total storage.
-        On ply 239 - visited 425.980 state pairs and 2.079.120 transitions in 3,056 seconds at 139.391 state pairs and 680.340 transitions per second using 210MB total storage.
-        On ply 240 - visited 426.584 state pairs and 2.081.105 transitions in 3,061 seconds at 139.361 state pairs and 679.877 transitions per second using 210MB total storage.
-        On ply 241 - visited 427.236 state pairs and 2.083.377 transitions in 3,068 seconds at 139.256 state pairs and 679.067 transitions per second using 210MB total storage.
-        On ply 242 - visited 427.986 state pairs and 2.086.479 transitions in 3,075 seconds at 139.182 state pairs and 678.530 transitions per second using 210MB total storage.
-        On ply 243 - visited 428.980 state pairs and 2.091.787 transitions in 3,085 seconds at 139.053 state pairs and 678.051 transitions per second using 210MB total storage.
-        On ply 244 - visited 430.550 state pairs and 2.101.156 transitions in 3,097 seconds at 139.022 state pairs and 678.449 transitions per second using 210MB total storage.
-        On ply 245 - visited 432.988 state pairs and 2.115.785 transitions in 3,116 seconds at 138.956 state pairs and 679.007 transitions per second using 210MB total storage.
-        On ply 246 - visited 436.464 state pairs and 2.136.615 transitions in 3,142 seconds at 138.913 state pairs and 680.018 transitions per second using 210MB total storage.
-        On ply 247 - visited 441.114 state pairs and 2.164.608 transitions in 3,172 seconds at 139.065 state pairs and 682.411 transitions per second using 210MB total storage.
-        On ply 248 - visited 447.035 state pairs and 2.200.600 transitions in 3,211 seconds at 139.220 state pairs and 685.332 transitions per second using 210MB total storage.
-        On ply 249 - visited 454.397 state pairs and 2.245.768 transitions in 3,26 seconds at 139.386 state pairs and 688.886 transitions per second using 210MB total storage.
-        On ply 250 - visited 463.472 state pairs and 2.301.347 transitions in 3,325 seconds at 139.390 state pairs and 692.134 transitions per second using 210MB total storage.
-        On ply 251 - visited 474.374 state pairs and 2.366.752 transitions in 3,398 seconds at 139.604 state pairs and 696.513 transitions per second using 210MB total storage.
-        On ply 252 - visited 486.739 state pairs and 2.438.084 transitions in 3,476 seconds at 140.028 state pairs and 701.405 transitions per second using 210MB total storage.
-        On ply 253 - visited 499.660 state pairs and 2.509.219 transitions in 3,559 seconds at 140.393 state pairs and 705.035 transitions per second using 210MB total storage.
-        On ply 254 - visited 512.108 state pairs and 2.575.112 transitions in 3,64 seconds at 140.689 state pairs and 707.448 transitions per second using 210MB total storage.
-        On ply 255 - visited 523.500 state pairs and 2.634.051 transitions in 3,711 seconds at 141.067 state pairs and 709.795 transitions per second using 210MB total storage.
-        On ply 256 - visited 533.815 state pairs and 2.686.867 transitions in 3,776 seconds at 141.370 state pairs and 711.564 transitions per second using 210MB total storage.
-        On ply 257 - visited 543.273 state pairs and 2.734.704 transitions in 3,834 seconds at 141.699 state pairs and 713.277 transitions per second using 210MB total storage.
-        On ply 258 - visited 551.971 state pairs and 2.777.655 transitions in 3,893 seconds at 141.786 state pairs and 713.500 transitions per second using 210MB total storage.
-        On ply 259 - visited 559.865 state pairs and 2.816.055 transitions in 3,939 seconds at 142.134 state pairs and 714.916 transitions per second using 210MB total storage.
-        On ply 260 - visited 567.147 state pairs and 2.852.353 transitions in 3,985 seconds at 142.320 state pairs and 715.772 transitions per second using 210MB total storage.
-        On ply 261 - visited 574.351 state pairs and 2.890.078 transitions in 4,033 seconds at 142.413 state pairs and 716.607 transitions per second using 210MB total storage.
-        On ply 262 - visited 581.999 state pairs and 2.931.640 transitions in 4,08 seconds at 142.647 state pairs and 718.539 transitions per second using 210MB total storage.
-        On ply 263 - visited 590.343 state pairs and 2.977.850 transitions in 4,13 seconds at 142.940 state pairs and 721.029 transitions per second using 210MB total storage.
-        On ply 264 - visited 599.395 state pairs and 3.028.503 transitions in 4,186 seconds at 143.190 state pairs and 723.484 transitions per second using 210MB total storage.
-        On ply 265 - visited 609.051 state pairs and 3.082.944 transitions in 4,244 seconds at 143.509 state pairs and 726.424 transitions per second using 210MB total storage.
-        On ply 266 - visited 619.175 state pairs and 3.140.250 transitions in 4,312 seconds at 143.593 state pairs and 728.258 transitions per second using 210MB total storage.
-        On ply 267 - visited 629.575 state pairs and 3.198.955 transitions in 4,377 seconds at 143.837 state pairs and 730.856 transitions per second using 210MB total storage.
-        On ply 268 - visited 639.967 state pairs and 3.257.217 transitions in 4,441 seconds at 144.104 state pairs and 733.442 transitions per second using 210MB total storage.
-        On ply 269 - visited 650.079 state pairs and 3.313.648 transitions in 4,503 seconds at 144.366 state pairs and 735.876 transitions per second using 210MB total storage.
-        On ply 270 - visited 659.751 state pairs and 3.367.523 transitions in 4,563 seconds at 144.587 state pairs and 738.006 transitions per second using 210MB total storage.
-        On ply 271 - visited 668.887 state pairs and 3.418.231 transitions in 4,619 seconds at 144.812 state pairs and 740.037 transitions per second using 210MB total storage.
-        On ply 272 - visited 677.375 state pairs and 3.465.008 transitions in 4,672 seconds at 144.986 state pairs and 741.654 transitions per second using 210MB total storage.
-        On ply 273 - visited 685.087 state pairs and 3.507.035 transitions in 4,72 seconds at 145.146 state pairs and 743.016 transitions per second using 210MB total storage.
-        On ply 274 - visited 691.895 state pairs and 3.543.517 transitions in 4,761 seconds at 145.326 state pairs and 744.280 transitions per second using 210MB total storage.
-        On ply 275 - visited 697.685 state pairs and 3.573.846 transitions in 4,798 seconds at 145.412 state pairs and 744.862 transitions per second using 210MB total storage.
-        On ply 276 - visited 702.393 state pairs and 3.597.814 transitions in 4,83 seconds at 145.423 state pairs and 744.889 transitions per second using 210MB total storage.
-        On ply 277 - visited 706.025 state pairs and 3.615.620 transitions in 4,856 seconds at 145.392 state pairs and 744.568 transitions per second using 210MB total storage.
-        On ply 278 - visited 708.641 state pairs and 3.627.778 transitions in 4,874 seconds at 145.392 state pairs and 744.312 transitions per second using 210MB total storage.
-        On ply 279 - visited 710.359 state pairs and 3.635.245 transitions in 4,885 seconds at 145.416 state pairs and 744.165 transitions per second using 210MB total storage.
-        On ply 280 - visited 711.377 state pairs and 3.639.376 transitions in 4,894 seconds at 145.357 state pairs and 743.640 transitions per second using 210MB total storage.
-        On ply 281 - visited 711.923 state pairs and 3.641.419 transitions in 4,901 seconds at 145.261 state pairs and 742.995 transitions per second using 210MB total storage.
-        On ply 282 - visited 712.177 state pairs and 3.642.248 transitions in 4,904 seconds at 145.224 state pairs and 742.710 transitions per second using 210MB total storage.
-        On ply 283 - visited 712.267 state pairs and 3.642.486 transitions in 4,905 seconds at 145.212 state pairs and 742.607 transitions per second using 210MB total storage.
-        On ply 284 - visited 712.288 state pairs and 3.642.543 transitions in 4,905 seconds at 145.217 state pairs and 742.618 transitions per second using 210MB total storage.
-        On ply 285 - visited 712.307 state pairs and 3.642.755 transitions in 4,906 seconds at 145.191 state pairs and 742.510 transitions per second using 210MB total storage.
-        On ply 286 - visited 712.420 state pairs and 3.643.779 transitions in 4,907 seconds at 145.184 state pairs and 742.568 transitions per second using 210MB total storage.
-        On ply 287 - visited 712.827 state pairs and 3.646.618 transitions in 4,912 seconds at 145.120 state pairs and 742.390 transitions per second using 210MB total storage.
-        On ply 288 - visited 713.762 state pairs and 3.651.921 transitions in 4,92 seconds at 145.074 state pairs and 742.260 transitions per second using 210MB total storage.
-        On ply 289 - visited 715.273 state pairs and 3.658.948 transitions in 4,932 seconds at 145.027 state pairs and 741.879 transitions per second using 210MB total storage.
-        On ply 290 - visited 717.051 state pairs and 3.665.825 transitions in 4,943 seconds at 145.064 state pairs and 741.619 transitions per second using 210MB total storage.
-        On ply 291 - visited 718.628 state pairs and 3.671.172 transitions in 4,954 seconds at 145.060 state pairs and 741.052 transitions per second using 210MB total storage.
-        On ply 292 - visited 719.904 state pairs and 3.675.498 transitions in 4,963 seconds at 145.054 state pairs and 740.580 transitions per second using 210MB total storage.
-        On ply 293 - visited 720.941 state pairs and 3.679.038 transitions in 4,973 seconds at 144.971 state pairs and 739.803 transitions per second using 210MB total storage.
-        On ply 294 - visited 721.775 state pairs and 3.681.884 transitions in 4,981 seconds at 144.906 state pairs and 739.186 transitions per second using 210MB total storage.
-        On ply 295 - visited 722.542 state pairs and 3.684.582 transitions in 4,987 seconds at 144.885 state pairs and 738.837 transitions per second using 210MB total storage.
-        On ply 296 - visited 723.305 state pairs and 3.687.175 transitions in 4,993 seconds at 144.864 state pairs and 738.469 transitions per second using 210MB total storage.
-        On ply 297 - visited 724.026 state pairs and 3.689.553 transitions in 4,998 seconds at 144.863 state pairs and 738.206 transitions per second using 210MB total storage.
-        On ply 298 - visited 724.677 state pairs and 3.691.705 transitions in 5,003 seconds at 144.848 state pairs and 737.898 transitions per second using 210MB total storage.
-        On ply 299 - visited 725.258 state pairs and 3.693.672 transitions in 5,009 seconds at 144.791 state pairs and 737.407 transitions per second using 210MB total storage.
-        On ply 300 - visited 725.792 state pairs and 3.695.484 transitions in 5,013 seconds at 144.782 state pairs and 737.180 transitions per second using 210MB total storage.
-        On ply 301 - visited 726.279 state pairs and 3.696.990 transitions in 5,02 seconds at 144.677 state pairs and 736.452 transitions per second using 210MB total storage.
-        On ply 302 - visited 726.666 state pairs and 3.698.048 transitions in 5,024 seconds at 144.639 state pairs and 736.076 transitions per second using 210MB total storage.
-        On ply 303 - visited 726.906 state pairs and 3.698.631 transitions in 5,026 seconds at 144.629 state pairs and 735.900 transitions per second using 210MB total storage.
-        On ply 304 - visited 727.013 state pairs and 3.698.878 transitions in 5,028 seconds at 144.593 state pairs and 735.656 transitions per second using 210MB total storage.
-        On ply 305 - visited 727.058 state pairs and 3.698.995 transitions in 5,029 seconds at 144.573 state pairs and 735.533 transitions per second using 210MB total storage.
-        On ply 306 - visited 727.094 state pairs and 3.699.087 transitions in 5,031 seconds at 144.523 state pairs and 735.259 transitions per second using 210MB total storage.
-        On ply 307 - visited 727.122 state pairs and 3.699.159 transitions in 5,031 seconds at 144.528 state pairs and 735.273 transitions per second using 210MB total storage.
-        On ply 308 - visited 727.144 state pairs and 3.699.213 transitions in 5,031 seconds at 144.533 state pairs and 735.284 transitions per second using 210MB total storage.
-        On ply 309 - visited 727.160 state pairs and 3.699.249 transitions in 5,035 seconds at 144.421 state pairs and 734.707 transitions per second using 210MB total storage.
-        On ply 310 - visited 727.170 state pairs and 3.699.267 transitions in 5,035 seconds at 144.423 state pairs and 734.710 transitions per second using 210MB total storage.
-        On ply 311 - visited 727.174 state pairs and 3.699.271 transitions in 5,038 seconds at 144.338 state pairs and 734.274 transitions per second using 210MB total storage.
+        On ply 12 - visited 9.401 state pairs and 45.164 transitions in 0,074 seconds at 127.041 state pairs and 610.324 transitions per second using 210MB total storage.
+        On ply 13 - visited 11.695 state pairs and 59.360 transitions in 0,092 seconds at 127.120 state pairs and 645.217 transitions per second using 210MB total storage.
+        On ply 14 - visited 15.059 state pairs and 79.876 transitions in 0,115 seconds at 130.948 state pairs and 694.574 transitions per second using 210MB total storage.
+        On ply 15 - visited 19.641 state pairs and 107.762 transitions in 0,147 seconds at 133.612 state pairs and 733.075 transitions per second using 210MB total storage.
+        On ply 16 - visited 25.570 state pairs and 143.923 transitions in 0,186 seconds at 137.473 state pairs and 773.780 transitions per second using 210MB total storage.
+        On ply 17 - visited 32.996 state pairs and 189.413 transitions in 0,235 seconds at 140.409 state pairs and 806.013 transitions per second using 210MB total storage.
+        On ply 18 - visited 42.147 state pairs and 245.380 transitions in 0,297 seconds at 141.909 state pairs and 826.195 transitions per second using 210MB total storage.
+        On ply 19 - visited 53.133 state pairs and 311.332 transitions in 0,374 seconds at 142.067 state pairs and 832.439 transitions per second using 210MB total storage.
+        On ply 20 - visited 65.622 state pairs and 383.707 transitions in 0,454 seconds at 144.542 state pairs and 845.170 transitions per second using 210MB total storage.
+        On ply 21 - visited 78.819 state pairs and 456.965 transitions in 0,536 seconds at 147.050 state pairs and 852.547 transitions per second using 210MB total storage.
+        On ply 22 - visited 91.803 state pairs and 526.514 transitions in 0,619 seconds at 148.309 state pairs and 850.588 transitions per second using 210MB total storage.
+        On ply 23 - visited 104.043 state pairs and 591.090 transitions in 0,702 seconds at 148.209 state pairs and 842.009 transitions per second using 210MB total storage.
+        On ply 24 - visited 115.610 state pairs and 652.311 transitions in 0,771 seconds at 149.948 state pairs and 846.058 transitions per second using 210MB total storage.
+        On ply 25 - visited 126.874 state pairs and 712.260 transitions in 0,844 seconds at 150.325 state pairs and 843.910 transitions per second using 210MB total storage.
+        On ply 26 - visited 138.046 state pairs and 771.574 transitions in 0,914 seconds at 151.035 state pairs and 844.173 transitions per second using 210MB total storage.
+        On ply 27 - visited 149.052 state pairs and 830.168 transitions in 0,978 seconds at 152.405 state pairs and 848.843 transitions per second using 210MB total storage.
+        On ply 28 - visited 159.884 state pairs and 889.107 transitions in 1,043 seconds at 153.292 state pairs and 852.452 transitions per second using 210MB total storage.
+        On ply 29 - visited 170.782 state pairs and 949.900 transitions in 1,111 seconds at 153.719 state pairs and 854.995 transitions per second using 210MB total storage.
+        On ply 30 - visited 181.908 state pairs and 1.012.582 transitions in 1,179 seconds at 154.290 state pairs and 858.848 transitions per second using 210MB total storage.
+        On ply 31 - visited 193.140 state pairs and 1.075.701 transitions in 1,247 seconds at 154.884 state pairs and 862.631 transitions per second using 210MB total storage.
+        On ply 32 - visited 204.192 state pairs and 1.137.337 transitions in 1,313 seconds at 155.516 state pairs and 866.212 transitions per second using 210MB total storage.
+        On ply 33 - visited 214.786 state pairs and 1.196.101 transitions in 1,381 seconds at 155.529 state pairs and 866.112 transitions per second using 210MB total storage.
+        On ply 34 - visited 224.774 state pairs and 1.251.426 transitions in 1,445 seconds at 155.553 state pairs and 866.039 transitions per second using 210MB total storage.
+        On ply 35 - visited 234.098 state pairs and 1.302.960 transitions in 1,504 seconds at 155.650 state pairs and 866.330 transitions per second using 210MB total storage.
+        On ply 36 - visited 242.688 state pairs and 1.350.152 transitions in 1,556 seconds at 155.969 state pairs and 867.707 transitions per second using 210MB total storage.
+        On ply 37 - visited 250.446 state pairs and 1.392.336 transitions in 1,603 seconds at 156.236 state pairs and 868.581 transitions per second using 210MB total storage.
+        On ply 38 - visited 257.268 state pairs and 1.428.853 transitions in 1,645 seconds at 156.394 state pairs and 868.604 transitions per second using 210MB total storage.
+        On ply 39 - visited 263.060 state pairs and 1.459.185 transitions in 1,683 seconds at 156.304 state pairs and 867.014 transitions per second using 210MB total storage.
+        On ply 40 - visited 267.768 state pairs and 1.483.153 transitions in 1,714 seconds at 156.224 state pairs and 865.317 transitions per second using 210MB total storage.
+        On ply 41 - visited 271.400 state pairs and 1.500.959 transitions in 1,738 seconds at 156.157 state pairs and 863.613 transitions per second using 210MB total storage.
+        On ply 42 - visited 274.016 state pairs and 1.513.117 transitions in 1,757 seconds at 155.957 state pairs and 861.194 transitions per second using 210MB total storage.
+        On ply 43 - visited 275.734 state pairs and 1.520.584 transitions in 1,771 seconds at 155.694 state pairs and 858.602 transitions per second using 210MB total storage.
+        On ply 44 - visited 276.752 state pairs and 1.524.715 transitions in 1,779 seconds at 155.566 state pairs and 857.063 transitions per second using 210MB total storage.
+        On ply 45 - visited 277.298 state pairs and 1.526.758 transitions in 1,786 seconds at 155.262 state pairs and 854.848 transitions per second using 210MB total storage.
+        On ply 46 - visited 277.552 state pairs and 1.527.587 transitions in 1,788 seconds at 155.230 state pairs and 854.355 transitions per second using 210MB total storage.
+        On ply 47 - visited 277.642 state pairs and 1.527.825 transitions in 1,79 seconds at 155.107 state pairs and 853.534 transitions per second using 210MB total storage.
+        On ply 48 - visited 277.663 state pairs and 1.527.882 transitions in 1,791 seconds at 155.032 state pairs and 853.089 transitions per second using 210MB total storage.
+        On ply 49 - visited 277.682 state pairs and 1.528.094 transitions in 1,794 seconds at 154.784 state pairs and 851.780 transitions per second using 210MB total storage.
+        On ply 50 - visited 277.795 state pairs and 1.529.118 transitions in 1,795 seconds at 154.760 state pairs and 851.876 transitions per second using 210MB total storage.
+        On ply 51 - visited 278.202 state pairs and 1.531.957 transitions in 1,799 seconds at 154.643 state pairs and 851.560 transitions per second using 210MB total storage.
+        On ply 52 - visited 279.137 state pairs and 1.537.260 transitions in 1,809 seconds at 154.305 state pairs and 849.784 transitions per second using 210MB total storage.
+        On ply 53 - visited 280.648 state pairs and 1.544.287 transitions in 1,822 seconds at 154.033 state pairs and 847.578 transitions per second using 210MB total storage.
+        On ply 54 - visited 282.426 state pairs and 1.551.164 transitions in 1,836 seconds at 153.827 state pairs and 844.861 transitions per second using 210MB total storage.
+        On ply 55 - visited 284.003 state pairs and 1.556.511 transitions in 1,848 seconds at 153.681 state pairs and 842.268 transitions per second using 210MB total storage.
+        On ply 56 - visited 285.279 state pairs and 1.560.837 transitions in 1,856 seconds at 153.706 state pairs and 840.968 transitions per second using 210MB total storage.
+        On ply 57 - visited 286.444 state pairs and 1.564.761 transitions in 1,867 seconds at 153.425 state pairs and 838.115 transitions per second using 210MB total storage.
+        On ply 58 - visited 287.486 state pairs and 1.568.119 transitions in 1,874 seconds at 153.408 state pairs and 836.776 transitions per second using 210MB total storage.
+        On ply 59 - visited 288.445 state pairs and 1.571.297 transitions in 1,881 seconds at 153.347 state pairs and 835.352 transitions per second using 210MB total storage.
+        On ply 60 - visited 289.409 state pairs and 1.574.388 transitions in 1,888 seconds at 153.289 state pairs and 833.892 transitions per second using 210MB total storage.
+        On ply 61 - visited 290.340 state pairs and 1.577.282 transitions in 1,895 seconds at 153.214 state pairs and 832.339 transitions per second using 210MB total storage.
+        On ply 62 - visited 291.210 state pairs and 1.580.040 transitions in 1,902 seconds at 153.107 state pairs and 830.726 transitions per second using 210MB total storage.
+        On ply 63 - visited 292.091 state pairs and 1.582.973 transitions in 1,909 seconds at 153.007 state pairs and 829.216 transitions per second using 210MB total storage.
+        On ply 64 - visited 293.032 state pairs and 1.586.039 transitions in 1,915 seconds at 153.019 state pairs and 828.219 transitions per second using 210MB total storage.
+        On ply 65 - visited 293.946 state pairs and 1.588.823 transitions in 1,922 seconds at 152.938 state pairs and 826.651 transitions per second using 210MB total storage.
+        On ply 66 - visited 294.747 state pairs and 1.591.177 transitions in 1,929 seconds at 152.798 state pairs and 824.871 transitions per second using 210MB total storage.
+        On ply 67 - visited 295.416 state pairs and 1.593.096 transitions in 1,933 seconds at 152.828 state pairs and 824.157 transitions per second using 210MB total storage.
+        On ply 68 - visited 295.959 state pairs and 1.594.637 transitions in 1,939 seconds at 152.635 state pairs and 822.402 transitions per second using 210MB total storage.
+        On ply 69 - visited 296.381 state pairs and 1.595.827 transitions in 1,943 seconds at 152.538 state pairs and 821.321 transitions per second using 210MB total storage.
+        On ply 70 - visited 296.748 state pairs and 1.596.846 transitions in 1,947 seconds at 152.413 state pairs and 820.157 transitions per second using 210MB total storage.
+        On ply 71 - visited 297.046 state pairs and 1.597.568 transitions in 1,95 seconds at 152.331 state pairs and 819.266 transitions per second using 210MB total storage.
+        On ply 72 - visited 297.246 state pairs and 1.598.050 transitions in 1,953 seconds at 152.200 state pairs and 818.254 transitions per second using 210MB total storage.
+        On ply 73 - visited 297.400 state pairs and 1.598.453 transitions in 1,955 seconds at 152.123 state pairs and 817.623 transitions per second using 210MB total storage.
+        On ply 74 - visited 297.535 state pairs and 1.598.806 transitions in 1,956 seconds at 152.114 state pairs and 817.385 transitions per second using 210MB total storage.
+        On ply 75 - visited 297.659 state pairs and 1.599.275 transitions in 1,958 seconds at 152.022 state pairs and 816.790 transitions per second using 210MB total storage.
+        On ply 76 - visited 297.853 state pairs and 1.600.490 transitions in 1,961 seconds at 151.888 state pairs and 816.160 transitions per second using 210MB total storage.
+        On ply 77 - visited 298.319 state pairs and 1.603.445 transitions in 1,966 seconds at 151.739 state pairs and 815.587 transitions per second using 210MB total storage.
+        On ply 78 - visited 299.278 state pairs and 1.608.679 transitions in 1,975 seconds at 151.533 state pairs and 814.521 transitions per second using 210MB total storage.
+        On ply 79 - visited 300.729 state pairs and 1.615.327 transitions in 1,988 seconds at 151.272 state pairs and 812.539 transitions per second using 210MB total storage.
+        On ply 80 - visited 302.337 state pairs and 1.621.462 transitions in 1,999 seconds at 151.244 state pairs and 811.137 transitions per second using 210MB total storage.
+        On ply 81 - visited 303.646 state pairs and 1.625.811 transitions in 2,008 seconds at 151.218 state pairs and 809.667 transitions per second using 210MB total storage.
+        On ply 82 - visited 304.616 state pairs and 1.629.157 transitions in 2,014 seconds at 151.249 state pairs and 808.916 transitions per second using 210MB total storage.
+        On ply 83 - visited 305.511 state pairs and 1.632.705 transitions in 2,021 seconds at 151.168 state pairs and 807.870 transitions per second using 210MB total storage.
+        On ply 84 - visited 306.529 state pairs and 1.637.374 transitions in 2,029 seconds at 151.074 state pairs and 806.986 transitions per second using 210MB total storage.
+        On ply 85 - visited 307.960 state pairs and 1.644.117 transitions in 2,039 seconds at 151.035 state pairs and 806.335 transitions per second using 210MB total storage.
+        On ply 86 - visited 309.873 state pairs and 1.652.089 transitions in 2,054 seconds at 150.863 state pairs and 804.328 transitions per second using 210MB total storage.
+        On ply 87 - visited 311.866 state pairs and 1.659.237 transitions in 2,068 seconds at 150.806 state pairs and 802.339 transitions per second using 210MB total storage.
+        On ply 88 - visited 313.478 state pairs and 1.664.349 transitions in 2,078 seconds at 150.856 state pairs and 800.938 transitions per second using 210MB total storage.
+        On ply 89 - visited 314.664 state pairs and 1.668.039 transitions in 2,088 seconds at 150.701 state pairs and 798.869 transitions per second using 210MB total storage.
+        On ply 90 - visited 315.630 state pairs and 1.671.003 transitions in 2,096 seconds at 150.587 state pairs and 797.234 transitions per second using 210MB total storage.
+        On ply 91 - visited 316.418 state pairs and 1.673.315 transitions in 2,102 seconds at 150.532 state pairs and 796.059 transitions per second using 210MB total storage.
+        On ply 92 - visited 317.130 state pairs and 1.675.513 transitions in 2,108 seconds at 150.441 state pairs and 794.835 transitions per second using 210MB total storage.
+        On ply 93 - visited 317.854 state pairs and 1.677.687 transitions in 2,116 seconds at 150.215 state pairs and 792.858 transitions per second using 210MB total storage.
+        On ply 94 - visited 318.542 state pairs and 1.679.786 transitions in 2,121 seconds at 150.185 state pairs and 791.978 transitions per second using 210MB total storage.
+        On ply 95 - visited 319.218 state pairs and 1.681.953 transitions in 2,127 seconds at 150.079 state pairs and 790.763 transitions per second using 210MB total storage.
+        On ply 96 - visited 319.926 state pairs and 1.684.252 transitions in 2,132 seconds at 150.059 state pairs and 789.987 transitions per second using 210MB total storage.
+        On ply 97 - visited 320.685 state pairs and 1.686.736 transitions in 2,138 seconds at 149.993 state pairs and 788.932 transitions per second using 210MB total storage.
+        On ply 98 - visited 321.496 state pairs and 1.689.295 transitions in 2,145 seconds at 149.882 state pairs and 787.550 transitions per second using 210MB total storage.
+        On ply 99 - visited 322.327 state pairs and 1.691.840 transitions in 2,152 seconds at 149.780 state pairs and 786.171 transitions per second using 210MB total storage.
+        On ply 100 - visited 323.145 state pairs and 1.694.314 transitions in 2,16 seconds at 149.604 state pairs and 784.405 transitions per second using 210MB total storage.
+        On ply 101 - visited 323.933 state pairs and 1.696.762 transitions in 2,166 seconds at 149.554 state pairs and 783.362 transitions per second using 210MB total storage.
+        On ply 102 - visited 324.707 state pairs and 1.699.187 transitions in 2,172 seconds at 149.497 state pairs and 782.314 transitions per second using 210MB total storage.
+        On ply 103 - visited 325.463 state pairs and 1.701.496 transitions in 2,177 seconds at 149.501 state pairs and 781.578 transitions per second using 210MB total storage.
+        On ply 104 - visited 326.151 state pairs and 1.703.501 transitions in 2,183 seconds at 149.405 state pairs and 780.349 transitions per second using 210MB total storage.
+        On ply 105 - visited 326.741 state pairs and 1.705.227 transitions in 2,189 seconds at 149.265 state pairs and 778.998 transitions per second using 210MB total storage.
+        On ply 106 - visited 327.275 state pairs and 1.706.834 transitions in 2,192 seconds at 149.304 state pairs and 778.665 transitions per second using 210MB total storage.
+        On ply 107 - visited 327.793 state pairs and 1.708.417 transitions in 2,196 seconds at 149.268 state pairs and 777.968 transitions per second using 210MB total storage.
+        On ply 108 - visited 328.317 state pairs and 1.710.084 transitions in 2,201 seconds at 149.167 state pairs and 776.958 transitions per second using 210MB total storage.
+        On ply 109 - visited 328.871 state pairs and 1.711.852 transitions in 2,205 seconds at 149.148 state pairs and 776.350 transitions per second using 210MB total storage.
+        On ply 110 - visited 329.417 state pairs and 1.713.538 transitions in 2,21 seconds at 149.057 state pairs and 775.357 transitions per second using 210MB total storage.
+        On ply 111 - visited 329.909 state pairs and 1.715.070 transitions in 2,215 seconds at 148.943 state pairs and 774.298 transitions per second using 210MB total storage.
+        On ply 112 - visited 330.369 state pairs and 1.716.526 transitions in 2,219 seconds at 148.882 state pairs and 773.558 transitions per second using 210MB total storage.
+        On ply 113 - visited 330.804 state pairs and 1.717.881 transitions in 2,223 seconds at 148.810 state pairs and 772.776 transitions per second using 210MB total storage.
+        On ply 114 - visited 331.207 state pairs and 1.719.285 transitions in 2,227 seconds at 148.723 state pairs and 772.018 transitions per second using 210MB total storage.
+        On ply 115 - visited 331.668 state pairs and 1.721.407 transitions in 2,231 seconds at 148.663 state pairs and 771.585 transitions per second using 210MB total storage.
+        On ply 116 - visited 332.397 state pairs and 1.725.249 transitions in 2,237 seconds at 148.591 state pairs and 771.233 transitions per second using 210MB total storage.
+        On ply 117 - visited 333.608 state pairs and 1.731.299 transitions in 2,248 seconds at 148.402 state pairs and 770.151 transitions per second using 210MB total storage.
+        On ply 118 - visited 335.277 state pairs and 1.738.596 transitions in 2,259 seconds at 148.418 state pairs and 769.631 transitions per second using 210MB total storage.
+        On ply 119 - visited 337.041 state pairs and 1.745.181 transitions in 2,274 seconds at 148.215 state pairs and 767.450 transitions per second using 210MB total storage.
+        On ply 120 - visited 338.452 state pairs and 1.749.820 transitions in 2,285 seconds at 148.119 state pairs and 765.786 transitions per second using 210MB total storage.
+        On ply 121 - visited 339.470 state pairs and 1.753.132 transitions in 2,295 seconds at 147.917 state pairs and 763.892 transitions per second using 210MB total storage.
+        On ply 122 - visited 340.267 state pairs and 1.755.660 transitions in 2,304 seconds at 147.685 state pairs and 762.005 transitions per second using 210MB total storage.
+        On ply 123 - visited 340.847 state pairs and 1.757.388 transitions in 2,308 seconds at 147.681 state pairs and 761.433 transitions per second using 210MB total storage.
+        On ply 124 - visited 341.302 state pairs and 1.758.801 transitions in 2,314 seconds at 147.494 state pairs and 760.070 transitions per second using 210MB total storage.
+        On ply 125 - visited 341.718 state pairs and 1.760.023 transitions in 2,318 seconds at 147.419 state pairs and 759.285 transitions per second using 210MB total storage.
+        On ply 126 - visited 342.073 state pairs and 1.760.980 transitions in 2,321 seconds at 147.382 state pairs and 758.716 transitions per second using 210MB total storage.
+        On ply 127 - visited 342.347 state pairs and 1.761.679 transitions in 2,325 seconds at 147.246 state pairs and 757.711 transitions per second using 210MB total storage.
+        On ply 128 - visited 342.546 state pairs and 1.762.193 transitions in 2,327 seconds at 147.205 state pairs and 757.281 transitions per second using 210MB total storage.
+        On ply 129 - visited 342.705 state pairs and 1.762.579 transitions in 2,331 seconds at 147.021 state pairs and 756.147 transitions per second using 210MB total storage.
+        On ply 130 - visited 342.815 state pairs and 1.762.817 transitions in 2,332 seconds at 147.005 state pairs and 755.925 transitions per second using 210MB total storage.
+        On ply 131 - visited 342.885 state pairs and 1.762.995 transitions in 2,333 seconds at 146.972 state pairs and 755.677 transitions per second using 210MB total storage.
+        On ply 132 - visited 342.944 state pairs and 1.763.128 transitions in 2,334 seconds at 146.934 state pairs and 755.410 transitions per second using 210MB total storage.
+        On ply 133 - visited 342.986 state pairs and 1.763.219 transitions in 2,335 seconds at 146.889 state pairs and 755.126 transitions per second using 210MB total storage.
+        On ply 134 - visited 343.018 state pairs and 1.763.291 transitions in 2,337 seconds at 146.777 state pairs and 754.510 transitions per second using 210MB total storage.
+        On ply 135 - visited 343.044 state pairs and 1.763.346 transitions in 2,339 seconds at 146.663 state pairs and 753.889 transitions per second using 210MB total storage.
+        On ply 136 - visited 343.063 state pairs and 1.763.384 transitions in 2,34 seconds at 146.608 state pairs and 753.583 transitions per second using 210MB total storage.
+        On ply 137 - visited 343.076 state pairs and 1.763.407 transitions in 2,34 seconds at 146.614 state pairs and 753.593 transitions per second using 210MB total storage.
+        On ply 138 - visited 343.084 state pairs and 1.763.420 transitions in 2,34 seconds at 146.617 state pairs and 753.598 transitions per second using 210MB total storage.
+        On ply 139 - visited 343.089 state pairs and 1.763.441 transitions in 2,341 seconds at 146.557 state pairs and 753.285 transitions per second using 210MB total storage.
+        On ply 140 - visited 343.107 state pairs and 1.763.651 transitions in 2,341 seconds at 146.564 state pairs and 753.375 transitions per second using 210MB total storage.
+        On ply 141 - visited 343.220 state pairs and 1.764.675 transitions in 2,344 seconds at 146.425 state pairs and 752.848 transitions per second using 210MB total storage.
+        On ply 142 - visited 343.626 state pairs and 1.767.497 transitions in 2,348 seconds at 146.348 state pairs and 752.767 transitions per second using 210MB total storage.
+        On ply 143 - visited 344.544 state pairs and 1.772.655 transitions in 2,357 seconds at 146.179 state pairs and 752.081 transitions per second using 210MB total storage.
+        On ply 144 - visited 345.974 state pairs and 1.779.264 transitions in 2,369 seconds at 146.042 state pairs and 751.061 transitions per second using 210MB total storage.
+        On ply 145 - visited 347.570 state pairs and 1.785.378 transitions in 2,379 seconds at 146.099 state pairs and 750.474 transitions per second using 210MB total storage.
+        On ply 146 - visited 348.872 state pairs and 1.789.704 transitions in 2,39 seconds at 145.972 state pairs and 748.830 transitions per second using 210MB total storage.
+        On ply 147 - visited 349.824 state pairs and 1.792.840 transitions in 2,398 seconds at 145.882 state pairs and 747.640 transitions per second using 210MB total storage.
+        On ply 148 - visited 350.606 state pairs and 1.795.365 transitions in 2,404 seconds at 145.843 state pairs and 746.824 transitions per second using 210MB total storage.
+        On ply 149 - visited 351.219 state pairs and 1.797.237 transitions in 2,411 seconds at 145.674 state pairs and 745.432 transitions per second using 210MB total storage.
+        On ply 150 - visited 351.745 state pairs and 1.798.967 transitions in 2,416 seconds at 145.590 state pairs and 744.606 transitions per second using 210MB total storage.
+        On ply 151 - visited 352.285 state pairs and 1.800.684 transitions in 2,421 seconds at 145.512 state pairs and 743.777 transitions per second using 210MB total storage.
+        On ply 152 - visited 352.808 state pairs and 1.802.296 transitions in 2,426 seconds at 145.428 state pairs and 742.908 transitions per second using 210MB total storage.
+        On ply 153 - visited 353.308 state pairs and 1.803.854 transitions in 2,43 seconds at 145.394 state pairs and 742.327 transitions per second using 210MB total storage.
+        On ply 154 - visited 353.798 state pairs and 1.805.398 transitions in 2,434 seconds at 145.357 state pairs and 741.741 transitions per second using 210MB total storage.
+        On ply 155 - visited 354.301 state pairs and 1.807.185 transitions in 2,439 seconds at 145.265 state pairs and 740.953 transitions per second using 210MB total storage.
+        On ply 156 - visited 354.908 state pairs and 1.809.707 transitions in 2,444 seconds at 145.216 state pairs and 740.469 transitions per second using 210MB total storage.
+        On ply 157 - visited 355.730 state pairs and 1.813.263 transitions in 2,449 seconds at 145.255 state pairs and 740.410 transitions per second using 210MB total storage.
+        On ply 158 - visited 356.777 state pairs and 1.817.601 transitions in 2,457 seconds at 145.208 state pairs and 739.764 transitions per second using 210MB total storage.
+        On ply 159 - visited 357.965 state pairs and 1.822.209 transitions in 2,467 seconds at 145.101 state pairs and 738.634 transitions per second using 210MB total storage.
+        On ply 160 - visited 359.142 state pairs and 1.826.363 transitions in 2,477 seconds at 144.991 state pairs and 737.329 transitions per second using 210MB total storage.
+        On ply 161 - visited 360.153 state pairs and 1.829.681 transitions in 2,485 seconds at 144.931 state pairs and 736.290 transitions per second using 210MB total storage.
+        On ply 162 - visited 360.983 state pairs and 1.832.346 transitions in 2,492 seconds at 144.857 state pairs and 735.291 transitions per second using 210MB total storage.
+        On ply 163 - visited 361.691 state pairs and 1.834.542 transitions in 2,498 seconds at 144.792 state pairs and 734.404 transitions per second using 210MB total storage.
+        On ply 164 - visited 362.299 state pairs and 1.836.365 transitions in 2,504 seconds at 144.688 state pairs and 733.373 transitions per second using 210MB total storage.
+        On ply 165 - visited 362.837 state pairs and 1.838.006 transitions in 2,509 seconds at 144.614 state pairs and 732.565 transitions per second using 210MB total storage.
+        On ply 166 - visited 363.347 state pairs and 1.839.628 transitions in 2,513 seconds at 144.587 state pairs and 732.045 transitions per second using 210MB total storage.
+        On ply 167 - visited 363.859 state pairs and 1.841.278 transitions in 2,518 seconds at 144.503 state pairs and 731.246 transitions per second using 210MB total storage.
+        On ply 168 - visited 364.361 state pairs and 1.842.896 transitions in 2,523 seconds at 144.416 state pairs and 730.438 transitions per second using 210MB total storage.
+        On ply 169 - visited 364.839 state pairs and 1.844.462 transitions in 2,527 seconds at 144.376 state pairs and 729.902 transitions per second using 210MB total storage.
+        On ply 170 - visited 365.313 state pairs and 1.846.079 transitions in 2,533 seconds at 144.221 state pairs and 728.811 transitions per second using 210MB total storage.
+        On ply 171 - visited 365.797 state pairs and 1.847.766 transitions in 2,537 seconds at 144.185 state pairs and 728.327 transitions per second using 210MB total storage.
+        On ply 172 - visited 366.283 state pairs and 1.849.494 transitions in 2,542 seconds at 144.092 state pairs and 727.574 transitions per second using 210MB total storage.
+        On ply 173 - visited 366.769 state pairs and 1.851.250 transitions in 2,546 seconds at 144.057 state pairs and 727.121 transitions per second using 210MB total storage.
+        On ply 174 - visited 367.247 state pairs and 1.852.972 transitions in 2,551 seconds at 143.962 state pairs and 726.371 transitions per second using 210MB total storage.
+        On ply 175 - visited 367.695 state pairs and 1.854.583 transitions in 2,555 seconds at 143.912 state pairs and 725.864 transitions per second using 210MB total storage.
+        On ply 176 - visited 368.101 state pairs and 1.856.065 transitions in 2,559 seconds at 143.846 state pairs and 725.309 transitions per second using 210MB total storage.
+        On ply 177 - visited 368.473 state pairs and 1.857.428 transitions in 2,562 seconds at 143.822 state pairs and 724.991 transitions per second using 210MB total storage.
+        On ply 178 - visited 368.814 state pairs and 1.858.717 transitions in 2,565 seconds at 143.787 state pairs and 724.646 transitions per second using 210MB total storage.
+        On ply 179 - visited 369.149 state pairs and 1.860.147 transitions in 2,569 seconds at 143.694 state pairs and 724.074 transitions per second using 210MB total storage.
+        On ply 180 - visited 369.560 state pairs and 1.862.308 transitions in 2,573 seconds at 143.630 state pairs and 723.789 transitions per second using 210MB total storage.
+        On ply 181 - visited 370.231 state pairs and 1.866.120 transitions in 2,58 seconds at 143.500 state pairs and 723.302 transitions per second using 210MB total storage.
+        On ply 182 - visited 371.366 state pairs and 1.872.032 transitions in 2,59 seconds at 143.385 state pairs and 722.792 transitions per second using 210MB total storage.
+        On ply 183 - visited 372.935 state pairs and 1.879.053 transitions in 2,599 seconds at 143.492 state pairs and 722.991 transitions per second using 210MB total storage.
+        On ply 184 - visited 374.575 state pairs and 1.885.250 transitions in 2,609 seconds at 143.570 state pairs and 722.595 transitions per second using 210MB total storage.
+        On ply 185 - visited 375.848 state pairs and 1.889.458 transitions in 2,621 seconds at 143.399 state pairs and 720.892 transitions per second using 210MB total storage.
+        On ply 186 - visited 376.732 state pairs and 1.892.366 transitions in 2,629 seconds at 143.299 state pairs and 719.804 transitions per second using 210MB total storage.
+        On ply 187 - visited 377.414 state pairs and 1.894.572 transitions in 2,634 seconds at 143.285 state pairs and 719.276 transitions per second using 210MB total storage.
+        On ply 188 - visited 377.917 state pairs and 1.896.267 transitions in 2,639 seconds at 143.205 state pairs and 718.555 transitions per second using 210MB total storage.
+        On ply 189 - visited 378.420 state pairs and 1.898.620 transitions in 2,644 seconds at 143.124 state pairs and 718.086 transitions per second using 210MB total storage.
+        On ply 190 - visited 379.220 state pairs and 1.902.789 transitions in 2,652 seconds at 142.994 state pairs and 717.492 transitions per second using 210MB total storage.
+        On ply 191 - visited 380.523 state pairs and 1.909.219 transitions in 2,66 seconds at 143.054 state pairs and 717.752 transitions per second using 210MB total storage.
+        On ply 192 - visited 382.309 state pairs and 1.916.991 transitions in 2,675 seconds at 142.919 state pairs and 716.632 transitions per second using 210MB total storage.
+        On ply 193 - visited 384.221 state pairs and 1.924.167 transitions in 2,689 seconds at 142.886 state pairs and 715.570 transitions per second using 210MB total storage.
+        On ply 194 - visited 385.827 state pairs and 1.929.751 transitions in 2,7 seconds at 142.899 state pairs and 714.723 transitions per second using 210MB total storage.
+        On ply 195 - visited 387.162 state pairs and 1.934.770 transitions in 2,711 seconds at 142.812 state pairs and 713.674 transitions per second using 210MB total storage.
+        On ply 196 - visited 388.486 state pairs and 1.939.967 transitions in 2,72 seconds at 142.826 state pairs and 713.223 transitions per second using 210MB total storage.
+        On ply 197 - visited 389.794 state pairs and 1.945.077 transitions in 2,731 seconds at 142.729 state pairs and 712.222 transitions per second using 210MB total storage.
+        On ply 198 - visited 391.109 state pairs and 1.950.143 transitions in 2,741 seconds at 142.688 state pairs and 711.471 transitions per second using 210MB total storage.
+        On ply 199 - visited 392.391 state pairs and 1.954.748 transitions in 2,749 seconds at 142.740 state pairs and 711.076 transitions per second using 210MB total storage.
+        On ply 200 - visited 393.519 state pairs and 1.958.655 transitions in 2,758 seconds at 142.683 state pairs and 710.172 transitions per second using 210MB total storage.
+        On ply 201 - visited 394.512 state pairs and 1.962.109 transitions in 2,767 seconds at 142.578 state pairs and 709.111 transitions per second using 210MB total storage.
+        On ply 202 - visited 395.425 state pairs and 1.965.294 transitions in 2,775 seconds at 142.495 state pairs and 708.214 transitions per second using 210MB total storage.
+        On ply 203 - visited 396.277 state pairs and 1.968.266 transitions in 2,783 seconds at 142.392 state pairs and 707.246 transitions per second using 210MB total storage.
+        On ply 204 - visited 397.065 state pairs and 1.971.084 transitions in 2,791 seconds at 142.266 state pairs and 706.229 transitions per second using 210MB total storage.
+        On ply 205 - visited 397.825 state pairs and 1.973.883 transitions in 2,797 seconds at 142.233 state pairs and 705.714 transitions per second using 210MB total storage.
+        On ply 206 - visited 398.581 state pairs and 1.976.659 transitions in 2,806 seconds at 142.046 state pairs and 704.440 transitions per second using 210MB total storage.
+        On ply 207 - visited 399.339 state pairs and 1.979.448 transitions in 2,817 seconds at 141.760 state pairs and 702.679 transitions per second using 210MB total storage.
+        On ply 208 - visited 400.119 state pairs and 1.982.221 transitions in 2,825 seconds at 141.635 state pairs and 701.671 transitions per second using 210MB total storage.
+        On ply 209 - visited 400.865 state pairs and 1.984.732 transitions in 2,831 seconds at 141.598 state pairs and 701.071 transitions per second using 210MB total storage.
+        On ply 210 - visited 401.505 state pairs and 1.986.822 transitions in 2,837 seconds at 141.524 state pairs and 700.325 transitions per second using 210MB total storage.
+        On ply 211 - visited 402.023 state pairs and 1.988.480 transitions in 2,841 seconds at 141.508 state pairs and 699.923 transitions per second using 210MB total storage.
+        On ply 212 - visited 402.449 state pairs and 1.989.834 transitions in 2,845 seconds at 141.458 state pairs and 699.414 transitions per second using 210MB total storage.
+        On ply 213 - visited 402.811 state pairs and 1.990.921 transitions in 2,848 seconds at 141.436 state pairs and 699.059 transitions per second using 210MB total storage.
+        On ply 214 - visited 403.096 state pairs and 1.991.845 transitions in 2,851 seconds at 141.388 state pairs and 698.648 transitions per second using 210MB total storage.
+        On ply 215 - visited 403.392 state pairs and 1.993.385 transitions in 2,855 seconds at 141.293 state pairs and 698.208 transitions per second using 210MB total storage.
+        On ply 216 - visited 403.949 state pairs and 1.996.666 transitions in 2,86 seconds at 141.241 state pairs and 698.135 transitions per second using 210MB total storage.
+        On ply 217 - visited 405.003 state pairs and 2.002.225 transitions in 2,87 seconds at 141.116 state pairs and 697.639 transitions per second using 210MB total storage.
+        On ply 218 - visited 406.549 state pairs and 2.009.168 transitions in 2,883 seconds at 141.016 state pairs and 696.902 transitions per second using 210MB total storage.
+        On ply 219 - visited 408.240 state pairs and 2.015.543 transitions in 2,896 seconds at 140.967 state pairs and 695.975 transitions per second using 210MB total storage.
+        On ply 220 - visited 409.614 state pairs and 2.020.049 transitions in 2,907 seconds at 140.906 state pairs and 694.891 transitions per second using 210MB total storage.
+        On ply 221 - visited 410.613 state pairs and 2.023.290 transitions in 2,914 seconds at 140.910 state pairs and 694.334 transitions per second using 210MB total storage.
+        On ply 222 - visited 411.421 state pairs and 2.025.858 transitions in 2,922 seconds at 140.801 state pairs and 693.312 transitions per second using 210MB total storage.
+        On ply 223 - visited 412.035 state pairs and 2.027.632 transitions in 2,927 seconds at 140.770 state pairs and 692.734 transitions per second using 210MB total storage.
+        On ply 224 - visited 412.499 state pairs and 2.028.981 transitions in 2,931 seconds at 140.737 state pairs and 692.249 transitions per second using 210MB total storage.
+        On ply 225 - visited 412.887 state pairs and 2.030.185 transitions in 2,936 seconds at 140.629 state pairs and 691.480 transitions per second using 210MB total storage.
+        On ply 226 - visited 413.264 state pairs and 2.031.891 transitions in 2,94 seconds at 140.566 state pairs and 691.119 transitions per second using 210MB total storage.
+        On ply 227 - visited 413.852 state pairs and 2.035.179 transitions in 2,946 seconds at 140.479 state pairs and 690.828 transitions per second using 210MB total storage.
+        On ply 228 - visited 414.902 state pairs and 2.040.649 transitions in 2,954 seconds at 140.454 state pairs and 690.809 transitions per second using 210MB total storage.
+        On ply 229 - visited 416.434 state pairs and 2.047.528 transitions in 2,965 seconds at 140.450 state pairs and 690.566 transitions per second using 210MB total storage.
+        On ply 230 - visited 418.150 state pairs and 2.054.020 transitions in 2,978 seconds at 140.413 state pairs and 689.731 transitions per second using 210MB total storage.
+        On ply 231 - visited 419.620 state pairs and 2.058.874 transitions in 2,991 seconds at 140.294 state pairs and 688.356 transitions per second using 210MB total storage.
+        On ply 232 - visited 420.770 state pairs and 2.062.616 transitions in 2,998 seconds at 140.350 state pairs and 687.997 transitions per second using 210MB total storage.
+        On ply 233 - visited 421.756 state pairs and 2.065.797 transitions in 3,005 seconds at 140.351 state pairs and 687.453 transitions per second using 210MB total storage.
+        On ply 234 - visited 422.584 state pairs and 2.068.368 transitions in 3,013 seconds at 140.254 state pairs and 686.481 transitions per second using 210MB total storage.
+        On ply 235 - visited 423.326 state pairs and 2.070.752 transitions in 3,02 seconds at 140.174 state pairs and 685.679 transitions per second using 210MB total storage.
+        On ply 236 - visited 424.056 state pairs and 2.073.039 transitions in 3,026 seconds at 140.137 state pairs and 685.076 transitions per second using 210MB total storage.
+        On ply 237 - visited 424.728 state pairs and 2.075.139 transitions in 3,032 seconds at 140.082 state pairs and 684.413 transitions per second using 210MB total storage.
+        On ply 238 - visited 425.362 state pairs and 2.077.167 transitions in 3,037 seconds at 140.060 state pairs and 683.954 transitions per second using 210MB total storage.
+        On ply 239 - visited 425.980 state pairs and 2.079.120 transitions in 3,042 seconds at 140.033 state pairs and 683.471 transitions per second using 210MB total storage.
+        On ply 240 - visited 426.584 state pairs and 2.081.105 transitions in 3,048 seconds at 139.955 state pairs and 682.777 transitions per second using 210MB total storage.
+        On ply 241 - visited 427.236 state pairs and 2.083.377 transitions in 3,054 seconds at 139.894 state pairs and 682.180 transitions per second using 210MB total storage.
+        On ply 242 - visited 427.986 state pairs and 2.086.479 transitions in 3,062 seconds at 139.773 state pairs and 681.411 transitions per second using 210MB total storage.
+        On ply 243 - visited 428.980 state pairs and 2.091.787 transitions in 3,071 seconds at 139.687 state pairs and 681.142 transitions per second using 210MB total storage.
+        On ply 244 - visited 430.550 state pairs and 2.101.156 transitions in 3,083 seconds at 139.653 state pairs and 681.530 transitions per second using 210MB total storage.
+        On ply 245 - visited 432.988 state pairs and 2.115.785 transitions in 3,103 seconds at 139.539 state pairs and 681.851 transitions per second using 210MB total storage.
+        On ply 246 - visited 436.464 state pairs and 2.136.615 transitions in 3,127 seconds at 139.579 state pairs and 683.280 transitions per second using 210MB total storage.
+        On ply 247 - visited 441.114 state pairs and 2.164.608 transitions in 3,159 seconds at 139.637 state pairs and 685.219 transitions per second using 210MB total storage.
+        On ply 248 - visited 447.035 state pairs and 2.200.600 transitions in 3,198 seconds at 139.786 state pairs and 688.118 transitions per second using 210MB total storage.
+        On ply 249 - visited 454.397 state pairs and 2.245.768 transitions in 3,249 seconds at 139.857 state pairs and 691.218 transitions per second using 210MB total storage.
+        On ply 250 - visited 463.472 state pairs and 2.301.347 transitions in 3,309 seconds at 140.064 state pairs and 695.481 transitions per second using 210MB total storage.
+        On ply 251 - visited 474.374 state pairs and 2.366.752 transitions in 3,383 seconds at 140.223 state pairs and 699.602 transitions per second using 210MB total storage.
+        On ply 252 - visited 486.739 state pairs and 2.438.084 transitions in 3,467 seconds at 140.392 state pairs and 703.226 transitions per second using 210MB total storage.
+        On ply 253 - visited 499.660 state pairs and 2.509.219 transitions in 3,55 seconds at 140.749 state pairs and 706.822 transitions per second using 210MB total storage.
+        On ply 254 - visited 512.108 state pairs and 2.575.112 transitions in 3,631 seconds at 141.038 state pairs and 709.202 transitions per second using 210MB total storage.
+        On ply 255 - visited 523.500 state pairs and 2.634.051 transitions in 3,703 seconds at 141.372 state pairs and 711.329 transitions per second using 210MB total storage.
+        On ply 256 - visited 533.815 state pairs and 2.686.867 transitions in 3,766 seconds at 141.746 state pairs and 713.454 transitions per second using 210MB total storage.
+        On ply 257 - visited 543.273 state pairs and 2.734.704 transitions in 3,829 seconds at 141.884 state pairs and 714.208 transitions per second using 210MB total storage.
+        On ply 258 - visited 551.971 state pairs and 2.777.655 transitions in 3,882 seconds at 142.187 state pairs and 715.522 transitions per second using 210MB total storage.
+        On ply 259 - visited 559.865 state pairs and 2.816.055 transitions in 3,932 seconds at 142.387 state pairs and 716.189 transitions per second using 210MB total storage.
+        On ply 260 - visited 567.147 state pairs and 2.852.353 transitions in 3,976 seconds at 142.643 state pairs and 717.393 transitions per second using 210MB total storage.
+        On ply 261 - visited 574.351 state pairs and 2.890.078 transitions in 4,02 seconds at 142.873 state pairs and 718.925 transitions per second using 210MB total storage.
+        On ply 262 - visited 581.999 state pairs and 2.931.640 transitions in 4,066 seconds at 143.138 state pairs and 721.013 transitions per second using 210MB total storage.
+        On ply 263 - visited 590.343 state pairs and 2.977.850 transitions in 4,117 seconds at 143.392 state pairs and 723.306 transitions per second using 210MB total storage.
+        On ply 264 - visited 599.395 state pairs and 3.028.503 transitions in 4,173 seconds at 143.636 state pairs and 725.738 transitions per second using 210MB total storage.
+        On ply 265 - visited 609.051 state pairs and 3.082.944 transitions in 4,233 seconds at 143.882 state pairs and 728.312 transitions per second using 210MB total storage.
+        On ply 266 - visited 619.175 state pairs and 3.140.250 transitions in 4,296 seconds at 144.128 state pairs and 730.971 transitions per second using 210MB total storage.
+        On ply 267 - visited 629.575 state pairs and 3.198.955 transitions in 4,361 seconds at 144.365 state pairs and 733.537 transitions per second using 210MB total storage.
+        On ply 268 - visited 639.967 state pairs and 3.257.217 transitions in 4,427 seconds at 144.560 state pairs and 735.762 transitions per second using 210MB total storage.
+        On ply 269 - visited 650.079 state pairs and 3.313.648 transitions in 4,49 seconds at 144.784 state pairs and 738.006 transitions per second using 210MB total storage.
+        On ply 270 - visited 659.751 state pairs and 3.367.523 transitions in 4,549 seconds at 145.032 state pairs and 740.278 transitions per second using 210MB total storage.
+        On ply 271 - visited 668.887 state pairs and 3.418.231 transitions in 4,606 seconds at 145.221 state pairs and 742.126 transitions per second using 210MB total storage.
+        On ply 272 - visited 677.375 state pairs and 3.465.008 transitions in 4,661 seconds at 145.328 state pairs and 743.404 transitions per second using 210MB total storage.
+        On ply 273 - visited 685.087 state pairs and 3.507.035 transitions in 4,71 seconds at 145.454 state pairs and 744.593 transitions per second using 210MB total storage.
+        On ply 274 - visited 691.895 state pairs and 3.543.517 transitions in 4,751 seconds at 145.631 state pairs and 745.847 transitions per second using 210MB total storage.
+        On ply 275 - visited 697.685 state pairs and 3.573.846 transitions in 4,788 seconds at 145.715 state pairs and 746.417 transitions per second using 210MB total storage.
+        On ply 276 - visited 702.393 state pairs and 3.597.814 transitions in 4,823 seconds at 145.634 state pairs and 745.970 transitions per second using 210MB total storage.
+        On ply 277 - visited 706.025 state pairs and 3.615.620 transitions in 4,847 seconds at 145.662 state pairs and 745.950 transitions per second using 210MB total storage.
+        On ply 278 - visited 708.641 state pairs and 3.627.778 transitions in 4,866 seconds at 145.631 state pairs and 745.536 transitions per second using 210MB total storage.
+        On ply 279 - visited 710.359 state pairs and 3.635.245 transitions in 4,879 seconds at 145.595 state pairs and 745.080 transitions per second using 210MB total storage.
+        On ply 280 - visited 711.377 state pairs and 3.639.376 transitions in 4,887 seconds at 145.565 state pairs and 744.706 transitions per second using 210MB total storage.
+        On ply 281 - visited 711.923 state pairs and 3.641.419 transitions in 4,892 seconds at 145.528 state pairs and 744.362 transitions per second using 210MB total storage.
+        On ply 282 - visited 712.177 state pairs and 3.642.248 transitions in 4,896 seconds at 145.461 state pairs and 743.923 transitions per second using 210MB total storage.
+        On ply 283 - visited 712.267 state pairs and 3.642.486 transitions in 4,897 seconds at 145.450 state pairs and 743.820 transitions per second using 210MB total storage.
+        On ply 284 - visited 712.288 state pairs and 3.642.543 transitions in 4,899 seconds at 145.395 state pairs and 743.528 transitions per second using 210MB total storage.
+        On ply 285 - visited 712.307 state pairs and 3.642.755 transitions in 4,899 seconds at 145.398 state pairs and 743.571 transitions per second using 210MB total storage.
+        On ply 286 - visited 712.420 state pairs and 3.643.779 transitions in 4,901 seconds at 145.362 state pairs and 743.477 transitions per second using 210MB total storage.
+        On ply 287 - visited 712.827 state pairs and 3.646.618 transitions in 4,907 seconds at 145.267 state pairs and 743.146 transitions per second using 210MB total storage.
+        On ply 288 - visited 713.762 state pairs and 3.651.921 transitions in 4,915 seconds at 145.221 state pairs and 743.015 transitions per second using 210MB total storage.
+        On ply 289 - visited 715.273 state pairs and 3.658.948 transitions in 4,926 seconds at 145.204 state pairs and 742.783 transitions per second using 210MB total storage.
+        On ply 290 - visited 717.051 state pairs and 3.665.825 transitions in 4,939 seconds at 145.181 state pairs and 742.220 transitions per second using 210MB total storage.
+        On ply 291 - visited 718.628 state pairs and 3.671.172 transitions in 4,952 seconds at 145.119 state pairs and 741.351 transitions per second using 210MB total storage.
+        On ply 292 - visited 719.904 state pairs and 3.675.498 transitions in 4,96 seconds at 145.142 state pairs and 741.028 transitions per second using 210MB total storage.
+        On ply 293 - visited 720.941 state pairs and 3.679.038 transitions in 4,967 seconds at 145.146 state pairs and 740.696 transitions per second using 210MB total storage.
+        On ply 294 - visited 721.775 state pairs and 3.681.884 transitions in 4,974 seconds at 145.110 state pairs and 740.226 transitions per second using 210MB total storage.
+        On ply 295 - visited 722.542 state pairs and 3.684.582 transitions in 4,98 seconds at 145.089 state pairs and 739.876 transitions per second using 210MB total storage.
+        On ply 296 - visited 723.305 state pairs and 3.687.175 transitions in 4,988 seconds at 145.009 state pairs and 739.209 transitions per second using 210MB total storage.
+        On ply 297 - visited 724.026 state pairs and 3.689.553 transitions in 4,994 seconds at 144.979 state pairs and 738.797 transitions per second using 210MB total storage.
+        On ply 298 - visited 724.677 state pairs and 3.691.705 transitions in 4,999 seconds at 144.964 state pairs and 738.489 transitions per second using 210MB total storage.
+        On ply 299 - visited 725.258 state pairs and 3.693.672 transitions in 5,006 seconds at 144.878 state pairs and 737.849 transitions per second using 210MB total storage.
+        On ply 300 - visited 725.792 state pairs and 3.695.484 transitions in 5,011 seconds at 144.840 state pairs and 737.474 transitions per second using 210MB total storage.
+        On ply 301 - visited 726.279 state pairs and 3.696.990 transitions in 5,016 seconds at 144.792 state pairs and 737.039 transitions per second using 210MB total storage.
+        On ply 302 - visited 726.666 state pairs and 3.698.048 transitions in 5,02 seconds at 144.754 state pairs and 736.663 transitions per second using 210MB total storage.
+        On ply 303 - visited 726.906 state pairs and 3.698.631 transitions in 5,024 seconds at 144.687 state pairs and 736.192 transitions per second using 210MB total storage.
+        On ply 304 - visited 727.013 state pairs and 3.698.878 transitions in 5,025 seconds at 144.679 state pairs and 736.095 transitions per second using 210MB total storage.
+        On ply 305 - visited 727.058 state pairs and 3.698.995 transitions in 5,027 seconds at 144.631 state pairs and 735.826 transitions per second using 210MB total storage.
+        On ply 306 - visited 727.094 state pairs and 3.699.087 transitions in 5,028 seconds at 144.609 state pairs and 735.697 transitions per second using 210MB total storage.
+        On ply 307 - visited 727.122 state pairs and 3.699.159 transitions in 5,029 seconds at 144.586 state pairs and 735.566 transitions per second using 210MB total storage.
+        On ply 308 - visited 727.144 state pairs and 3.699.213 transitions in 5,032 seconds at 144.504 state pairs and 735.138 transitions per second using 210MB total storage.
+        On ply 309 - visited 727.160 state pairs and 3.699.249 transitions in 5,034 seconds at 144.450 state pairs and 734.853 transitions per second using 210MB total storage.
+        On ply 310 - visited 727.170 state pairs and 3.699.267 transitions in 5,034 seconds at 144.452 state pairs and 734.856 transitions per second using 210MB total storage.
+        On ply 311 - visited 727.174 state pairs and 3.699.271 transitions in 5,034 seconds at 144.453 state pairs and 734.857 transitions per second using 210MB total storage.
         Finished
         Reconstructing counterexamples
 Spec1
