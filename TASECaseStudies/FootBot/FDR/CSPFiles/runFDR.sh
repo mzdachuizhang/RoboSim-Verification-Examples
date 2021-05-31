@@ -2,7 +2,7 @@
 
 echo "FootBot verification"
 
-path="/TASEcaseStudies3005/FootBot/FDR"
+path="/TASEcaseStudies/FootBot/FDR"
 
 pathFDR4="/tools/fdr4/bin/"
 
