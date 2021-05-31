@@ -2,7 +2,7 @@
 
 echo "Alpha Algorithm verification - UPPAAL"
 
-path="/home/TASEcaseStudies3005/AlphaAlgorithm/UPPAAL"
+path="/home/TASEcaseStudies/AlphaAlgorithm/UPPAAL"
 
 pathUPPAAL="/home/tools/uppaal/bin-Linux"
 
