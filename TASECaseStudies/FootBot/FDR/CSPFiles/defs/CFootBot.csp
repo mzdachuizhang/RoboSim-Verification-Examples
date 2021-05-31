@@ -1,0 +1,1552 @@
+module CFootBot
+exports 
+
+	transparent diamond
+	transparent sbisim
+	transparent chase
+	
+	-- declaring channels
+	-- inputs, evars, rvars and outputs as calculated internally
+	-- outputs = {
+	--	(FootBot::stop,ctrl_ref0::stop),
+	--	(FootBot::move,ctrl_ref0::move)
+	--	 }
+	-- inputs = {
+	--	(FootBot::obstacle,ctrl_ref0::obstacle)
+	--	 }
+	-- evars = {}
+	-- rvars = {}
+	
+	-- declaring registerRead/Write datatypes
+	
+	datatype RegisterDataInput = i_obstacle.Bool
+	
+	datatype RegisterDataOutput = o_stop
+		| o_move.core_real.core_real
+	
+	
+	nametype RegisterOutputs = {|
+	o_stop,
+	o_move|}
+	
+	nametype RegisterInputs = {|
+	i_obstacle|}
+	
+	channel registerRead 	: RegisterDataInput
+	channel registerWrite 	: RegisterDataOutput
+	channel endexec
+	
+	-- declaring module termination channel
+	channel terminate
+	
+	module ctrl_ref0
+	exports
+	
+		transparent diamond
+		transparent sbisim
+		transparent chase
+	
+		-- declaring channels
+		-- allInputs = inputs_evars? false
+		-- allOutputs = outputs_evars? false
+		
+		-- inputs, evars, rvars and outputs as calculated internally
+		-- outputs = {
+		--	(ctrl_ref0::move,stm_ref0::move),
+		--	(ctrl_ref0::stop,stm_ref0::stop)
+		--	 }
+		-- inputs = {
+		--	(ctrl_ref0::obstacle,stm_ref0::obstacle)
+		--	 }
+		-- evars = {}
+		-- dvars = {}
+		
+		-- declaring registerRead/Write datatypes
+		datatype RegisterDataInput = i_obstacle.Bool
+		
+		datatype RegisterDataOutput = o_stop
+			| o_move.core_real.core_real
+			| o_obstacle
+		
+		
+		nametype RegisterOutputs = {|
+		o_move,
+		o_stop|}
+		
+		nametype RegisterInputs = {|
+		i_obstacle|}
+		
+		channel registerRead 	: RegisterDataInput
+		channel registerWrite 	: RegisterDataOutput
+		
+		channel endexec, terminate
+		
+		
+		-- declaring call and ret events for undefined operations
+		channel stopCall
+		channel moveCall: core_real.core_real
+		
+		CALL__stop(id__) =  EDeadline(stopCall,0)		
+		CALL__move(id__,
+				    ls,
+				    a) =  EDeadline(moveCall.ls.a,0)		
+		
+		
+		-- (Rule 8) cycleController(...) : CSPProcess
+		datatype SOutputEvents = SOutput_move
+			| SOutput_stop
+		
+		DVarsEvents = {}
+		
+		EVarsEvents = {}
+		
+		cycleController(id__,cycle_Movement_Movement,
+				    const_Movement_stm_ref0_PI,
+				    const_Movement_stm_ref0_av) =
+		let
+					
+			project_stm_ref0(stm_ref0::o_move.x__) = SOutput_move
+			project_stm_ref0(stm_ref0::o_stop) = SOutput_stop
+		
+			connected_stm_ref0(stm_ref0::o_move.x__) = true
+			connected_stm_ref0(stm_ref0::o_stop) = true
+			connected_stm_ref0(_) = false
+		
+			lift_stm_ref0(stm_ref0::o_move.x__) = o_move.x__
+			lift_stm_ref0(stm_ref0::o_stop) = o_stop
+			
+			CycleController =
+				-- read inputs from the controller and pass to state machines
+				(
+				((registerRead.i_obstacle?x__ ->
+					((stm_ref0::registerRead.stm_ref0::i_obstacle!x__ -> SKIP))))
+				-- ensure state machines read the values being communicated via evars
+						);
+				-- synchronize on events related to evars to erase memory
+				-- collect outputs, and monitor termination of the cycle, by all controllers
+				(CollectOutputs(SOutputEvents) [| {endexec} |] Monitor);
+				-- wait for the cycleDef period
+				(wait(cycle_Movement_Movement) [] terminate -> SKIP);
+				-- recurse
+				CycleController
+				
+										
+			CollectOutputs(sout) =
+				(stm_ref0::registerWrite?outp:{ outp | outc <- diff(sout,union(EVarsEvents,DVarsEvents)), outp <- stm_ref0::RegisterDataOutput, connected_stm_ref0(outp), project_stm_ref0(outp) == outc}
+						-> registerWrite!lift_stm_ref0(outp)
+							-> CollectOutputs(diff(sout,{project_stm_ref0(outp)}))
+				[]
+				endexec -> SKIP
+				)
+		
+			Monitor = 
+				(	 (stm_ref0::endexec -> SKIP)); endexec -> SKIP
+		within
+			CycleController
+		
+		-- (Rule 5) memoryComp(...) : CSPProcess
+		memoryComp(id__,
+				    const_Movement_stm_ref0_PI,
+				    const_Movement_stm_ref0_av) = (
+			STOP)
+		
+		
+		module stm_ref0
+		exports
+			-- definition of the behaviour of state machines (default, optimised, visible, visible and optimised)
+			external prioritise
+			transparent wbisim
+			transparent sbisim
+			transparent dbisim
+		
+			-- flow channels
+			channel internal__ : TIDS
+			channel enteredV, enterV, exitV, exitedV : SIDS
+			channel enter, entered: SIDS.SIDS
+			channel exit,exited: SIDS.SIDS
+			
+			-- RoboSim channels
+			channel endexec
+			channel endexec__ : TIDS
+			channel startexec
+			channel terminate
+			
+			-- declaring registerRead/Write datatypes
+			datatype RegisterDataInput = i_obstacle.Bool
+			
+			
+			datatype RegisterDataOutput = o_stop
+				| o_move.core_real.core_real
+			
+			
+			nametype RegisterOutputs = {|
+			o_stop,
+			o_move|}
+			
+			nametype RegisterInputs = {|
+			i_obstacle|}
+			
+			channel registerRead 	: RegisterDataInput
+			channel registerWrite 	: RegisterDataOutput
+			
+			-- variable channels
+			channel get_obstacle : Bool
+			
+			-- local variable channels for defined operations that are required by the state machine
+			
+			-- declaring state machine events
+			
+			-- declaring call and ret events for undefined operations
+			channel stopCall, stopRet
+			channel moveCall, moveRet: core_real.core_real
+			
+			EndExecs = {| endexec__, endexec
+			 |}
+			
+			Transitions = {| internal__
+			 |}
+			
+		
+			-- Only the undefined operations are declared here.
+			-- If the state machine is in isolation, all required operations will be undefined.
+			-- If it is in the context of a controller, the required operations not provided by the
+			-- controller will be declared here, and the defined operations will be defined in the
+			-- context of the Controller module, and therefore within scope of the state machien module.
+			CALL__stop(id__) = registerWrite.o_stop -> SKIP
+			
+			CALL__move(id__,
+					    ls,
+					    a) = registerWrite.o_move.ls.a -> SKIP
+			
+			
+			
+			-- definition of functions used to expose flow channels
+			ShowEvents(P,E) = P[[ entered.x____.y____ <- enteredV.y____ | entered.x____.y____ <- E]]
+							   [[ enter.x____.y____ <- enterV.y____ | enter.x____.y____ <- E]]
+							   [[ exit.x____.y____ <- exitV.y____ | exit.x____.y____ <- E]]
+							   [[ exited.x____.y____ <- exitedV.y____ | exited.x____.y____ <- E ]]
+								 
+			ShowEnteredV(P) = P[[ entered.x____.y____ <- enteredV.y____ | x____ <- SIDS, y____ <- SIDS ]]
+			ShowEnterV(P) = P[[ enter.x____.y____ <- enterV.y____ | x____ <- SIDS, y____ <- SIDS ]]
+			ShowExitV(P) = P[[ exit.x____.y____ <- exitV.y____ | x____ <- SIDS, y____ <- SIDS ]]
+			ShowExitedV(P) = P[[ exited.x____.y____ <- exitedV.y____ | x____ <- SIDS, y____ <- SIDS ]]
+			ShowV(P) = P[[ entered.x____.y____ <- enteredV.y____ | x____ <- SIDS, y____ <- SIDS]]
+						[[ enter.x____.y____ <- enterV.y____ | x____ <- SIDS, y____ <- SIDS ]]
+						[[ exit.x____.y____ <- exitV.y____ | x____ <- SIDS, y____ <- SIDS]]
+						[[ exited.x____.y____ <- exitedV.y____ | x____ <- SIDS, y____ <- SIDS ]]
+			
+			-- declaring identifiers of state and final states
+			datatype SIDS = SID_SMovement
+			              | SID_SMovement_SMoving
+			              | SID_SMovement_DMoving
+			              | SID_SMovement_STurning
+			              | SID_SMovement_DTurning
+			              | SID_SMovement_Waiting
+			
+			-- declaring identifiers of transitions
+			datatype TIDS = NULLTRANSITION__
+			              | TID_SMovement_t0
+			              | TID_SMovement_SMoving_to_DMoving
+			              | TID_SMovement_tid2
+			              | TID_SMovement_tid7
+			              | TID_SMovement_tid8_toWait
+			              | TID_SMovement_Wait_to_STurning
+			              | TID_SMovement_tid3
+			              | TID_SMovement_tid4
+			              | TID_SMovement_tid6
+			              | TID_SMovement_tid5
+			
+			-- declaring identifiers of transitions that can interupt a state (excludes transitions from junctions)
+			
+			ITIDS = {
+				TID_SMovement_SMoving_to_DMoving,	TID_SMovement_tid2,	TID_SMovement_Wait_to_STurning,	TID_SMovement_tid3,	TID_SMovement_tid4
+			}
+			
+			int_int = {|
+				internal__.TID_SMovement_SMoving_to_DMoving,
+				internal__.TID_SMovement_tid2,
+				internal__.TID_SMovement_Wait_to_STurning,
+				internal__.TID_SMovement_tid3,
+				internal__.TID_SMovement_tid4
+			|}
+				
+			
+			internal_events = {|enter,entered,exit,exited|}
+			
+			-- declaring all states
+			CS_SMovement_SMoving_sync = {|
+				enter.y____.x____, 
+				entered.y____.x____, 
+				exit.y____.x____, 
+				exited.y____.x____,
+				enter.x____.y____, 
+				entered.x____.y____, 
+				exit.x____.y____, 
+				exited.x____.y____ |
+				x____ <- {SID_SMovement_SMoving,SID_SMovement_DMoving,SID_SMovement_STurning,SID_SMovement_DTurning,SID_SMovement_Waiting},
+				y____ <- {SID_SMovement_SMoving}
+			|}
+			
+			
+			SMovement_SMoving_triggers = {|
+				internal__.TID_SMovement_tid3,
+				internal__.TID_SMovement_tid2,
+				internal__.TID_SMovement_Wait_to_STurning,
+				internal__.TID_SMovement_tid5,
+				internal__.TID_SMovement_tid7,
+				internal__.TID_SMovement_tid4,
+				internal__.TID_SMovement_tid6,
+				internal__.TID_SMovement_SMoving_to_DMoving,
+				internal__.TID_SMovement_tid8_toWait
+			|}
+			
+			State_SMovement_SMoving(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = let
+				T_SMovement_SMoving_to_DMoving(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = internal__!TID_SMovement_SMoving_to_DMoving ->  exit.SID_SMovement_SMoving.SID_SMovement_SMoving -> SKIP;
+									SKIP;exited.SID_SMovement_SMoving.SID_SMovement_SMoving -> SKIP;
+									enter!SID_SMovement_SMoving!SID_SMovement_DMoving -> entered!SID_SMovement_SMoving!SID_SMovement_DMoving ->
+									State_SMovement_SMoving(id__,
+											    const_SMovement_PI,
+											    const_SMovement_av)
+				State_SMovement_SMoving_execute(id__,o____) = true&CALL__move(
+							id__,
+							1,
+							0
+						); 
+					entered!o____!SID_SMovement_SMoving ->
+					(SKIP; STOP /\ (
+						T_SMovement_SMoving_to_DMoving(id__,
+								    const_SMovement_PI,
+								    const_SMovement_av)
+						[]
+						internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_SMovement_tid3,TID_SMovement_tid2,TID_SMovement_Wait_to_STurning,TID_SMovement_tid5,TID_SMovement_tid7,TID_SMovement_tid4,TID_SMovement_tid6,TID_SMovement_SMoving_to_DMoving,TID_SMovement_tid8_toWait}) -> exit?y____:diff(SIDS,{SID_SMovement_SMoving})!SID_SMovement_SMoving -> (
+								SKIP;
+								exited!y____!SID_SMovement_SMoving -> SKIP);
+								State_SMovement_SMoving(id__,
+										    const_SMovement_PI,
+										    const_SMovement_av)
+					))
+			within
+				enter?x____:diff(SIDS,{SID_SMovement_SMoving})!SID_SMovement_SMoving -> (State_SMovement_SMoving_execute(id__,x____))
+			
+			CS_SMovement_DMoving_sync = {|
+				enter.y____.x____, 
+				entered.y____.x____, 
+				exit.y____.x____, 
+				exited.y____.x____,
+				enter.x____.y____, 
+				entered.x____.y____, 
+				exit.x____.y____, 
+				exited.x____.y____ |
+				x____ <- {SID_SMovement_SMoving,SID_SMovement_DMoving,SID_SMovement_STurning,SID_SMovement_DTurning,SID_SMovement_Waiting},
+				y____ <- {SID_SMovement_DMoving}
+			|}
+			
+			
+			SMovement_DMoving_triggers = {|
+				internal__.TID_SMovement_tid3,
+				internal__.TID_SMovement_tid2,
+				internal__.TID_SMovement_Wait_to_STurning,
+				internal__.TID_SMovement_tid5,
+				internal__.TID_SMovement_tid7,
+				internal__.TID_SMovement_tid4,
+				internal__.TID_SMovement_tid6,
+				internal__.TID_SMovement_SMoving_to_DMoving,
+				internal__.TID_SMovement_tid8_toWait
+			|}
+			
+			State_SMovement_DMoving(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = let
+				T_SMovement_tid2(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = endexec__.TID_SMovement_tid2 -> startexec ->  (exit.SID_SMovement_DMoving.SID_SMovement_DMoving -> SKIP;
+									SKIP;exited.SID_SMovement_DMoving.SID_SMovement_DMoving -> SKIP;
+									J_SMovement_j1(id__,
+											    const_SMovement_PI,
+											    const_SMovement_av))
+				J_SMovement_j1(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = (
+							(internal__!TID_SMovement_tid7 -> enter!SID_SMovement_DMoving!SID_SMovement_DMoving -> State_SMovement_DMoving_execute(id__,SID_SMovement_DMoving)
+							)[]
+							(internal__!TID_SMovement_tid8_toWait -> DoClockReset({clockReset.CLID_MBC});true&CALL__stop(
+										id__
+									);enter!SID_SMovement_DMoving!SID_SMovement_Waiting -> entered!SID_SMovement_DMoving!SID_SMovement_Waiting ->
+							State_SMovement_DMoving(id__,
+									    const_SMovement_PI,
+									    const_SMovement_av)
+							)
+							)
+				State_SMovement_DMoving_execute(id__,o____) = SKIP; 
+					entered!o____!SID_SMovement_DMoving ->
+					(SKIP; STOP /\ (
+						T_SMovement_tid2(id__,
+								    const_SMovement_PI,
+								    const_SMovement_av)
+						[]
+						internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_SMovement_tid3,TID_SMovement_tid2,TID_SMovement_Wait_to_STurning,TID_SMovement_tid5,TID_SMovement_tid7,TID_SMovement_tid4,TID_SMovement_tid6,TID_SMovement_SMoving_to_DMoving,TID_SMovement_tid8_toWait}) -> exit?y____:diff(SIDS,{SID_SMovement_DMoving})!SID_SMovement_DMoving -> (
+								SKIP;
+								exited!y____!SID_SMovement_DMoving -> SKIP);
+								State_SMovement_DMoving(id__,
+										    const_SMovement_PI,
+										    const_SMovement_av)
+					))
+			within
+				enter?x____:diff(SIDS,{SID_SMovement_DMoving})!SID_SMovement_DMoving -> (State_SMovement_DMoving_execute(id__,x____))
+			
+			CS_SMovement_STurning_sync = {|
+				enter.y____.x____, 
+				entered.y____.x____, 
+				exit.y____.x____, 
+				exited.y____.x____,
+				enter.x____.y____, 
+				entered.x____.y____, 
+				exit.x____.y____, 
+				exited.x____.y____ |
+				x____ <- {SID_SMovement_SMoving,SID_SMovement_DMoving,SID_SMovement_STurning,SID_SMovement_DTurning,SID_SMovement_Waiting},
+				y____ <- {SID_SMovement_STurning}
+			|}
+			
+			
+			SMovement_STurning_triggers = {|
+				internal__.TID_SMovement_tid3,
+				internal__.TID_SMovement_tid2,
+				internal__.TID_SMovement_Wait_to_STurning,
+				internal__.TID_SMovement_tid5,
+				internal__.TID_SMovement_tid7,
+				internal__.TID_SMovement_tid4,
+				internal__.TID_SMovement_tid6,
+				internal__.TID_SMovement_SMoving_to_DMoving,
+				internal__.TID_SMovement_tid8_toWait
+			|}
+			
+			State_SMovement_STurning(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = let
+				T_SMovement_tid3(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = internal__!TID_SMovement_tid3 ->  exit.SID_SMovement_STurning.SID_SMovement_STurning -> SKIP;
+									SKIP;exited.SID_SMovement_STurning.SID_SMovement_STurning -> SKIP;
+									enter!SID_SMovement_STurning!SID_SMovement_DTurning -> entered!SID_SMovement_STurning!SID_SMovement_DTurning ->
+									State_SMovement_STurning(id__,
+											    const_SMovement_PI,
+											    const_SMovement_av)
+				State_SMovement_STurning_execute(id__,o____) = true&CALL__move(
+							id__,
+							0,
+							1
+						); 
+					entered!o____!SID_SMovement_STurning ->
+					(SKIP; STOP /\ (
+						T_SMovement_tid3(id__,
+								    const_SMovement_PI,
+								    const_SMovement_av)
+						[]
+						internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_SMovement_tid3,TID_SMovement_tid2,TID_SMovement_Wait_to_STurning,TID_SMovement_tid5,TID_SMovement_tid7,TID_SMovement_tid4,TID_SMovement_tid6,TID_SMovement_SMoving_to_DMoving,TID_SMovement_tid8_toWait}) -> exit?y____:diff(SIDS,{SID_SMovement_STurning})!SID_SMovement_STurning -> (
+								SKIP;
+								exited!y____!SID_SMovement_STurning -> SKIP);
+								State_SMovement_STurning(id__,
+										    const_SMovement_PI,
+										    const_SMovement_av)
+					))
+			within
+				enter?x____:diff(SIDS,{SID_SMovement_STurning})!SID_SMovement_STurning -> (State_SMovement_STurning_execute(id__,x____))
+			
+			CS_SMovement_DTurning_sync = {|
+				enter.y____.x____, 
+				entered.y____.x____, 
+				exit.y____.x____, 
+				exited.y____.x____,
+				enter.x____.y____, 
+				entered.x____.y____, 
+				exit.x____.y____, 
+				exited.x____.y____ |
+				x____ <- {SID_SMovement_SMoving,SID_SMovement_DMoving,SID_SMovement_STurning,SID_SMovement_DTurning,SID_SMovement_Waiting},
+				y____ <- {SID_SMovement_DTurning}
+			|}
+			
+			
+			SMovement_DTurning_triggers = {|
+				internal__.TID_SMovement_tid3,
+				internal__.TID_SMovement_tid2,
+				internal__.TID_SMovement_Wait_to_STurning,
+				internal__.TID_SMovement_tid5,
+				internal__.TID_SMovement_tid7,
+				internal__.TID_SMovement_tid4,
+				internal__.TID_SMovement_tid6,
+				internal__.TID_SMovement_SMoving_to_DMoving,
+				internal__.TID_SMovement_tid8_toWait
+			|}
+			
+			State_SMovement_DTurning(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = let
+				T_SMovement_tid4(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = endexec__.TID_SMovement_tid4 -> startexec ->  (exit.SID_SMovement_DTurning.SID_SMovement_DTurning -> SKIP;
+									SKIP;exited.SID_SMovement_DTurning.SID_SMovement_DTurning -> SKIP;
+									J_SMovement_j0(id__,
+											    const_SMovement_PI,
+											    const_SMovement_av))
+				J_SMovement_j0(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = (
+							(internal__!TID_SMovement_tid6 -> enter!SID_SMovement_DTurning!SID_SMovement_DTurning -> State_SMovement_DTurning_execute(id__,SID_SMovement_DTurning)
+							)[]
+							(internal__!TID_SMovement_tid5 -> enter!SID_SMovement_DTurning!SID_SMovement_SMoving -> entered!SID_SMovement_DTurning!SID_SMovement_SMoving ->
+							State_SMovement_DTurning(id__,
+									    const_SMovement_PI,
+									    const_SMovement_av)
+							)
+							)
+				State_SMovement_DTurning_execute(id__,o____) = SKIP; 
+					entered!o____!SID_SMovement_DTurning ->
+					(SKIP; STOP /\ (
+						T_SMovement_tid4(id__,
+								    const_SMovement_PI,
+								    const_SMovement_av)
+						[]
+						internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_SMovement_tid3,TID_SMovement_tid2,TID_SMovement_Wait_to_STurning,TID_SMovement_tid5,TID_SMovement_tid7,TID_SMovement_tid4,TID_SMovement_tid6,TID_SMovement_SMoving_to_DMoving,TID_SMovement_tid8_toWait}) -> exit?y____:diff(SIDS,{SID_SMovement_DTurning})!SID_SMovement_DTurning -> (
+								SKIP;
+								exited!y____!SID_SMovement_DTurning -> SKIP);
+								State_SMovement_DTurning(id__,
+										    const_SMovement_PI,
+										    const_SMovement_av)
+					))
+			within
+				enter?x____:diff(SIDS,{SID_SMovement_DTurning})!SID_SMovement_DTurning -> (State_SMovement_DTurning_execute(id__,x____))
+			
+			CS_SMovement_Waiting_sync = {|
+				enter.y____.x____, 
+				entered.y____.x____, 
+				exit.y____.x____, 
+				exited.y____.x____,
+				enter.x____.y____, 
+				entered.x____.y____, 
+				exit.x____.y____, 
+				exited.x____.y____ |
+				x____ <- {SID_SMovement_SMoving,SID_SMovement_DMoving,SID_SMovement_STurning,SID_SMovement_DTurning,SID_SMovement_Waiting},
+				y____ <- {SID_SMovement_Waiting}
+			|}
+			
+			
+			SMovement_Waiting_triggers = {|
+				internal__.TID_SMovement_tid3,
+				internal__.TID_SMovement_Wait_to_STurning,
+				internal__.TID_SMovement_tid2,
+				internal__.TID_SMovement_tid5,
+				internal__.TID_SMovement_tid7,
+				internal__.TID_SMovement_tid4,
+				internal__.TID_SMovement_tid6,
+				internal__.TID_SMovement_SMoving_to_DMoving,
+				internal__.TID_SMovement_tid8_toWait
+			|}
+			
+			State_SMovement_Waiting(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = let
+				T_SMovement_Wait_to_STurning(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = endexec__.TID_SMovement_Wait_to_STurning -> startexec ->  (exit.SID_SMovement_Waiting.SID_SMovement_Waiting -> SKIP;
+									SKIP;exited.SID_SMovement_Waiting.SID_SMovement_Waiting -> SKIP;
+									enter!SID_SMovement_Waiting!SID_SMovement_STurning -> entered!SID_SMovement_Waiting!SID_SMovement_STurning ->
+									State_SMovement_Waiting(id__,
+											    const_SMovement_PI,
+											    const_SMovement_av)
+				)
+				State_SMovement_Waiting_execute(id__,o____) = SKIP; 
+					entered!o____!SID_SMovement_Waiting ->
+					(SKIP; STOP /\ (
+						T_SMovement_Wait_to_STurning(id__,
+								    const_SMovement_PI,
+								    const_SMovement_av)
+						[]
+						internal__?x____:diff(ITIDS,{NULLTRANSITION__,TID_SMovement_tid3,TID_SMovement_Wait_to_STurning,TID_SMovement_tid2,TID_SMovement_tid5,TID_SMovement_tid7,TID_SMovement_tid4,TID_SMovement_tid6,TID_SMovement_SMoving_to_DMoving,TID_SMovement_tid8_toWait}) -> exit?y____:diff(SIDS,{SID_SMovement_Waiting})!SID_SMovement_Waiting -> (
+								SKIP;
+								exited!y____!SID_SMovement_Waiting -> SKIP);
+								State_SMovement_Waiting(id__,
+										    const_SMovement_PI,
+										    const_SMovement_av)
+					))
+			within
+				enter?x____:diff(SIDS,{SID_SMovement_Waiting})!SID_SMovement_Waiting -> (State_SMovement_Waiting_execute(id__,x____))
+			
+			
+			I_SMovement_i0(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = let
+				T_SMovement_t0(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = internal__!TID_SMovement_t0 -> enter!SID_SMovement!SID_SMovement_SMoving -> entered!SID_SMovement!SID_SMovement_SMoving ->
+				SKIP
+			within
+				T_SMovement_t0(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+			
+			
+			State_SMovement_SMoving_R(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = 
+				State_SMovement_SMoving(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+					[|diff(int_int,SMovement_SMoving_triggers)|]
+				SKIP
+					 		
+			State_SMovement_DMoving_R(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = 
+				State_SMovement_DMoving(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+					[|diff(int_int,SMovement_DMoving_triggers)|]
+				SKIP
+					 		
+			State_SMovement_STurning_R(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = 
+				State_SMovement_STurning(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+					[|diff(int_int,SMovement_STurning_triggers)|]
+				SKIP
+					 		
+			State_SMovement_DTurning_R(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = 
+				State_SMovement_DTurning(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+					[|diff(int_int,SMovement_DTurning_triggers)|]
+				SKIP
+					 		
+			State_SMovement_Waiting_R(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = 
+				State_SMovement_Waiting(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+					[|diff(int_int,SMovement_Waiting_triggers)|]
+				SKIP
+					 		
+				
+			STM(id__,
+					    const_SMovement_PI,
+					    const_SMovement_av) = 
+				let
+					Ending = endexec -> (startexec -> Ending [] terminate -> SKIP)
+				within
+					startexec -> 
+						(
+							(
+								(
+								I_SMovement_i0(id__,
+										    const_SMovement_PI,
+										    const_SMovement_av)
+									[|
+										{|enter.x____.y____, entered.x____.y____, exit.x____.y____, exited.x____.y____ |
+											x____ <- diff(SIDS,{SID_SMovement_SMoving,SID_SMovement_DMoving,SID_SMovement_STurning,SID_SMovement_DTurning,SID_SMovement_Waiting}),
+											y____ <- {SID_SMovement_SMoving,SID_SMovement_DMoving,SID_SMovement_STurning,SID_SMovement_DTurning,SID_SMovement_Waiting}
+									|}|]
+								(
+									State_SMovement_SMoving_R(id__,
+											    const_SMovement_PI,
+											    const_SMovement_av)
+										[|inter(CS_SMovement_SMoving_sync,union(union(union(CS_SMovement_DMoving_sync,CS_SMovement_STurning_sync),CS_SMovement_DTurning_sync),CS_SMovement_Waiting_sync))|]
+									(
+										State_SMovement_DMoving_R(id__,
+												    const_SMovement_PI,
+												    const_SMovement_av)
+											[|inter(CS_SMovement_DMoving_sync,union(union(CS_SMovement_STurning_sync,CS_SMovement_DTurning_sync),CS_SMovement_Waiting_sync))|]
+										(
+											State_SMovement_STurning_R(id__,
+													    const_SMovement_PI,
+													    const_SMovement_av)
+												[|inter(CS_SMovement_STurning_sync,union(CS_SMovement_DTurning_sync,CS_SMovement_Waiting_sync))|]
+											(
+												State_SMovement_DTurning_R(id__,
+														    const_SMovement_PI,
+														    const_SMovement_av)
+													[|inter(CS_SMovement_DTurning_sync,CS_SMovement_Waiting_sync)|]
+												State_SMovement_Waiting_R(id__,
+														    const_SMovement_PI,
+														    const_SMovement_av)
+											)
+										)
+									)
+								)
+								) [|{|terminate|}|> SKIP
+							) \ {|terminate|}
+						) ; Ending
+			
+			-- optimized memory process
+			channel getV_obstacle: Bool
+			
+			-- individual memory processes
+			
+			Memory_WC_TID_SMovement_tid6_0(x__) = (
+				getWC.WC_TID_SMovement_tid6_0_ID!x__ -> Memory_WC_TID_SMovement_tid6_0(x__)
+				[]
+				setWC.WC_TID_SMovement_tid6_0_ID?x__ -> Memory_WC_TID_SMovement_tid6_0(x__)
+			)
+			
+			Memory_WC_TID_SMovement_tid5_0(x__) = (
+				getWC.WC_TID_SMovement_tid5_0_ID!x__ -> Memory_WC_TID_SMovement_tid5_0(x__)
+				[]
+				setWC.WC_TID_SMovement_tid5_0_ID?x__ -> Memory_WC_TID_SMovement_tid5_0(x__)
+			)
+			
+				Memory_obstacle(x__) = (
+					get_obstacle!x__ -> Memory_obstacle(x__)
+					[]
+					getV_obstacle!x__ -> Memory_obstacle(x__)
+					[]
+					registerRead.i_obstacle?x__ -> Memory_obstacle(x__)
+				)
+			
+			-- processes that read variables and offer transitions
+					
+			MemoryTransitions(id__,
+				 WC_TID_SMovement_tid6_0,
+				 WC_TID_SMovement_tid5_0,
+				 const_SMovement_PI,
+				 const_SMovement_av,
+				 obstacle) = (
+				startexec -> SKIP
+			
+				[]	internal__!TID_SMovement_t0 -> SKIP
+				[]
+				internal__!TID_SMovement_SMoving_to_DMoving -> SKIP
+				[]
+				endexec__!TID_SMovement_tid2 -> SKIP
+				[]
+				((not (member(obstacle,{true}))))&(internal__!TID_SMovement_tid7 -> SKIP)
+				[]
+				(member(obstacle,{true}))&(internal__!TID_SMovement_tid8_toWait -> SKIP)
+				[]
+				endexec__!TID_SMovement_Wait_to_STurning -> SKIP
+				[]
+				internal__!TID_SMovement_tid3 -> SKIP
+				[]
+				endexec__!TID_SMovement_tid4 -> SKIP
+				[]
+				(WC_TID_SMovement_tid6_0)&(internal__!TID_SMovement_tid6 -> SKIP)
+				[]
+				(WC_TID_SMovement_tid5_0)&(internal__!TID_SMovement_tid5 -> SKIP)
+			
+			 	[]
+			 	 	setWC.WC_TID_SMovement_tid6_0_ID?x__ -> SKIP
+			 	[]
+			 	setWC.WC_TID_SMovement_tid5_0_ID?x__ -> SKIP
+			 			 			 	
+			 	)
+			MemoryTransitions_SMovement(id__,
+				 const_SMovement_PI,
+				 const_SMovement_av) =
+				(
+				getWC.WC_TID_SMovement_tid6_0_ID?WC_TID_SMovement_tid6_0 ->	
+				getWC.WC_TID_SMovement_tid5_0_ID?WC_TID_SMovement_tid5_0 ->	
+				getV_obstacle?obstacle ->
+				 MemoryTransitions(id__,
+				 	 WC_TID_SMovement_tid6_0,
+				 	 WC_TID_SMovement_tid5_0,
+				 	 const_SMovement_PI,
+				 	 const_SMovement_av,
+				 	 obstacle);
+				 MemoryTransitions_SMovement(id__,
+				 	 const_SMovement_PI,
+				 	 const_SMovement_av)
+				)
+			
+			-- synchronisation, hiding and process sets 
+			MemoryVariablesProcesses_SMovement = Union(
+				{
+					{
+						Memory_WC_TID_SMovement_tid6_0(false),
+						Memory_WC_TID_SMovement_tid5_0(false),
+						Memory_obstacle(false)
+					}
+				}
+			)
+			
+			MemoryVariablesSyncSet = Union({
+				{|
+					setWC.WC_TID_SMovement_tid5_0_ID,
+					setWC.WC_TID_SMovement_tid6_0_ID,
+					setWC,
+					getWC.WC_TID_SMovement_tid6_0_ID,
+					getV_obstacle,
+					getWC.WC_TID_SMovement_tid5_0_ID
+				|}	
+			})
+			
+			MemoryVariablesHideSet = Union({
+				{|
+					getWC,
+					getV_obstacle
+				|}
+			})
+			
+			-- combined individual memory processes
+			MemoryVariables = ||| P : MemoryVariablesProcesses_SMovement @ P
+			
+			-- complete memory process
+			MemoryN(id__,
+				 const_SMovement_PI,
+				 const_SMovement_av) = 
+				(MemoryVariables 
+				 [| MemoryVariablesSyncSet |] 
+				 (	startexec -> wbisim(MemoryTransitions_SMovement(id__,
+				 	 const_SMovement_PI,
+				 	 const_SMovement_av))
+				 	[| union({|startexec|},union(Transitions,diff(EndExecs,{endexec}))) |]
+				 	-- The following process is an equivalent way to specify that between endexec
+				 	-- and startexec no events in the set Transitions are available, thus preventing
+				 	-- the state machine from performing transitions in between. Note that there is
+				 	-- no synchronisation on the single 'endexec' event itself, because this only
+				 	-- arises from an action, and the memory does not interfere with events in
+				 	-- actions.
+				 	(let
+				 		TransitionController = startexec -> (RUN(Transitions) 
+				 											 /\ ([] e : EndExecs @ e -> TransitionController))
+				 	within 
+				 		TransitionController)
+				 	
+				 	-- It isn't part of MemoryTransitions_ itself, because such a process would need
+				 	-- to permit updates to setWC events, emanating from processes controlling clocks.
+				 	-- Currently the MemoryTransitions_ process of a software operation called 
+				 	-- within this state machine is copied into this process. So to incorporate the
+				 	-- control below in such a process would require either:
+				 	--
+				 	-- (1) knowing about the clocks of every state machine that could call it, which
+				 	-- 	   is not compositional;
+				 	-- (2) not copying the process, but generating the transition choices explicitly.
+				 	--
+				 )
+				) \ MemoryVariablesHideSet
+			
+			-- optimised memory
+			-- Sets of named elements identified according to transition conditions:
+			-- {}
+			-- {WC_TID_SMovement_tid6_0}
+			-- {WC_TID_SMovement_tid5_0}
+			-- {obstacle}
+			-- Summary of all identified named elements:
+			-- {
+			-- WC_TID_SMovement_tid6_0
+			-- obstacle
+			-- WC_TID_SMovement_tid5_0
+			-- }
+			
+			-- Allocation plan:
+			-- 0:{}
+			--	=> {
+			--		TID_SMovement_t0,
+			--		TID_SMovement_Wait_to_STurning,
+			--		TID_SMovement_SMoving_to_DMoving,
+			--		TID_SMovement_tid3,
+			--		TID_SMovement_tid2,
+			--		TID_SMovement_tid4}
+			-- 1:{WC_TID_SMovement_tid6_0}
+			--	=> {
+			--		TID_SMovement_tid6}
+			-- 2:{WC_TID_SMovement_tid5_0}
+			--	=> {
+			--		TID_SMovement_tid5}
+			-- 3:{obstacle}
+			--	=> {
+			--		TID_SMovement_tid8_toWait,
+			--		TID_SMovement_tid7}
+			
+			-- Memory transition processes
+			MemoryTransitions_opt_0(id__) =
+			(
+				let
+					Update = Current(id__)
+					Current(id__)
+					 	   = 
+					 	   internal__!TID_SMovement_t0 -> Update
+					 	   []
+					 	   endexec__!TID_SMovement_Wait_to_STurning -> Update
+					 	   []
+					 	   internal__!TID_SMovement_SMoving_to_DMoving -> Update
+					 	   []
+					 	   internal__!TID_SMovement_tid3 -> Update
+					 	   []
+					 	   endexec__!TID_SMovement_tid2 -> Update
+					 	   []
+					 	   endexec__!TID_SMovement_tid4 -> Update
+					 	   	 []
+					 	   	 startexec -> Update
+				within
+					Update
+			)
+			MemoryTransitions_opt_1(id__) =
+			(
+				let
+					Update = 
+					getWC.WC_TID_SMovement_tid6_0_ID?WC_TID_SMovement_tid6_0 ->
+					Current(id__,
+						 WC_TID_SMovement_tid6_0)
+					Current(id__,
+						 WC_TID_SMovement_tid6_0)
+					 	   = 
+					 	   (WC_TID_SMovement_tid6_0)&(internal__!TID_SMovement_tid6 -> Update)
+					 	   	 []
+					 	   	 startexec -> Update
+					 	   	 
+					 	   	 []
+					 	   	 setWC.WC_TID_SMovement_tid6_0_ID?x__ -> Update
+				within
+					Update
+			)
+			MemoryTransitions_opt_2(id__) =
+			(
+				let
+					Update = 
+					getWC.WC_TID_SMovement_tid5_0_ID?WC_TID_SMovement_tid5_0 ->
+					Current(id__,
+						 WC_TID_SMovement_tid5_0)
+					Current(id__,
+						 WC_TID_SMovement_tid5_0)
+					 	   = 
+					 	   (WC_TID_SMovement_tid5_0)&(internal__!TID_SMovement_tid5 -> Update)
+					 	   	 []
+					 	   	 startexec -> Update
+					 	   	 
+					 	   	 []
+					 	   	 setWC.WC_TID_SMovement_tid5_0_ID?x__ -> Update
+				within
+					Update
+			)
+			MemoryTransitions_opt_3(id__) =
+			(
+				let
+					Update = 
+					get_obstacle?obstacle ->
+					Current(id__,
+						 obstacle)
+					Current(id__,
+						 obstacle)
+					 	   = 
+					 	   (member(obstacle,{true}))&(internal__!TID_SMovement_tid8_toWait -> Update)
+					 	   []
+					 	   ((not (member(obstacle,{true}))))&(internal__!TID_SMovement_tid7 -> Update)
+					 	   	 []
+					 	   	 startexec -> Update
+				within
+					Update
+			)
+			
+			-- Memory cell processes
+			Memory_opt_WC_TID_SMovement_tid6_0(x__) = ( 
+				getWC.WC_TID_SMovement_tid6_0_ID!x__ -> Memory_opt_WC_TID_SMovement_tid6_0(x__)
+				[]
+				setWC.WC_TID_SMovement_tid6_0_ID?x__ -> Memory_opt_WC_TID_SMovement_tid6_0(x__)
+			)
+			Memory_opt_obstacle(x__) = (
+				get_obstacle!x__ -> Memory_opt_obstacle(x__)
+				[]
+				registerRead.i_obstacle?x__ -> Memory_opt_obstacle(x__)
+			)
+			Memory_opt_WC_TID_SMovement_tid5_0(x__) = ( 
+				getWC.WC_TID_SMovement_tid5_0_ID!x__ -> Memory_opt_WC_TID_SMovement_tid5_0(x__)
+				[]
+				setWC.WC_TID_SMovement_tid5_0_ID?x__ -> Memory_opt_WC_TID_SMovement_tid5_0(x__)
+			)
+			
+			-- Composition of memory, StateMachine and Memory transition processes
+			
+			MemorySTM_opt(id__,cycle_SMovement_SMovement,
+					    const_SMovement_PI,
+					    const_SMovement_av) =
+				dbisim(
+				  sbisim(Memory_opt_WC_TID_SMovement_tid6_0(false)
+				      	[| {|setWC.WC_TID_SMovement_tid6_0_ID,getWC.WC_TID_SMovement_tid6_0_ID|} |] 
+				      	sbisim(	
+				      	  dbisim(
+				      	    sbisim(dbisim(
+				      	      sbisim(Memory_opt_WC_TID_SMovement_tid5_0(false)
+				      	          	[| {|setWC.WC_TID_SMovement_tid5_0_ID,getWC.WC_TID_SMovement_tid5_0_ID|} |] 
+				      	          	sbisim(	
+				      	          	  dbisim(
+				      	          	    sbisim(dbisim(
+				      	          	      sbisim(Memory_opt_obstacle(false)
+				      	          	          	[| {|get_obstacle,registerRead.i_obstacle|} |] 
+				      	          	          	sbisim(	
+				      	          	          	  dbisim(
+				      	          	          	    sbisim(sbisim(	
+				      	          	          	      dbisim(
+				      	          	          	        sbisim(STM_core(id__,cycle_SMovement_SMovement,
+				      	          	          	        		    const_SMovement_PI,
+				      	          	          	        		    const_SMovement_av)
+				      	          	          	          	  [| union({|startexec|},{|internal__.TID_SMovement_tid3,endexec__.TID_SMovement_tid2,endexec__.TID_SMovement_Wait_to_STurning,endexec__.TID_SMovement_tid4,internal__.TID_SMovement_SMoving_to_DMoving,internal__.TID_SMovement_t0|}) |]
+				      	          	          	          	  MemoryTransitions_opt_0(id__)
+				      	          	          	          	  )\{|internal__.TID_SMovement_tid3,internal__.TID_SMovement_SMoving_to_DMoving,internal__.TID_SMovement_t0|})
+				      	          	          	          	  [[ endexec__.TID_SMovement_Wait_to_STurning <- endexec ]]
+				      	          	          	          	  [[ endexec__.TID_SMovement_tid2 <- endexec ]]
+				      	          	          	          	  [[ endexec__.TID_SMovement_tid4 <- endexec ]]
+				      	          	          	          )
+				      	          	          	      	  [| union({|startexec|},{|internal__.TID_SMovement_tid7,internal__.TID_SMovement_tid8_toWait|}) |]
+				      	          	          	      	  MemoryTransitions_opt_3(id__)
+				      	          	          	      	  )\{|internal__.TID_SMovement_tid7,internal__.TID_SMovement_tid8_toWait|})
+				      	          	          	      )
+				      	          	          	) \ {|get_obstacle|}
+				      	          	          )
+				      	          	      	  [| union({|startexec|},{|internal__.TID_SMovement_tid5,setWC.WC_TID_SMovement_tid5_0_ID|}) |]
+				      	          	      	  MemoryTransitions_opt_2(id__)
+				      	          	      	  )\{|internal__.TID_SMovement_tid5|})
+				      	          	      )
+				      	          	) \ {|setWC.WC_TID_SMovement_tid5_0_ID,getWC.WC_TID_SMovement_tid5_0_ID|}
+				      	          )
+				      	      	  [| union({|startexec|},{|internal__.TID_SMovement_tid6,setWC.WC_TID_SMovement_tid6_0_ID|}) |]
+				      	      	  MemoryTransitions_opt_1(id__)
+				      	      	  )\{|internal__.TID_SMovement_tid6|})
+				      	      )
+				      	) \ {|setWC.WC_TID_SMovement_tid6_0_ID,getWC.WC_TID_SMovement_tid6_0_ID|}
+				      )
+			
+			-- main process
+			MachineMemorySyncSet = Union({
+				union(
+					union(
+						{||},
+						union({|get_obstacle|},
+							  {||}
+							 )
+					)
+						
+					,
+					{|internal__.TID_SMovement_t0,
+					internal__.TID_SMovement_SMoving_to_DMoving,
+					endexec__.TID_SMovement_tid2,
+					internal__.TID_SMovement_tid7,
+					internal__.TID_SMovement_tid8_toWait,
+					endexec__.TID_SMovement_Wait_to_STurning,
+					internal__.TID_SMovement_tid3,
+					endexec__.TID_SMovement_tid4,
+					internal__.TID_SMovement_tid6,
+					internal__.TID_SMovement_tid5|}
+				),
+				{|deadline|},
+				WCresets
+			})
+			
+			MachineMemoryHidingSet = Union({
+				union(
+					{||},
+					union({|get_obstacle|},
+						  {||})
+				)
+				,
+				{|deadline|}
+			})
+			
+			MachineInternalEvents = {|
+				internal__
+			|}
+		
+			STM_core(id__,cycle_SMovement_SMovement,
+					    const_SMovement_PI,
+					    const_SMovement_av) =
+				sbisim(	
+					dbisim(
+					(wbisim(STM(id__,
+							    const_SMovement_PI,
+							    const_SMovement_av))
+					[| union(WCsync,WCresets) |]
+					Clocks(id__,
+							    const_SMovement_PI,
+							    const_SMovement_av))\WCresets
+					)
+					[| union({|startexec|},union(Transitions,EndExecs)) |]
+					(let
+						TransitionController = startexec -> (RUN(Transitions) 
+							 /\ ([] e : EndExecs @ e -> TransitionController))
+					within 
+					TransitionController))
+				[| {| endexec,endexec__
+					,registerWrite,startexec,terminate,tock |} |]
+				cycle(cycle_SMovement_SMovement)
+			
+			
+			-- optimized main process
+			AUX_opt(id__,cycle_SMovement_SMovement,
+					    const_SMovement_PI,
+					    const_SMovement_av) =
+				prioritise(
+				  dbisim(
+					(MemorySTM_opt(id__,cycle_SMovement_SMovement,
+							    const_SMovement_PI,
+							    const_SMovement_av))
+					\union(union(MachineMemoryHidingSet,MachineInternalEvents),{|startexec|}))
+					[|{|terminate|}|>SKIP
+				,<{},{tock}>)
+			
+			-- main process
+			AUX(id__,cycle_SMovement_SMovement,
+					    const_SMovement_PI,
+					    const_SMovement_av) =
+				prioritise(
+					(
+				 		(
+				 			cycle(cycle_SMovement_SMovement)
+				 			[| {| endexec,endexec__
+				 					,registerRead
+				 					,registerWrite,startexec,tock |} |]
+				 			(MemoryN(id__,
+				 					    const_SMovement_PI,
+				 					    const_SMovement_av) 
+				 	 		[| union(WCsets,WCsync) |] 
+				 	 		Clocks(id__,
+				 	 				    const_SMovement_PI,
+				 	 				    const_SMovement_av)
+				 			)\WCsets
+				 		)
+				 		[| union(MachineMemorySyncSet,{| startexec,endexec,endexec__
+				 										 ,terminate |}) |]
+				 		wbisim(STM(id__,
+				 				    const_SMovement_PI,
+				 				    const_SMovement_av))
+					)[[ endexec__.x____ <- endexec | x____ <- TIDS ]]
+				\union(union(MachineMemoryHidingSet,MachineInternalEvents),{|startexec|})
+				[|{|terminate|}|>SKIP
+				,<{},{tock}>)
+			
+			internal_(id__,cycle_SMovement_SMovement,
+					    const_SMovement_PI,
+					    const_SMovement_av) =
+				prioritise(
+							(
+						 		(
+						 			cycle(cycle_SMovement_SMovement)
+						 			[| {| endexec,endexec__
+						 					,registerRead
+						 					,registerWrite,startexec,terminate,tock |} |]
+						 			(MemoryN(id__,
+						 					    const_SMovement_PI,
+						 					    const_SMovement_av) 
+						 	 		[| union(WCsets,WCsync) |] 
+						 	 		Clocks(id__,
+						 	 				    const_SMovement_PI,
+						 	 				    const_SMovement_av)
+						 			)\WCsets
+						 		)
+						 		[| union(MachineMemorySyncSet,{| startexec,endexec,endexec__
+						 										  |}) |]
+						 		wbisim(STM(id__,
+						 				    const_SMovement_PI,
+						 				    const_SMovement_av))
+							)[[ endexec__.x____ <- endexec | x____ <- TIDS ]]
+						\union(MachineMemoryHidingSet,{|startexec|})
+						[|{|terminate|}|>SKIP
+						,<Union({internal_events, ClockResets, {|internal__,terminate|}}),{tock}>)
+			
+			
+		
+			datatype SOutputEvents = SOutput_stop
+				| SOutput_move
+			
+			cycle(cycle_SMovement_SMovement) =
+				let
+					project(o_stop) = SOutput_stop
+					project(o_move.x__) = SOutput_move
+			
+					Cycle =
+						(registerRead.i_obstacle?x__ -> SKIP);
+						startexec -> CollectOutputs(SOutputEvents);
+						(wait(cycle_SMovement_SMovement) [] terminate -> SKIP);
+						Cycle
+					
+					CollectOutputs(sout) =
+						(registerWrite?outp:{ outp | outc <- inter(sout,SOutputEvents), outp <- RegisterDataOutput,project(outp) == outc} -> CollectOutputs(diff(sout,{project(outp)}))
+						[]
+						endexec -> SKIP
+						[]
+						endexec__?x__ -> SKIP
+			)
+				within
+					Cycle
+					
+			cycle_opt(cycle_SMovement_SMovement) =
+				let
+					project(o_stop) = SOutput_stop
+					project(o_move.x__) = SOutput_move
+			
+					Cycle =
+						(registerRead.i_obstacle?x__ -> SKIP);
+						startexec -> CollectOutputs(SOutputEvents);
+						(wait(cycle_SMovement_SMovement) [] terminate -> SKIP);
+						Cycle
+					
+					CollectOutputs(sout) =
+						(registerWrite?outp:{ outp | outc <- inter(sout,SOutputEvents), outp <- RegisterDataOutput,project(outp) == outc} -> CollectOutputs(diff(sout,{project(outp)}))
+						[]
+						endexec -> SKIP
+						)
+				within
+					Cycle
+		
+			Timed(OneStep) {
+				-- declare clocks
+				datatype ClockSet = dummyC | CLID_MBC
+				channel clockReset : ClockSet
+		
+				
+				-- declare trigger deadlines channel
+				channel deadline : TIDS.Signal
+		
+				-- compile clocks process
+				
+				-- set of strings that uniquely identify the waiting conditions, each of which is 
+				-- used to synchronise with the Memory process to set the correspoding variable in
+				-- the memory process.
+				datatype setWC_identifierSet = dummyWC
+				                             | WC_TID_SMovement_tid5_0_ID
+				                             | WC_TID_SMovement_tid6_0_ID
+				
+				-- declaring getWC and setWC channel for updating memory variables related to clocks
+				channel setWC : setWC_identifierSet.Bool
+				channel getWC : setWC_identifierSet.Bool
+				
+				-- Set of pairs capturing waiting condition processes and their alphabet.
+				-- It includes the corresponding set of the defined operations.
+				WCset(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = Union({
+					{
+					({|clockReset.CLID_MBC,internal__.TID_SMovement_tid6,setWC.WC_TID_SMovement_tid6_0_ID | x <- SIDS|},P_WC_TID_SMovement_tid6_0(id__,
+							    const_SMovement_PI,
+							    const_SMovement_av)),
+					
+					({|clockReset.CLID_MBC,internal__.TID_SMovement_tid5,setWC.WC_TID_SMovement_tid5_0_ID | x <- SIDS|},P_WC_TID_SMovement_tid5_0(id__,
+							    const_SMovement_PI,
+							    const_SMovement_av))
+					}
+					})
+				
+				-- Auxiliary function to rename the channel set for required clocks.
+				
+				-- Set of transition events for which synchronisation is required between Clocks and the Memory process.
+				-- It includes the corresponding set of the defined operations.
+				WCsync = Union({
+					{|internal__.TID_SMovement_tid5,
+					internal__.TID_SMovement_tid6|}
+					})
+				-- Set of all clock resets, including 'clockReset.C' events and 'entered.x.y' events where x is drawn
+				-- from the set of all state machine state identifiers. It includes the corresponding set of the defined operations.
+				WCresets = Union({
+					{|clockReset.CLID_MBC | x <- SIDS |}
+					})
+				-- Set of all waiting condition set events. It includes the corresponding set of the defined operations.
+				WCsets = Union({
+					{|setWC|}
+					})
+				
+				P_WC_TID_SMovement_tid6_0_reset(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = clockReset.CLID_MBC -> setWC.WC_TID_SMovement_tid6_0_ID.true -> P_WC_TID_SMovement_tid6_0_monitor(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+				
+				P_WC_TID_SMovement_tid6_0_monitor(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = (TimedInterrupt(RUN({|tock,internal__.TID_SMovement_tid6|}),Div(const_SMovement_PI, const_SMovement_av, core_real)) ; setWC.WC_TID_SMovement_tid6_0_ID.false -> RUN({|tock,internal__.TID_SMovement_tid6|})) /\ P_WC_TID_SMovement_tid6_0_reset(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+				
+				P_WC_TID_SMovement_tid5_0_reset(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = clockReset.CLID_MBC -> setWC.WC_TID_SMovement_tid5_0_ID.false -> P_WC_TID_SMovement_tid5_0_monitor(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+				
+				P_WC_TID_SMovement_tid5_0_monitor(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = (TimedInterrupt(RUN({|tock,internal__.TID_SMovement_tid5|}),Div(const_SMovement_PI, const_SMovement_av, core_real)) ; setWC.WC_TID_SMovement_tid5_0_ID.true -> RUN({|tock,internal__.TID_SMovement_tid5|})) /\ P_WC_TID_SMovement_tid5_0_reset(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+				
+				P_WC_TID_SMovement_tid6_0(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = setWC.WC_TID_SMovement_tid6_0_ID.true -> P_WC_TID_SMovement_tid6_0_monitor(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+				
+				P_WC_TID_SMovement_tid5_0(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = setWC.WC_TID_SMovement_tid5_0_ID.false -> P_WC_TID_SMovement_tid5_0_monitor(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+				
+				-- Clocks process
+				Clocks(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) = || (alpha, P) : WCset(id__,
+						    const_SMovement_PI,
+						    const_SMovement_av) @ [alpha] wbisim(P)
+		
+				-- collects all clockResets including those of operations
+				ClockResets = Union({
+					{|clockReset|}
+							})
+		
+				-- With no internal events visible
+				Dunopt__(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) = timed_priority(AUX(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) \ union(internal_events,ClockResets))
+		
+				D__(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) = timed_priority(AUX_opt(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) \ union(internal_events,ClockResets))
+		
+				O__(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) = D__(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+		
+				-- With enter/entered/exit/exited events visible
+				FVS__(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) = timed_priority(AUX(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) \ ClockResets)
+		
+				-- With enterV/enteredV/exitV/exitedV events visible
+				VS__(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) = ShowV(timed_priority(AUX(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) \ ClockResets))
+		
+				-- With clock resets visible
+				FVS_C__(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av) = AUX(id__,cycle_SMovement_SMovement,
+						    const_SMovement_PI,
+						    const_SMovement_av)
+				}
+		endmodule
+		
+		--VS
+		
+		VS__(id__,cycle_Movement_Movement,
+				    const_Movement_stm_ref0_PI,
+				    const_Movement_stm_ref0_av) =
+			(
+				(
+					(
+						(
+						wbisim(cycleController(id__,cycle_Movement_Movement,
+								    const_Movement_stm_ref0_PI,
+								    const_Movement_stm_ref0_av))
+					 	 [| Union({{||},
+					 	 		  {||},
+					 	 		  {||},
+					 	 		  {||}}) |]
+					 	memoryComp(id__,
+					 			    const_Movement_stm_ref0_PI,
+					 			    const_Movement_stm_ref0_av)
+					 	)\{||}
+						[| {| 	terminate,tock,
+								stm_ref0::endexec,stm_ref0::registerRead,stm_ref0::registerWrite|} |]
+						-- (Rule 9) composeMachines(...) : CSPProcess
+					 	((let
+					 		cycle_SMovement_SMovement = cycle_Movement_Movement
+					 	within
+					 		(stm_ref0::VS__(id__,cycle_SMovement_SMovement,
+					 				    const_SMovement_PI,
+					 				    const_SMovement_av)
+					 		\{| |})
+					 		[[stm_ref0::terminate <- terminate]]
+					 	)
+					 	)
+					) \ {|	stm_ref0::endexec,stm_ref0::registerRead,stm_ref0::registerWrite |}
+				) [| {terminate} |> SKIP
+			)
+		
+		-- (Rule 7) [[ c : Controller ]]_C : CSPProcess
+		D__(id__,cycle_Movement_Movement,
+				    const_Movement_stm_ref0_PI,
+				    const_Movement_stm_ref0_av) =
+			(
+				(
+					(
+						(
+						wbisim(cycleController(id__,cycle_Movement_Movement,
+								    const_Movement_stm_ref0_PI,
+								    const_Movement_stm_ref0_av))
+					 	 [| Union({{||},
+					 	 		  {||},
+					 	 		  {||},
+					 	 		  {||}}) |]
+					 	memoryComp(id__,
+					 			    const_Movement_stm_ref0_PI,
+					 			    const_Movement_stm_ref0_av)
+					 	)\{||}
+						[| {| 	terminate,tock,
+								stm_ref0::endexec,stm_ref0::registerRead,stm_ref0::registerWrite|} |]
+						-- (Rule 9) composeMachines(...) : CSPProcess
+					 	((let
+					 		cycle_SMovement_SMovement = cycle_Movement_Movement
+					 	within
+					 		(stm_ref0::D__(id__,cycle_SMovement_SMovement,
+					 				    const_SMovement_PI,
+					 				    const_SMovement_av)
+					 		\{| |})
+					 		[[stm_ref0::terminate <- terminate]]
+					 	)
+					 	)
+					) \ {|	stm_ref0::endexec,stm_ref0::registerRead,stm_ref0::registerWrite |}
+				) [| {terminate} |> SKIP
+			)
+	
+		O__(id__,cycle_Movement_Movement,
+				    const_Movement_stm_ref0_PI,
+				    const_Movement_stm_ref0_av) = D__(id__,cycle_Movement_Movement,
+				    const_Movement_stm_ref0_PI,
+				    const_Movement_stm_ref0_av)
+	
+	endmodule
+	
+	-- declaring inputs and outputs of the module
+	
+	-- (Rule 3) cycleModule(...) : CSPProcess
+	
+	datatype COutputEvents = COutput_stop
+		| COutput_move
+	
+	EVarsEvents = {}
+	
+	
+	cycleModule(id__,cycle_CFootBot_CFootBot) =
+	let 
+					
+		project_ctrl_ref0(ctrl_ref0::o_stop) = COutput_stop
+		project_ctrl_ref0(ctrl_ref0::o_move.x__) = COutput_move
+		
+								
+		connected_ctrl_ref0(ctrl_ref0::o_stop) = true
+		connected_ctrl_ref0(ctrl_ref0::o_move.x__) = true
+		connected_ctrl_ref0(_) = false
+	
+		lift_ctrl_ref0(ctrl_ref0::o_stop) = o_stop
+		lift_ctrl_ref0(ctrl_ref0::o_move.x__) = o_move.x__
+	
+		CycleModule =
+			-- read inputs from the platform and pass to controllers
+			(
+			((registerRead.i_obstacle?x__ ->
+				ctrl_ref0::registerRead.ctrl_ref0::i_obstacle!x__ -> SKIP))
+					);
+			-- synchronize on events related to evars
+			-- collect outputs, and monitor termination of the cycle, by all controllers
+			(CollectOutputs(COutputEvents) [| {endexec} |] Monitor);
+			-- wait for the cycleDef period
+			(wait(cycle_CFootBot_CFootBot) [] terminate -> SKIP);
+			-- recurse
+			CycleModule
+								
+		CollectOutputs(sout) =
+			(
+			ctrl_ref0::registerWrite?outp:{ outp | outc <- diff(sout,EVarsEvents), outp <- ctrl_ref0::RegisterDataOutput, connected_ctrl_ref0(outp), project_ctrl_ref0(outp) == outc}
+			 	-> registerWrite!lift_ctrl_ref0(outp)
+			 		-> CollectOutputs(diff(sout,{project_ctrl_ref0(outp)}))
+			[]
+			endexec -> SKIP
+			)
+			
+		Monitor = 
+			(	 (ctrl_ref0::endexec -> SKIP)); endexec -> SKIP
+		
+	within
+		CycleModule 
+	
+	-- (Rule 5) memoryComp(...) : CSPProcess
+	memoryComp(id__) = (
+		STOP)
+	
+	
+	VS__(id__,cycle_CFootBot_CFootBot,
+			    const_Movement_stm_ref0_PI,
+			    const_Movement_stm_ref0_av) =
+	(
+		(
+			(
+				(
+					wbisim(cycleModule(id__,cycle_CFootBot_CFootBot))
+	 	 			[| Union({{||},
+	 	 					  {||},
+	 	 					  {||},
+	 	 					  {||}}) |]
+	 	 		 	memoryComp(id__)
+	 			)\{||}
+				[| {| 	terminate,tock,
+						ctrl_ref0::endexec,ctrl_ref0::registerRead,ctrl_ref0::registerWrite	|} |]
+				-- (Rule 6) composeControllers(...) : CSPProcess
+	 			((let
+	 				cycle_Movement_Movement = cycle_CFootBot_CFootBot
+	 			within
+	 				(ctrl_ref0::VS__(id__,cycle_Movement_Movement,
+	 						    const_Movement_stm_ref0_PI,
+	 						    const_Movement_stm_ref0_av)
+	 				\{| |})
+	 				[[ctrl_ref0::terminate <- terminate]]
+	 			)
+	 			)
+			) \ {|	endexec,
+					ctrl_ref0::endexec,ctrl_ref0::registerRead,ctrl_ref0::registerWrite |}
+		) [| {terminate} |> SKIP
+	) \ {terminate}
+	
+	
+	-- (Rule 1) [[ M : SimModule ]]_M : CSPProcess
+	D__(id__,cycle_CFootBot_CFootBot,
+			    const_Movement_stm_ref0_PI,
+			    const_Movement_stm_ref0_av) =
+	(
+		(
+			(
+				(
+					wbisim(cycleModule(id__,cycle_CFootBot_CFootBot))
+	 	 			[| Union({{||},
+	 	 					  {||},
+	 	 					  {||},
+	 	 					  {||}}) |]
+	 	 		 	memoryComp(id__)
+	 			)\{||}
+				[| {| 	terminate,tock,
+						ctrl_ref0::endexec,ctrl_ref0::registerRead,ctrl_ref0::registerWrite	|} |]
+				-- (Rule 6) composeControllers(...) : CSPProcess
+	 			((let
+	 				cycle_Movement_Movement = cycle_CFootBot_CFootBot
+	 			within
+	 				(ctrl_ref0::D__(id__,cycle_Movement_Movement,
+	 						    const_Movement_stm_ref0_PI,
+	 						    const_Movement_stm_ref0_av)
+	 				\{| |})
+	 				[[ctrl_ref0::terminate <- terminate]]
+	 			)
+	 			)
+			) \ {|	endexec,
+					ctrl_ref0::endexec,ctrl_ref0::registerRead,ctrl_ref0::registerWrite |}
+		) [| {terminate} |> SKIP
+	) \ {terminate}
+	
+	O__(id__,cycle_CFootBot_CFootBot,
+			    const_Movement_stm_ref0_PI,
+			    const_Movement_stm_ref0_av) = D__(id__,cycle_CFootBot_CFootBot,
+			    const_Movement_stm_ref0_PI,
+			    const_Movement_stm_ref0_av)
+	
+endmodule

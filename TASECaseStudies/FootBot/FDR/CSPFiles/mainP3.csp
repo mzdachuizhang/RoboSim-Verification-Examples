@@ -1,0 +1,15 @@
+transparent diamond
+transparent sbisim
+
+
+include "FootBot.csp"
+
+
+--------------------------------------------------------------------------------------------------------------
+--State SMove is reachable. 
+--------------------------------------------------------------------------------------------------------------
+
+assert not STOP [T= CFootBot::VS__(1,1,360,180) |\ {|CFootBot::ctrl_ref0::stm_ref0::enteredV.CFootBot::ctrl_ref0::stm_ref0::SID_SMovement_SMoving|}
+                
+        
+

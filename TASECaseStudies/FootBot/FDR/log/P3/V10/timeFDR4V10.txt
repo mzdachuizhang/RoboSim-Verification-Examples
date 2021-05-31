@@ -1,0 +1,6 @@
+<unknown location>:
+    Could not open the file '/home/madiel/Dropbox/UFPE/RS2UPPAAL/2021/TASEcaseStudies3005/FootBot/FDR/CSPFiles/AgSwR.csp'
+
+real	0m0,022s
+user	0m0,015s
+sys	0m0,010s

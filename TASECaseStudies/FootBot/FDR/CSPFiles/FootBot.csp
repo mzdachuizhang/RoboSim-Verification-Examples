@@ -1,0 +1,10 @@
+include "defs/timed_definitions.csp"
+include "defs/robochart_defs.csp"
+include "defs/core_defs.csp"
+include "defs/CFootBot.csp"
+include "defs/file_Sim_FW_defs.csp"
+include "instantiations.csp"
+transparent wbisim
+transparent chase
+		
+channel r__

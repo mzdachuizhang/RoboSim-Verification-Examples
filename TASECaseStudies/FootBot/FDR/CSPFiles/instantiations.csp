@@ -1,0 +1,87 @@
+-- generate --
+
+-- MODULE CONSTANTS
+
+-- CONTROLLER CONSTANTS
+
+-- STATEMACHINE CONSTANTS
+
+-- generate nat
+nametype core_nat = {calc_type_min(Union(
+			{{0},{0},{1},{1}}))..calc_type_max(Union({{0},{0},{1},{1}}))} --{0..2}
+
+-- generate const_SMovement_av
+const_SMovement_av = 180
+
+-- generate cycle_Movement_Movement
+cycle_Movement_Movement = 1
+
+-- generate string
+nametype core_string = LSeq(Char,2)
+
+-- generate real
+nametype core_real = {calc_type_min(Union(
+			{{ -2..2},{ -2..2},{ -2..2},{ -2..2},{0},{0},{1},{1}}))..calc_type_max(Union({{ -2..2},{ -2..2},{ -2..2},{ -2..2},{0},{0},{1},{1}}))} -- { -2..2}
+
+-- BASIC FUNCTIONS
+
+-- generate const_SMovement_lv
+const_SMovement_lv = 0
+
+-- generate int
+nametype core_int = {calc_type_min(Union(
+			{{0},{0},{1},{1}}))..calc_type_max(Union({{0},{0},{1},{1}}))} --{ -2..2}
+
+-- generate const_Movement_stm_ref0_lv
+const_Movement_stm_ref0_lv = 0
+
+-- generate -- OPERATION BOUNDS
+
+-- MODULE CONSTANTS
+
+-- CONTROLLER CONSTANTS
+
+-- STATEMACHINE CONSTANTS
+
+-- generate Div
+Div(e1,e2,T) = if member(e1/e2,T) then e1/e2 else e1
+
+-- generate Neg
+Neg(e1,T) = if member(-e1,T) then -e1 else e1
+
+-- CYCLE DEFINITIONS
+
+-- generate boolean
+nametype core_boolean = Bool
+
+-- generate Mult
+Mult(e1,e2,T) = if member(e1*e2,T) then e1*e2 else e1
+
+-- generate Modulus
+Modulus(e1,e2,T) = if member(e1%e2,T) then e1%e2 else e1
+
+-- generate cycle_CFootBot_CFootBot
+cycle_CFootBot_CFootBot = 1
+
+-- generate const_Movement_stm_ref0_av
+const_Movement_stm_ref0_av = 180
+
+-- OPERATION CONSTANTS
+
+-- BASIC TYPES
+
+-- generate Plus
+Plus(e1,e2,T) = if member(e1+e2,T) then e1+e2 else e1
+
+-- generate const_SMovement_PI
+const_SMovement_PI = 360
+
+-- generate cycle_SMovement_SMovement
+cycle_SMovement_SMovement = 1
+
+-- generate Minus
+Minus(e1,e2,T) = if member(e1-e2,T) then e1-e2 else e1
+
+-- generate const_Movement_stm_ref0_PI
+const_Movement_stm_ref0_PI = 360
+

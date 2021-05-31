@@ -1,0 +1,942 @@
+Welcome to FDR Version 4.2.7 copyright 2016 Oxford University Innovation Ltd. All Rights Reserved.
+License: Academic license for non-commercial use only
+        Found 955 processes including 113 names
+        Visited 842 processes and discovered 70 recursive names
+        Constructed 0 states with 1 transitions
+        Constructed 0 states with 27 transitions
+        Constructed 4 states with 3 transitions
+        Constructed 58 states with 109 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 5 states with 5 transitions
+        Constructed 0 states with 0 transitions
+        Constructed 1 states with 0 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 1 of 17 machines
+        Constructed 0 states with 27 transitions
+        Constructed 3 states with 3 transitions
+        Constructed 2 of 18 machines
+        Constructed 58 states with 109 transitions
+        Constructed 3 of 18 machines
+        Constructed 4 of 18 machines
+        Reduced 4 states to 4 equivalence classes
+        Reduced 3 states to 3 equivalence classes
+        Constructed 5 of 18 machines
+        Constructed 32 equivalence classes
+        Constructed 58 equivalence classes
+        Reduced 1 states to 1 equivalence classes
+        Constructed 6 of 19 machines
+        Reduced 58 states to 58 equivalence classes
+        Constructed 7 of 19 machines
+        Constructed 0 states with 1 transitions
+        Constructed 8 of 19 machines
+        Constructed 4 states with 3 transitions
+        Reduced 5 states to 5 equivalence classes
+        Constructed 9 of 19 machines
+        Constructed 10 of 19 machines
+        Constructed 11 of 19 machines
+        Constructed 12 of 19 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 13 of 128 machines
+        Constructed 0 states with 2 transitions
+        Constructed 5 states with 5 transitions
+        Constructed 0 states with 1 transitions
+        Constructed 14 of 148 machines
+        Constructed 0 states with 1 transitions
+        Constructed 2 states with 1 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 0 states with 5 transitions
+        Constructed 0 states with 5 transitions
+        Constructed 17 states with 22 transitions
+        Constructed 0 states with 5 transitions
+        Constructed 19 states with 25 transitions
+        Constructed 17 states with 22 transitions
+        Constructed 0 states with 5 transitions
+        Constructed 15 of 148 machines
+        Constructed 4 states with 4 transitions
+        Constructed 16 of 148 machines
+        Constructed 0 states with 2 transitions
+        Constructed 0 states with 1 transitions
+        Constructed 14 states with 19 transitions
+        Constructed 3 states with 3 transitions
+        Constructed 32 equivalence classes
+        Constructed 0 states with 5 transitions
+        Constructed 58 equivalence classes
+        Constructed 5 states with 4 transitions
+        Constructed 17 states with 23 transitions
+        Constructed 17 of 149 machines
+        Reduced 58 states to 58 equivalence classes
+        Constructed 0 states with 1 transitions
+        Constructed 18 of 149 machines
+        Constructed 0 states with 2 transitions
+        Constructed 19 of 149 machines
+        Constructed 3 states with 47 transitions
+        Constructed 20 of 149 machines
+        Constructed 0 states with 2 transitions
+        Constructed 21 of 150 machines
+        Constructed 3 states with 6 transitions
+        Constructed 0 states with 7 transitions
+        Constructed 0 states with 3 transitions
+        Constructed 1 states with 7 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 22 of 150 machines
+        Constructed 7 states with 105 transitions
+        Constructed 0 states with 2 transitions
+        Constructed 3 states with 9 transitions
+        Constructed 0 states with 3 transitions
+        Constructed 23 of 150 machines
+        Constructed 2 states with 6 transitions
+        Constructed 2 states with 6 transitions
+        Constructed 24 of 150 machines
+        Constructed 0 states with 2 transitions
+        Constructed 25 of 150 machines
+        Constructed 3 states with 9 transitions
+        Constructed 0 states with 3 transitions
+        Constructed 26 of 150 machines
+        Constructed 2 states with 6 transitions
+        Constructed 27 of 151 machines
+        Constructed 28 of 151 machines
+        Reduced 2 states to 2 equivalence classes
+        Reduced 5 states to 5 equivalence classes
+        Constructed 29 of 151 machines
+        Constructed 30 of 151 machines
+        Constructed 31 of 151 machines
+        Constructed 13 equivalence classes
+        Constructed 32 of 151 machines
+        Constructed 17 equivalence classes
+        Reduced 17 states to 17 equivalence classes
+        Constructed 33 of 151 machines
+        Constructed 34 of 152 machines
+        Constructed 35 of 152 machines
+        Constructed 36 of 152 machines
+        Constructed 37 of 152 machines
+        Constructed 38 of 152 machines
+        Constructed 12 states with 31 transitions
+        Constructed 39 of 152 machines
+        Constructed 12 states with 31 transitions
+        Constructed 40 of 152 machines
+        Reduced 4 states to 4 equivalence classes
+        Constructed 13 equivalence classes
+        Constructed 13 equivalence classes
+        Constructed 17 equivalence classes
+        Reduced 17 states to 17 equivalence classes
+        Constructed 13 equivalence classes
+        Reduced 3 states to 3 equivalence classes
+        Constructed 41 of 152 machines
+        Reduced 14 states to 13 equivalence classes
+        Reduced 5 states to 5 equivalence classes
+        Constructed 42 of 152 machines
+        Constructed 16 equivalence classes
+        Reduced 3 states to 3 equivalence classes
+        Constructed 43 of 153 machines
+        Constructed 16 equivalence classes
+        Reduced 17 states to 16 equivalence classes
+        Reduced 2 states to 2 equivalence classes
+        Constructed 44 of 153 machines
+        Reduced 2 states to 2 equivalence classes
+        Constructed 45 of 153 machines
+        Constructed 46 of 154 machines
+        Constructed 2 equivalence classes
+        Constructed 47 of 154 machines
+        Constructed 2 equivalence classes
+        Reduced 3 states to 2 equivalence classes
+        Constructed 48 of 154 machines
+        Constructed 49 of 154 machines
+        Reduced 2 states to 2 equivalence classes
+        Reduced 3 states to 3 equivalence classes
+        Constructed 50 of 156 machines
+        Reduced 3 states to 3 equivalence classes
+        Reduced 1 states to 1 equivalence classes
+        Constructed 51 of 156 machines
+        Constructed 18 equivalence classes
+        Reduced 12 states to 12 states
+        Reduced 7 states to 7 equivalence classes
+        Reduced 12 states to 12 states
+        Constructed 18 equivalence classes
+        Constructed 52 of 156 machines
+        Reduced 19 states to 18 equivalence classes
+        Constructed 3 equivalence classes
+        Constructed 53 of 156 machines
+        Constructed 3 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 4 equivalence classes
+        Constructed 5 equivalence classes
+        Constructed 54 of 157 machines
+        Constructed 5 equivalence classes
+        Constructed 5 equivalence classes
+        Reduced 12 states to 5 equivalence classes
+        Constructed 55 of 157 machines
+        Constructed 5 equivalence classes
+        Reduced 12 states to 5 equivalence classes
+        Constructed 56 of 157 machines
+        Constructed 57 of 157 machines
+        Constructed 58 of 157 machines
+        Constructed 59 of 157 machines
+        Constructed 60 of 158 machines
+        Constructed 61 of 158 machines
+        Constructed 0 formats
+        Constructed 62 of 158 machines
+        Constructed 2 formats
+        Constructed 63 of 158 machines
+        Constructed 64 of 162 machines
+        Visited 322 processes generating 164 machines
+        Constructed 65 of 164 machines
+        Constructed 66 of 164 machines
+        Constructed 67 of 166 machines
+        Constructed 68 of 166 machines
+        Constructed 69 of 166 machines
+        Constructed 70 of 166 machines
+        Constructed 71 of 170 machines
+        Constructed 0 formats
+        Constructed 72 of 170 machines
+        Constructed 2 formats
+        Constructed 73 of 170 machines
+        Constructed 74 of 170 machines
+        Constructed 75 of 170 machines
+        Constructed 76 of 170 machines
+        Constructed 77 of 170 machines
+        Constructed 78 of 174 machines
+        Constructed 79 of 174 machines
+        Constructed 80 of 174 machines
+        Constructed 81 of 174 machines
+        Constructed 82 of 174 machines
+        Constructed 83 of 174 machines
+        Constructed 84 of 174 machines
+        Constructed 85 of 174 machines
+        Constructed 86 of 174 machines
+        Constructed 87 of 174 machines
+        Constructed 0 states with 1 transitions
+        Constructing high-level wrapper
+        Constructed 88 of 174 machines
+        Constructed 89 of 174 machines
+        Constructed 90 of 177 machines
+        Constructed 91 of 177 machines
+        Constructed 92 of 177 machines
+        Constructed 93 of 179 machines
+        Constructed 94 of 179 machines
+        Constructed 95 of 182 machines
+        Constructed 96 of 188 machines
+        Constructed 97 of 188 machines
+        Constructed 98 of 188 machines
+        Constructed 99 of 188 machines
+        Constructed 100 of 188 machines
+        Constructed 101 of 188 machines
+        Constructed 102 of 188 machines
+        Constructed 103 of 188 machines
+        Constructed 104 of 188 machines
+        Enumerated to 119 states and 277 transitions
+        Reduced 119 states to 119 states
+        Constructed 64 equivalence classes
+        Constructed 116 equivalence classes
+        Constructed 116 equivalence classes
+        Reduced 119 states to 116 equivalence classes
+        Constructed 105 of 188 machines
+        Constructed 106 of 188 machines
+        Enumerated to 119 states and 277 transitions
+        Reduced 119 states to 119 states
+        Constructed 64 equivalence classes
+        Constructed 116 equivalence classes
+        Constructed 116 equivalence classes
+        Reduced 119 states to 116 equivalence classes
+        Constructed 107 of 188 machines
+        Constructed 108 of 188 machines
+        Enumerated to 48 states and 55 transitions
+        Reduced 48 states to 48 states
+        Constructed 39 equivalence classes
+        Constructed 43 equivalence classes
+        Constructed 43 equivalence classes
+        Reduced 48 states to 43 equivalence classes
+        Constructed 109 of 188 machines
+        Constructed 110 of 188 machines
+        Constructed 111 of 188 machines
+        Constructed 112 of 191 machines
+        Constructed 113 of 191 machines
+        Constructed 114 of 191 machines
+        Constructed 115 of 191 machines
+        Enumerated to 1050 states and 2946 transitions
+        Constructed 1000 states
+        Reduced 1050 states to 1050 states
+        Constructed 335 equivalence classes
+        Constructed 667 equivalence classes
+        Constructed 1049 equivalence classes
+        Constructed 1049 equivalence classes
+        Reduced 1050 states to 1049 equivalence classes
+        Constructed 116 of 191 machines
+        Constructed 117 of 191 machines
+        Constructed 118 of 193 machines
+        Constructed 119 of 193 machines
+        Constructed 120 of 193 machines
+        Enumerated to 1049 states and 2944 transitions
+        Constructed 336 equivalence classes
+        Constructed 671 equivalence classes
+        Constructed 1049 equivalence classes
+        Reduced 1049 states to 1049 equivalence classes
+        Constructed 121 of 193 machines
+        Constructed 122 of 193 machines
+        Constructed 123 of 193 machines
+        Constructed 124 of 196 machines
+        Constructed 125 of 196 machines
+        Constructed 126 of 196 machines
+        Constructed 127 of 196 machines
+        Enumerated to 745 states and 1351 transitions
+        Constructed 229 equivalence classes
+        Constructed 261 equivalence classes
+        Constructed 294 equivalence classes
+        Constructed 334 equivalence classes
+        Constructed 359 equivalence classes
+        Constructed 384 equivalence classes
+        Constructed 411 equivalence classes
+        Constructed 440 equivalence classes
+        Constructed 470 equivalence classes
+        Constructed 503 equivalence classes
+        Constructed 533 equivalence classes
+        Constructed 555 equivalence classes
+        Constructed 580 equivalence classes
+        Constructed 605 equivalence classes
+        Constructed 630 equivalence classes
+        Constructed 652 equivalence classes
+        Constructed 671 equivalence classes
+        Constructed 687 equivalence classes
+        Constructed 703 equivalence classes
+        Constructed 709 equivalence classes
+        Constructed 709 equivalence classes
+        Reduced 745 states to 709 equivalence classes
+        Constructed 128 of 196 machines
+        Constructed 129 of 196 machines
+        Constructed 130 of 197 machines
+        Constructed 131 of 197 machines
+        Enumerated to 709 states and 1302 transitions
+        Reduced 709 states to 709 states
+        Constructed 215 equivalence classes
+        Constructed 244 equivalence classes
+        Constructed 274 equivalence classes
+        Constructed 311 equivalence classes
+        Constructed 333 equivalence classes
+        Constructed 355 equivalence classes
+        Constructed 379 equivalence classes
+        Constructed 403 equivalence classes
+        Constructed 427 equivalence classes
+        Constructed 451 equivalence classes
+        Constructed 473 equivalence classes
+        Constructed 494 equivalence classes
+        Constructed 522 equivalence classes
+        Constructed 550 equivalence classes
+        Constructed 573 equivalence classes
+        Constructed 598 equivalence classes
+        Constructed 623 equivalence classes
+        Constructed 648 equivalence classes
+        Constructed 673 equivalence classes
+        Constructed 676 equivalence classes
+        Constructed 676 equivalence classes
+        Reduced 709 states to 676 equivalence classes
+        Constructed 132 of 197 machines
+        Constructed 133 of 197 machines
+        Constructed 134 of 197 machines
+        Constructed 135 of 197 machines
+        Constructed 136 of 198 machines
+        Constructed 137 of 198 machines
+        Enumerated to 676 states and 1248 transitions
+        Constructed 206 equivalence classes
+        Constructed 235 equivalence classes
+        Constructed 259 equivalence classes
+        Constructed 296 equivalence classes
+        Constructed 333 equivalence classes
+        Constructed 355 equivalence classes
+        Constructed 379 equivalence classes
+        Constructed 403 equivalence classes
+        Constructed 427 equivalence classes
+        Constructed 451 equivalence classes
+        Constructed 473 equivalence classes
+        Constructed 494 equivalence classes
+        Constructed 522 equivalence classes
+        Constructed 550 equivalence classes
+        Constructed 573 equivalence classes
+        Constructed 598 equivalence classes
+        Constructed 623 equivalence classes
+        Constructed 648 equivalence classes
+        Constructed 673 equivalence classes
+        Constructed 676 equivalence classes
+        Reduced 676 states to 676 equivalence classes
+        Constructed 138 of 198 machines
+        Constructed 139 of 198 machines
+        Constructed 140 of 200 machines
+        Constructed 141 of 200 machines
+        Constructed 142 of 200 machines
+        Enumerated to 2028 states and 4933 transitions
+        Constructed 406 equivalence classes
+        Constructed 471 equivalence classes
+        Constructed 528 equivalence classes
+        Constructed 604 equivalence classes
+        Constructed 678 equivalence classes
+        Constructed 730 equivalence classes
+        Constructed 778 equivalence classes
+        Constructed 826 equivalence classes
+        Constructed 862 equivalence classes
+        Constructed 901 equivalence classes
+        Constructed 940 equivalence classes
+        Constructed 981 equivalence classes
+        Constructed 1018 equivalence classes
+        Constructed 1067 equivalence classes
+        Constructed 1118 equivalence classes
+        Constructed 1157 equivalence classes
+        Constructed 1198 equivalence classes
+        Constructed 1242 equivalence classes
+        Constructed 1283 equivalence classes
+        Constructed 1321 equivalence classes
+        Constructed 1349 equivalence classes
+        Constructed 1370 equivalence classes
+        Constructed 1379 equivalence classes
+        Constructed 1379 equivalence classes
+        Reduced 2028 states to 1379 equivalence classes
+        Constructed 143 of 200 machines
+        Constructed 144 of 200 machines
+        Constructed 145 of 201 machines
+        Constructed 146 of 201 machines
+        Enumerated to 1379 states and 3773 transitions
+        Constructed 1000 states
+        Reduced 1379 states to 1379 states
+        Constructed 388 equivalence classes
+        Constructed 453 equivalence classes
+        Constructed 510 equivalence classes
+        Constructed 586 equivalence classes
+        Constructed 660 equivalence classes
+        Constructed 719 equivalence classes
+        Constructed 767 equivalence classes
+        Constructed 808 equivalence classes
+        Constructed 844 equivalence classes
+        Constructed 890 equivalence classes
+        Constructed 931 equivalence classes
+        Constructed 974 equivalence classes
+        Constructed 1018 equivalence classes
+        Constructed 1074 equivalence classes
+        Constructed 1116 equivalence classes
+        Constructed 1164 equivalence classes
+        Constructed 1214 equivalence classes
+        Constructed 1249 equivalence classes
+        Constructed 1281 equivalence classes
+        Constructed 1321 equivalence classes
+        Constructed 1342 equivalence classes
+        Constructed 1345 equivalence classes
+        Constructed 1345 equivalence classes
+        Reduced 1379 states to 1345 equivalence classes
+        Constructed 147 of 201 machines
+        Constructed 388 equivalence classes
+        Constructed 453 equivalence classes
+        Constructed 510 equivalence classes
+        Constructed 586 equivalence classes
+        Constructed 660 equivalence classes
+        Constructed 719 equivalence classes
+        Constructed 767 equivalence classes
+        Constructed 808 equivalence classes
+        Constructed 844 equivalence classes
+        Constructed 890 equivalence classes
+        Constructed 931 equivalence classes
+        Constructed 974 equivalence classes
+        Constructed 1018 equivalence classes
+        Constructed 1074 equivalence classes
+        Constructed 1116 equivalence classes
+        Constructed 1164 equivalence classes
+        Constructed 1214 equivalence classes
+        Constructed 1249 equivalence classes
+        Constructed 1281 equivalence classes
+        Constructed 1321 equivalence classes
+        Constructed 1342 equivalence classes
+        Constructed 1345 equivalence classes
+        Reduced 1345 states to 1345 equivalence classes
+        Constructed 148 of 201 machines
+        Constructed 149 of 201 machines
+        Constructed 150 of 203 machines
+        Constructed 151 of 203 machines
+        Constructed 152 of 203 machines
+        Enumerated to 2400 states and 5357 transitions
+        Constructed 540 equivalence classes
+        Constructed 653 equivalence classes
+        Constructed 734 equivalence classes
+        Constructed 833 equivalence classes
+        Constructed 930 equivalence classes
+        Constructed 1012 equivalence classes
+        Constructed 1077 equivalence classes
+        Constructed 1135 equivalence classes
+        Constructed 1188 equivalence classes
+        Constructed 1251 equivalence classes
+        Constructed 1311 equivalence classes
+        Constructed 1374 equivalence classes
+        Constructed 1437 equivalence classes
+        Constructed 1512 equivalence classes
+        Constructed 1568 equivalence classes
+        Constructed 1630 equivalence classes
+        Constructed 1696 equivalence classes
+        Constructed 1747 equivalence classes
+        Constructed 1795 equivalence classes
+        Constructed 1851 equivalence classes
+        Constructed 1887 equivalence classes
+        Constructed 1893 equivalence classes
+        Constructed 1893 equivalence classes
+        Reduced 2400 states to 1893 equivalence classes
+        Constructed 153 of 203 machines
+        Constructed 154 of 203 machines
+        Constructed 155 of 204 machines
+        Constructed 156 of 204 machines
+        Enumerated to 1893 states and 4461 transitions
+        Constructed 1000 states
+        Reduced 1893 states to 1893 states
+        Constructed 197 equivalence classes
+        Constructed 235 equivalence classes
+        Constructed 268 equivalence classes
+        Constructed 314 equivalence classes
+        Constructed 351 equivalence classes
+        Constructed 373 equivalence classes
+        Constructed 397 equivalence classes
+        Constructed 421 equivalence classes
+        Constructed 445 equivalence classes
+        Constructed 471 equivalence classes
+        Constructed 493 equivalence classes
+        Constructed 521 equivalence classes
+        Constructed 549 equivalence classes
+        Constructed 577 equivalence classes
+        Constructed 600 equivalence classes
+        Constructed 625 equivalence classes
+        Constructed 650 equivalence classes
+        Constructed 666 equivalence classes
+        Constructed 675 equivalence classes
+        Constructed 678 equivalence classes
+        Constructed 678 equivalence classes
+        Reduced 1893 states to 678 equivalence classes
+        Constructed 157 of 204 machines
+        Constructed 158 of 204 machines
+        Constructed 159 of 206 machines
+        Constructed 160 of 206 machines
+        Constructed 161 of 206 machines
+        Enumerated to 2034 states and 4736 transitions
+        Constructed 283 equivalence classes
+        Constructed 455 equivalence classes
+        Constructed 524 equivalence classes
+        Constructed 600 equivalence classes
+        Constructed 683 equivalence classes
+        Constructed 745 equivalence classes
+        Constructed 796 equivalence classes
+        Constructed 842 equivalence classes
+        Constructed 883 equivalence classes
+        Constructed 928 equivalence classes
+        Constructed 972 equivalence classes
+        Constructed 1018 equivalence classes
+        Constructed 1065 equivalence classes
+        Constructed 1118 equivalence classes
+        Constructed 1174 equivalence classes
+        Constructed 1223 equivalence classes
+        Constructed 1269 equivalence classes
+        Constructed 1315 equivalence classes
+        Constructed 1356 equivalence classes
+        Constructed 1379 equivalence classes
+        Constructed 1390 equivalence classes
+        Constructed 1398 equivalence classes
+        Constructed 1401 equivalence classes
+        Constructed 1401 equivalence classes
+        Reduced 2034 states to 1401 equivalence classes
+        Constructed 162 of 206 machines
+        Constructed 163 of 206 machines
+        Constructed 164 of 207 machines
+        Constructed 165 of 207 machines
+        Enumerated to 1401 states and 3567 transitions
+        Constructed 1000 states
+        Reduced 1401 states to 1401 states
+        Constructed 280 equivalence classes
+        Constructed 455 equivalence classes
+        Constructed 524 equivalence classes
+        Constructed 600 equivalence classes
+        Constructed 683 equivalence classes
+        Constructed 745 equivalence classes
+        Constructed 796 equivalence classes
+        Constructed 842 equivalence classes
+        Constructed 883 equivalence classes
+        Constructed 928 equivalence classes
+        Constructed 972 equivalence classes
+        Constructed 1018 equivalence classes
+        Constructed 1065 equivalence classes
+        Constructed 1118 equivalence classes
+        Constructed 1174 equivalence classes
+        Constructed 1223 equivalence classes
+        Constructed 1269 equivalence classes
+        Constructed 1315 equivalence classes
+        Constructed 1356 equivalence classes
+        Constructed 1379 equivalence classes
+        Constructed 1390 equivalence classes
+        Constructed 1398 equivalence classes
+        Constructed 1401 equivalence classes
+        Reduced 1401 states to 1401 equivalence classes
+        Constructed 166 of 207 machines
+        Constructed 282 equivalence classes
+        Constructed 455 equivalence classes
+        Constructed 524 equivalence classes
+        Constructed 600 equivalence classes
+        Constructed 683 equivalence classes
+        Constructed 745 equivalence classes
+        Constructed 796 equivalence classes
+        Constructed 842 equivalence classes
+        Constructed 883 equivalence classes
+        Constructed 928 equivalence classes
+        Constructed 972 equivalence classes
+        Constructed 1018 equivalence classes
+        Constructed 1065 equivalence classes
+        Constructed 1118 equivalence classes
+        Constructed 1174 equivalence classes
+        Constructed 1223 equivalence classes
+        Constructed 1269 equivalence classes
+        Constructed 1315 equivalence classes
+        Constructed 1356 equivalence classes
+        Constructed 1379 equivalence classes
+        Constructed 1390 equivalence classes
+        Constructed 1398 equivalence classes
+        Constructed 1401 equivalence classes
+        Reduced 1401 states to 1401 equivalence classes
+        Constructed 167 of 207 machines
+        Constructed 168 of 207 machines
+        Constructed 169 of 209 machines
+        Constructed 170 of 209 machines
+        Constructed 171 of 209 machines
+        Enumerated to 1418 states and 3020 transitions
+        Constructed 350 equivalence classes
+        Constructed 561 equivalence classes
+        Constructed 651 equivalence classes
+        Constructed 746 equivalence classes
+        Constructed 843 equivalence classes
+        Constructed 918 equivalence classes
+        Constructed 976 equivalence classes
+        Constructed 1027 equivalence classes
+        Constructed 1079 equivalence classes
+        Constructed 1133 equivalence classes
+        Constructed 1182 equivalence classes
+        Constructed 1225 equivalence classes
+        Constructed 1260 equivalence classes
+        Constructed 1296 equivalence classes
+        Constructed 1329 equivalence classes
+        Constructed 1351 equivalence classes
+        Constructed 1370 equivalence classes
+        Constructed 1388 equivalence classes
+        Constructed 1400 equivalence classes
+        Constructed 1412 equivalence classes
+        Constructed 1418 equivalence classes
+        Reduced 1418 states to 1418 equivalence classes
+        Constructed 172 of 209 machines
+        Constructed 173 of 209 machines
+        Constructed 174 of 210 machines
+        Constructed 175 of 210 machines
+        Enumerated to 1418 states and 3020 transitions
+        Constructed 1000 states
+        Reduced 1418 states to 1418 states
+        Constructed 86 equivalence classes
+        Constructed 105 equivalence classes
+        Constructed 119 equivalence classes
+        Constructed 134 equivalence classes
+        Constructed 146 equivalence classes
+        Constructed 154 equivalence classes
+        Constructed 162 equivalence classes
+        Constructed 172 equivalence classes
+        Constructed 182 equivalence classes
+        Constructed 192 equivalence classes
+        Constructed 203 equivalence classes
+        Constructed 215 equivalence classes
+        Constructed 227 equivalence classes
+        Constructed 239 equivalence classes
+        Constructed 251 equivalence classes
+        Constructed 263 equivalence classes
+        Constructed 276 equivalence classes
+        Constructed 289 equivalence classes
+        Constructed 300 equivalence classes
+        Constructed 310 equivalence classes
+        Constructed 320 equivalence classes
+        Constructed 330 equivalence classes
+        Constructed 340 equivalence classes
+        Constructed 346 equivalence classes
+        Constructed 349 equivalence classes
+        Constructed 352 equivalence classes
+        Constructed 355 equivalence classes
+        Constructed 357 equivalence classes
+        Constructed 357 equivalence classes
+        Reduced 1418 states to 357 equivalence classes
+        Constructed 176 of 210 machines
+        Constructed 177 of 210 machines
+        Constructed 178 of 212 machines
+        Constructed 179 of 212 machines
+        Constructed 180 of 212 machines
+        Enumerated to 1071 states and 2328 transitions
+        Constructed 184 equivalence classes
+        Constructed 300 equivalence classes
+        Constructed 338 equivalence classes
+        Constructed 368 equivalence classes
+        Constructed 403 equivalence classes
+        Constructed 426 equivalence classes
+        Constructed 443 equivalence classes
+        Constructed 464 equivalence classes
+        Constructed 487 equivalence classes
+        Constructed 506 equivalence classes
+        Constructed 525 equivalence classes
+        Constructed 548 equivalence classes
+        Constructed 572 equivalence classes
+        Constructed 596 equivalence classes
+        Constructed 622 equivalence classes
+        Constructed 646 equivalence classes
+        Constructed 659 equivalence classes
+        Constructed 673 equivalence classes
+        Constructed 693 equivalence classes
+        Constructed 707 equivalence classes
+        Constructed 712 equivalence classes
+        Constructed 717 equivalence classes
+        Constructed 725 equivalence classes
+        Constructed 729 equivalence classes
+        Constructed 729 equivalence classes
+        Reduced 1071 states to 729 equivalence classes
+        Constructed 181 of 212 machines
+        Constructed 182 of 212 machines
+        Constructed 183 of 213 machines
+        Constructed 184 of 213 machines
+        Enumerated to 729 states and 1753 transitions
+        Reduced 729 states to 729 states
+        Constructed 119 equivalence classes
+        Constructed 199 equivalence classes
+        Constructed 232 equivalence classes
+        Constructed 257 equivalence classes
+        Constructed 284 equivalence classes
+        Constructed 303 equivalence classes
+        Constructed 319 equivalence classes
+        Constructed 336 equivalence classes
+        Constructed 353 equivalence classes
+        Constructed 369 equivalence classes
+        Constructed 389 equivalence classes
+        Constructed 410 equivalence classes
+        Constructed 430 equivalence classes
+        Constructed 451 equivalence classes
+        Constructed 473 equivalence classes
+        Constructed 493 equivalence classes
+        Constructed 513 equivalence classes
+        Constructed 534 equivalence classes
+        Constructed 557 equivalence classes
+        Constructed 577 equivalence classes
+        Constructed 600 equivalence classes
+        Constructed 620 equivalence classes
+        Constructed 638 equivalence classes
+        Constructed 656 equivalence classes
+        Constructed 671 equivalence classes
+        Constructed 682 equivalence classes
+        Constructed 693 equivalence classes
+        Constructed 701 equivalence classes
+        Constructed 705 equivalence classes
+        Constructed 708 equivalence classes
+        Constructed 712 equivalence classes
+        Constructed 714 equivalence classes
+        Constructed 714 equivalence classes
+        Reduced 729 states to 714 equivalence classes
+        Constructed 185 of 213 machines
+        Constructed 182 equivalence classes
+        Constructed 295 equivalence classes
+        Constructed 332 equivalence classes
+        Constructed 362 equivalence classes
+        Constructed 397 equivalence classes
+        Constructed 420 equivalence classes
+        Constructed 439 equivalence classes
+        Constructed 460 equivalence classes
+        Constructed 481 equivalence classes
+        Constructed 500 equivalence classes
+        Constructed 523 equivalence classes
+        Constructed 548 equivalence classes
+        Constructed 571 equivalence classes
+        Constructed 595 equivalence classes
+        Constructed 621 equivalence classes
+        Constructed 641 equivalence classes
+        Constructed 656 equivalence classes
+        Constructed 671 equivalence classes
+        Constructed 687 equivalence classes
+        Constructed 698 equivalence classes
+        Constructed 705 equivalence classes
+        Constructed 710 equivalence classes
+        Constructed 713 equivalence classes
+        Constructed 714 equivalence classes
+        Reduced 714 states to 714 equivalence classes
+        Constructed 186 of 213 machines
+        Constructed 187 of 213 machines
+        Constructed 188 of 215 machines
+        Constructed 189 of 215 machines
+        Constructed 190 of 215 machines
+        Enumerated to 859 states and 1721 transitions
+        Constructed 231 equivalence classes
+        Constructed 381 equivalence classes
+        Constructed 435 equivalence classes
+        Constructed 479 equivalence classes
+        Constructed 529 equivalence classes
+        Constructed 566 equivalence classes
+        Constructed 595 equivalence classes
+        Constructed 626 equivalence classes
+        Constructed 656 equivalence classes
+        Constructed 682 equivalence classes
+        Constructed 709 equivalence classes
+        Constructed 734 equivalence classes
+        Constructed 753 equivalence classes
+        Constructed 771 equivalence classes
+        Constructed 790 equivalence classes
+        Constructed 804 equivalence classes
+        Constructed 812 equivalence classes
+        Constructed 818 equivalence classes
+        Constructed 826 equivalence classes
+        Constructed 830 equivalence classes
+        Constructed 830 equivalence classes
+        Reduced 859 states to 830 equivalence classes
+        Constructed 191 of 215 machines
+        Constructed 192 of 215 machines
+        Constructed 193 of 216 machines
+        Constructed 194 of 216 machines
+        Enumerated to 830 states and 1667 transitions
+        Reduced 830 states to 830 states
+        Constructed 35 equivalence classes
+        Constructed 43 equivalence classes
+        Constructed 50 equivalence classes
+        Constructed 56 equivalence classes
+        Constructed 61 equivalence classes
+        Constructed 64 equivalence classes
+        Constructed 67 equivalence classes
+        Constructed 73 equivalence classes
+        Constructed 80 equivalence classes
+        Constructed 87 equivalence classes
+        Constructed 94 equivalence classes
+        Constructed 101 equivalence classes
+        Constructed 108 equivalence classes
+        Constructed 115 equivalence classes
+        Constructed 122 equivalence classes
+        Constructed 130 equivalence classes
+        Constructed 138 equivalence classes
+        Constructed 146 equivalence classes
+        Constructed 154 equivalence classes
+        Constructed 162 equivalence classes
+        Constructed 170 equivalence classes
+        Constructed 177 equivalence classes
+        Constructed 184 equivalence classes
+        Constructed 188 equivalence classes
+        Constructed 192 equivalence classes
+        Constructed 196 equivalence classes
+        Constructed 196 equivalence classes
+        Reduced 830 states to 196 equivalence classes
+        Constructed 195 of 216 machines
+        Constructed 196 of 216 machines
+        Constructed 197 of 217 machines
+        Constructed 198 of 217 machines
+        Enumerated to 196 states and 307 transitions
+        Reduced 196 states to 196 states
+        Constructed 34 equivalence classes
+        Constructed 42 equivalence classes
+        Constructed 48 equivalence classes
+        Constructed 53 equivalence classes
+        Constructed 56 equivalence classes
+        Constructed 59 equivalence classes
+        Constructed 65 equivalence classes
+        Constructed 72 equivalence classes
+        Constructed 79 equivalence classes
+        Constructed 86 equivalence classes
+        Constructed 93 equivalence classes
+        Constructed 100 equivalence classes
+        Constructed 107 equivalence classes
+        Constructed 115 equivalence classes
+        Constructed 123 equivalence classes
+        Constructed 131 equivalence classes
+        Constructed 139 equivalence classes
+        Constructed 147 equivalence classes
+        Constructed 154 equivalence classes
+        Constructed 161 equivalence classes
+        Constructed 168 equivalence classes
+        Constructed 172 equivalence classes
+        Constructed 176 equivalence classes
+        Constructed 176 equivalence classes
+        Reduced 196 states to 176 equivalence classes
+        Constructed 199 of 217 machines
+        Constructed 200 of 217 machines
+        Constructed 201 of 219 machines
+        Constructed 202 of 219 machines
+        Constructed 203 of 219 machines
+        Constructed 204 of 219 machines
+        Constructed 205 of 219 machines
+        Constructed 206 of 219 machines
+        Constructed 207 of 220 machines
+        Constructed 208 of 220 machines
+        Constructed 209 of 220 machines
+        Constructed 210 of 220 machines
+        Constructed 211 of 220 machines
+        Constructed 212 of 220 machines
+        Constructed 213 of 220 machines
+        Constructed 214 of 220 machines
+        Constructed 215 of 220 machines
+        Constructed 216 of 220 machines
+        Constructed 217 of 220 machines
+        Constructed 218 of 220 machines
+        Constructed 219 of 220 machines
+        Constructed 220 of 227 machines
+        Constructed 221 of 227 machines
+        Constructed 222 of 227 machines
+        Constructed 223 of 227 machines
+        Constructed 224 of 227 machines
+        Constructed 225 of 227 machines
+        Constructed 226 of 227 machines
+        Constructed 227 of 227 machines
+        Parallel BTree Explorer using 12 workers, 28 to 28 bytes per state
+        Next level storage overhead is 4.02934 bytes per state (402.934 MB per 100 million states)
+        Using BTree blocks of size 8 KiB and next-level blocks of size 8 KiB
+        On ply 1
+        On ply 2 - visited 1 state pairs and 3 transitions in 0 seconds at inf state pairs and inf transitions per second using 604MB total storage.
+        On ply 3 - visited 3 state pairs and 5 transitions in 0 seconds at inf state pairs and inf transitions per second using 604MB total storage.
+        On ply 4 - visited 5 state pairs and 7 transitions in 0 seconds at inf state pairs and inf transitions per second using 604MB total storage.
+        On ply 5 - visited 6 state pairs and 8 transitions in 0 seconds at inf state pairs and inf transitions per second using 604MB total storage.
+        On ply 6 - visited 7 state pairs and 9 transitions in 0.001 seconds at 7000 state pairs and 9000 transitions per second using 604MB total storage.
+        On ply 7 - visited 8 state pairs and 11 transitions in 0.001 seconds at 8000 state pairs and 11000 transitions per second using 604MB total storage.
+        On ply 8 - visited 10 state pairs and 15 transitions in 0.001 seconds at 10000 state pairs and 15000 transitions per second using 604MB total storage.
+        On ply 9 - visited 13 state pairs and 20 transitions in 0.001 seconds at 13000 state pairs and 20000 transitions per second using 604MB total storage.
+        On ply 10 - visited 16 state pairs and 25 transitions in 0.002 seconds at 8000 state pairs and 12500 transitions per second using 604MB total storage.
+        On ply 11 - visited 19 state pairs and 30 transitions in 0.002 seconds at 9500 state pairs and 15000 transitions per second using 604MB total storage.
+        On ply 12 - visited 22 state pairs and 35 transitions in 0.002 seconds at 11000 state pairs and 17500 transitions per second using 604MB total storage.
+        On ply 13 - visited 25 state pairs and 39 transitions in 0.002 seconds at 12500 state pairs and 19500 transitions per second using 604MB total storage.
+        On ply 14 - visited 27 state pairs and 42 transitions in 0.003 seconds at 9000 state pairs and 14000 transitions per second using 604MB total storage.
+        On ply 15 - visited 29 state pairs and 44 transitions in 0.003 seconds at 9666.67 state pairs and 14666.7 transitions per second using 604MB total storage.
+        On ply 16 - visited 30 state pairs and 45 transitions in 0.003 seconds at 10000 state pairs and 15000 transitions per second using 604MB total storage.
+        On ply 17 - visited 31 state pairs and 46 transitions in 0.003 seconds at 10333.3 state pairs and 15333.3 transitions per second using 604MB total storage.
+        On ply 18 - visited 32 state pairs and 48 transitions in 0.004 seconds at 8000 state pairs and 12000 transitions per second using 604MB total storage.
+        On ply 19 - visited 34 state pairs and 50 transitions in 0.004 seconds at 8500 state pairs and 12500 transitions per second using 604MB total storage.
+        On ply 20 - visited 36 state pairs and 52 transitions in 0.004 seconds at 9000 state pairs and 13000 transitions per second using 604MB total storage.
+        On ply 21 - visited 38 state pairs and 54 transitions in 0.004 seconds at 9500 state pairs and 13500 transitions per second using 604MB total storage.
+        On ply 22 - visited 40 state pairs and 56 transitions in 0.004 seconds at 10000 state pairs and 14000 transitions per second using 604MB total storage.
+        On ply 23 - visited 42 state pairs and 60 transitions in 0.005 seconds at 8400 state pairs and 12000 transitions per second using 604MB total storage.
+        On ply 24 - visited 46 state pairs and 69 transitions in 0.005 seconds at 9200 state pairs and 13800 transitions per second using 604MB total storage.
+        On ply 25 - visited 52 state pairs and 85 transitions in 0.005 seconds at 10400 state pairs and 17000 transitions per second using 604MB total storage.
+        On ply 26 - visited 61 state pairs and 111 transitions in 0.005 seconds at 12200 state pairs and 22200 transitions per second using 604MB total storage.
+        On ply 27 - visited 73 state pairs and 142 transitions in 0.006 seconds at 12166.7 state pairs and 23666.7 transitions per second using 604MB total storage.
+        On ply 28 - visited 84 state pairs and 168 transitions in 0.006 seconds at 14000 state pairs and 28000 transitions per second using 604MB total storage.
+        On ply 29 - visited 93 state pairs and 188 transitions in 0.006 seconds at 15500 state pairs and 31333.3 transitions per second using 604MB total storage.
+        On ply 30 - visited 100 state pairs and 202 transitions in 0.006 seconds at 16666.7 state pairs and 33666.7 transitions per second using 604MB total storage.
+        On ply 31 - visited 105 state pairs and 210 transitions in 0.007 seconds at 15000 state pairs and 30000 transitions per second using 604MB total storage.
+        On ply 32 - visited 108 state pairs and 213 transitions in 0.007 seconds at 15428.6 state pairs and 30428.6 transitions per second using 604MB total storage.
+        On ply 33 - visited 109 state pairs and 214 transitions in 0.007 seconds at 15571.4 state pairs and 30571.4 transitions per second using 604MB total storage.
+        On ply 34 - visited 110 state pairs and 216 transitions in 0.007 seconds at 15714.3 state pairs and 30857.1 transitions per second using 604MB total storage.
+        On ply 35 - visited 112 state pairs and 218 transitions in 0.007 seconds at 16000 state pairs and 31142.9 transitions per second using 604MB total storage.
+        On ply 36 - visited 114 state pairs and 220 transitions in 0.008 seconds at 14250 state pairs and 27500 transitions per second using 604MB total storage.
+        On ply 37 - visited 115 state pairs and 221 transitions in 0.008 seconds at 14375 state pairs and 27625 transitions per second using 604MB total storage.
+        On ply 38 - visited 116 state pairs and 222 transitions in 0.008 seconds at 14500 state pairs and 27750 transitions per second using 604MB total storage.
+        On ply 39 - visited 117 state pairs and 223 transitions in 0.008 seconds at 14625 state pairs and 27875 transitions per second using 604MB total storage.
+        On ply 40 - visited 118 state pairs and 224 transitions in 0.008 seconds at 14750 state pairs and 28000 transitions per second using 604MB total storage.
+        On ply 41 - visited 119 state pairs and 226 transitions in 0.009 seconds at 13222.2 state pairs and 25111.1 transitions per second using 604MB total storage.
+        On ply 42 - visited 121 state pairs and 230 transitions in 0.009 seconds at 13444.4 state pairs and 25555.6 transitions per second using 604MB total storage.
+        On ply 43 - visited 124 state pairs and 235 transitions in 0.009 seconds at 13777.8 state pairs and 26111.1 transitions per second using 604MB total storage.
+        On ply 44 - visited 127 state pairs and 240 transitions in 0.009 seconds at 14111.1 state pairs and 26666.7 transitions per second using 604MB total storage.
+        On ply 45 - visited 130 state pairs and 245 transitions in 0.009 seconds at 14444.4 state pairs and 27222.2 transitions per second using 604MB total storage.
+        On ply 46 - visited 133 state pairs and 250 transitions in 0.01 seconds at 13300 state pairs and 25000 transitions per second using 604MB total storage.
+        On ply 47 - visited 136 state pairs and 254 transitions in 0.01 seconds at 13600 state pairs and 25400 transitions per second using 604MB total storage.
+        On ply 48 - visited 138 state pairs and 257 transitions in 0.01 seconds at 13800 state pairs and 25700 transitions per second using 604MB total storage.
+        On ply 49 - visited 140 state pairs and 259 transitions in 0.01 seconds at 14000 state pairs and 25900 transitions per second using 604MB total storage.
+        On ply 50 - visited 141 state pairs and 260 transitions in 0.011 seconds at 12818.2 state pairs and 23636.4 transitions per second using 604MB total storage.
+        On ply 51 - visited 142 state pairs and 261 transitions in 0.011 seconds at 12909.1 state pairs and 23727.3 transitions per second using 604MB total storage.
+        On ply 52 - visited 143 state pairs and 263 transitions in 0.011 seconds at 13000 state pairs and 23909.1 transitions per second using 604MB total storage.
+        On ply 53 - visited 145 state pairs and 265 transitions in 0.011 seconds at 13181.8 state pairs and 24090.9 transitions per second using 604MB total storage.
+        On ply 54 - visited 147 state pairs and 267 transitions in 0.012 seconds at 12250 state pairs and 22250 transitions per second using 604MB total storage.
+        On ply 55 - visited 148 state pairs and 268 transitions in 0.012 seconds at 12333.3 state pairs and 22333.3 transitions per second using 604MB total storage.
+        On ply 56 - visited 149 state pairs and 269 transitions in 0.012 seconds at 12416.7 state pairs and 22416.7 transitions per second using 604MB total storage.
+        On ply 57 - visited 150 state pairs and 270 transitions in 0.012 seconds at 12500 state pairs and 22500 transitions per second using 604MB total storage.
+        On ply 58 - visited 151 state pairs and 271 transitions in 0.013 seconds at 11615.4 state pairs and 20846.2 transitions per second using 604MB total storage.
+        On ply 59 - visited 152 state pairs and 273 transitions in 0.013 seconds at 11692.3 state pairs and 21000 transitions per second using 604MB total storage.
+        On ply 60 - visited 153 state pairs and 275 transitions in 0.013 seconds at 11769.2 state pairs and 21153.8 transitions per second using 604MB total storage.
+        On ply 61 - visited 154 state pairs and 276 transitions in 0.013 seconds at 11846.2 state pairs and 21230.8 transitions per second using 604MB total storage.
+        Finished
+        Reconstructing counterexamples
+CFootBot::D__(1, 1, 360, 180) :[deadlock free [F]]: [32mPassed[m
