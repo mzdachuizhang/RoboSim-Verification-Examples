@@ -1,20 +1,4 @@
-/home/mscf/Dropbox/UFPE/RS2UPPAAL/2021/TASEcaseStudies3005/AlphaAlgorithm/FDR/CSPFiles/mainP3.csp:46:17-22:
-    Couldn't match expected type (a, b, c, d, e) -> f
-            with actual type (g, Int, Int) -> Proc
-    In the expression:
-        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__
-    In the expression:
-        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__(1, 1, 4, 1,
-                                                              1)
-    In the assertion:
-        CommunicationStateSpent(Communication_RC,
-                                AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::SID_Communication_SReceive)
-            [FD= AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__(1, 1, 4,
-                                                                       1, 1)
-    Relevant variable types:
-        AgSwR::AggregationSoftware::ctrl_ref1::stm_ref0::VS__ :: (h, Int,
-                                                                  Int) -> Proc
 
-real	0m0.354s
-user	0m0.346s
-sys	0m0.008s
+real	1m10.754s
+user	1m58.841s
+sys	0m1.717s
